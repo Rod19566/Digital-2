@@ -40,6 +40,9 @@ Librerias
 Prototipo de Funciones
 */
 void setup(void);
+void upButton(void);
+void downButton(void);
+
 
 
 /*
@@ -59,8 +62,9 @@ void main(void) {
     setup();
     
     while(1){
-        PORTB++;
-        __delay_ms(500);
+        downButton();
+        upButton();
+        //__delay_ms(1000);
     }
     
 }
@@ -68,8 +72,28 @@ void main(void) {
 void setup(void){
     configOsc(8);
     
+    //Setting all I/O as digital pins
     ANSEL = 0;
     ANSELH = 0b00000000;
+    
+    //Setting PORTB as an output
     TRISB = 0x00;
     PORTB = 0;
+    
+    //Setting PORTA as an input
+    TRISA   = 0b00000101;       //RA0 RA2 as inputs
 }
+
+void downButton(void){
+    if(PORTAbits.RA2) {
+        PORTB--;
+        __delay_ms(400);
+    }
+}
+void upButton(void){
+    if(PORTAbits.RA0) {
+        PORTB++;
+        __delay_ms(400);
+    }
+}
+

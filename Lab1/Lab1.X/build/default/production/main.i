@@ -2666,13 +2666,16 @@ void configOsc(uint16_t frec);
 
 
 void setup(void);
-# 58 "main.c"
+void upButton(void);
+void downButton(void);
+# 61 "main.c"
 void main(void) {
     setup();
 
     while(1){
-        PORTB++;
-        _delay((unsigned long)((500)*(8000000/4000.0)));
+        downButton();
+        upButton();
+
     }
 
 }
@@ -2680,8 +2683,27 @@ void main(void) {
 void setup(void){
     configOsc(8);
 
+
     ANSEL = 0;
     ANSELH = 0b00000000;
+
+
     TRISB = 0x00;
     PORTB = 0;
+
+
+    TRISA = 0b00000101;
+}
+
+void downButton(void){
+    if(PORTAbits.RA2) {
+        PORTB--;
+        _delay((unsigned long)((400)*(8000000/4000.0)));
+    }
+}
+void upButton(void){
+    if(PORTAbits.RA0) {
+        PORTB++;
+        _delay((unsigned long)((400)*(8000000/4000.0)));
+    }
 }
