@@ -2646,14 +2646,17 @@ void downButtonF(void);
 
 void setupF(void){
 
-    ANSEL = 0;
     ANSELH = 0b00000000;
+    ANSELbits.ANS0 = 1;
 
 
     TRISC = 0x00;
     PORTC = 0;
 
-    TRISB = 0b00000101;
+    TRISD = 0x00;
+    PORTD = 0;
+
+    TRISB = 0b00000011;
     PORTB = 0;
 
 
@@ -2677,7 +2680,7 @@ void ioc_init (char pin){
 
 
             IOCBbits.IOCB0 = 1;
-            IOCBbits.IOCB2 = 1;
+            IOCBbits.IOCB1 = 1;
 
             OPTION_REGbits.nRBPU = 0;
 

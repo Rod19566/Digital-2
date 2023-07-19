@@ -37,6 +37,7 @@ Librerias
 #include "oscillator.h"
 #include "setup.h"
 #include "ADC_Interrupt.h"
+#include "sevensd.h"
 
 /*
 Prototipo de Funciones
@@ -46,8 +47,11 @@ Prototipo de Funciones
 Variables
 */
 #define upButton RB0
-#define downButton RB2
+#define downButton RB1
 #define _XTAL_FREQ 8000000
+
+unsigned char c = 0;                // ADC Value   
+unsigned char display = 0;          //display
 
 /*
 Codigo actual
@@ -59,7 +63,7 @@ Codigo actual
 
 void __interrupt() isr(void){
     
-    if(RBIF == 1)  {        //interrupcion por cambio en boton
+    if(RBIF == 1)  {        //interrupt due to change in button state
     if (!upButton){
         upButtonF();
         
@@ -70,13 +74,46 @@ void __interrupt() isr(void){
     }
         INTCONbits.RBIF = 0;
     }
+    if (ADIF == 1) {
+        //ADC comversion
+        if (c == PORTC){
+                  PORTBbits.RB4 = 1; //ALARM
+              }
+        else {
+                  PORTBbits.RB4 = 0;
+        }
+        c = adc_change_channel(0);      //sets to ADC value
+        __delay_us(20);                
+        PIR1bits.ADIF = 0;              //ADC interrupt flag
+        ADCON0bits.GO = 1;              //next conversion
+    }
     
-        //PIR1bits.ADIF = 0;
+    //TMR0
+     if (T0IF == 1) {
+        TMR0 = 0;
+        //display multiplexation
+        switch(display) {
+            case 0: 
+                PORTBbits.RB2 = 0;
+                PORTD = sevenSegmentDisplay(c & 0x0F);
+                PORTBbits.RB3 = 1;
+                display = 1; 
+                break;
+            case 1:
+                PORTBbits.RB3 = 0;
+                PORTD = sevenSegmentDisplay((c & 0xF0) >> 4);
+                PORTBbits.RB2 = 1;
+                display = 0;      
+                break;
+        }
+    INTCONbits.T0IF = 0; // TMR0 interrupt flag
+     }    
    return;         //INTERRUPT RETURN  
 }
 
 void main(void) {
     setupF();
+    adc_init(1);
     
     while(1){
     }

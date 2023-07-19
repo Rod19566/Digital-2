@@ -4,14 +4,17 @@
 
 void setupF(void){    
     //Setting all I/O as digital pins
-    ANSEL = 0;
     ANSELH = 0b00000000;       //
+    ANSELbits.ANS0  = 1;        //RA0 analogic
     
     //Setting PORTC as an output
     TRISC = 0x00;
     PORTC = 0; 
+    //Setting PORTD as an output
+    TRISD = 0x00;
+    PORTD = 0; 
     //Setting PORTb as an input
-    TRISB = 0b00000101;       //RB0 RB2 as inputs
+    TRISB = 0b00000011;       //RB0 RB2 as inputs
     PORTB = 0; 
       
     // TMR0
@@ -35,7 +38,7 @@ void ioc_init (char pin){
             
             // interrupt on change PORTB
             IOCBbits.IOCB0 = 1; //enable interrupt RB0, RB2
-            IOCBbits.IOCB2 = 1;
+            IOCBbits.IOCB1 = 1;
             
             OPTION_REGbits.nRBPU = 0; //enable pullups
             //enable pullups RB0, RB2

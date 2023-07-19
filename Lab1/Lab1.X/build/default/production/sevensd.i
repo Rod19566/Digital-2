@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "sevensd.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,44 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 15 "main.c"
-#pragma config FOSC = INTRC_CLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+# 1 "sevensd.c" 2
 
 
 
 
-
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
-# 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\xc8debug.h" 3
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 24 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\builtins.h" 1 3
 
 
 
@@ -180,6 +147,26 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
+# 8 "sevensd.c" 2
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
+# 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\xc8debug.h" 3
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 24 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
+# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\builtins.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
 # 5 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\builtins.h" 2 3
 
 
@@ -2647,51 +2634,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 36 "main.c" 2
-
-# 1 "./oscillator.h" 1
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./oscillator.h" 2
-
-
-void configOsc(uint16_t frec);
-# 37 "main.c" 2
-
-# 1 "./setup.h" 1
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./setup.h" 2
-
-
-void setupF(void);
-void ioc_init (char pin);
-void buttonPressed(void);
-void upButtonF(void);
-void downButtonF(void);
-# 38 "main.c" 2
-
-# 1 "./ADC_Interrupt.h" 1
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./ADC_Interrupt.h" 2
-
-
-
-void adc_init(int channel);
-int adc_read();
-unsigned char adc_change_channel(unsigned char channel);
-int adc_get_channel();
-# 39 "main.c" 2
+# 9 "sevensd.c" 2
 
 # 1 "./sevensd.h" 1
 
@@ -2701,66 +2644,25 @@ int adc_get_channel();
 
 
 unsigned char sevenSegmentDisplay(unsigned char number);
-# 40 "main.c" 2
-# 53 "main.c"
-unsigned char c = 0;
-unsigned char display = 0;
-# 64 "main.c"
-void __attribute__((picinterrupt(("")))) isr(void){
-
-    if(RBIF == 1) {
-    if (!RB0){
-        upButtonF();
-
-    }
-    if (!RB1){
-        downButtonF();
-
-    }
-        INTCONbits.RBIF = 0;
-    }
-    if (ADIF == 1) {
-
-        if (c == PORTC){
-                  PORTBbits.RB4 = 1;
-              }
-        else {
-                  PORTBbits.RB4 = 0;
-        }
-        c = adc_change_channel(0);
-        _delay((unsigned long)((20)*(8000000/4000000.0)));
-        PIR1bits.ADIF = 0;
-        ADCON0bits.GO = 1;
-    }
+# 10 "sevensd.c" 2
 
 
-     if (T0IF == 1) {
-        TMR0 = 0;
-
-        switch(display) {
-            case 0:
-                PORTBbits.RB2 = 0;
-                PORTD = sevenSegmentDisplay(c & 0x0F);
-                PORTBbits.RB3 = 1;
-                display = 1;
-                break;
-            case 1:
-                PORTBbits.RB3 = 0;
-                PORTD = sevenSegmentDisplay((c & 0xF0) >> 4);
-                PORTBbits.RB2 = 1;
-                display = 0;
-                break;
-        }
-    INTCONbits.T0IF = 0;
-     }
-   return;
-}
-
-void main(void) {
-    setupF();
-    adc_init(1);
-
-    while(1){
-    }
-
+unsigned char sevenSegmentDisplay(unsigned char number){
+    unsigned char table[] = {0b00111111,
+                         0b00000110,
+                         0b01011011,
+                         0b01001111,
+                         0b01100110,
+                         0b01101101,
+                         0b01111101,
+                         0b00000111,
+                         0b01111111,
+                         0b01101111,
+                         0b01110111,
+                         0b01111100,
+                         0b00111001,
+                         0b01011110,
+                         0b01111001,
+                         0b01110001};
+    return table[number];
 }

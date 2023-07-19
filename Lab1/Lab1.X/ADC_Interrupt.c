@@ -8,17 +8,25 @@ Variables
 
 
 
-
-
 void adc_init(int channel){
+    ADCON0bits.ADCS = 0;            // select Fosc/2 (2us full TAD)
+    ADCON0bits.CHS0 = 0;            // AN0
+    ADCON0bits.ADON = 1;            // enable ADC
+    ADCON1bits.VCFG1 = 0;           // reference voltages of PIC
+    ADCON1bits.VCFG0 = 0;           // 0V to 5V
+    ADCON1bits.ADFM = 0;            //
     
+    PIE1bits.ADIE = 1;               //ADC on
+    ADCON0bits.GO = 1;               //conversion starts
 }
 
 int adc_read (){
     return 0;    
 }
 
-void adc_change_channel(int channel){
+unsigned char adc_change_channel(unsigned char channel){    
+    ADCON0bits.CHS = channel;
+    return ADRESH;
     
 }
 
@@ -36,5 +44,4 @@ int adc_get_channel(){
             ADCON0bits.GO = 1;              // Iniciamos proceso de conversi n�
         }
         ADCON0bits.GO == 0;
-    return 0;
 }

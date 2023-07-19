@@ -2636,20 +2636,30 @@ extern __bank0 __bit __timeout;
 
 
 void adc_init(int channel);
-int adc_read ();
-void adc_change_channel(int channel);
+int adc_read();
+unsigned char adc_change_channel(unsigned char channel);
 int adc_get_channel();
 # 1 "ADC_Interrupt.c" 2
-# 13 "ADC_Interrupt.c"
+# 11 "ADC_Interrupt.c"
 void adc_init(int channel){
+    ADCON0bits.ADCS = 0;
+    ADCON0bits.CHS0 = 0;
+    ADCON0bits.ADON = 1;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.ADFM = 0;
 
+    PIE1bits.ADIE = 1;
+    ADCON0bits.GO = 1;
 }
 
 int adc_read (){
     return 0;
 }
 
-void adc_change_channel(int channel){
+unsigned char adc_change_channel(unsigned char channel){
+    ADCON0bits.CHS = channel;
+    return ADRESH;
 
 }
 
@@ -2667,5 +2677,4 @@ int adc_get_channel(){
             ADCON0bits.GO = 1;
         }
         ADCON0bits.GO == 0;
-    return 0;
 }
