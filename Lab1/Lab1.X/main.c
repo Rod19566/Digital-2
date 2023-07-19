@@ -108,7 +108,6 @@ void __interrupt() isr(void){
         }
     INTCONbits.T0IF = 0; // TMR0 interrupt flag
      }    
-   return;         //INTERRUPT RETURN  
 }
 
 void main(void) {

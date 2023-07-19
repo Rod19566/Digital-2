@@ -11,30 +11,31 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\Lab1.X.production.o
-cinit CODE 0 13 13 14 2 1
-idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 A9 A9 2E 2 1
-text2 CODE 0 149 149 B 2 1
-text3 CODE 0 12B 12B 10 2 1
-text4 CODE 0 27 27 82 2 1
-text5 CODE 0 154 154 7 2 1
-text6 CODE 0 D7 D7 1D 2 1
-text7 CODE 0 15B 15B 5 2 1
-text8 CODE 0 13B 13B E 2 1
-maintext CODE 0 F4 F4 14 2 1
-cstackCOMMON COMMON 1 70 70 A 1 1
-cstackBANK0 BANK0 1 20 20 13 1 1
-inittext CODE 0 108 108 13 2 1
-intentry CODE 0 4 4 C 2 1
-bssBANK0 BANK0 1 43 43 2 1 1
-idataBANK0 CODE 0 11B 11B 10 2 1
-dataBANK0 BANK0 1 33 33 10 1 1
-config CONFIG 4 2007 2007 2 2 1
-$C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
+$C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 10 10 3 2 1
+config CONFIG 4 2007 2007 2 2 1
+$dist/default/production\Lab1.X.production.o
+cinit CODE 0 13 13 14 2 1
+idloc IDLOC 5 2000 2000 4 2 1
+text1 CODE 0 10D 10D 3A 2 1
+text2 CODE 0 1B9 1B9 B 2 1
+text3 CODE 0 A9 A9 64 2 1
+text4 CODE 0 19B 19B 10 2 1
+text5 CODE 0 27 27 82 2 1
+text6 CODE 0 1C4 1C4 7 2 1
+text7 CODE 0 147 147 1D 2 1
+text8 CODE 0 1CB 1CB 5 2 1
+text9 CODE 0 1AB 1AB E 2 1
+maintext CODE 0 164 164 14 2 1
+cstackCOMMON COMMON 1 70 70 A 1 1
+cstackBANK0 BANK0 1 20 20 13 1 1
+inittext CODE 0 178 178 13 2 1
+intentry CODE 0 4 4 C 2 1
+bssBANK0 BANK0 1 43 43 2 1 1
+idataBANK0 CODE 0 18B 18B 10 2 1
+dataBANK0 BANK0 1 33 33 10 1 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -51,11 +52,11 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 160-1FFF 2
+CONST 1D0-1FFF 2
 ENTRY 3-3 2
-ENTRY 160-1FFF 2
+ENTRY 1D0-1FFF 2
 CODE 3-3 2
-CODE 160-1FFF 2
+CODE 1D0-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -63,9 +64,9 @@ SFR3 180-18F 1
 COMMON 7A-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 160-1FFF 2
+STRCODE 1D0-1FFF 2
 STRING 3-3 2
-STRING 160-1FFF 2
+STRING 1D0-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -80,138 +81,151 @@ STRING 160-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab1.X.production.o
-13 cinit CODE >1134:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-13 cinit CODE >1137:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-13 cinit CODE >1187:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-14 cinit CODE >1188:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-15 cinit CODE >1189:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-16 cinit CODE >1190:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-17 cinit CODE >1191:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-18 cinit CODE >1192:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-19 cinit CODE >1193:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-1A cinit CODE >1194:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-1B cinit CODE >1195:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-1C cinit CODE >1196:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-21 cinit CODE >1200:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-22 cinit CODE >1201:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-23 cinit CODE >1207:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-23 cinit CODE >1209:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-24 cinit CODE >1210:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
+13 cinit CODE >1137:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+13 cinit CODE >1140:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+13 cinit CODE >1190:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+14 cinit CODE >1191:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+15 cinit CODE >1192:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+16 cinit CODE >1193:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+17 cinit CODE >1194:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+18 cinit CODE >1195:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+19 cinit CODE >1196:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+1A cinit CODE >1197:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+1B cinit CODE >1198:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+1C cinit CODE >1199:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+21 cinit CODE >1203:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+22 cinit CODE >1204:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+23 cinit CODE >1210:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+23 cinit CODE >1212:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+24 cinit CODE >1213:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
 4 intentry CODE >64:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-13B text8 CODE >27:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-13C text8 CODE >28:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-147 text8 CODE >29:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-148 text8 CODE >31:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-15B text7 CODE >55:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-15B text7 CODE >56:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-15F text7 CODE >57:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-D7 text6 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
-DA text6 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
-EF text6 CODE >29:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
-F3 text6 CODE >30:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
-154 text5 CODE >50:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-154 text5 CODE >51:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-15A text5 CODE >53:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-27 text4 CODE >64:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-27 text4 CODE >66:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-2B text4 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-31 text4 CODE >68:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-36 text4 CODE >71:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-3C text4 CODE >72:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-41 text4 CODE >75:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-42 text4 CODE >77:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-48 text4 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-4A text4 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-4E text4 CODE >80:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-4F text4 CODE >81:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-50 text4 CODE >82:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-50 text4 CODE >83:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-51 text4 CODE >85:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-5A text4 CODE >86:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-5E text4 CODE >87:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-61 text4 CODE >88:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-62 text4 CODE >92:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-66 text4 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-67 text4 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-68 text4 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-68 text4 CODE >97:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-69 text4 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-73 text4 CODE >99:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-74 text4 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-76 text4 CODE >101:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-77 text4 CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-77 text4 CODE >103:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-78 text4 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-7B text4 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-7E text4 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-8A text4 CODE >105:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-8B text4 CODE >106:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-8C text4 CODE >107:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-8D text4 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-92 text4 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-97 text4 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-9A text4 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-9D text4 CODE >109:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-9E text4 CODE >112:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-12B text3 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-12B text3 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-12F text3 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-130 text3 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-131 text3 CODE >15:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-134 text3 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-135 text3 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-136 text3 CODE >19:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-137 text3 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-13A text3 CODE >21:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
-149 text2 CODE >31:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-149 text2 CODE >35:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-14A text2 CODE >36:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-14B text2 CODE >37:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-14C text2 CODE >40:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-14F text2 CODE >41:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-150 text2 CODE >43:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-151 text2 CODE >45:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-152 text2 CODE >46:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-153 text2 CODE >47:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-A9 text1 CODE >5:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-A9 text1 CODE >7:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-AC text1 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-AD text1 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-B0 text1 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-B3 text1 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-B6 text1 CODE >15:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-B9 text1 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-BD text1 CODE >18:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-C0 text1 CODE >21:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-C3 text1 CODE >22:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-C4 text1 CODE >23:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-C6 text1 CODE >25:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-C9 text1 CODE >26:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-CA text1 CODE >28:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-D0 text1 CODE >29:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-D6 text1 CODE >30:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
-F4 maintext CODE >114:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-F4 maintext CODE >115:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-F9 maintext CODE >116:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-104 maintext CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-104 maintext CODE >119:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
-108 inittext CODE >1161:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-108 inittext CODE >1162:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-109 inittext CODE >1163:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-10A inittext CODE >1164:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-10B inittext CODE >1165:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-10C inittext CODE >1172:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-10C inittext CODE >1173:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-111 inittext CODE >1174:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-112 inittext CODE >1175:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-113 inittext CODE >1176:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-114 inittext CODE >1177:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-115 inittext CODE >1178:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-116 inittext CODE >1179:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-117 inittext CODE >1180:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-118 inittext CODE >1181:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-119 inittext CODE >1182:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
-11A inittext CODE >1183:C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_1.s
+1AB text9 CODE >27:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1AC text9 CODE >28:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1B7 text9 CODE >29:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1B8 text9 CODE >31:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1CB text8 CODE >58:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1CB text8 CODE >59:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1CF text8 CODE >60:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+147 text7 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
+14A text7 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
+15F text7 CODE >29:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
+163 text7 CODE >30:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\sevensd.c
+1C4 text6 CODE >53:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1C4 text6 CODE >54:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1CA text6 CODE >56:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+27 text5 CODE >64:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+27 text5 CODE >66:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+2B text5 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+31 text5 CODE >68:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+36 text5 CODE >71:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+3C text5 CODE >72:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+41 text5 CODE >75:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+42 text5 CODE >77:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+48 text5 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+4A text5 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+4E text5 CODE >80:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+4F text5 CODE >81:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+50 text5 CODE >82:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+50 text5 CODE >83:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+51 text5 CODE >85:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+5A text5 CODE >86:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+5E text5 CODE >87:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+61 text5 CODE >88:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+62 text5 CODE >92:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+66 text5 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+67 text5 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+68 text5 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+68 text5 CODE >97:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+69 text5 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+73 text5 CODE >99:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+74 text5 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+76 text5 CODE >101:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+77 text5 CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+77 text5 CODE >103:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+78 text5 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+7B text5 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+7E text5 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+8A text5 CODE >105:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+8B text5 CODE >106:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+8C text5 CODE >107:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+8D text5 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+92 text5 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+97 text5 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+9A text5 CODE >108:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+9D text5 CODE >109:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+9E text5 CODE >111:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+19B text4 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+19B text4 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+19F text4 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1A0 text4 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1A1 text4 CODE >15:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1A4 text4 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1A5 text4 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1A6 text4 CODE >19:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1A7 text4 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+1AA text4 CODE >21:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\ADC_Interrupt.c
+A9 text3 CODE >4:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+A9 text3 CODE >5:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+B6 text3 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+C4 text3 CODE >7:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+D1 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+D4 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+E1 text3 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+EF text3 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+FD text3 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+109 text3 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+10C text3 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\oscilador.c
+1B9 text2 CODE >34:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1B9 text2 CODE >38:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1BA text2 CODE >39:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1BB text2 CODE >40:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1BC text2 CODE >43:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1BF text2 CODE >44:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1C0 text2 CODE >46:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1C1 text2 CODE >48:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1C2 text2 CODE >49:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+1C3 text2 CODE >50:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+10D text1 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+10D text1 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+110 text1 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+111 text1 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+114 text1 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+115 text1 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+118 text1 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+11B text1 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+11E text1 CODE >19:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+122 text1 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+125 text1 CODE >23:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+128 text1 CODE >24:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+129 text1 CODE >25:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+12B text1 CODE >27:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+12E text1 CODE >28:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+12F text1 CODE >30:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+135 text1 CODE >31:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+13B text1 CODE >32:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+146 text1 CODE >33:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\setup.c
+164 maintext CODE >113:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+164 maintext CODE >114:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+169 maintext CODE >115:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+174 maintext CODE >117:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+174 maintext CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
+178 inittext CODE >1164:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+178 inittext CODE >1165:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+179 inittext CODE >1166:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+17A inittext CODE >1167:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+17B inittext CODE >1168:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+17C inittext CODE >1175:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+17C inittext CODE >1176:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+181 inittext CODE >1177:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+182 inittext CODE >1178:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+183 inittext CODE >1179:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+184 inittext CODE >1180:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+185 inittext CODE >1181:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+186 inittext CODE >1182:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+187 inittext CODE >1183:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+188 inittext CODE >1184:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+189 inittext CODE >1185:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
+18A inittext CODE >1186:C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -227,7 +241,7 @@ F9 maintext CODE >116:E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
 _c 44 0 BANK0 1 bssBANK0 dist/default/production\Lab1.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __LdataBANK0 0 0 ABS 0 dataBANK0 -
-__Hspace_0 160 0 ABS 0 - -
+__Hspace_0 1D0 0 ABS 0 - -
 __Hspace_1 7A 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -240,46 +254,48 @@ _ADIF 66 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _RBIF 58 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _T0IF 5A 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-_main 1E8 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+_main 2C8 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
-start 20 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
+start 20 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab1.X.production.o
 adc_init@channel 31 0 BANK0 1 cstackBANK0 dist/default/production\Lab1.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
+__end_of_configOsc 21A 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab1.X.production.o
-__end_of_upButtonF 2B6 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
+__end_of_upButtonF 396 0 CODE 0 text6 dist/default/production\Lab1.X.production.o
 _display 43 0 BANK0 1 bssBANK0 dist/default/production\Lab1.X.production.o
+_configOsc 152 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_upButtonF 2A8 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
+_upButtonF 388 0 CODE 0 text6 dist/default/production\Lab1.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
 _WPUBbits 95 0 ABS 0 - dist/default/production\Lab1.X.production.o
 start_initialization 26 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab1.X.production.o
-__end_of_downButtonF 2C0 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
-_ioc_init 292 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
-__end_of_setupF 1AE 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
+__end_of_downButtonF 3A0 0 CODE 0 text8 dist/default/production\Lab1.X.production.o
+_ioc_init 372 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
+__end_of_setupF 28E 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 4E 0 CODE 0 cinit -
 __Hidloc 4008 0 IDLOC 5 idloc -
-__end_of_ioc_init 2A8 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
+__end_of_ioc_init 388 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
@@ -311,75 +327,78 @@ __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+configOsc@frec 31 0 BANK0 1 cstackBANK0 dist/default/production\Lab1.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _RB0 30 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _RB1 31 0 ABS 0 - dist/default/production\Lab1.X.production.o
-__S0 160 0 ABS 0 - -
+__S0 1D0 0 ABS 0 - -
 __S1 7A 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 4E 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
+_isr 4E 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
-__end_of_isr 152 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
+__end_of_isr 152 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAseng.\driver_tmp_12.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAsccg.\driver_tmp_12.o
 __pdataBANK0 33 0 BANK0 1 dataBANK0 dist/default/production\Lab1.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-_sevenSegmentDisplay 1AE 0 CODE 0 text6 dist/default/production\Lab1.X.production.o
+_sevenSegmentDisplay 28E 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Lab1.X.production.o
-__pmaintext 1E8 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
+__pmaintext 2C8 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Hinittext 0 0 ABS 0 inittext -
-__end_of_adc_change_channel 292 0 CODE 0 text8 dist/default/production\Lab1.X.production.o
+__end_of_adc_change_channel 372 0 CODE 0 text9 dist/default/production\Lab1.X.production.o
 sevenSegmentDisplay@F1296 33 0 BANK0 1 dataBANK0 dist/default/production\Lab1.X.production.o
-_setupF 152 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
+_setupF 21A 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
 sevenSegmentDisplay@table 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab1.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production\Lab1.X.production.o
-_adc_init 256 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
+_adc_init 336 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-init_fetch0 210 0 CODE 0 inittext dist/default/production\Lab1.X.production.o
+init_fetch0 2F0 0 CODE 0 inittext dist/default/production\Lab1.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __Lend_init 20 0 CODE 0 end_init -
-__end_of_adc_init 276 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
+__end_of_adc_init 356 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization 46 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
-_adc_change_channel 276 0 CODE 0 text8 dist/default/production\Lab1.X.production.o
+_adc_change_channel 356 0 CODE 0 text9 dist/default/production\Lab1.X.production.o
 __Hintentry 20 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 adc_change_channel@channel 71 0 COMMON 1 cstackCOMMON dist/default/production\Lab1.X.production.o
-__ptext1 152 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
-__ptext2 292 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
-__ptext3 256 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
-__ptext4 4E 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
-__ptext5 2A8 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
-__ptext6 1AE 0 CODE 0 text6 dist/default/production\Lab1.X.production.o
-__ptext7 2B6 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
-__ptext8 276 0 CODE 0 text8 dist/default/production\Lab1.X.production.o
-__end_of_sevenSegmentDisplay 1E8 0 CODE 0 text6 dist/default/production\Lab1.X.production.o
+__ptext1 21A 0 CODE 0 text1 dist/default/production\Lab1.X.production.o
+__ptext2 372 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
+__ptext3 152 0 CODE 0 text3 dist/default/production\Lab1.X.production.o
+__ptext4 336 0 CODE 0 text4 dist/default/production\Lab1.X.production.o
+__ptext5 4E 0 CODE 0 text5 dist/default/production\Lab1.X.production.o
+__ptext6 388 0 CODE 0 text6 dist/default/production\Lab1.X.production.o
+__ptext7 28E 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
+__ptext8 396 0 CODE 0 text8 dist/default/production\Lab1.X.production.o
+__ptext9 356 0 CODE 0 text9 dist/default/production\Lab1.X.production.o
+__end_of_sevenSegmentDisplay 2C8 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of__initialization 46 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 236 0 CODE 0 idataBANK0 dist/default/production\Lab1.X.production.o
+__pidataBANK0 316 0 CODE 0 idataBANK0 dist/default/production\Lab1.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _ANSELbits 188 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab1.X.production.o
 __Hend_init 26 0 CODE 0 end_init -
-init_ram0 218 0 CODE 0 inittext dist/default/production\Lab1.X.production.o
-__end_of_main 210 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
+init_ram0 2F8 0 CODE 0 inittext dist/default/production\Lab1.X.production.o
+__end_of_main 2F0 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\Lab1.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Lab1.X.production.o
@@ -392,7 +411,7 @@ __HdataBANK0 0 0 ABS 0 dataBANK0 -
 __initialization 26 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
 sevenSegmentDisplay@number 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab1.X.production.o
 __pbssBANK0 43 0 BANK0 1 bssBANK0 dist/default/production\Lab1.X.production.o
-_downButtonF 2B6 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
+_downButtonF 396 0 CODE 0 text8 dist/default/production\Lab1.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -420,7 +439,7 @@ _downButtonF 2B6 0 CODE 0 text7 dist/default/production\Lab1.X.production.o
 %SEGMENTS
 cstackCOMMON 1 70 70 A 1
 cstackBANK0 1 20 20 25 1
-intentry 0 4 8 15C 2
+intentry 0 4 8 1CC 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

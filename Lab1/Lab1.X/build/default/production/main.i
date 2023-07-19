@@ -2753,7 +2753,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }
     INTCONbits.T0IF = 0;
      }
-   return;
 }
 
 void main(void) {

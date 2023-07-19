@@ -1,4 +1,5 @@
 #include "setup.h"
+#include "oscillator.h"
 
 #define _XTAL_FREQ 8000000
 
@@ -6,6 +7,7 @@ void setupF(void){
     //Setting all I/O as digital pins
     ANSELH = 0b00000000;       //
     ANSELbits.ANS0  = 1;        //RA0 analogic
+    TRISA  = 0;
     
     //Setting PORTC as an output
     TRISC = 0x00;
@@ -14,7 +16,7 @@ void setupF(void){
     TRISD = 0x00;
     PORTD = 0; 
     //Setting PORTb as an input
-    TRISB = 0b00000011;       //RB0 RB2 as inputs
+    TRISB = 3;       //RB0 RB2 as inputs
     PORTB = 0; 
       
     // TMR0
@@ -27,6 +29,7 @@ void setupF(void){
     
     ioc_init(1);    //enable interrupt on change and pullup
     ioc_init(3);    //enable interrupt on change and pullup
+    configOsc(4);
 }
 void ioc_init (char pin){
            // PIR1bits.ADIF   = 0;

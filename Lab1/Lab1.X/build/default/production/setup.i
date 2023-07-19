@@ -2641,6 +2641,18 @@ void upButtonF(void);
 void downButtonF(void);
 # 1 "setup.c" 2
 
+# 1 "./oscillator.h" 1
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "./oscillator.h" 2
+
+
+void configOsc(uint16_t frec);
+# 2 "setup.c" 2
+
 
 
 
@@ -2648,6 +2660,7 @@ void setupF(void){
 
     ANSELH = 0b00000000;
     ANSELbits.ANS0 = 1;
+    TRISA = 0;
 
 
     TRISC = 0x00;
@@ -2656,7 +2669,7 @@ void setupF(void){
     TRISD = 0x00;
     PORTD = 0;
 
-    TRISB = 0b00000011;
+    TRISB = 3;
     PORTB = 0;
 
 
@@ -2669,6 +2682,7 @@ void setupF(void){
 
     ioc_init(1);
     ioc_init(3);
+    configOsc(4);
 }
 void ioc_init (char pin){
 
