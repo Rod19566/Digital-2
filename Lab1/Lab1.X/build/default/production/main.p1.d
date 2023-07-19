@@ -1,3 +1,5 @@
 build/default/production/main.p1:  \
 main.c  \
-oscillator.h 
+oscillator.h  \
+setup.h  \
+ADC_Interrupt.h 

@@ -35,21 +35,19 @@ Librerias
 */
 #include <xc.h>
 #include "oscillator.h"
+#include "setup.h"
+#include "ADC_Interrupt.h"
 
 /*
 Prototipo de Funciones
 */
-void setup(void);
-void upButton(void);
-void downButton(void);
-
-
 
 /*
 Variables
 */
+#define upButton RB0
+#define downButton RB2
 #define _XTAL_FREQ 8000000
-
 
 /*
 Codigo actual
@@ -58,42 +56,33 @@ Codigo actual
 
 #include <xc.h>
 
+
+void __interrupt() isr(void){
+    
+    if(RBIF == 1)  {        //interrupcion por cambio en boton
+    if (!upButton){
+        upButtonF();
+        
+    }
+    if (!downButton){
+        downButtonF();
+        
+    }
+        INTCONbits.RBIF = 0;
+    }
+    
+        //PIR1bits.ADIF = 0;
+   return;         //INTERRUPT RETURN  
+}
+
 void main(void) {
-    setup();
+    setupF();
     
     while(1){
-        downButton();
-        upButton();
-        //__delay_ms(1000);
     }
     
 }
 
-void setup(void){
-    configOsc(8);
-    
-    //Setting all I/O as digital pins
-    ANSEL = 0;
-    ANSELH = 0b00000000;
-    
-    //Setting PORTB as an output
-    TRISB = 0x00;
-    PORTB = 0;
-    
-    //Setting PORTA as an input
-    TRISA   = 0b00000101;       //RA0 RA2 as inputs
-}
 
-void downButton(void){
-    if(PORTAbits.RA2) {
-        PORTB--;
-        __delay_ms(400);
-    }
-}
-void upButton(void){
-    if(PORTAbits.RA0) {
-        PORTB++;
-        __delay_ms(400);
-    }
-}
+
 

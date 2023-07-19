@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "setup.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 15 "main.c"
-#pragma config FOSC = INTRC_CLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "setup.c" 2
+# 1 "./setup.h" 1
 
 
 
@@ -2647,24 +2628,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 36 "main.c" 2
-
-# 1 "./oscillator.h" 1
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./oscillator.h" 2
-
-
-void configOsc(uint16_t frec);
-# 37 "main.c" 2
-
-# 1 "./setup.h" 1
-
-
-
+# 4 "./setup.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
 # 5 "./setup.h" 2
@@ -2675,46 +2639,58 @@ void ioc_init (char pin);
 void buttonPressed(void);
 void upButtonF(void);
 void downButtonF(void);
-# 38 "main.c" 2
-
-# 1 "./ADC_Interrupt.h" 1
+# 1 "setup.c" 2
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./ADC_Interrupt.h" 2
+void setupF(void){
+
+    ANSEL = 0;
+    ANSELH = 0b00000000;
+
+
+    TRISC = 0x00;
+    PORTC = 0;
+
+    TRISB = 0b00000101;
+    PORTB = 0;
+
+
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS = 0;
+
+    TMR0 = 0;
+    INTCONbits.T0IF = 0;
+
+    ioc_init(1);
+    ioc_init(3);
+}
+void ioc_init (char pin){
 
 
 
-void adc_init(int channel);
-int adc_read ();
-void adc_change_channel(int channel);
-int adc_get_channel();
-# 39 "main.c" 2
-# 60 "main.c"
-void __attribute__((picinterrupt(("")))) isr(void){
-
-    if(RBIF == 1) {
-    if (!RB0){
-        upButtonF();
-
-    }
-    if (!RB2){
-        downButtonF();
-
-    }
-        INTCONbits.RBIF = 0;
-    }
+            INTCONbits.GIE = 1;
+            INTCONbits.RBIF = 0;
+            INTCONbits.RBIE = 1;
 
 
-   return;
+            IOCBbits.IOCB0 = 1;
+            IOCBbits.IOCB2 = 1;
+
+            OPTION_REGbits.nRBPU = 0;
+
+            WPUBbits.WPUB0 = 1;
+            WPUBbits.WPUB1 = 1;
 }
 
-void main(void) {
-    setupF();
 
-    while(1){
-    }
+void upButtonF(void){
+        PORTC++;
 
+}
+
+void downButtonF(void){
+        PORTC--;
 }
