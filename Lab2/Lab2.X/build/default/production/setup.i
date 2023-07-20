@@ -2650,51 +2650,79 @@ void ioc_init (char pin);
 void configOsc(uint16_t frec);
 # 2 "setup.c" 2
 
+# 1 "./lcd.h" 1
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdint.h" 1 3
+# 6 "./lcd.h" 2
+
+
+
+
+
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Clear();
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right(void);
+void Lcd_Shift_Left(void);
+void Lcd_Init(void);
+void example(void);
+void LCD_Test(void);
+# 3 "setup.c" 2
+
+# 1 "./ADC_Interrupt.h" 1
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "./ADC_Interrupt.h" 2
+
+
+
+void adc_init(int channel);
+int adc_read();
+unsigned char adc_change_channel(unsigned char channel);
+int adc_get_channel();
+# 4 "setup.c" 2
+
 
 
 
 void setupF(void){
 
-    ANSELH = 0b00000000;
+    ANSELH = 0;
     ANSELbits.ANS0 = 1;
     TRISA = 0;
+    PORTA = 0;
 
-
-    TRISC = 0x00;
-    PORTC = 0;
 
     TRISD = 0x00;
     PORTD = 0;
-
-    TRISB = 3;
-    PORTB = 0;
 
 
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.PS = 0;
 
-    TMR0 = 0;
-    INTCONbits.T0IF = 0;
-
-    ioc_init(1);
-    ioc_init(3);
     configOsc(4);
+    ioc_init(1);
+    adc_init(1);
+    Lcd_Init();
 }
 void ioc_init (char pin){
 
+    INTCONbits.GIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCONbits.RBIE = 1;
+    INTCONbits.PEIE = 1;
 
-
-            INTCONbits.GIE = 1;
-            INTCONbits.RBIF = 0;
-            INTCONbits.RBIE = 1;
-
-
-            IOCBbits.IOCB0 = 1;
-            IOCBbits.IOCB1 = 1;
-
-            OPTION_REGbits.nRBPU = 0;
-
-            WPUBbits.WPUB0 = 1;
-            WPUBbits.WPUB1 = 1;
+    TMR0 = 0;
+    INTCONbits.T0IF = 0;
 }

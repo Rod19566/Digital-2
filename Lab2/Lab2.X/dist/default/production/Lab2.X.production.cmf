@@ -12,16 +12,26 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\Lab2.X.production.o
-cinit CODE 0 7FB 7FB 5 2 1
+cinit CODE 0 7F9 7F9 7 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 767 767 38 2 1
-text2 CODE 0 75C 75C B 2 1
-text3 CODE 0 79F 79F 5C 2 1
-maintext CODE 0 753 753 9 2 1
-cstackCOMMON COMMON 1 70 70 2 1 1
-bssCOMMON COMMON 1 72 72 1 1 1
+text1 CODE 0 681 681 34 2 1
+text2 CODE 0 5BD 5BD 9 2 1
+text3 CODE 0 740 740 5C 2 1
+text4 CODE 0 5E1 5E1 10 2 1
+text5 CODE 0 79C 79C 5D 2 1
+text6 CODE 0 652 652 2F 2 1
+text7 CODE 0 62D 62D 25 2 1
+text8 CODE 0 6B5 6B5 39 2 1
+text9 CODE 0 6EE 6EE 52 2 1
+text10 CODE 0 5C6 5C6 D 2 1
+text11 CODE 0 5F1 5F1 1A 2 1
+text12 CODE 0 60B 60B 22 2 1
+maintext CODE 0 5D3 5D3 E 2 1
+cstackCOMMON COMMON 1 70 70 E 1 1
+bssBANK0 BANK0 1 20 20 1 1 1
+strings STRING 0 3 3 6D 2 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
+$C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
 idloc IDLOC 5 2000 2000 4 2 1
 end_init CODE 0 0 0 3 2 1
 config CONFIG 4 2007 2007 2 2 1
@@ -31,29 +41,28 @@ config CONFIG 4 2007 2007 2 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
+RAM 21-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 20-6F 1
+BANK0 21-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-752 2
+CONST 70-5BC 2
 CONST 800-1FFF 2
-ENTRY 3-752 2
+ENTRY 70-5BC 2
 ENTRY 800-1FFF 2
-CODE 3-752 2
+CODE 70-5BC 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 73-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-752 2
+STRCODE 70-5BC 2
 STRCODE 800-1FFF 2
-STRING 3-752 2
+STRING 70-5BC 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -69,56 +78,154 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab2.X.production.o
-7FB cinit CODE >937:C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.s
-7FB cinit CODE >940:C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.s
-7FB cinit CODE >951:C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.s
-7FC cinit CODE >957:C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.s
-7FC cinit CODE >959:C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.s
-7FD cinit CODE >960:C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.s
-79F text3 CODE >4:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-79F text3 CODE >5:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7AA text3 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7B7 text3 CODE >7:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7C3 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7C5 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7D2 text3 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7DF text3 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7EC text3 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7F7 text3 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-7FA text3 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
-75C text2 CODE >34:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-75C text2 CODE >38:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-75D text2 CODE >39:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-75E text2 CODE >40:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-75F text2 CODE >43:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-762 text2 CODE >44:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-763 text2 CODE >46:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-764 text2 CODE >48:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-765 text2 CODE >49:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-766 text2 CODE >50:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-767 text1 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-767 text1 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-76A text1 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-76B text1 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-76E text1 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-76F text1 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-772 text1 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-775 text1 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-778 text1 CODE >19:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-77C text1 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-77F text1 CODE >23:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-782 text1 CODE >24:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-783 text1 CODE >25:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-785 text1 CODE >27:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-788 text1 CODE >28:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-789 text1 CODE >30:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-78F text1 CODE >31:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-795 text1 CODE >32:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-79E text1 CODE >33:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
-753 maintext CODE >49:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
-753 maintext CODE >50:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
-758 maintext CODE >52:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
-758 maintext CODE >53:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
+7F9 cinit CODE >1247:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7F9 cinit CODE >1250:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7F9 cinit CODE >1261:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7FA cinit CODE >1262:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7FB cinit CODE >1263:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7FC cinit CODE >1269:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7FC cinit CODE >1271:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+7FD cinit CODE >1272:C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.s
+60B text12 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+60C text12 CODE >69:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+610 text12 CODE >70:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+614 text12 CODE >71:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+614 text12 CODE >72:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+617 text12 CODE >74:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+61B text12 CODE >75:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+61D text12 CODE >76:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+61D text12 CODE >77:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+61E text12 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+622 text12 CODE >80:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+624 text12 CODE >81:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+624 text12 CODE >82:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+625 text12 CODE >84:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+629 text12 CODE >85:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+62B text12 CODE >86:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+62B text12 CODE >87:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+62C text12 CODE >88:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5F1 text11 CODE >89:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5F2 text11 CODE >91:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5F5 text11 CODE >92:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5FB text11 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5FE text11 CODE >94:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+607 text11 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+60A text11 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5C6 text10 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5C6 text10 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5CC text10 CODE >101:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5D2 text10 CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6EE text9 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6EF text9 CODE >107:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6F4 text9 CODE >109:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6F9 text9 CODE >110:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6FC text9 CODE >110:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6FF text9 CODE >110:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+705 text9 CODE >111:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+70A text9 CODE >112:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+710 text9 CODE >113:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+716 text9 CODE >114:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+717 text9 CODE >115:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+71D text9 CODE >117:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+722 text9 CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+725 text9 CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+728 text9 CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+72E text9 CODE >119:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+733 text9 CODE >120:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+739 text9 CODE >121:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+73F text9 CODE >123:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6B5 text8 CODE >144:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6B6 text8 CODE >147:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6BB text8 CODE >148:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6C0 text8 CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6C3 text8 CODE >150:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6C6 text8 CODE >150:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6C9 text8 CODE >150:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6D1 text8 CODE >151:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6D4 text8 CODE >152:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6D9 text8 CODE >153:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6DC text8 CODE >154:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6E2 text8 CODE >155:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6E5 text8 CODE >156:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6EA text8 CODE >157:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+6ED text8 CODE >158:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+62D text7 CODE >160:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+62E text7 CODE >163:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+631 text7 CODE >164:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+640 text7 CODE >164:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+64D text7 CODE >164:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+651 text7 CODE >165:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+652 text6 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+652 text6 CODE >15:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+657 text6 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+65F text6 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+665 text6 CODE >18:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+66D text6 CODE >19:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+673 text6 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+680 text6 CODE >21:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+79C text5 CODE >125:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+79C text5 CODE >127:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7A2 text5 CODE >128:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7AB text5 CODE >129:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7B1 text5 CODE >130:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7BA text5 CODE >131:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7C0 text5 CODE >132:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7C8 text5 CODE >133:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7CE text5 CODE >135:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7D4 text5 CODE >136:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7DA text5 CODE >137:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7E0 text5 CODE >138:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7E6 text5 CODE >139:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7EC text5 CODE >140:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7F2 text5 CODE >141:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+7F8 text5 CODE >142:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+5E1 text4 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5E1 text4 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5E5 text4 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5E6 text4 CODE >14:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5E7 text4 CODE >15:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5EA text4 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5EB text4 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5EC text4 CODE >19:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5ED text4 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+5F0 text4 CODE >21:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+740 text3 CODE >4:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+740 text3 CODE >5:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+74B text3 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+758 text3 CODE >7:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+764 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+766 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+773 text3 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+780 text3 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+78D text3 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+798 text3 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+79B text3 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
+5BD text2 CODE >29:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5BD text2 CODE >31:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5BE text2 CODE >32:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5BF text2 CODE >33:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5C0 text2 CODE >34:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5C1 text2 CODE >36:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5C4 text2 CODE >37:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5C5 text2 CODE >38:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+681 text1 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+681 text1 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+684 text1 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+685 text1 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+688 text1 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+68B text1 CODE >16:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+68E text1 CODE >17:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+691 text1 CODE >20:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+694 text1 CODE >21:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+695 text1 CODE >22:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+697 text1 CODE >24:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+6A0 text1 CODE >25:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+6A6 text1 CODE >26:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+6AF text1 CODE >27:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+6B4 text1 CODE >28:E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+5D3 maintext CODE >62:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
+5D3 maintext CODE >63:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
+5D8 maintext CODE >65:E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -133,50 +240,62 @@ $dist/default/production\Lab2.X.production.o
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Hspace_0 800 0 ABS 0 - -
-__Hspace_1 73 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
+_Lcd_Init F38 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
+_Lcd_Port C16 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_Lcd_Init FF2 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
+__end_of_Lcd_Port C5A 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\Lab2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-_main EA6 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+_main BA6 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab2.X.production.o
-start 0 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+_Lcd_Write_Char D6A 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
+start 0 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+Lcd_Port@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+Lcd_Write_Char@temp 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab2.X.production.o
+_LCD_Test CA4 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+__end_of_LCD_Test D02 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab2.X.production.o
+adc_init@channel 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_configOsc FF6 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+__end_of_configOsc F38 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+__end_of_Lcd_Write_Char DDC 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
+_ADRESH 1E 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab2.X.production.o
-_configOsc F3E 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+_configOsc E80 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-_WPUBbits 95 0 ABS 0 - dist/default/production\Lab2.X.production.o
-start_initialization FF6 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
-_ioc_init EB8 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-__end_of_setupF F3E 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+Lcd_Set_Cursor@temp 7A 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+start_initialization FF2 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
+_Lcd_Write_String C5A 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
+_ioc_init B7A 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+__end_of_setupF D6A 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 1000 0 CODE 0 cinit -
 __Hidloc 4008 0 IDLOC 5 idloc -
-__end_of_ioc_init ECE 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+__end_of_ioc_init B8C 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
 __Hstack 0 0 STACK 2 stack -
+__stringbase 10 0 STRING 0 strings dist/default/production\Lab2.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
@@ -184,7 +303,7 @@ __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FF6 0 CODE 0 cinit -
+__Lcinit FF2 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 _INTCONbits B 0 ABS 0 - dist/default/production\Lab2.X.production.o
@@ -213,50 +332,81 @@ _RD5 45 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _RD6 46 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _RD7 47 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __S0 800 0 ABS 0 - -
-__S1 73 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+__end_of_Lcd_Write_String CA4 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
+__end_of_Lcd_Clear BA6 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAsqc0.o
-__pmaintext EA6 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+__stringtab 6 0 STRING 0 strings dist/default/production\Lab2.X.production.o
+Lcd_Write_String@a 77 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+Lcd_Write_String@i 75 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAs1ko.o
+__end_of_Lcd_Cmd C16 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_PIE1bits 8C 0 ABS 0 - dist/default/production\Lab2.X.production.o
+__ptext10 B8C 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
+__ptext11 BE2 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
+__ptext12 C16 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
+_Lcd_Clear B8C 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
+_Lcd_Set_Cursor DDC 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
+__pmaintext BA6 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_setupF ECE 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+_setupF D02 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+_ADCON0bits 1F 0 ABS 0 - dist/default/production\Lab2.X.production.o
+_ADCON1bits 9F 0 ABS 0 - dist/default/production\Lab2.X.production.o
+_adc_init BC2 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
+__end_of__stringtab 12 0 STRING 0 strings dist/default/production\Lab2.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 72 0 COMMON 1 bssCOMMON dist/default/production\Lab2.X.production.o
 __Lend_init 0 0 CODE 0 end_init -
+__end_of_adc_init BE2 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
+__end_of_Lcd_Set_Cursor E80 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
+Lcd_Set_Cursor@a 77 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+Lcd_Set_Cursor@b 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+Lcd_Set_Cursor@y 79 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+Lcd_Set_Cursor@z 78 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 ECE 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
-__ptext2 EB8 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
-__ptext3 F3E 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 D02 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+__ptext2 B7A 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+__ptext3 E80 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+__ptext4 BC2 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
+__ptext5 F38 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
+__ptext6 CA4 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
+__ptext7 C5A 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
+__ptext8 D6A 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
+__ptext9 DDC 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+Lcd_Cmd@a 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _ANSELbits 188 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main EB8 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
-_PORTB 6 0 ABS 0 - dist/default/production\Lab2.X.production.o
-_PORTC 7 0 ABS 0 - dist/default/production\Lab2.X.production.o
+__end_of_main BC2 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Lab2.X.production.o
-_TRISB 86 0 ABS 0 - dist/default/production\Lab2.X.production.o
-_TRISC 87 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_IOCBbits 96 0 ABS 0 - dist/default/production\Lab2.X.production.o
-__initialization FF6 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
+_Lcd_Cmd BE2 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
+__initialization FF2 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\Lab2.X.production.o
+__pstrings 6 0 STRING 0 strings dist/default/production\Lab2.X.production.o
+Lcd_Write_Char@a 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
+Lcd_Write_Char@y 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -282,13 +432,24 @@ __initialization FF6 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7FB FF6 5 2
-text1 0 767 ECE 38 2
-text2 0 75C EB8 B 2
-text3 0 79F F3E 5C 2
-maintext 0 753 EA6 9 2
-cstackCOMMON 1 70 70 3 1
+cinit 0 7F9 FF2 7 2
+text1 0 681 D02 34 2
+text2 0 5BD B7A 9 2
+text3 0 740 E80 5C 2
+text4 0 5E1 BC2 10 2
+text5 0 79C F38 5D 2
+text6 0 652 CA4 2F 2
+text7 0 62D C5A 25 2
+text8 0 6B5 D6A 39 2
+text9 0 6EE DDC 52 2
+text10 0 5C6 B8C D 2
+text11 0 5F1 BE2 1A 2
+text12 0 60B C16 22 2
+maintext 0 5D3 BA6 E 2
+cstackCOMMON 1 70 70 E 1
 reset_vec 0 0 0 3 2
+bssBANK0 1 20 20 1 1
+strings 0 3 6 6D 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

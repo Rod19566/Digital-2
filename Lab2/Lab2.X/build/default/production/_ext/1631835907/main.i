@@ -7,36 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
-
-
-
-
-
-
-
-
-#pragma config FOSC = INTRC_CLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
-
-
-
+# 14 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2654,7 +2625,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 30 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
+# 14 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
 
 # 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/oscillator.h" 1
 
@@ -2666,7 +2637,7 @@ extern __bank0 __bit __timeout;
 
 
 void configOsc(uint16_t frec);
-# 31 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
+# 15 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
 
 # 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/setup.h" 1
 
@@ -2679,18 +2650,73 @@ void configOsc(uint16_t frec);
 
 void setupF(void);
 void ioc_init (char pin);
-# 32 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
-# 43 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c"
+# 16 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
+
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/lcd.h" 1
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdint.h" 1 3
+# 6 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/lcd.h" 2
+
+
+
+
+
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Clear();
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right(void);
+void Lcd_Shift_Left(void);
+void Lcd_Init(void);
+void example(void);
+void LCD_Test(void);
+# 17 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
+
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/ADC_Interrupt.h" 1
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/ADC_Interrupt.h" 2
+
+
+
+void adc_init(int channel);
+int adc_read();
+unsigned char adc_change_channel(unsigned char channel);
+int adc_get_channel();
+# 18 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
+
+
+
+#pragma config FOSC=INTRC_NOCLKOUT
+#pragma config WDTE=OFF
+#pragma config PWRTE=OFF
+#pragma config MCLRE=OFF
+#pragma config CP=OFF
+#pragma config CPD=OFF
+#pragma config BOREN=OFF
+#pragma config IESO=OFF
+#pragma config FCMEN=OFF
+#pragma config LVP=OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+# 45 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c"
 unsigned char c = 0;
-
-
-
-
-
+# 62 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c"
 void main(void) {
     setupF();
-
     while(1){
+        LCD_Test();
     }
 
 }

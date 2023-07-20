@@ -4,6 +4,19 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
+/*
+ Prototipos
+ */
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Clear();
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right(void);
+void Lcd_Shift_Left(void);
+void Lcd_Init(void);
+
 //LCD Functions Developed by electroSome
 
 
@@ -38,7 +51,7 @@ void Lcd_Cmd(char a)
         EN  = 0;             // => E = 0
 }
 
-Lcd_Clear()
+void Lcd_Clear(void)
 {
 	Lcd_Cmd(0);
 	Lcd_Cmd(1);
@@ -65,7 +78,7 @@ void Lcd_Set_Cursor(char a, char b)
 	}
 }
 
-void Lcd_Init()
+void Lcd_Init(void)
 {
   Lcd_Port(0x00);
    __delay_ms(20);
@@ -107,13 +120,13 @@ void Lcd_Write_String(char *a)
 	   Lcd_Write_Char(a[i]);
 }
 
-void Lcd_Shift_Right()
+void Lcd_Shift_Right(void)
 {
 	Lcd_Cmd(0x01);
 	Lcd_Cmd(0x0C);
 }
 
-void Lcd_Shift_Left()
+void Lcd_Shift_Left(void)
 {
 	Lcd_Cmd(0x01);
 	Lcd_Cmd(0x08);

@@ -3,30 +3,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/setup.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/setup.h: 7: void setupF(void);
 [v _setupF `(v ~T0 @X0 0 ef ]
-"9 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
-[p x FOSC  =  INTRC_CLKOUT ]
-"10
-[p x WDTE  =  OFF        ]
-"11
-[p x PWRTE  =  OFF       ]
-"12
-[p x MCLRE  =  OFF       ]
-"13
-[p x CP  =  OFF          ]
-"14
-[p x CPD  =  OFF         ]
-"15
-[p x BOREN  =  ON        ]
-"16
-[p x IESO  =  ON         ]
-"17
-[p x FCMEN  =  ON        ]
-"18
-[p x LVP  =  ON          ]
-"21
-[p x BOR4V  =  BOR40V    ]
-"22
-[p x WRT  =  OFF         ]
+"21 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/lcd.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/lcd.h: 21: void LCD_Test(void);
+[v _LCD_Test `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -261,33 +240,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"43 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 43: unsigned char c = 0;
+"21 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
+[p x FOSC=INTRC_NOCLKOUT  ]
+"22
+[p x WDTE=OFF            ]
+"23
+[p x PWRTE=OFF            ]
+"24
+[p x MCLRE=OFF           ]
+"25
+[p x CP=OFF              ]
+"26
+[p x CPD=OFF             ]
+"27
+[p x BOREN=OFF  ]
+"28
+[p x IESO=OFF   ]
+"29
+[p x FCMEN=OFF  ]
+"30
+[p x LVP=OFF     ]
+"33
+[p x BOR4V  =  BOR40V    ]
+"34
+[p x WRT  =  OFF         ]
+"45
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 45: unsigned char c = 0;
 [v _c `uc ~T0 @X0 1 e ]
 [i _c
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 49: void main(void) {
+"62
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 62: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"50
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 50:     setupF();
+"63
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 63:     setupF();
 [e ( _setupF ..  ]
-"52
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 52:     while(1){
+"64
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 64:     while(1){
 [e :U 140 ]
 {
-"53
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 53:     }
+"65
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 65:         LCD_Test();
+[e ( _LCD_Test ..  ]
+"66
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 66:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"55
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 55: }
+"68
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c: 68: }
 [e :UE 138 ]
 }

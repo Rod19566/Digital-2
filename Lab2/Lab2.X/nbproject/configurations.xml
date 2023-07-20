@@ -7,6 +7,7 @@
       <itemPath>lcd.h</itemPath>
       <itemPath>oscillator.h</itemPath>
       <itemPath>setup.h</itemPath>
+      <itemPath>ADC_Interrupt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +20,7 @@
       <itemPath>oscilador.c</itemPath>
       <itemPath>setup.c</itemPath>
       <itemPath>E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c</itemPath>
+      <itemPath>ADC_Interrupt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

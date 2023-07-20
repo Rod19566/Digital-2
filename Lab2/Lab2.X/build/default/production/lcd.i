@@ -2628,7 +2628,86 @@ extern __bank0 __bit __timeout;
 # 10 "lcd.c" 2
 
 # 1 "./lcd.h" 1
-# 10 "./lcd.h"
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdint.h" 1 3
+# 6 "./lcd.h" 2
+
+
+
+
+
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Clear();
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right(void);
+void Lcd_Shift_Left(void);
+void Lcd_Init(void);
+void example(void);
+void LCD_Test(void);
+# 11 "lcd.c" 2
+
+
+
+void LCD_Test(){
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Pot 1:     CPU:");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("#POT       #CPU");
+    _delay((unsigned long)((2000)*(8000000/4000.0)));
+}
+
+
+
+void example()
+{
+    unsigned int a;
+    TRISD = 0x00;
+
+    while(1)
+    {
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("LCD Library for");
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String("MPLAB XC8");
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("Developed By");
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String("electroSome");
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("www.electroSome.com");
+
+        for(a=0;a<15;a++)
+        {
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            Lcd_Shift_Left();
+        }
+
+        for(a=0;a<15;a++)
+        {
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            Lcd_Shift_Right();
+        }
+
+        Lcd_Clear();
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_Char('e');
+        Lcd_Write_Char('S');
+        _delay((unsigned long)((2000)*(8000000/4000.0)));
+    }
+}
 void Lcd_Port(char a)
 {
  if(a & 1)
@@ -2660,7 +2739,7 @@ void Lcd_Cmd(char a)
         RD3 = 0;
 }
 
-void Lcd_Clear()
+void Lcd_Clear(void)
 {
  Lcd_Cmd(0);
  Lcd_Cmd(1);
@@ -2687,7 +2766,7 @@ void Lcd_Set_Cursor(char a, char b)
  }
 }
 
-void Lcd_Init()
+void Lcd_Init(void)
 {
   Lcd_Port(0x00);
    _delay((unsigned long)((20)*(8000000/4000.0)));
@@ -2729,16 +2808,14 @@ void Lcd_Write_String(char *a)
     Lcd_Write_Char(a[i]);
 }
 
-void Lcd_Shift_Right()
+void Lcd_Shift_Right(void)
 {
  Lcd_Cmd(0x01);
  Lcd_Cmd(0x0C);
 }
 
-void Lcd_Shift_Left()
+void Lcd_Shift_Left(void)
 {
  Lcd_Cmd(0x01);
  Lcd_Cmd(0x08);
 }
-# 11 "lcd.c" 2
-

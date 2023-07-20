@@ -3,12 +3,8 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"10 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X/lcd.h
-[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
-"32
-[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
-"87
-[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"11 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+[v _adc_init adc_init `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
@@ -17,23 +13,41 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"49 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
+"62 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
 [v _main main `(v  1 e 1 0 ]
+"14 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+[v _LCD_Test LCD_Test `(v  1 e 1 0 ]
+"67
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+"89
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"98
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"104
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"125
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"144
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"160
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+"167
+[v _Lcd_Shift_Right Lcd_Shift_Right `(v  1 e 1 0 ]
+"173
+[v _Lcd_Shift_Left Lcd_Shift_Left `(v  1 e 1 0 ]
 "4 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
-"6 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+"8 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
 [v _setupF setupF `(v  1 e 1 0 ]
-"34
+"29
 [v _ioc_init ioc_init `(v  1 e 1 0 ]
 "60 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
-"229
-[v _PORTB PORTB `VEuc  1 e 1 @6 ]
-"291
-[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"167
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S147 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S193 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -43,14 +57,39 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S156 . 1 `uc 1 . 1 0 :2:0 
+[s S202 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S161 . 1 `S147 1 . 1 0 `S156 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES161  1 e 1 @11 ]
-[s S120 . 1 `uc 1 PS 1 0 :3:0 
+[u S207 . 1 `S193 1 . 1 0 `S202 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES207  1 e 1 @11 ]
+"1239
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S263 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1277
+[s S268 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S277 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S280 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S283 . 1 `S263 1 . 1 0 `S268 1 . 1 0 `S277 1 . 1 0 `S280 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES283  1 e 1 @31 ]
+[s S155 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -58,63 +97,51 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S127 . 1 `uc 1 PS0 1 0 :1:0 
+[s S162 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S131 . 1 `S120 1 . 1 0 `S127 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES131  1 e 1 @129 ]
+[u S166 . 1 `S155 1 . 1 0 `S162 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES166  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-"1479
-[v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"1541
-[v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S58 . 1 `uc 1 SCS 1 0 :1:0 
+[s S324 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1719
+[u S332 . 1 `S324 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES332  1 e 1 @140 ]
+[s S96 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S64 . 1 `uc 1 . 1 0 :4:0 
+[s S102 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S69 . 1 `S58 1 . 1 0 `S64 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES69  1 e 1 @143 ]
-[s S211 . 1 `uc 1 WPUB 1 0 :8:0 
+[u S107 . 1 `S96 1 . 1 0 `S102 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES107  1 e 1 @143 ]
+[s S309 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
 ]
-"2367
-[s S213 . 1 `uc 1 WPUB0 1 0 :1:0 
-`uc 1 WPUB1 1 0 :1:1 
-`uc 1 WPUB2 1 0 :1:2 
-`uc 1 WPUB3 1 0 :1:3 
-`uc 1 WPUB4 1 0 :1:4 
-`uc 1 WPUB5 1 0 :1:5 
-`uc 1 WPUB6 1 0 :1:6 
-`uc 1 WPUB7 1 0 :1:7 
-]
-[u S222 . 1 `S211 1 . 1 0 `S213 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES222  1 e 1 @149 ]
-[s S185 . 1 `uc 1 IOCB 1 0 :8:0 
-]
-"2437
-[s S187 . 1 `uc 1 IOCB0 1 0 :1:0 
-`uc 1 IOCB1 1 0 :1:1 
-`uc 1 IOCB2 1 0 :1:2 
-`uc 1 IOCB3 1 0 :1:3 
-`uc 1 IOCB4 1 0 :1:4 
-`uc 1 IOCB5 1 0 :1:5 
-`uc 1 IOCB6 1 0 :1:6 
-`uc 1 IOCB7 1 0 :1:7 
-]
-[u S196 . 1 `S185 1 . 1 0 `S187 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES196  1 e 1 @150 ]
-[s S92 . 1 `uc 1 ANS0 1 0 :1:0 
+"2992
+[u S315 . 1 `S309 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES315  1 e 1 @159 ]
+[s S130 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -124,8 +151,8 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3405
-[u S101 . 1 `S92 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES101  1 e 1 @392 ]
+[u S139 . 1 `S130 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES139  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4192
@@ -140,24 +167,103 @@
 [v _RD6 RD6 `VEb  1 e 0 @70 ]
 "4207
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
-"49 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
+"62 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"55
+"68
 } 0
-"6 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
+"8 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\setup.c
 [v _setupF setupF `(v  1 e 1 0 ]
 {
-"33
+"28
 } 0
-"34
+"29
 [v _ioc_init ioc_init `(v  1 e 1 0 ]
 {
-"50
+"38
 } 0
 "4 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\oscilador.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
 {
 [v configOsc@frec frec `ui  1 p 2 0 ]
 "13
+} 0
+"11 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\ADC_Interrupt.c
+[v _adc_init adc_init `(v  1 e 1 0 ]
+{
+[v adc_init@channel channel `i  1 p 2 0 ]
+"21
+} 0
+"125 E:\Universidad\Semestre2_2023\Digital-2\Lab2\Lab2.X\lcd.c
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"142
+} 0
+"14
+[v _LCD_Test LCD_Test `(v  1 e 1 0 ]
+{
+"21
+} 0
+"160
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+{
+[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
+"162
+[v Lcd_Write_String@i i `i  1 a 2 5 ]
+"160
+[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
+"163
+[v Lcd_Write_String@a a `*.24uc  1 a 1 7 ]
+"165
+} 0
+"144
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+"146
+[v Lcd_Write_Char@y y `uc  1 a 1 3 ]
+[v Lcd_Write_Char@temp temp `uc  1 a 1 2 ]
+"144
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+"147
+[v Lcd_Write_Char@a a `uc  1 a 1 4 ]
+"158
+} 0
+"104
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+"106
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 10 ]
+[v Lcd_Set_Cursor@y y `uc  1 a 1 9 ]
+[v Lcd_Set_Cursor@z z `uc  1 a 1 8 ]
+"104
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
+"107
+[v Lcd_Set_Cursor@a a `uc  1 a 1 7 ]
+"123
+} 0
+"98
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"102
+} 0
+"89
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+"91
+[v Lcd_Cmd@a a `uc  1 a 1 3 ]
+"96
+} 0
+"67
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+{
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+"69
+[v Lcd_Port@a a `uc  1 a 1 0 ]
+"88
 } 0
