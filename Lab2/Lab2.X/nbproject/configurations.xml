@@ -19,8 +19,8 @@
       <itemPath>lcd.c</itemPath>
       <itemPath>oscilador.c</itemPath>
       <itemPath>setup.c</itemPath>
-      <itemPath>E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c</itemPath>
       <itemPath>ADC_Interrupt.c</itemPath>
+      <itemPath>E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

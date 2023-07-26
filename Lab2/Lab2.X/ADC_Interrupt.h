@@ -6,9 +6,9 @@
 
 // PROTOTIPOS
 void adc_init(int channel);
-int adc_read();
+unsigned char adc_read(unsigned char channel);
 unsigned char adc_change_channel(unsigned char channel);
-int adc_get_channel();
+int adc_get_channel(void);
 
 #endif //interrupt
 

@@ -2636,11 +2636,11 @@ extern __bank0 __bit __timeout;
 
 
 void adc_init(int channel);
-int adc_read();
+unsigned char adc_read(unsigned char channel);
 unsigned char adc_change_channel(unsigned char channel);
-int adc_get_channel();
+int adc_get_channel(void);
 # 1 "ADC_Interrupt.c" 2
-# 11 "ADC_Interrupt.c"
+# 17 "ADC_Interrupt.c"
 void adc_init(int channel){
     ADCON0bits.ADCS = 0;
     ADCON0bits.CHS0 = 0;
@@ -2648,22 +2648,28 @@ void adc_init(int channel){
     ADCON1bits.VCFG1 = 0;
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.ADFM = 0;
+    adc_change_channel(1);
 
+    PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
     ADCON0bits.GO = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+
 }
 
-int adc_read (){
-    return 0;
+unsigned char adc_read(unsigned char channel){
+    ADCON0bits.CHS = channel;
+    _delay((unsigned long)((20)*(8000000/4000000.0)));
+    return ADRESH;
 }
 
 unsigned char adc_change_channel(unsigned char channel){
     ADCON0bits.CHS = channel;
-    return ADRESH;
+    return 1;
 
 }
 
-int adc_get_channel(){
+int adc_get_channel(void){
 
         if(ADCON0bits.GO == 0){
             if(ADCON0bits.CHS == 0b0000){
@@ -2676,5 +2682,5 @@ int adc_get_channel(){
             _delay((unsigned long)((40)*(8000000/4000000.0)));
             ADCON0bits.GO = 1;
         }
-        ADCON0bits.GO == 0;
+        ADCON0bits.GO = 0;
 }

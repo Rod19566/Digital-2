@@ -23,18 +23,15 @@ void setupF(void){
 
     configOsc(4);
     ioc_init(1);
-    adc_init(1);
-    Lcd_Init();
 }
 void ioc_init (char pin){
 //configuracion interrupciones
     INTCONbits.GIE  = 1;        //se habilitan las interrupciones globales
-    INTCONbits.T0IE = 1;        //interrupcion overflow tmr0 habilitada
-    INTCONbits.RBIE = 1;        //interrupcion on change habilitada
     INTCONbits.PEIE = 1;        //se habilitan las interrupciones de los perifericos
-
-    TMR0 = 0;
-    INTCONbits.T0IF = 0; // enable overflow interrupt TMR0
+//    INTCONbits.T0IE = 1;        //interrupcion overflow tmr0 habilitada
+//
+//    TMR0 = 0;
+//    INTCONbits.T0IF = 0; // enable overflow interrupt TMR0
 }
 
 

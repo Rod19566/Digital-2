@@ -12,6 +12,8 @@
 Librerias
 */
 #include <xc.h> // include processor files - each processor file is guarded.
+#include <stdio.h> // include processor files - each processor file is guarded.
+#include <stdint.h> // include processor files - each processor file is guarded.
 #include "oscillator.h"
 #include "setup.h"
 #include "lcd.h"
@@ -38,31 +40,58 @@ Librerias
 Prototipo de Funciones
 */
 
+void LCD_Test(void);
 /*
 Variables
 */
 
-unsigned char c = 0;                // ADC Value    
-
+unsigned char c = 0;                // ADC Value   
 /*
 Codigo actual
 */
-
-//void __interrupt() isr(void){    // only process timer-triggered interrupts
-//    if (ADIF == 1) {//ADC Conversion
-//        c = adc_change_channel(0);     //adc value
-//        __delay_us(20);             //delay de 20 ms
-//        
-//        PIR1bits.ADIF = 0;          //ADC flag
-//        ADCON0bits.GO = 1;          //
-//    }
-//}    
+void __interrupt() isr(void){
+    
+    if (ADIF == 1) {
+        //ADC conversion
+        c = adc_read(0);      //sets to ADC value 
+        PIR1bits.ADIF = 0;              //ADC interrupt flag
+        ADCON0bits.GO = 0;
+    }
+    
+    //TMR0
+     if (T0IF == 1) {      
+        TMR0 = 0;
+        INTCONbits.T0IF = 0; // TMR0 interrupt flag
+     }   
+    
+}   
   
 
 void main(void) {
-    setupF();    
+    setupF(); 
+    adc_init(1);
+    Lcd_Init();      
     while(1){
-        LCD_Test();
+        LCD_Test(); 
+        if(ADCON0bits.GO == 0){   
+            __delay_us(40);                 // Tiempo de adquisici n
+            ADCON0bits.GO = 1;              // Iniciamos proceso de conversi n�
+        }    
     }
     
+}
+
+
+void LCD_Test(){ 
+    char buffer[12];
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Pot 1:     CPU:");
+    Lcd_Set_Cursor(2,1);
+    
+    intToString(c, buffer);
+    Lcd_Write_String(buffer);
+    //Lcd_Set_Cursor(2,10);
+    //Lcd_Write_String("Counter");
+    __delay_ms(2000);
 }

@@ -7,18 +7,9 @@
 #define D6 RD6
 #define D7 RD7
 
-#include <xc.h>
 #include "lcd.h"
 
 
-void LCD_Test(){
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Pot 1:     CPU:");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("#POT       #CPU");
-    __delay_ms(2000);
-}
     
 
 
@@ -162,6 +153,17 @@ void Lcd_Write_String(char *a)
 	int i;
 	for(i=0;a[i]!='\0';i++)
 	   Lcd_Write_Char(a[i]);
+}
+
+// Function to print an integer value on the LCD
+void Lcd_Write_Integer(int value) {
+    char buffer[5]; // Assuming a char can have at most 3 digits + sign
+    sprintf(buffer, "%d ", value);
+    Lcd_Write_String(buffer);
+}
+// Function to convert an integer to a string
+void intToString(int num, char *buffer) {
+    sprintf(buffer, "%d", num);
 }
 
 void Lcd_Shift_Right(void)

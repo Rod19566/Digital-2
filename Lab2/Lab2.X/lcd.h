@@ -3,7 +3,8 @@
 #define	XC_LCD_H
 
 #include <xc.h> // include processor files - each processor file is guarded. 
-#include <stdint.h>
+#include <stdint.h> 
+#include <stdio.h>
 
 /*
  Prototipos
@@ -18,7 +19,8 @@ void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
 void Lcd_Init(void);
 void example(void);
-void LCD_Test(void);
+void intToString(int num, char *buffer);
+void Lcd_Write_Integer(int value);
 
 //LCD Functions Developed by electroSome
 
