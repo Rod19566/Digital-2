@@ -3,4 +3,5 @@ E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c  \
 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/oscillator.h  \
 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/setup.h  \
 E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/lcd.h  \
-E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/ADC_Interrupt.h 
+E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/ADC_Interrupt.h  \
+E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/uart.h 

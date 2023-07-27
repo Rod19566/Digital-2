@@ -2788,7 +2788,7 @@ void Lcd_Write_Integer(int value);
 
 void adc_init(int channel);
 unsigned char adc_read(unsigned char channel);
-unsigned char adc_change_channel(unsigned char channel);
+void adc_change_channel(unsigned char channel);
 int adc_get_channel(void);
 # 4 "setup.c" 2
 
@@ -2796,10 +2796,13 @@ int adc_get_channel(void);
 
 
 void setupF(void){
+    configOsc(8);
 
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
-    TRISA = 0;
+    ANSELbits.ANS1 = 1;
+    TRISA = 3;
+    TRISC = 128;
     PORTA = 0;
 
 
@@ -2811,8 +2814,8 @@ void setupF(void){
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.PS = 0;
 
-    configOsc(4);
     ioc_init(1);
+
 }
 void ioc_init (char pin){
 

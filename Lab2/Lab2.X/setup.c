@@ -6,10 +6,13 @@
 #define _XTAL_FREQ 8000000
 
 void setupF(void){    
+    configOsc(8);
     //Setting all I/O as digital pins
     ANSELH = 0;             //Digital Pins
     ANSELbits.ANS0  = 1;    //RA0 Analogic Pin
-    TRISA  = 0;
+    ANSELbits.ANS1  = 1;//RA1 como pines analogicos
+    TRISA  = 3;
+    TRISC = 128;
     PORTA  = 0;             //clean PORTA
 
     
@@ -21,8 +24,8 @@ void setupF(void){
     OPTION_REGbits.PSA  = 0;        // prescaler 
     OPTION_REGbits.PS = 0;          // 1:1
 
-    configOsc(4);
     ioc_init(1);
+    
 }
 void ioc_init (char pin){
 //configuracion interrupciones

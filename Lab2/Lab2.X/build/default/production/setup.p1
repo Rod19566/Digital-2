@@ -1,4 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"7 ./oscillator.h
+[; ;./oscillator.h: 7: void configOsc(uint16_t frec);
+[v _configOsc `(v ~T0 @X0 0 ef1`ui ]
 "3450 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3450: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
@@ -16,6 +19,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1417
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1417: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1541
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1541: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "167
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
@@ -40,9 +46,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1367
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1367: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
 [v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
-"7 ./oscillator.h
-[; ;./oscillator.h: 7: void configOsc(uint16_t frec);
-[v _configOsc `(v ~T0 @X0 0 ef1`ui ]
 "8 ./setup.h
 [; ;./setup.h: 8: void ioc_init (char pin);
 [v _ioc_init `(v ~T0 @X0 0 ef1`uc ]
@@ -301,57 +304,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _setupF ]
 [f ]
-"10
-[; ;setup.c: 10:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
+"9
+[; ;setup.c: 9:     configOsc(8);
+[e ( _configOsc (1 -> -> 8 `i `ui ]
 "11
-[; ;setup.c: 11:     ANSELbits.ANS0 = 1;
-[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
+[; ;setup.c: 11:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "12
-[; ;setup.c: 12:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
+[; ;setup.c: 12:     ANSELbits.ANS0 = 1;
+[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
 "13
-[; ;setup.c: 13:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;setup.c: 13:     ANSELbits.ANS1 = 1;
+[e = . . _ANSELbits 0 1 -> -> 1 `i `uc ]
+"14
+[; ;setup.c: 14:     TRISA = 3;
+[e = _TRISA -> -> 3 `i `uc ]
+"15
+[; ;setup.c: 15:     TRISC = 128;
+[e = _TRISC -> -> 128 `i `uc ]
 "16
-[; ;setup.c: 16:     TRISD = 0x00;
+[; ;setup.c: 16:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"19
+[; ;setup.c: 19:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"17
-[; ;setup.c: 17:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
 "20
-[; ;setup.c: 20:     OPTION_REGbits.T0CS = 0;
+[; ;setup.c: 20:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"23
+[; ;setup.c: 23:     OPTION_REGbits.T0CS = 0;
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"21
-[; ;setup.c: 21:     OPTION_REGbits.PSA = 0;
-[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
-"22
-[; ;setup.c: 22:     OPTION_REGbits.PS = 0;
-[e = . . _OPTION_REGbits 0 0 -> -> 0 `i `uc ]
 "24
-[; ;setup.c: 24:     configOsc(4);
-[e ( _configOsc (1 -> -> 4 `i `ui ]
+[; ;setup.c: 24:     OPTION_REGbits.PSA = 0;
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
 "25
-[; ;setup.c: 25:     ioc_init(1);
+[; ;setup.c: 25:     OPTION_REGbits.PS = 0;
+[e = . . _OPTION_REGbits 0 0 -> -> 0 `i `uc ]
+"27
+[; ;setup.c: 27:     ioc_init(1);
 [e ( _ioc_init (1 -> -> 1 `i `uc ]
-"26
-[; ;setup.c: 26: }
+"29
+[; ;setup.c: 29: }
 [e :UE 139 ]
 }
-"27
-[; ;setup.c: 27: void ioc_init (char pin){
+"30
+[; ;setup.c: 30: void ioc_init (char pin){
 [v _ioc_init `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _ioc_init ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-"29
-[; ;setup.c: 29:     INTCONbits.GIE = 1;
+"32
+[; ;setup.c: 32:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"30
-[; ;setup.c: 30:     INTCONbits.PEIE = 1;
+"33
+[; ;setup.c: 33:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"35
-[; ;setup.c: 35: }
+"38
+[; ;setup.c: 38: }
 [e :UE 140 ]
 }

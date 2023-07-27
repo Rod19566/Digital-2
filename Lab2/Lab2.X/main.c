@@ -18,6 +18,7 @@ Librerias
 #include "setup.h"
 #include "lcd.h"
 #include "ADC_Interrupt.h"
+#include "uart.h"
 
 // CONFIG1
 #pragma config FOSC=INTRC_NOCLKOUT //Oscilador interno sin salida
@@ -38,25 +39,25 @@ Librerias
 #define _XTAL_FREQ 8000000
 /*
 Prototipo de Funciones
+ * 
 */
+void LCD_Test();
+float map(unsigned char adresval);
 
-void LCD_Test(void);
-/*
-Variables
-*/
 
-unsigned char c = 0;                // ADC Value   
+unsigned char lcd1 = 0;                // ADC Value   
 /*
 Codigo actual
 */
 void __interrupt() isr(void){
     
-    if (ADIF == 1) {
-        //ADC conversion
-        c = adc_read(0);      //sets to ADC value 
-        PIR1bits.ADIF = 0;              //ADC interrupt flag
-        ADCON0bits.GO = 0;
-    }
+//    if (ADIF == 1) {
+//        //ADC conversion
+////        c = adc_read(0);      //sets to ADC value 
+////        c = map(c);
+//        PIR1bits.ADIF = 0;              //ADC interrupt flag
+////        ADCON0bits.GO = 0;
+//    }
     
     //TMR0
      if (T0IF == 1) {      
@@ -69,13 +70,20 @@ void __interrupt() isr(void){
 
 void main(void) {
     setupF(); 
-    adc_init(1);
+    adc_init(0);
+    setupUart();
     Lcd_Init();      
     while(1){
         LCD_Test(); 
         if(ADCON0bits.GO == 0){   
-            __delay_us(40);                 // Tiempo de adquisici n
-            ADCON0bits.GO = 1;              // Iniciamos proceso de conversi n�
+            __delay_us(20);                 // Tiempo de adquisici n
+            lcd1 = adc_read(0);     //se actualiza la variable con valor del adc
+            PIR1bits.ADIF = 0;//se baja bandera interrupcion adc
+            ADCON0bits.GO = 1;//inicio de la siguiente conversion
+        }
+        if(ADCON0bits.GO == 1){   
+            PIR1bits.ADIF = 0;//se baja bandera interrupcion adc
+            ADCON0bits.GO = 0;//inicio de la siguiente conversion
         }    
     }
     
@@ -89,9 +97,11 @@ void LCD_Test(){
     Lcd_Write_String("Pot 1:     CPU:");
     Lcd_Set_Cursor(2,1);
     
-    intToString(c, buffer);
+    intToString(map(lcd1), buffer);
     Lcd_Write_String(buffer);
-    //Lcd_Set_Cursor(2,10);
-    //Lcd_Write_String("Counter");
     __delay_ms(2000);
+}
+
+float map(unsigned char adresval){
+    return (adresval-0)*(5.00-0)/(255-0.0)+0;
 }

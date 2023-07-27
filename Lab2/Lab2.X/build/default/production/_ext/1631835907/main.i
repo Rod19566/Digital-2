@@ -2794,9 +2794,24 @@ void Lcd_Write_Integer(int value);
 
 void adc_init(int channel);
 unsigned char adc_read(unsigned char channel);
-unsigned char adc_change_channel(unsigned char channel);
+void adc_change_channel(unsigned char channel);
 int adc_get_channel(void);
 # 20 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
+
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/uart.h" 1
+
+
+
+
+
+
+void setupUart(void);
+void UART_RX_config (uint16_t baudrate);
+void UART_TX_config (uint16_t baudrate);
+void UART_write_char(char c);
+void UART_write_string(char* c);
+unsigned char UART_read_char(unsigned char address);
+# 21 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c" 2
 
 
 
@@ -2820,25 +2835,16 @@ int adc_get_channel(void);
 
 
 
-void LCD_Test(void);
+void LCD_Test();
+float map(unsigned char adresval);
 
 
-
-
-unsigned char c = 0;
+unsigned char lcd1 = 0;
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
-
-    if (ADIF == 1) {
-
-        c = adc_read(0);
-        PIR1bits.ADIF = 0;
-        ADCON0bits.GO = 0;
-    }
-
-
+# 63 "E:/Universidad/Semestre2_2023/Digital-2/Lab2/Lab2.X/main.c"
      if (T0IF == 1) {
         TMR0 = 0;
         INTCONbits.T0IF = 0;
@@ -2849,13 +2855,20 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 void main(void) {
     setupF();
-    adc_init(1);
+    adc_init(0);
+    setupUart();
     Lcd_Init();
     while(1){
         LCD_Test();
         if(ADCON0bits.GO == 0){
-            _delay((unsigned long)((40)*(8000000/4000000.0)));
+            _delay((unsigned long)((20)*(8000000/4000000.0)));
+            lcd1 = adc_read(0);
+            PIR1bits.ADIF = 0;
             ADCON0bits.GO = 1;
+        }
+        if(ADCON0bits.GO == 1){
+            PIR1bits.ADIF = 0;
+            ADCON0bits.GO = 0;
         }
     }
 
@@ -2869,9 +2882,11 @@ void LCD_Test(){
     Lcd_Write_String("Pot 1:     CPU:");
     Lcd_Set_Cursor(2,1);
 
-    intToString(c, buffer);
+    intToString(lcd1, buffer);
     Lcd_Write_String(buffer);
-
-
     _delay((unsigned long)((2000)*(8000000/4000.0)));
+}
+
+float map(unsigned char adresval){
+    return (adresval-0)*(5.00-0)/(255-0.0)+0;
 }

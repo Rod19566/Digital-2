@@ -21,7 +21,7 @@ void adc_init(int channel){
     ADCON1bits.VCFG1 = 0;           // reference voltages of PIC
     ADCON1bits.VCFG0 = 0;           // 0V to 5V
     ADCON1bits.ADFM = 0;            //    
-    adc_change_channel(1);
+    adc_change_channel(channel);
     
     PIR1bits.ADIF = 0;              //clean
     PIE1bits.ADIE = 1;               //ADC on
@@ -31,15 +31,13 @@ void adc_init(int channel){
 }
 
 unsigned char adc_read(unsigned char channel){
-    ADCON0bits.CHS = channel;
+    adc_change_channel(channel);
     __delay_us(20);   //delay de 20 ms;
     return ADRESH;  
 }
 
-unsigned char adc_change_channel(unsigned char channel){    
-    ADCON0bits.CHS = channel;
-    return 1;
-    
+void adc_change_channel(unsigned char channel){    
+    ADCON0bits.CHS = channel;    
 }
 
 int adc_get_channel(void){
@@ -56,4 +54,5 @@ int adc_get_channel(void){
             ADCON0bits.GO = 1;              // Iniciamos proceso de conversi n�
         }
         ADCON0bits.GO = 0;
+        return 0;
 }
