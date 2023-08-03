@@ -43,6 +43,7 @@
 // Definición de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
+
 uint8_t z;
 uint8_t dato;
 unsigned char adcValue = 0;      //valor adc   
@@ -101,6 +102,7 @@ void __interrupt() isr(void){
 // Main
 //*****************************************************************************
 void main(void) {
+    configOsc(8);
     setup();
     //*************************************************************************
     // Loop infinito

@@ -2720,6 +2720,7 @@ void configOsc(uint16_t frec);
 
 
 
+
 uint8_t z;
 uint8_t dato;
 unsigned char adcValue = 0;
@@ -2778,6 +2779,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
 void main(void) {
+    configOsc(8);
     setup();
 
 
