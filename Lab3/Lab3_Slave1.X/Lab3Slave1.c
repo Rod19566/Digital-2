@@ -40,7 +40,7 @@
 #define _XTAL_FREQ 8000000
 
 uint8_t temporal = 0;
-unsigned char c = 0;      //valor adc    
+unsigned char adcValue = 0;      //valor adc    
 unsigned char dummydata = 0;
 
 //*****************************************************************************
@@ -55,22 +55,22 @@ void __interrupt() isr(void){
    if(SSPIF == 1){
         dummydata = spiRead();
         if (dummydata == 0){
-            spiWrite(PORTB);}
+            spiWrite(adcValue);}
         else{
-            spiWrite(PORTB);
+            spiWrite(adcValue);
         }
         SSPIF = 0;
     }
    
    if (ADIF == 1){
-       if (ADCON0bits.CHS == 0){
-       PORTB = adcChannel(1);     //se actualiza la variable con valor del adc
+       if (ADCON0bits.CHS == 1){
+       adcValue = adcChannel(0);     //se actualiza la variable con valor del adc
         __delay_us(20);   //delay de 20 ms
         PIR1bits.ADIF = 0;//se baja bandera interrupcion adc
         ADCON0bits.GO = 1;//inicio de la siguiente conversion
         }
        else {
-        PORTD = adcChannel(0);     //se actualiza la variable con valor del adc
+        PORTD = adcChannel(1);     //se actualiza la variable con valor del adc
         __delay_us(20);   //delay de 20 ms
         PIR1bits.ADIF = 0;//se baja bandera interrupcion adc
         ADCON0bits.GO = 1;//inicio de la siguiente conversion
@@ -83,33 +83,27 @@ void __interrupt() isr(void){
 //*****************************************************************************
 void main(void) {
     setup();
-    //c = 0b00100010;
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
     while(1){  
-        //PORTB = 0b00100010;   
-//        if (ADCON0bits.GO == 0) {
-//            ADCON0bits.CHS = 0;
-//            //c = ADRESH;      //se actualiza la variable con valor del adc
-//            __delay_us(20);         //delay de 20 ms
-//            PIR1bits.ADIF = 0;      //se baja bandera interrupcion adc
-//            ADCON0bits.GO = 1;      //inicio de la siguiente conversion
-//        }   
+        PORTDbits.RD0 = 1;
+        PORTDbits.RD1 = 0;
     }
-    return;
 }
 //*****************************************************************************
 // Función de Inicialización
 //*****************************************************************************
 void setup(void){
+    configOsc(8);
+    
     ANSELH = 0; //Pines digitales
     ANSELbits.ANS0  = 1;//RA0 como pines analogicos
-    ANSELbits.ANS1  = 1;//RA1 como pines analogicos
     
-    TRISA = 3;         //RA0 y RA1 como inputs
+    TRISA = 35;         //RA0 y RA1 como inputs
     TRISB = 0;
     TRISD = 0;
+    TRISCbits.TRISC2 = 0;
     
     PORTA = 0;         //se limpian los puertos
     PORTB = 0;
@@ -121,9 +115,7 @@ void setup(void){
     PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
     TRISAbits.TRISA5 = 1;       // Slave Select
-    TRISCbits.TRISC2 = 0;
     adcConfig();
-    configOsc(8);
     __delay_us(20);   //delay de 20 ms
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
    

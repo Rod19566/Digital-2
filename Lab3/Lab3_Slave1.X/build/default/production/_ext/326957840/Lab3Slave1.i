@@ -2713,7 +2713,7 @@ void configOsc(uint16_t frec);
 
 
 uint8_t temporal = 0;
-unsigned char c = 0;
+unsigned char adcValue = 0;
 unsigned char dummydata = 0;
 
 
@@ -2728,22 +2728,22 @@ void __attribute__((picinterrupt(("")))) isr(void){
    if(SSPIF == 1){
         dummydata = spiRead();
         if (dummydata == 0){
-            spiWrite(PORTB);}
+            spiWrite(adcValue);}
         else{
-            spiWrite(PORTB);
+            spiWrite(adcValue);
         }
         SSPIF = 0;
     }
 
    if (ADIF == 1){
-       if (ADCON0bits.CHS == 0){
-       PORTB = adcChannel(1);
+       if (ADCON0bits.CHS == 1){
+       adcValue = adcChannel(0);
         _delay((unsigned long)((20)*(8000000/4000000.0)));
         PIR1bits.ADIF = 0;
         ADCON0bits.GO = 1;
         }
        else {
-        PORTD = adcChannel(0);
+        PORTD = adcChannel(1);
         _delay((unsigned long)((20)*(8000000/4000000.0)));
         PIR1bits.ADIF = 0;
         ADCON0bits.GO = 1;
@@ -2759,23 +2759,24 @@ void main(void) {
 
 
 
-
     while(1){
-# 99 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave1.X/Lab3Slave1.c"
+        PORTDbits.RD0 = 1;
+        PORTDbits.RD1 = 0;
     }
-    return;
 }
 
 
 
 void setup(void){
+    configOsc(8);
+
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
 
-    TRISA = 3;
+    TRISA = 35;
     TRISB = 0;
     TRISD = 0;
+    TRISCbits.TRISC2 = 0;
 
     PORTA = 0;
     PORTB = 0;
@@ -2787,9 +2788,7 @@ void setup(void){
     PIR1bits.SSPIF = 0;
     PIE1bits.SSPIE = 1;
     TRISAbits.TRISA5 = 1;
-    TRISCbits.TRISC2 = 0;
     adcConfig();
-    configOsc(8);
     _delay((unsigned long)((20)*(8000000/4000000.0)));
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 

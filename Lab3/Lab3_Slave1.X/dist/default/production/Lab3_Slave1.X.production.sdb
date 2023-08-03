@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"128 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave1.X/Lab3Slave1.c
+"120 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave1.X/Lab3Slave1.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -61,7 +61,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _isr isr `II(v  1 e 1 0 ]
 "84
 [v _main main `(v  1 e 1 0 ]
-"105
+"97
 [v _setup setup `(v  1 e 1 0 ]
 "4 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave1.X\oscilador.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
@@ -81,6 +81,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S393 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"370
+[u S402 . 1 `S393 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES402  1 e 1 @8 ]
 [s S135 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -98,7 +110,7 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S149 . 1 `S135 1 . 1 0 `S144 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES149  1 e 1 @11 ]
-[s S370 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S369 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -107,8 +119,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S378 . 1 `S370 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES378  1 e 1 @12 ]
+[u S377 . 1 `S369 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES377  1 e 1 @12 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
@@ -140,7 +152,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _ADCON0bits ADCON0bits `VES75  1 e 1 @31 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S450 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S493 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -150,11 +162,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1434
-[u S459 . 1 `S450 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES459  1 e 1 @133 ]
+[u S502 . 1 `S493 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES502  1 e 1 @133 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S471 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S440 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -164,8 +176,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1558
-[u S480 . 1 `S471 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES480  1 e 1 @135 ]
+[u S449 . 1 `S440 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES449  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 [s S116 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -247,7 +259,7 @@ SPI_ACTIVE_2_IDLE 64
 "2992
 [u S107 . 1 `S101 1 . 1 0 ]
 [v _ADCON1bits ADCON1bits `VES107  1 e 1 @159 ]
-[s S395 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S416 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -257,8 +269,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3405
-[u S404 . 1 `S395 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES404  1 e 1 @392 ]
+[u S425 . 1 `S416 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES425  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3592
@@ -269,17 +281,19 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4468
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"44 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave1.X/Lab3Slave1.c
+"43 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave1.X/Lab3Slave1.c
+[v _adcValue adcValue `uc  1 e 1 0 ]
+"44
 [v _dummydata dummydata `uc  1 e 1 0 ]
 "84
 [v _main main `(v  1 e 1 0 ]
 {
-"101
+"93
 } 0
-"105
+"97
 [v _setup setup `(v  1 e 1 0 ]
 {
-"130
+"122
 } 0
 "12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave1.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
