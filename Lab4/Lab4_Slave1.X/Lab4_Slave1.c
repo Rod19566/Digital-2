@@ -32,22 +32,27 @@
 //*****************************************************************************
 // Definición e importación de librerías
 //*****************************************************************************
-
 #include <xc.h>
 #include <pic16f887.h>
-#include "I2C.h"
 #include <stdint.h>
+#include "I2C.h"
+#include "ADC.h"
+#include "oscillator.h"
+
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
 uint8_t z;
 uint8_t dato;
+unsigned char adcValue = 0;      //valor adc   
+
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
+
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
@@ -70,19 +75,26 @@ void __interrupt() isr(void){
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            PORTD = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+            PORTD = SSPBUF;             // Saves buffer value in PORTD 
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTB;
+            SSPBUF = adcValue;      //Sends value
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
         }
        
         PIR1bits.SSPIF = 0;    
+    }
+   
+    if (ADIF == 1) {
+        if (ADCON0bits.CHS == 0) { // Check if the ADC channel is AN0
+            adcValue = adcRead();
+            PIR1bits.ADIF = 0; // Clear the ADC interrupt flag
+        }
     }
 }
 //*****************************************************************************
@@ -93,8 +105,14 @@ void main(void) {
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
-    while(1){
-        PORTB = ~PORTB;
+    while(1){        
+       if (ADCON0bits.CHS == 0){
+       adcChannel(0);     //se actualiza la variable con valor del adc
+        __delay_us(20);   //delay de 20 ms
+        ADCON0bits.GO = 1;//inicio de la siguiente conversion
+        } 
+       PORTB = adcValue;
+        //PORTB = ~PORTB;
        __delay_ms(500);
     }
     return;
@@ -103,13 +121,18 @@ void main(void) {
 // Función de Inicialización
 //*****************************************************************************
 void setup(void){
+    configOsc(8);
     ANSEL = 0;
-    ANSELH = 0;
+    ANSELH = 1;
+    TRISA = 0b00000001;         //RA0 as inputs
     
     TRISB = 0;
     TRISD = 0;
     
+    PORTA = 0;         //se limpian los puertos
     PORTB = 0;
     PORTD = 0;
+    adcConfig();
+    __delay_us(40);
     I2C_Slave_Init(0x50);   
 }

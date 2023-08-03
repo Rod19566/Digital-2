@@ -22,7 +22,14 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 36 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c"
+
+
+
+
+
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2640,8 +2647,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 36 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c" 2
+# 35 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c" 2
 
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 37 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c" 2
 
 # 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/I2C.h" 1
 # 20 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/I2C.h"
@@ -2686,8 +2696,25 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 # 38 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/ADC.h" 1
+# 14 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/ADC.h"
+void adcConfig(void);
+void adcChannel(unsigned char channel);
+unsigned char adcRead();
 # 39 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c" 2
+
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/oscillator.h" 1
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/oscillator.h" 2
+
+
+void configOsc(uint16_t frec);
+# 40 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Slave1.X/Lab4_Slave1.c" 2
+
 
 
 
@@ -2695,11 +2722,14 @@ void I2C_Slave_Init(uint8_t address);
 
 uint8_t z;
 uint8_t dato;
+unsigned char adcValue = 0;
+
 
 
 
 
 void setup(void);
+
 
 
 
@@ -2728,13 +2758,20 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTB;
+            SSPBUF = adcValue;
             SSPCONbits.CKP = 1;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
         }
 
         PIR1bits.SSPIF = 0;
+    }
+
+    if (ADIF == 1) {
+        if (ADCON0bits.CHS == 0) {
+            adcValue = adcRead();
+            PIR1bits.ADIF = 0;
+        }
     }
 }
 
@@ -2746,7 +2783,13 @@ void main(void) {
 
 
     while(1){
-        PORTB = ~PORTB;
+       if (ADCON0bits.CHS == 0){
+       adcChannel(0);
+        _delay((unsigned long)((20)*(8000000/4000000.0)));
+        ADCON0bits.GO = 1;
+        }
+       PORTB = adcValue;
+
        _delay((unsigned long)((500)*(8000000/4000.0)));
     }
     return;
@@ -2755,13 +2798,18 @@ void main(void) {
 
 
 void setup(void){
+    configOsc(8);
     ANSEL = 0;
-    ANSELH = 0;
+    ANSELH = 1;
+    TRISA = 0b00000001;
 
     TRISB = 0;
     TRISD = 0;
 
+    PORTA = 0;
     PORTB = 0;
     PORTD = 0;
+    adcConfig();
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
     I2C_Slave_Init(0x50);
 }

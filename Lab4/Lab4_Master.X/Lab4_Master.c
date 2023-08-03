@@ -74,6 +74,7 @@ void main(void) {
 // Función de Inicialización
 //*****************************************************************************
 void setup(void){
+    configOsc(8);
     ANSEL = 0;
     ANSELH = 0;
     TRISB = 0;
