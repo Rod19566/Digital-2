@@ -2824,10 +2824,10 @@ void configOsc(uint16_t frec);
 # 40 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Master.X/Lab3Master.c" 2
 # 55 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Master.X/Lab3Master.c"
 char volt[16];
-float s1 = 0;
+char s1 = 0;
 float s2 = 0;
 
-unsigned char slaveSelect = 1;
+char slaveSelect = 1;
 
 
 
@@ -2843,11 +2843,8 @@ void main(void) {
 
 
     while(1){
-        PORTCbits.RC2 = 0;
-       _delay((unsigned long)((1)*(8000000/4000.0)));
 
-
-        if (slaveSelect == 0){
+        if (slaveSelect == 1){
             PORTCbits.RC2 = 0;
             _delay((unsigned long)((1)*(8000000/4000.0)));
 
@@ -2858,19 +2855,27 @@ void main(void) {
 
             PORTCbits.RC2 = 1;
             _delay((unsigned long)((100)*(8000000/4000.0)));
-            slaveSelect = 1;
+            slaveSelect = 0;
        }
         else {
-# 103 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Master.X/Lab3Master.c"
+            PORTCbits.RC2 = 0;
+            _delay((unsigned long)((1)*(8000000/4000.0)));
+
+            spiWrite(slaveSelect);
+            s2 = spiRead();
+            _delay((unsigned long)((1)*(8000000/4000.0)));
+
+            PORTCbits.RC2 = 1;
             _delay((unsigned long)((100)*(8000000/4000.0)));
-            slaveSelect = 0;
+            slaveSelect = 1;
         }
 
+       PORTB = s1;
        Lcd_Clear();
        Lcd_Set_Cursor(1,1);
        Lcd_Write_String("Slave1 Pot:");
        Lcd_Set_Cursor(2,1);
-       sprintf(volt, "%.2f ", s1);
+       sprintf(volt, "%.2d ", s1);
        Lcd_Write_String(volt);
        _delay((unsigned long)((500)*(8000000/4000.0)));
 
@@ -2882,7 +2887,7 @@ void main(void) {
 void setup(void){
     configOsc(8);
     ANSELH = 0;
-    TRISC = 128;
+    TRISC = 144;
     TRISC2 = 0;
     TRISB = 0;
     TRISD = 0;
@@ -2890,9 +2895,8 @@ void setup(void){
     PORTC = 0;
     PORTD = 0;
     PORTCbits.RC2 = 1;
-
-
-
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Lcd_Init();
 

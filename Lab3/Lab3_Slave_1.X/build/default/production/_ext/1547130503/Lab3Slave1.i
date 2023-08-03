@@ -2728,8 +2728,7 @@ void setup(void);
 void __attribute__((picinterrupt(("")))) isr(void) {
     if (SSPIF == 1) {
         slaveSelect = spiRead();
-        if (slaveSelect == 0)
-            spiWrite(PORTB);
+        if (slaveSelect == 0) spiWrite(adcValue);
 
         SSPIF = 0;
     }
@@ -2754,9 +2753,7 @@ void main(void) {
     while(1){
        if (ADCON0bits.CHS == 0){
        adcChannel(0);
-
         _delay((unsigned long)((20)*(8000000/4000000.0)));
-
         ADCON0bits.GO = 1;
         }
         PORTB = adcValue;
@@ -2772,7 +2769,7 @@ void setup(void){
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
 
-    TRISA = 1;
+    TRISA = 0b00000001;
     TRISB = 0;
 
     PORTA = 0;

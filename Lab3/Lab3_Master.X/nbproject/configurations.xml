@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>lcd.h</itemPath>
       <itemPath>oscillator.h</itemPath>
+      <itemPath>SPI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

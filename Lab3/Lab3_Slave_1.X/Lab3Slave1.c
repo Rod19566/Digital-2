@@ -54,8 +54,7 @@ void setup(void);
 void __interrupt() isr(void) {
     if (SSPIF == 1) {
         slaveSelect = spiRead();
-        if (slaveSelect == 0)
-            spiWrite(PORTB);
+        if (slaveSelect == 0) spiWrite(adcValue);
 
         SSPIF = 0; // Clear the SPI interrupt flag
     }
@@ -80,9 +79,7 @@ void main(void) {
     while(1){          
        if (ADCON0bits.CHS == 0){
        adcChannel(0);     //se actualiza la variable con valor del adc
-       //adcValue = adcRead();
         __delay_us(20);   //delay de 20 ms
-        //PIR1bits.ADIF = 0;//se baja bandera interrupcion adc
         ADCON0bits.GO = 1;//inicio de la siguiente conversion
         }   
         PORTB = adcValue;
@@ -98,7 +95,7 @@ void setup(void){
     ANSELH = 0; //Pines digitales
     ANSELbits.ANS0  = 1;//RA0 como pines analogicos
     
-    TRISA = 1;         //RA0 y RA1 como inputs
+    TRISA = 0b00000001;         //RA0 y RA1 como inputs
     TRISB = 0;
     
     PORTA = 0;         //se limpian los puertos

@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"112 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+"109 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -61,9 +61,9 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"75
+"74
 [v _main main `(v  1 e 1 0 ]
-"95
+"92
 [v _setup setup `(v  1 e 1 0 ]
 "4 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\oscilador.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
@@ -96,7 +96,7 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S259 . 1 `S245 1 . 1 0 `S254 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES259  1 e 1 @11 ]
-[s S370 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S369 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -105,8 +105,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S378 . 1 `S370 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES378  1 e 1 @12 ]
+[u S377 . 1 `S369 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES377  1 e 1 @12 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
@@ -257,15 +257,15 @@ SPI_ACTIVE_2_IDLE 64
 [v _adcValue adcValue `uc  1 e 1 0 ]
 "44
 [v _slaveSelect slaveSelect `uc  1 e 1 0 ]
-"75
+"74
 [v _main main `(v  1 e 1 0 ]
 {
-"91
+"88
 } 0
-"95
+"92
 [v _setup setup `(v  1 e 1 0 ]
 {
-"114
+"111
 } 0
 "12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -301,7 +301,7 @@ SPI_ACTIVE_2_IDLE 64
 "54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"69
+"68
 } 0
 "34 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

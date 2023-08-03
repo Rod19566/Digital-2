@@ -53,10 +53,10 @@
 #define D6 RD6
 #define D7 RD7
 char volt[16];            //voltage chain
-float s1 = 0;             //dato pot S1
+char s1 = 0;             //dato pot S1
 float s2 = 0;             //dato pot S2
 
-unsigned char slaveSelect = 1;
+char slaveSelect = 1;
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -72,11 +72,8 @@ void main(void) {
     // Loop infinito
     //*************************************************************************
     while(1){ 
-        PORTCbits.RC2 = 0;       //Slave Select
-       __delay_ms(1);
        
-       
-        if (slaveSelect == 0){
+        if (slaveSelect == 1){
             PORTCbits.RC2 = 0;       //Slave Select
             __delay_ms(1);
 
@@ -87,28 +84,27 @@ void main(void) {
             
             PORTCbits.RC2 = 1;       //Slave Deselect 
             __delay_ms(100);
-            slaveSelect = 1;
+            slaveSelect = 0;
        }
         else {
-//            PORTCbits.RC2 = 0;       //Slave Select
-//            __delay_ms(1);
+            PORTCbits.RC2 = 0;       //Slave Select
+            __delay_ms(1);
 //
-//            spiWrite(slaveSelect);
-//            s2 = spiRead();
+            spiWrite(slaveSelect);
+            s2 = spiRead();
+            __delay_ms(1);
 //
-//            __delay_ms(1);
-//
-//            PORTCbits.RC2 = 1;       //Slave Deselect 
-//
+            PORTCbits.RC2 = 1;       //Slave Deselect 
             __delay_ms(100);
-            slaveSelect = 0;
+            slaveSelect = 1;
         }
        
+       PORTB = s1;
        Lcd_Clear();
        Lcd_Set_Cursor(1,1);  //line 1
        Lcd_Write_String("Slave1 Pot:");
        Lcd_Set_Cursor(2,1);  
-       sprintf(volt, "%.2f ", s1);
+       sprintf(volt, "%.2d ", s1);
        Lcd_Write_String(volt);
        __delay_ms(500);       
        
@@ -120,7 +116,7 @@ void main(void) {
 void setup(void){
     configOsc(8);
     ANSELH = 0; //Pines digitales
-    TRISC = 128;
+    TRISC = 144;
     TRISC2 = 0;
     TRISB = 0;
     TRISD = 0;
@@ -128,9 +124,8 @@ void setup(void){
     PORTC = 0;
     PORTD = 0;
     PORTCbits.RC2 = 1;
-    //configuracion interrupciones
-//    INTCONbits.GIE  = 1; //se habilitan las interrupciones globales
-//    INTCONbits.PEIE = 1; //se habilitan las interrupciones de los perifericos
+    INTCONbits.GIE  = 1; //se habilitan las interrupciones globales
+    INTCONbits.PEIE = 1; //se habilitan las interrupciones de los perifericos
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Lcd_Init();
 
