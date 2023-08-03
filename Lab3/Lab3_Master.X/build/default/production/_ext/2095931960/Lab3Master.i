@@ -2825,9 +2825,10 @@ void configOsc(uint16_t frec);
 # 55 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Master.X/Lab3Master.c"
 char volt[16];
 char s1 = 0;
-float s2 = 0;
+char contador = 0;
+char s2 = 0;
 
-char slaveSelect = 1;
+char slaveSelect = 0;
 
 
 
@@ -2843,7 +2844,14 @@ void main(void) {
 
 
     while(1){
-
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("S1:   S2:   S3:");
+        Lcd_Set_Cursor(2,1);
+        sprintf(volt, "%.2d    %.2d    %.2d ", s1, contador, s2);
+        Lcd_Write_String(volt);
+        _delay((unsigned long)((50)*(8000000/4000.0)));
+# 97 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Master.X/Lab3Master.c"
         if (slaveSelect == 1){
             PORTCbits.RC2 = 0;
             _delay((unsigned long)((1)*(8000000/4000.0)));
@@ -2852,32 +2860,25 @@ void main(void) {
             s1 = spiRead();
 
             _delay((unsigned long)((1)*(8000000/4000.0)));
-
             PORTCbits.RC2 = 1;
+
             _delay((unsigned long)((100)*(8000000/4000.0)));
             slaveSelect = 0;
        }
-        else {
+        if (slaveSelect == 0){
             PORTCbits.RC2 = 0;
             _delay((unsigned long)((1)*(8000000/4000.0)));
 
             spiWrite(slaveSelect);
-            s2 = spiRead();
-            _delay((unsigned long)((1)*(8000000/4000.0)));
+            contador = spiRead();
 
+            _delay((unsigned long)((1)*(8000000/4000.0)));
             PORTCbits.RC2 = 1;
+
             _delay((unsigned long)((100)*(8000000/4000.0)));
             slaveSelect = 1;
-        }
+       }
 
-       PORTB = s1;
-       Lcd_Clear();
-       Lcd_Set_Cursor(1,1);
-       Lcd_Write_String("Slave1 Pot:");
-       Lcd_Set_Cursor(2,1);
-       sprintf(volt, "%.2d ", s1);
-       Lcd_Write_String(volt);
-       _delay((unsigned long)((500)*(8000000/4000.0)));
 
     }
 }
@@ -2889,6 +2890,7 @@ void setup(void){
     ANSELH = 0;
     TRISC = 144;
     TRISC2 = 0;
+    TRISC6 = 0;
     TRISB = 0;
     TRISD = 0;
     PORTB = 0;

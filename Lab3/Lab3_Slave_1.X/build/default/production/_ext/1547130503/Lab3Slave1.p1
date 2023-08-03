@@ -1,7 +1,40 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"4282 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+"4135 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4135: extern volatile __bit RBIF __attribute__((address(0x58)));
+[v _RBIF `Vb ~T0 @X0 0 e@88 ]
+"4108
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"55 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 55: void upButtonF(void);
+[v _upButtonF `(v ~T0 @X0 0 ef ]
+"4111 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4111: extern volatile __bit RB1 __attribute__((address(0x31)));
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"56 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 56: void downButtonF(void);
+[v _downButtonF `(v ~T0 @X0 0 ef ]
+"353 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"466
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 466:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"476
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 476:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"465
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 465: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"483
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"4282
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4282: extern volatile __bit SSPIF __attribute__((address(0x63)));
 [v _SSPIF `Vb ~T0 @X0 0 e@99 ]
 "49 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h
@@ -51,8 +84,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 554: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 [p mainexit ]
-"50 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 50: void setup(void);
+"54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 54: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "15 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h: 15: void adcChannel(unsigned char channel);
@@ -61,9 +94,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"229 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "7 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/oscillator.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/oscillator.h: 7: void configOsc(uint16_t frec);
 [v _configOsc `(v ~T0 @X0 0 ef1`ui ]
@@ -87,9 +117,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1479
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1479: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1603
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "167
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"229
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "14 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h: 14: void adcConfig(void);
 [v _adcConfig `(v ~T0 @X0 0 ef ]
@@ -115,8 +151,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1434
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1434: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
 [v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
-"109 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 109:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"134 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 134:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -128,6 +164,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h: 46: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1292`E1300`E1304`E1308 ]
+"2423 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2423:     struct {
+[s S93 :8 `uc 1 ]
+[n S93 . IOCB ]
+"2426
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2426:     struct {
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . IOCB0 IOCB1 IOCB2 IOCB3 IOCB4 IOCB5 IOCB6 IOCB7 ]
+"2422
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2422: typedef union {
+[u S92 `S93 1 `S94 1 ]
+[n S92 . . . ]
+"2437
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2437: extern volatile IOCBbits_t IOCBbits __attribute__((address(0x096)));
+[v _IOCBbits `VS92 ~T0 @X0 0 e@150 ]
+"1353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1353:     struct {
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1361
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1361:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1352
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1352: typedef union {
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1367
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1367: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
+"2353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2353:     struct {
+[s S90 :8 `uc 1 ]
+[n S90 . WPUB ]
+"2356
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2356:     struct {
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
+"2352
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2352: typedef union {
+[u S89 `S90 1 `S91 1 ]
+[n S89 . . . ]
+"2367
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2367: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x095)));
+[v _WPUBbits `VS89 ~T0 @X0 0 e@149 ]
 "11 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "12
@@ -393,159 +474,268 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "43
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 43: unsigned char adcValue = 3;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 43: unsigned char adcValue = 0;
 [v _adcValue `uc ~T0 @X0 1 e ]
 [i _adcValue
--> -> 3 `i `uc
+-> -> 0 `i `uc
 ]
 "44
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 44: unsigned char slaveSelect = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 44: unsigned char contValue = 0;
+[v _contValue `uc ~T0 @X0 1 e ]
+[i _contValue
+-> -> 0 `i `uc
+]
+"45
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 45: unsigned char slaveSelect = 0;
 [v _slaveSelect `uc ~T0 @X0 1 e ]
 [i _slaveSelect
 -> -> 0 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"54
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 54: void __attribute__((picinterrupt(("")))) isr(void) {
+"60
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 60: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"55
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 55:     if (SSPIF == 1) {
-[e $ ! == -> _SSPIF `i -> 1 `i 139  ]
-{
-"56
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 56:         slaveSelect = spiRead();
-[e = _slaveSelect -> ( _spiRead ..  `uc ]
-"57
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 57:         if (slaveSelect == 0) spiWrite(adcValue);
-[e $ ! == -> _slaveSelect `i -> 0 `i 140  ]
-[e ( _spiWrite (1 -> _adcValue `uc ]
-[e :U 140 ]
-"59
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 59:         SSPIF = 0;
-[e = _SSPIF -> -> 0 `i `b ]
-"60
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 60:     }
-}
-[e :U 139 ]
 "62
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 62:     if (ADIF == 1) {
-[e $ ! == -> _ADIF `i -> 1 `i 141  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 62:     if(RBIF == 1) {
+[e $ ! == -> _RBIF `i -> 1 `i 139  ]
 {
 "63
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 63:         if (ADCON0bits.CHS == 0) {
-[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 142  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 63:     if (!RB0){
+[e $ ! ! _RB0 140  ]
 {
 "64
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 64:             adcValue = adcRead();
-[e = _adcValue ( _adcRead ..  ]
-"65
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 65:             PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 64:         upButtonF();
+[e ( _upButtonF ..  ]
 "66
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 66:         }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 66:     }
 }
-[e :U 142 ]
+[e :U 140 ]
 "67
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 67:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 67:     if (!RB1){
+[e $ ! ! _RB1 141  ]
+{
+"68
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 68:         downButtonF();
+[e ( _downButtonF ..  ]
+"70
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 70:     }
 }
 [e :U 141 ]
-"68
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 68: }
+"71
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 71:         contValue = PORTD;
+[e = _contValue _PORTD ]
+"72
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 72:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"73
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 73:     }
+}
+[e :U 139 ]
+"74
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 74:    if(SSPIF == 1){
+[e $ ! == -> _SSPIF `i -> 1 `i 142  ]
+{
+"75
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 75:         slaveSelect = spiRead();
+[e = _slaveSelect -> ( _spiRead ..  `uc ]
+"76
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 76:         if (slaveSelect == 0){
+[e $ ! == -> _slaveSelect `i -> 0 `i 143  ]
+{
+"77
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 77:             spiWrite(adcValue);
+[e ( _spiWrite (1 -> _adcValue `uc ]
+"78
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 78:         }
+}
+[e $U 144  ]
+"79
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 79:         else{
+[e :U 143 ]
+{
+"80
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 80:             spiWrite(contValue);
+[e ( _spiWrite (1 -> _contValue `uc ]
+"81
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 81:         }
+}
+[e :U 144 ]
+"82
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 82:         SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"83
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 83:     }
+}
+[e :U 142 ]
+"85
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 85:     if (ADIF == 1) {
+[e $ ! == -> _ADIF `i -> 1 `i 145  ]
+{
+"86
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 86:         if (ADCON0bits.CHS == 0) {
+[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 146  ]
+{
+"87
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 87:             adcValue = adcRead();
+[e = _adcValue ( _adcRead ..  ]
+"88
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 88:             PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"89
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 89:         }
+}
+[e :U 146 ]
+"90
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 90:     }
+}
+[e :U 145 ]
+"91
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 91: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"74
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 74: void main(void) {
+"97
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 97: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"75
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 75:     setup();
+"98
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 98:     setup();
 [e ( _setup ..  ]
-"79
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 79:     while(1){
-[e :U 145 ]
+"102
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 102:     while(1){
+[e :U 149 ]
 {
-"80
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 80:        if (ADCON0bits.CHS == 0){
-[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 147  ]
+"103
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 103:        if (ADCON0bits.CHS == 0){
+[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 151  ]
 {
-"81
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 81:        adcChannel(0);
+"104
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 104:        adcChannel(0);
 [e ( _adcChannel (1 -> -> 0 `i `uc ]
-"82
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 82:         _delay((unsigned long)((20)*(8000000/4000000.0)));
+"105
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 105:         _delay((unsigned long)((20)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"83
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 83:         ADCON0bits.GO = 1;
+"106
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 106:         ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"84
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 84:         }
+"107
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 107:         }
 }
-[e :U 147 ]
-"85
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 85:         PORTB = adcValue;
-[e = _PORTB _adcValue ]
-"86
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 86:     }
+[e :U 151 ]
+"108
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 108:     }
 }
-[e :U 144 ]
-[e $U 145  ]
-[e :U 146 ]
-"88
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 88: }
-[e :UE 143 ]
+[e :U 148 ]
+[e $U 149  ]
+[e :U 150 ]
+"110
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 110: }
+[e :UE 147 ]
 }
-"92
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 92: void setup(void){
+"114
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 114: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"93
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 93:     configOsc(8);
+"115
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 115:     configOsc(8);
 [e ( _configOsc (1 -> -> 8 `i `ui ]
-"95
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 95:     ANSELH = 0;
+"117
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 117:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"96
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 96:     ANSELbits.ANS0 = 1;
+"118
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 118:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"98
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 98:     TRISA = 0b00000001;
+"120
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 120:     TRISA = 0b00000001;
 [e = _TRISA -> -> 1 `i `uc ]
-"99
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 99:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"101
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 101:     PORTA = 0;
+"122
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 122:     TRISB = 3;
+[e = _TRISB -> -> 3 `i `uc ]
+"123
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 123:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"125
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 125:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"102
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 102:     PORTB = 0;
+"126
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 126:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"104
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 104:     adcConfig();
+"127
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 127:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"129
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 129:     adcConfig();
 [e ( _adcConfig ..  ]
-"105
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 105:     _delay((unsigned long)((40)*(8000000/4000000.0)));
+"130
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 130:     _delay((unsigned long)((40)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"106
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 106:     PIR1bits.SSPIF = 0;
+"131
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 131:     PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"107
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 107:     PIE1bits.SSPIE = 1;
+"132
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 132:     PIE1bits.SSPIE = 1;
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
-"108
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 108:     TRISAbits.TRISA5 = 1;
+"133
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 133:     TRISAbits.TRISA5 = 1;
 [e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"109
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 109:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"134
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 134:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1292 4 . `E1300 0 . `E1304 1 . `E1308 0 ]
-"111
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 111: }
-[e :UE 148 ]
+"136
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 136:     INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"137
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 137:     INTCONbits.RBIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"140
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 140:     IOCBbits.IOCB0 = 1;
+[e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
+"141
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 141:     IOCBbits.IOCB1 = 1;
+[e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
+"143
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 143:     OPTION_REGbits.nRBPU = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"145
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 145:     WPUBbits.WPUB0 = 1;
+[e = . . _WPUBbits 1 0 -> -> 1 `i `uc ]
+"146
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 146:     WPUBbits.WPUB1 = 1;
+[e = . . _WPUBbits 1 1 -> -> 1 `i `uc ]
+"147
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 147: }
+[e :UE 152 ]
+}
+"150
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 150: void upButtonF(void){
+[v _upButtonF `(v ~T0 @X0 1 ef ]
+{
+[e :U _upButtonF ]
+[f ]
+"151
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 151:         PORTD++;
+[e ++ _PORTD -> -> 1 `i `Vuc ]
+"153
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 153: }
+[e :UE 153 ]
+}
+"155
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 155: void downButtonF(void){
+[v _downButtonF `(v ~T0 @X0 1 ef ]
+{
+[e :U _downButtonF ]
+[f ]
+"156
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 156:         PORTD--;
+[e -- _PORTD -> -> 1 `i `Vuc ]
+"157
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 157: }
+[e :UE 154 ]
 }

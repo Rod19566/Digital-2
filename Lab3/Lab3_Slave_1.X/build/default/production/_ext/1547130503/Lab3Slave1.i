@@ -2714,22 +2714,38 @@ void configOsc(uint16_t frec);
 
 
 uint8_t temporal = 0;
-unsigned char adcValue = 3;
+unsigned char adcValue = 0;
+unsigned char contValue = 0;
 unsigned char slaveSelect = 0;
-
-
-
-
-
+# 54 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c"
 void setup(void);
+void upButtonF(void);
+void downButtonF(void);
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void) {
-    if (SSPIF == 1) {
-        slaveSelect = spiRead();
-        if (slaveSelect == 0) spiWrite(adcValue);
 
+    if(RBIF == 1) {
+    if (!RB0){
+        upButtonF();
+
+    }
+    if (!RB1){
+        downButtonF();
+
+    }
+        contValue = PORTD;
+        INTCONbits.RBIF = 0;
+    }
+   if(SSPIF == 1){
+        slaveSelect = spiRead();
+        if (slaveSelect == 0){
+            spiWrite(adcValue);
+        }
+        else{
+            spiWrite(contValue);
+        }
         SSPIF = 0;
     }
 
@@ -2756,7 +2772,6 @@ void main(void) {
         _delay((unsigned long)((20)*(8000000/4000000.0)));
         ADCON0bits.GO = 1;
         }
-        PORTB = adcValue;
     }
 
 }
@@ -2770,10 +2785,13 @@ void setup(void){
     ANSELbits.ANS0 = 1;
 
     TRISA = 0b00000001;
-    TRISB = 0;
+
+    TRISB = 3;
+    TRISD = 0;
 
     PORTA = 0;
     PORTB = 0;
+    PORTD = 0;
 
     adcConfig();
     _delay((unsigned long)((40)*(8000000/4000000.0)));
@@ -2782,4 +2800,25 @@ void setup(void){
     TRISAbits.TRISA5 = 1;
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
+    INTCONbits.RBIF = 0;
+    INTCONbits.RBIE = 1;
+
+
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB1 = 1;
+
+    OPTION_REGbits.nRBPU = 0;
+
+    WPUBbits.WPUB0 = 1;
+    WPUBbits.WPUB1 = 1;
+}
+
+
+void upButtonF(void){
+        PORTD++;
+
+}
+
+void downButtonF(void){
+        PORTD--;
 }

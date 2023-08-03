@@ -4,13 +4,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4282 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4282: extern volatile __bit SSPIF __attribute__((address(0x63)));
 [v _SSPIF `Vb ~T0 @X0 0 e@99 ]
-"49 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h: 49: char spiRead();
-[v _spiRead `(uc ~T0 @X0 0 e? ]
-"47
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h: 47: void spiWrite(char);
-[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"3592 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+"3592
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3592: extern volatile __bit ADIF __attribute__((address(0x66)));
 [v _ADIF `Vb ~T0 @X0 0 e@102 ]
 "1252
@@ -36,8 +30,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1277
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1277: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
-"16 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h: 16: unsigned char adcRead();
+"16 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h: 16: unsigned char adcRead();
 [v _adcRead `(uc ~T0 @X0 0 e? ]
 "544 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 544:     struct {
@@ -51,21 +45,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 554: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 [p mainexit ]
-"50 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 50: void setup(void);
+"50 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 50: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
-"15 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h: 15: void adcChannel(unsigned char channel);
+"15 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h: 15: void adcChannel(unsigned char channel);
 [v _adcChannel `(v ~T0 @X0 0 ef1`uc ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"229 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"7 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/oscillator.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/oscillator.h: 7: void configOsc(uint16_t frec);
+"353 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"7 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/oscillator.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/oscillator.h: 7: void configOsc(uint16_t frec);
 [v _configOsc `(v ~T0 @X0 0 ef1`ui ]
 "3450 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3450: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
@@ -87,11 +81,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1479
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1479: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1603
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "167
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"14 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h: 14: void adcConfig(void);
+"229
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"14 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h: 14: void adcConfig(void);
 [v _adcConfig `(v ~T0 @X0 0 ef ]
 "1709 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1709:     struct {
@@ -115,8 +115,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1434
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1434: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
 [v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
-"109 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 109:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"112 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 112:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -125,10 +125,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E1304 . SPI_CLOCK_IDLE_HIGH SPI_CLOCK_IDLE_LOW  ]
 [c E1308 0 64 .. ]
 [n E1308 . SPI_IDLE_2_ACTIVE SPI_ACTIVE_2_IDLE  ]
-"46 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h: 46: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+"46 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/SPI.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/SPI.h: 46: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1292`E1300`E1304`E1308 ]
-"11 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+"11 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "12
 [p x WDTE  =  OFF        ]
@@ -386,166 +386,164 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"42 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 42: uint8_t temporal = 0;
+"42 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 42: uint8_t temporal = 0;
 [v _temporal `uc ~T0 @X0 1 e ]
 [i _temporal
 -> -> 0 `i `uc
 ]
 "43
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 43: unsigned char adcValue = 3;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 43: unsigned char adcValue = 3;
 [v _adcValue `uc ~T0 @X0 1 e ]
 [i _adcValue
 -> -> 3 `i `uc
 ]
 "44
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 44: unsigned char slaveSelect = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 44: unsigned char slaveSelect = 0;
 [v _slaveSelect `uc ~T0 @X0 1 e ]
 [i _slaveSelect
 -> -> 0 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "54
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 54: void __attribute__((picinterrupt(("")))) isr(void) {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 54: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
 "55
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 55:     if (SSPIF == 1) {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 55:     if (SSPIF == 1) {
 [e $ ! == -> _SSPIF `i -> 1 `i 139  ]
 {
-"56
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 56:         slaveSelect = spiRead();
-[e = _slaveSelect -> ( _spiRead ..  `uc ]
-"57
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 57:         if (slaveSelect == 0) spiWrite(adcValue);
-[e $ ! == -> _slaveSelect `i -> 0 `i 140  ]
-[e ( _spiWrite (1 -> _adcValue `uc ]
-[e :U 140 ]
-"59
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 59:         SSPIF = 0;
-[e = _SSPIF -> -> 0 `i `b ]
 "60
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 60:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 60:         SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"61
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 61:     }
 }
 [e :U 139 ]
-"62
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 62:     if (ADIF == 1) {
-[e $ ! == -> _ADIF `i -> 1 `i 141  ]
-{
 "63
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 63:         if (ADCON0bits.CHS == 0) {
-[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 142  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 63:     if (ADIF == 1) {
+[e $ ! == -> _ADIF `i -> 1 `i 140  ]
 {
 "64
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 64:             adcValue = adcRead();
-[e = _adcValue ( _adcRead ..  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 64:         if (ADCON0bits.CHS == 0) {
+[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 141  ]
+{
 "65
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 65:             PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 65:             adcValue = adcRead();
+[e = _adcValue ( _adcRead ..  ]
 "66
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 66:         }
-}
-[e :U 142 ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 66:             PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "67
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 67:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 67:         }
 }
 [e :U 141 ]
 "68
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 68: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 68:     }
+}
+[e :U 140 ]
+"69
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 69: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"74
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 74: void main(void) {
+"75
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 75: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"75
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 75:     setup();
+"76
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 76:     setup();
 [e ( _setup ..  ]
-"79
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 79:     while(1){
-[e :U 145 ]
-{
 "80
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 80:        if (ADCON0bits.CHS == 0){
-[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 147  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 80:     while(1){
+[e :U 144 ]
 {
 "81
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 81:        adcChannel(0);
-[e ( _adcChannel (1 -> -> 0 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 81:        if (ADCON0bits.CHS == 0){
+[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 146  ]
+{
 "82
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 82:         _delay((unsigned long)((20)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 82:        adcChannel(0);
+[e ( _adcChannel (1 -> -> 0 `i `uc ]
 "83
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 83:         ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 83:         _delay((unsigned long)((20)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "84
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 84:         }
-}
-[e :U 147 ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 84:         ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "85
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 85:         PORTB = adcValue;
-[e = _PORTB _adcValue ]
-"86
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 86:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 85:         }
 }
-[e :U 144 ]
-[e $U 145  ]
 [e :U 146 ]
-"88
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 88: }
-[e :UE 143 ]
+"86
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 86:         PORTD = adcValue;
+[e = _PORTD _adcValue ]
+"87
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 87:     }
 }
-"92
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 92: void setup(void){
+[e :U 143 ]
+[e $U 144  ]
+[e :U 145 ]
+"89
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 89: }
+[e :UE 142 ]
+}
+"93
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 93: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"93
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 93:     configOsc(8);
+"94
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 94:     configOsc(8);
 [e ( _configOsc (1 -> -> 8 `i `ui ]
-"95
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 95:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
 "96
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 96:     ANSELbits.ANS0 = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 96:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"97
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 97:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"98
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 98:     TRISA = 0b00000001;
-[e = _TRISA -> -> 1 `i `uc ]
 "99
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 99:     TRISB = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 99:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
+"100
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 100:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
 "101
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 101:     PORTA = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 101:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"103
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 103:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"102
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 102:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
 "104
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 104:     adcConfig();
-[e ( _adcConfig ..  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 104:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "105
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 105:     _delay((unsigned long)((40)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"106
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 106:     PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 105:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
 "107
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 107:     PIE1bits.SSPIE = 1;
-[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 107:     adcConfig();
+[e ( _adcConfig ..  ]
 "108
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 108:     TRISAbits.TRISA5 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 108:     _delay((unsigned long)((40)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "109
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 109:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1292 4 . `E1300 0 . `E1304 1 . `E1308 0 ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 109:     PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"110
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 110:     PIE1bits.SSPIE = 1;
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
 "111
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c: 111: }
-[e :UE 148 ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 111:     TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+"112
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 112:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1292 4 . `E1300 0 . `E1304 1 . `E1308 0 ]
+"114
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c: 114: }
+[e :UE 147 ]
 }

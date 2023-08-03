@@ -1,4 +1,4 @@
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c" 2
-# 11 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c" 2
+# 11 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2647,13 +2647,13 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 32 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c" 2
+# 32 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 33 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c" 2
+# 33 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c" 2
 
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h" 1
-# 17 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/SPI.h"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/SPI.h" 1
+# 17 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/SPI.h"
 typedef enum
 {
     SPI_MASTER_OSC_DIV4 = 0b00100000,
@@ -2687,26 +2687,26 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 34 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c" 2
+# 34 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c" 2
 
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h" 1
-# 14 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/adc_c.h"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h" 1
+# 14 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/adc_c.h"
 void adcConfig(void);
 void adcChannel(unsigned char channel);
 unsigned char adcRead();
-# 35 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c" 2
+# 35 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c" 2
 
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/oscillator.h" 1
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/oscillator.h" 1
 
 
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/oscillator.h" 2
+# 5 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/oscillator.h" 2
 
 
 void configOsc(uint16_t frec);
-# 36 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c" 2
+# 36 "E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c" 2
 
 
 
@@ -2727,8 +2727,9 @@ void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void) {
     if (SSPIF == 1) {
-        slaveSelect = spiRead();
-        if (slaveSelect == 0) spiWrite(adcValue);
+
+
+
 
         SSPIF = 0;
     }
@@ -2756,7 +2757,7 @@ void main(void) {
         _delay((unsigned long)((20)*(8000000/4000000.0)));
         ADCON0bits.GO = 1;
         }
-        PORTB = adcValue;
+        PORTD = adcValue;
     }
 
 }
@@ -2771,9 +2772,11 @@ void setup(void){
 
     TRISA = 0b00000001;
     TRISB = 0;
+    TRISD = 0;
 
     PORTA = 0;
     PORTB = 0;
+    PORTD = 0;
 
     adcConfig();
     _delay((unsigned long)((40)*(8000000/4000000.0)));

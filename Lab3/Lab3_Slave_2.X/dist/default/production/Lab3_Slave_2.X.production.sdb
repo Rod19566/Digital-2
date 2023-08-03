@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\SPI.c
+"12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\SPI.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"109 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+"112 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -45,7 +45,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"11 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\adc_c.c
+"11 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\adc_c.c
 [v _adcConfig adcConfig `(v  1 e 1 0 ]
 "27
 [v _adcChannel adcChannel `(v  1 e 1 0 ]
@@ -59,26 +59,24 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+"54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
 [v _isr isr `II(v  1 e 1 0 ]
-"74
+"75
 [v _main main `(v  1 e 1 0 ]
-"92
+"93
 [v _setup setup `(v  1 e 1 0 ]
-"4 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\oscilador.c
+"4 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\oscilador.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
-"12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\SPI.c
+"12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "29
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
-"34
-[v _spiWrite spiWrite `(v  1 e 1 0 ]
-"47
-[v _spiRead spiRead `(uc  1 e 1 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S245 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -96,7 +94,7 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S259 . 1 `S245 1 . 1 0 `S254 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES259  1 e 1 @11 ]
-[s S369 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S367 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -105,8 +103,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S377 . 1 `S369 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES377  1 e 1 @12 ]
+[u S375 . 1 `S367 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES375  1 e 1 @12 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
@@ -152,6 +150,8 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISAbits TRISAbits `VES447  1 e 1 @133 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1603
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
 [s S277 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -231,7 +231,7 @@ SPI_ACTIVE_2_IDLE 64
 "2992
 [u S236 . 1 `S230 1 . 1 0 ]
 [v _ADCON1bits ADCON1bits `VES236  1 e 1 @159 ]
-[s S402 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S400 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -241,8 +241,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3405
-[u S411 . 1 `S402 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES411  1 e 1 @392 ]
+[u S409 . 1 `S400 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES409  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3592
@@ -253,39 +253,37 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4468
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"43 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+"43 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
 [v _adcValue adcValue `uc  1 e 1 0 ]
-"44
-[v _slaveSelect slaveSelect `uc  1 e 1 0 ]
-"74
+"75
 [v _main main `(v  1 e 1 0 ]
 {
-"88
+"89
 } 0
-"92
+"93
 [v _setup setup `(v  1 e 1 0 ]
 {
-"111
+"114
 } 0
-"12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\SPI.c
+"12 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 {
 [v spiInit@sType sType `E1292  1 a 1 wreg ]
 [v spiInit@sType sType `E1292  1 a 1 wreg ]
-[v spiInit@sDataSample sDataSample `E1300  1 p 1 4 ]
-[v spiInit@sClockIdle sClockIdle `E1304  1 p 1 5 ]
-[v spiInit@sTransmitEdge sTransmitEdge `E1308  1 p 1 6 ]
+[v spiInit@sDataSample sDataSample `E1300  1 p 1 3 ]
+[v spiInit@sClockIdle sClockIdle `E1304  1 p 1 4 ]
+[v spiInit@sTransmitEdge sTransmitEdge `E1308  1 p 1 5 ]
 "14
-[v spiInit@sType sType `E1292  1 a 1 0 ]
+[v spiInit@sType sType `E1292  1 a 1 6 ]
 "27
 } 0
-"4 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\oscilador.c
+"4 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\oscilador.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
 {
-[v configOsc@frec frec `ui  1 p 2 4 ]
+[v configOsc@frec frec `ui  1 p 2 3 ]
 "13
 } 0
-"11 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\adc_c.c
+"11 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\adc_c.c
 [v _adcConfig adcConfig `(v  1 e 1 0 ]
 {
 "25
@@ -295,34 +293,15 @@ SPI_ACTIVE_2_IDLE 64
 {
 [v adcChannel@channel channel `uc  1 a 1 wreg ]
 [v adcChannel@channel channel `uc  1 a 1 wreg ]
-[v adcChannel@channel channel `uc  1 a 1 5 ]
+[v adcChannel@channel channel `uc  1 a 1 4 ]
 "30
 } 0
-"54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_1.X/Lab3Slave1.c
+"54 E:/Universidad/Semestre2_2023/Digital-2/Lab3/Lab3_Slave_2.X/Lab3Slave2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"68
+"69
 } 0
-"34 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\SPI.c
-[v _spiWrite spiWrite `(v  1 e 1 0 ]
-{
-[v spiWrite@dat dat `uc  1 a 1 wreg ]
-[v spiWrite@dat dat `uc  1 a 1 wreg ]
-"36
-[v spiWrite@dat dat `uc  1 a 1 0 ]
-"37
-} 0
-"47
-[v _spiRead spiRead `(uc  1 e 1 0 ]
-{
-"51
-} 0
-"29
-[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
-{
-"32
-} 0
-"32 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_1.X\adc_c.c
+"32 E:\Universidad\Semestre2_2023\Digital-2\Lab3\Lab3_Slave_2.X\adc_c.c
 [v _adcRead adcRead `(uc  1 e 1 0 ]
 {
 "34

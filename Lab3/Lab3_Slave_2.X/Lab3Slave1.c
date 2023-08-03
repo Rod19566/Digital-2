@@ -82,7 +82,7 @@ void main(void) {
         __delay_us(20);   //delay de 20 ms
         ADCON0bits.GO = 1;//inicio de la siguiente conversion
         }   
-        PORTB = adcValue;
+        PORTD = adcValue;
     }
     
 }
@@ -97,9 +97,11 @@ void setup(void){
     
     TRISA = 0b00000001;         //RA0 y RA1 como inputs
     TRISB = 0;
+    TRISD = 0;
     
     PORTA = 0;         //se limpian los puertos
     PORTB = 0;
+    PORTD = 0;
     
     adcConfig();
     __delay_us(40);

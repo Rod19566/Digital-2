@@ -40,46 +40,24 @@
 #define _XTAL_FREQ 8000000
 
 uint8_t temporal = 0;
-unsigned char adcValue = 0;      //valor adc   
-unsigned char contValue = 0;      //valor adc    
+unsigned char adcValue = 3;      //valor adc    
 unsigned char slaveSelect = 0;
-
-#define upButton RB0
-#define downButton RB1
 
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
-void upButtonF(void);
-void downButtonF(void);
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
 void __interrupt() isr(void) {
-    
-    if(RBIF == 1)  {        //interrupt due to change in button state
-    if (!upButton){
-        upButtonF();
-        
-    }
-    if (!downButton){
-        downButtonF();
-        
-    }
-        contValue = PORTD;
-        INTCONbits.RBIF = 0;
-    }
-   if(SSPIF == 1){
-        slaveSelect = spiRead();
-        if (slaveSelect == 0){
-            spiWrite(adcValue);
-        }
-        else{
-            spiWrite(contValue);
-        }
-        SSPIF = 0;
+    if (SSPIF == 1)  {
+//        slaveSelect = spiRead();
+//        if (slaveSelect == 2) spiWrite(adcValue);
+//        else spiWrite(""); 
+//       
+        SSPIF = 0; // Clear the SPI interrupt flag
     }
 
     if (ADIF == 1) {
@@ -104,7 +82,8 @@ void main(void) {
        adcChannel(0);     //se actualiza la variable con valor del adc
         __delay_us(20);   //delay de 20 ms
         ADCON0bits.GO = 1;//inicio de la siguiente conversion
-        } 
+        }   
+        PORTD = adcValue;
     }
     
 }
@@ -118,8 +97,7 @@ void setup(void){
     ANSELbits.ANS0  = 1;//RA0 como pines analogicos
     
     TRISA = 0b00000001;         //RA0 y RA1 como inputs
-    //Setting PORTb as an input
-    TRISB = 3;       //RB0 RB2 as inputs
+    TRISB = 0;
     TRISD = 0;
     
     PORTA = 0;         //se limpian los puertos
@@ -133,25 +111,4 @@ void setup(void){
     TRISAbits.TRISA5 = 1;       // Slave Select
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
    
-    INTCONbits.RBIF = 0;
-    INTCONbits.RBIE  = 1;
-
-    // interrupt on change PORTB
-    IOCBbits.IOCB0 = 1; //enable interrupt RB0, RB2
-    IOCBbits.IOCB1 = 1;
-
-    OPTION_REGbits.nRBPU = 0; //enable pullups
-    //enable pullups RB0, RB2
-    WPUBbits.WPUB0 = 1;      
-    WPUBbits.WPUB1 = 1;
-}
-
-
-void upButtonF(void){
-        PORTD++;       
-        
-}
-
-void downButtonF(void){
-        PORTD--;    
 }

@@ -54,9 +54,10 @@
 #define D7 RD7
 char volt[16];            //voltage chain
 char s1 = 0;             //dato pot S1
-float s2 = 0;             //dato pot S2
+char contador = 0;             //dato contador
+char s2 = 0;             //dato pot S2
 
-char slaveSelect = 1;
+char slaveSelect = 0;
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -71,8 +72,28 @@ void main(void) {
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
-    while(1){ 
-       
+    while(1){
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);  //line 1
+        Lcd_Write_String("S1:   S2:   S3:");
+        Lcd_Set_Cursor(2,1);  
+        sprintf(volt, "%.2d    %.2d    %.2d ", s1, contador, s2);
+        Lcd_Write_String(volt); 
+        __delay_ms(50);
+        
+//        if (slaveSelect == 2){
+//            PORTCbits.RC2 = 0;       //Slave Select
+//            __delay_ms(1);
+//
+//            spiWrite(slaveSelect);
+//            s1 = spiRead();
+//
+//            __delay_ms(1);
+//            PORTCbits.RC2 = 1;       //Slave Deselect 
+//
+//            __delay_ms(100);
+//            slaveSelect = 1;
+//       }    
         if (slaveSelect == 1){
             PORTCbits.RC2 = 0;       //Slave Select
             __delay_ms(1);
@@ -81,32 +102,25 @@ void main(void) {
             s1 = spiRead();
 
             __delay_ms(1);
-            
             PORTCbits.RC2 = 1;       //Slave Deselect 
+
             __delay_ms(100);
             slaveSelect = 0;
-       }
-        else {
+       }  
+        if (slaveSelect == 0){
             PORTCbits.RC2 = 0;       //Slave Select
             __delay_ms(1);
-//
+
             spiWrite(slaveSelect);
-            s2 = spiRead();
+            contador = spiRead();
+
             __delay_ms(1);
-//
             PORTCbits.RC2 = 1;       //Slave Deselect 
+
             __delay_ms(100);
             slaveSelect = 1;
-        }
-       
-       PORTB = s1;
-       Lcd_Clear();
-       Lcd_Set_Cursor(1,1);  //line 1
-       Lcd_Write_String("Slave1 Pot:");
-       Lcd_Set_Cursor(2,1);  
-       sprintf(volt, "%.2d ", s1);
-       Lcd_Write_String(volt);
-       __delay_ms(500);       
+       }           
+        
        
     }
 }
@@ -118,6 +132,7 @@ void setup(void){
     ANSELH = 0; //Pines digitales
     TRISC = 144;
     TRISC2 = 0;
+    TRISC6 = 0;
     TRISB = 0;
     TRISD = 0;
     PORTB = 0;
