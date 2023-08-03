@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 Link GitHub
 https://github.com/Rod19566/Digital-2/tree/main/Lab3
 
 Link video Youtube
+=======
+Link GitHub
+https://github.com/Rod19566/Digital-2/tree/main/Lab3
+
+Link video Youtube
+>>>>>>> cf0676d2956a292e037dd6b0940b05a88937eb82
 https://youtu.be/JSexopGErs4
