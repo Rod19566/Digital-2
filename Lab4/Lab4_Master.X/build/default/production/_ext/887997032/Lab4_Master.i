@@ -2830,16 +2830,30 @@ void Lcd_Shift_Left(void);
 void configOsc(uint16_t frec);
 # 40 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c" 2
 # 56 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
-char line1LCD[16];
-char line2LCD[16];
+char lineLCD[16];
 char s1ADC = 0;
+char counter = 0;
 char dateRTC[3] = {0,0,0};
 char timeRTC[3] = {0,0,0};
-
-
-
-
+# 69 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
 void setup(void);
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void) {
+
+    if(RBIF == 1) {
+    if (!RB0){
+        counter++;
+
+    }
+    if (!RB1){
+        counter--;
+    }
+        INTCONbits.RBIF = 0;
+    }
+}
 
 
 
@@ -2848,9 +2862,17 @@ void setup(void);
 void main(void) {
     setup();
     while(1){
+# 104 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
         I2C_Master_Start();
-        I2C_Master_Write(0x50);
-        I2C_Master_Write(PORTB);
+        I2C_Master_Write(0b11010001);
+        I2C_Master_Write(0x00);
+        PORTA = I2C_Master_Read(0);
+        timeRTC[0] = PORTA;
+
+
+
+
+
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
@@ -2859,15 +2881,26 @@ void main(void) {
         s1ADC = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
-        PORTB++;
+
+
+        PORTA = timeRTC[0];
+
 
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
-        sprintf(line1LCD, "S1:   %.2d/%.2d/%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
-        Lcd_Write_String(line1LCD);
+        sprintf(lineLCD, "S1:");
+        Lcd_Write_String(lineLCD);
+        Lcd_Set_Cursor(1,8);
+        sprintf(lineLCD, "%.2d/%.2d/%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
+        Lcd_Write_String(lineLCD);
+
         Lcd_Set_Cursor(2,1);
-        sprintf(line2LCD, "%.2d   %.2d:%.2d:%.2d", s1ADC, dateRTC[0], dateRTC[1], dateRTC[2]);
-        Lcd_Write_String(line2LCD);
+        sprintf(lineLCD,"%.2d", s1ADC);
+        Lcd_Write_String(lineLCD);
+        Lcd_Set_Cursor(2,8);
+        sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
+        Lcd_Write_String(lineLCD);
+
         _delay((unsigned long)((50)*(8000000/4000.0)));
     }
     return;
@@ -2882,13 +2915,30 @@ void setup(void){
     ANSEL = 0;
     ANSELH = 0;
 
-    TRISB = 0;
+    TRISA = 0;
+
+    TRISB = 3;
     TRISC = 128;
     TRISD = 0;
 
+    PORTA = 0;
     PORTB = 0;
     PORTC = 0;
     PORTD = 0;
     I2C_Master_Init(100000);
     Lcd_Init();
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.RBIF = 0;
+    INTCONbits.RBIE = 1;
+
+
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB1 = 1;
+
+    OPTION_REGbits.nRBPU = 0;
+
+    WPUBbits.WPUB0 = 1;
+    WPUBbits.WPUB1 = 1;
 }

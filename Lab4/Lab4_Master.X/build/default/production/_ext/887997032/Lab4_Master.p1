@@ -1,7 +1,33 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"4135 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4135: extern volatile __bit RBIF __attribute__((address(0x58)));
+[v _RBIF `Vb ~T0 @X0 0 e@88 ]
+"4108
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"4111
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4111: extern volatile __bit RB1 __attribute__((address(0x31)));
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"466
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 466:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"476
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 476:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"465
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 465: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"483
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 [p mainexit ]
-"65 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 65: void setup(void);
+"69 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 69: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "41 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 41: void I2C_Master_Start(void);
@@ -9,19 +35,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 55: void I2C_Master_Write(unsigned d);
 [v _I2C_Master_Write `(v ~T0 @X0 0 ef1`ui ]
-"229 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"49 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h
+"167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"60 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 60: unsigned short I2C_Master_Read(unsigned short a);
+[v _I2C_Master_Read `(us ~T0 @X0 0 ef1`us ]
+"49
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 49: void I2C_Master_Stop(void);
 [v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"60 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 60: unsigned short I2C_Master_Read(unsigned short a);
-[v _I2C_Master_Read `(us ~T0 @X0 0 ef1`us ]
 "38 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/lcd.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/lcd.h: 38: void Lcd_Clear(void);
 [v _Lcd_Clear `(v ~T0 @X0 0 ef ]
@@ -42,6 +68,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3450
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3450: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1417
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1417: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "1479
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1479: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
@@ -51,6 +80,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1603
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"229
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "291
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 291: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
@@ -63,6 +95,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/lcd.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/lcd.h: 42: void Lcd_Init(void);
 [v _Lcd_Init `(v ~T0 @X0 0 ef ]
+"2423 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2423:     struct {
+[s S93 :8 `uc 1 ]
+[n S93 . IOCB ]
+"2426
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2426:     struct {
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . IOCB0 IOCB1 IOCB2 IOCB3 IOCB4 IOCB5 IOCB6 IOCB7 ]
+"2422
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2422: typedef union {
+[u S92 `S93 1 `S94 1 ]
+[n S92 . . . ]
+"2437
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2437: extern volatile IOCBbits_t IOCBbits __attribute__((address(0x096)));
+[v _IOCBbits `VS92 ~T0 @X0 0 e@150 ]
+"1353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1353:     struct {
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1361
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1361:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1352
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1352: typedef union {
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1367
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1367: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
+"2353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2353:     struct {
+[s S90 :8 `uc 1 ]
+[n S90 . WPUB ]
+"2356
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2356:     struct {
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
+"2352
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2352: typedef union {
+[u S89 `S90 1 `S91 1 ]
+[n S89 . . . ]
+"2367
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2367: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x095)));
+[v _WPUBbits `VS89 ~T0 @X0 0 e@149 ]
 "13 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "14
@@ -328,15 +405,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "56 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 56: char line1LCD[16];
-[v _line1LCD `uc ~T0 @X0 -> 16 `i e ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 56: char lineLCD[16];
+[v _lineLCD `uc ~T0 @X0 -> 16 `i e ]
 "57
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 57: char line2LCD[16];
-[v _line2LCD `uc ~T0 @X0 -> 16 `i e ]
-"58
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 58: char s1ADC = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 57: char s1ADC = 0;
 [v _s1ADC `uc ~T0 @X0 1 e ]
 [i _s1ADC
+-> -> 0 `i `uc
+]
+"58
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 58: char counter = 0;
+[v _counter `uc ~T0 @X0 1 e ]
+[i _counter
 -> -> 0 `i `uc
 ]
 "59
@@ -359,133 +439,236 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"74
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 74: void __attribute__((picinterrupt(("")))) isr(void) {
+[v _isr `(v ~T1 @X0 1 ef ]
+{
+[e :U _isr ]
+[f ]
+"76
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 76:     if(RBIF == 1) {
+[e $ ! == -> _RBIF `i -> 1 `i 140  ]
+{
+"77
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 77:     if (!RB0){
+[e $ ! ! _RB0 141  ]
+{
+"78
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 78:         counter++;
+[e ++ _counter -> -> 1 `i `uc ]
+"80
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 80:     }
+}
+[e :U 141 ]
+"81
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 81:     if (!RB1){
+[e $ ! ! _RB1 142  ]
+{
+"82
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 82:         counter--;
+[e -- _counter -> -> 1 `i `uc ]
+"83
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 83:     }
+}
+[e :U 142 ]
+"84
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 84:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"85
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 85:     }
+}
+[e :U 140 ]
+"86
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 86: }
+[e :UE 139 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"71
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 71: void main(void) {
+"92
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 92: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"72
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 72:     setup();
-[e ( _setup ..  ]
-"73
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 73:     while(1){
-[e :U 141 ]
-{
-"74
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 74:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"75
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 75:         I2C_Master_Write(0x50);
-[e ( _I2C_Master_Write (1 -> -> 80 `i `ui ]
-"76
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 76:         I2C_Master_Write(PORTB);
-[e ( _I2C_Master_Write (1 -> _PORTB `ui ]
-"77
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 77:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"78
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 78:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"80
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 80:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"81
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 81:         I2C_Master_Write(0x51);
-[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
-"82
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 82:         s1ADC = I2C_Master_Read(0);
-[e = _s1ADC -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"83
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 83:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"84
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 84:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"85
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 85:         PORTB++;
-[e ++ _PORTB -> -> 1 `i `Vuc ]
-"87
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 87:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"88
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 88:         Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"89
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 89:         sprintf(line1LCD, "S1:   %.2d/%.2d/%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
-[e ( _sprintf (1 , , , (. , &U _line1LCD :s 1C -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i ]
-"90
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 90:         Lcd_Write_String(line1LCD);
-[e ( _Lcd_Write_String (1 &U _line1LCD ]
-"91
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 91:         Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"92
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 92:         sprintf(line2LCD, "%.2d   %.2d:%.2d:%.2d", s1ADC, dateRTC[0], dateRTC[1], dateRTC[2]);
-[e ( _sprintf (1 , , , , (. , &U _line2LCD :s 2C -> _s1ADC `i -> *U + &U _dateRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i ]
 "93
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 93:         Lcd_Write_String(line2LCD);
-[e ( _Lcd_Write_String (1 &U _line2LCD ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 93:     setup();
+[e ( _setup ..  ]
 "94
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 94:         _delay((unsigned long)((50)*(8000000/4000.0)));
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 94:     while(1){
+[e :U 145 ]
+{
+"104
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 104:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"105
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 105:         I2C_Master_Write(0b11010001);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+"106
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 106:         I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
+"107
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 107:         PORTA = I2C_Master_Read(0);
+[e = _PORTA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"108
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 108:         timeRTC[0] = PORTA;
+[e = *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> _PORTA `uc ]
+"114
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 114:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"115
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 115:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"117
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 117:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"118
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 118:         I2C_Master_Write(0x51);
+[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
+"119
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 119:         s1ADC = I2C_Master_Read(0);
+[e = _s1ADC -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"120
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 120:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"121
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 121:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"124
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 124:         PORTA = timeRTC[0];
+[e = _PORTA -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `uc ]
+"127
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 127:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"128
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 128:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"129
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 129:         sprintf(lineLCD, "S1:");
+[e ( _sprintf (1 , &U _lineLCD :s 1C ]
+"130
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 130:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"131
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 131:         Lcd_Set_Cursor(1,8);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+"132
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 132:         sprintf(lineLCD, "%.2d/%.2d/%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
+[e ( _sprintf (1 , , , (. , &U _lineLCD :s 2C -> *U + &U _dateRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i ]
+"133
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 133:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"135
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 135:         Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"136
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 136:         sprintf(lineLCD,"%.2d", s1ADC);
+[e ( _sprintf (1 , (. , &U _lineLCD :s 3C -> _s1ADC `i ]
+"137
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 137:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"138
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 138:         Lcd_Set_Cursor(2,8);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
+"139
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 139:         sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
+[e ( _sprintf (1 , , , (. , &U _lineLCD :s 4C -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i ]
+"140
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 140:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"142
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 142:         _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"95
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 95:     }
+"143
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 143:     }
 }
-[e :U 140 ]
-[e $U 141  ]
-[e :U 142 ]
-"96
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 96:     return;
-[e $UE 139  ]
-"97
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 97: }
-[e :UE 139 ]
+[e :U 144 ]
+[e $U 145  ]
+[e :U 146 ]
+"144
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 144:     return;
+[e $UE 143  ]
+"145
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 145: }
+[e :UE 143 ]
 }
-"103
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 103: void setup(void){
+"151
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 151: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"104
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 104:     configOsc(8);
+"152
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 152:     configOsc(8);
 [e ( _configOsc (1 -> -> 8 `i `ui ]
-"105
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 105:     ANSEL = 0;
+"153
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 153:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"106
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 106:     ANSELH = 0;
+"154
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 154:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"108
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 108:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"109
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 109:     TRISC = 128;
+"156
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 156:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+"158
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 158:     TRISB = 3;
+[e = _TRISB -> -> 3 `i `uc ]
+"159
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 159:     TRISC = 128;
 [e = _TRISC -> -> 128 `i `uc ]
-"110
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 110:     TRISD = 0;
+"160
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 160:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"112
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 112:     PORTB = 0;
+"162
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 162:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"163
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 163:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"113
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 113:     PORTC = 0;
+"164
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 164:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"114
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 114:     PORTD = 0;
+"165
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 165:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"115
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 115:     I2C_Master_Init(100000);
+"166
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 166:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"116
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 116:     Lcd_Init();
+"167
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 167:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"117
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 117: }
-[e :UE 143 ]
+"169
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 169:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"170
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 170:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"171
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 171:     INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"172
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 172:     INTCONbits.RBIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"175
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 175:     IOCBbits.IOCB0 = 1;
+[e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
+"176
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 176:     IOCBbits.IOCB1 = 1;
+[e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
+"178
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 178:     OPTION_REGbits.nRBPU = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"180
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 180:     WPUBbits.WPUB0 = 1;
+[e = . . _WPUBbits 1 0 -> -> 1 `i `uc ]
+"181
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 181:     WPUBbits.WPUB1 = 1;
+[e = . . _WPUBbits 1 1 -> -> 1 `i `uc ]
+"182
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 182: }
+[e :UE 147 ]
 }
 [p f _sprintf 8454272 ]
-[a 2C 37 46 50 100 32 32 32 37 46 50 100 58 37 46 50 100 58 37 46 50 100 0 ]
-[a 1C 83 49 58 32 32 32 37 46 50 100 47 37 46 50 100 47 37 46 50 100 0 ]
+[a 4C 37 46 50 100 58 37 46 50 100 58 37 46 50 100 0 ]
+[a 2C 37 46 50 100 47 37 46 50 100 47 37 46 50 100 0 ]
+[a 3C 37 46 50 100 0 ]
+[a 1C 83 49 58 0 ]
