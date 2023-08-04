@@ -2829,14 +2829,19 @@ void Lcd_Shift_Left(void);
 
 void configOsc(uint16_t frec);
 # 40 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c" 2
-# 56 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
+# 65 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
 char lineLCD[16];
 char s1ADC = 0;
 char counter = 0;
 char dateRTC[3] = {0,0,0};
+
 char timeRTC[3] = {0,0,0};
-# 69 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
+unsigned char seconds, minutes, hours;
+# 80 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
 void setup(void);
+uint8_t BCD_to_Decimal(uint8_t bcd_value);
+void settingHourRTC(char sec, char min, char hour, char day, char mon, char year);
+uint8_t Decimal_to_BCD(uint8_t decimal_value);
 
 
 
@@ -2861,20 +2866,27 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
 void main(void) {
     setup();
+    settingHourRTC(30,10,10,3,8,23);
     while(1){
-# 104 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
+# 119 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
         I2C_Master_Start();
-        I2C_Master_Write(0b11010001);
+        I2C_Master_Write(0b11010000);
         I2C_Master_Write(0x00);
-        PORTA = I2C_Master_Read(0);
-        timeRTC[0] = PORTA;
 
+        I2C_Master_RepeatedStart();
 
+        I2C_Master_Write(0b11010000 | 0x01);
 
-
-
+        timeRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
+        timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
+        timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
+        dateRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
+        dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
+        dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
+        dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(0));
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
+
 
         I2C_Master_Start();
         I2C_Master_Write(0x51);
@@ -2883,21 +2895,20 @@ void main(void) {
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
 
-        PORTA = timeRTC[0];
 
 
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
         sprintf(lineLCD, "S1:");
         Lcd_Write_String(lineLCD);
-        Lcd_Set_Cursor(1,8);
-        sprintf(lineLCD, "%.2d/%.2d/%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
+        Lcd_Set_Cursor(1,6);
+        sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
         Lcd_Write_String(lineLCD);
 
         Lcd_Set_Cursor(2,1);
         sprintf(lineLCD,"%.2d", s1ADC);
         Lcd_Write_String(lineLCD);
-        Lcd_Set_Cursor(2,8);
+        Lcd_Set_Cursor(2,7);
         sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
         Lcd_Write_String(lineLCD);
 
@@ -2941,4 +2952,56 @@ void setup(void){
 
     WPUBbits.WPUB0 = 1;
     WPUBbits.WPUB1 = 1;
+}
+
+void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
+
+        I2C_Master_Start();
+        I2C_Master_Write(0b11010000);
+        I2C_Master_Write(0x00);
+
+
+        I2C_Master_Write(Decimal_to_BCD(sec));
+
+
+        I2C_Master_Write(Decimal_to_BCD(min));
+
+
+        I2C_Master_Write(Decimal_to_BCD(hour));
+
+        I2C_Master_Write(Decimal_to_BCD(day));
+        I2C_Master_Write(Decimal_to_BCD(day));
+
+
+        I2C_Master_Write(Decimal_to_BCD(mon));
+
+
+        I2C_Master_Write(Decimal_to_BCD(year));
+
+
+        I2C_Master_Stop();
+}
+
+uint8_t BCD_to_Decimal(uint8_t bcd_value) {
+
+    uint8_t tens_digit = (bcd_value >> 4) & 0x0F;
+
+
+    uint8_t ones_digit = bcd_value & 0x0F;
+
+
+    uint8_t decimal_value = (tens_digit * 10) + ones_digit;
+
+    return decimal_value;
+}
+
+uint8_t Decimal_to_BCD(uint8_t decimal_value) {
+
+    uint8_t tens_digit = decimal_value / 10;
+    uint8_t ones_digit = decimal_value % 10;
+
+
+    uint8_t bcd_value = (tens_digit << 4) | ones_digit;
+
+    return bcd_value;
 }

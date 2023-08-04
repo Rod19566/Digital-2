@@ -45,7 +45,7 @@
 #define _XTAL_FREQ 8000000
 
 // DS3232 I2C address (default address)
-#define DS3232_ADDRESS 0x68         //     11010000   0x68
+#define DS3232_ADDRESS 0b11010000        //     11010000   0x68
 
 // Register addresses for time in DS3232
 #define SECONDS_REGISTER 0x00
@@ -66,7 +66,9 @@ char lineLCD[16];           //voltage chain
 char s1ADC = 0;          //dato pot s1 received ADC
 char counter = 0;          //dato pot s1 received ADC
 char dateRTC[3] = {0,0,0};           //dato Date
+
 char timeRTC[3] = {0,0,0};        //dato Time
+unsigned char seconds, minutes, hours;
 
 
 #define upButton RB0
@@ -76,6 +78,9 @@ char timeRTC[3] = {0,0,0};        //dato Time
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
+uint8_t BCD_to_Decimal(uint8_t bcd_value);
+void settingHourRTC(char sec, char min, char hour, char day, char mon, char year);
+uint8_t Decimal_to_BCD(uint8_t decimal_value);
 
 //*****************************************************************************
 // Código de Interrupción 
@@ -100,6 +105,7 @@ void __interrupt() isr(void) {
 
 void main(void) {
     setup();
+    settingHourRTC(30,10,10,3,8,23);
     while(1){
         //PORTA = counter;
         
@@ -112,39 +118,44 @@ void main(void) {
         //RTC  DS3232
         I2C_Master_Start();         //reads 
         I2C_Master_Write(DS3232_ADDRESS);        //followed by the direction bit (R/W),which  is  0  for  a  writ
-        I2C_Master_Write(0x00);
-        PORTA = I2C_Master_Read(0);
-        timeRTC[0] = PORTA;
-        //I2C_Master_RepeatedStart();
-//        I2C_Master_Write(0x01);
-//        timeRTC[1] = I2C_Master_Read(0);
-//        I2C_Master_Write(0x02);
-//        timeRTC[2] = I2C_Master_Read(0);
+        I2C_Master_Write(SECONDS_REGISTER);
+        // Restart communication with the DS3232
+        I2C_Master_RepeatedStart();
+        // Select DS3232 and read seconds
+        I2C_Master_Write(DS3232_ADDRESS | 0x01); // Set read bit (LSB)
+        // Read second
+        timeRTC[2] = BCD_to_Decimal(I2C_Master_Read(1)); // Read seconds and send ACK
+        timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read seconds and send ACK
+        timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1)); // Read seconds and send ACK
+        dateRTC[0] = BCD_to_Decimal(I2C_Master_Read(1)); // Read day and send ACK
+        dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read date and send ACK
+        dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read month and send ACK
+        dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(0)); // Read year and send ACK
         I2C_Master_Stop();
         __delay_ms(200);
-       
+        
+        /////// COMUNICATION WITH SLAVE 1
         I2C_Master_Start();
-        I2C_Master_Write(0x51);
+        I2C_Master_Write(0x51);     //read
         s1ADC = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
         //PORTB++;   
         
-        PORTA = timeRTC[0];
-        //1101000 RTC ADDRESS
-        
+        //PORTA = timeRTC[0];
+
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);  //line 1
         sprintf(lineLCD, "S1:");
         Lcd_Write_String(lineLCD); 
-        Lcd_Set_Cursor(1,8);  //line 1
-        sprintf(lineLCD, "%.2d/%.2d/%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
+        Lcd_Set_Cursor(1,6);  //line 1
+        sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
         Lcd_Write_String(lineLCD); 
         
         Lcd_Set_Cursor(2,1);  //line 2
         sprintf(lineLCD,"%.2d", s1ADC);
         Lcd_Write_String(lineLCD);
-        Lcd_Set_Cursor(2,8);  //line 2
+        Lcd_Set_Cursor(2,7);  //line 2
         sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
         Lcd_Write_String(lineLCD); 
         
@@ -188,5 +199,57 @@ void setup(void){
     //enable pullups RB0, RB2
     WPUBbits.WPUB0 = 1;      
     WPUBbits.WPUB1 = 1;
+}
+
+void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
+            //RTC  DS3232
+        I2C_Master_Start();         //reads 
+        I2C_Master_Write(DS3232_ADDRESS);
+        I2C_Master_Write(SECONDS_REGISTER);
+
+        // Write seconds to DS3232
+        I2C_Master_Write(Decimal_to_BCD(sec));
+
+        // Write minutes to DS3232
+        I2C_Master_Write(Decimal_to_BCD(min));
+
+        // Write hours to DS3232
+        I2C_Master_Write(Decimal_to_BCD(hour));
+        // Write seconds to DS3232
+        I2C_Master_Write(Decimal_to_BCD(day));
+        I2C_Master_Write(Decimal_to_BCD(day));
+
+        // Write minutes to DS3232
+        I2C_Master_Write(Decimal_to_BCD(mon));
+
+        // Write hours to DS3232
+        I2C_Master_Write(Decimal_to_BCD(year));
+
+        // Stop communication with the DS3232
+        I2C_Master_Stop();
+}
+
+uint8_t BCD_to_Decimal(uint8_t bcd_value) {
+    // Extract the tens digit from the BCD value
+    uint8_t tens_digit = (bcd_value >> 4) & 0x0F;
+
+    // Extract the ones digit from the BCD value
+    uint8_t ones_digit = bcd_value & 0x0F;
+
+    // Convert the tens and ones digits to decimal
+    uint8_t decimal_value = (tens_digit * 10) + ones_digit;
+
+    return decimal_value;
+}
+
+uint8_t Decimal_to_BCD(uint8_t decimal_value) {
+    // Extract the tens and ones digits from the decimal value
+    uint8_t tens_digit = decimal_value / 10;
+    uint8_t ones_digit = decimal_value % 10;
+
+    // Combine the tens and ones digits into a BCD value
+    uint8_t bcd_value = (tens_digit << 4) | ones_digit;
+
+    return bcd_value;
 }
 
