@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+$C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 12 12 3 2 1
@@ -62,7 +62,7 @@ cstackBANK1 BANK1 1 B0 B0 6 1 1
 intentry CODE 0 4 4 E 2 1
 bssBANK0 BANK0 1 4D 4D E 1 1
 bssBANK1 BANK1 1 A0 A0 10 1 1
-strings STRING 0 800 800 34 2 1
+strings STRING 0 800 800 3C 2 1
 clrtext CODE 0 C2B C2B 8 2 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
@@ -81,15 +81,15 @@ BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
 CONST 7FB-7FF 2
-CONST 834-C2A 2
+CONST 83C-C2A 2
 CONST 1000-1FFF 2
 ENTRY 3-3 2
 ENTRY 7FB-7FF 2
-ENTRY 834-C2A 2
+ENTRY 83C-C2A 2
 ENTRY 1000-1FFF 2
 CODE 3-3 2
 CODE 7FB-7FF 2
-CODE 834-C2A 2
+CODE 83C-C2A 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -98,11 +98,11 @@ SFR3 180-18F 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
 STRCODE 7FB-7FF 2
-STRCODE 834-C2A 2
+STRCODE 83C-C2A 2
 STRCODE 1000-1FFF 2
 STRING 3-3 2
 STRING 7FB-7FF 2
-STRING 834-C2A 2
+STRING 83C-C2A 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -118,20 +118,20 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab4_Master.X.production.o
-15 cinit CODE >1120:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-15 cinit CODE >1123:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-15 cinit CODE >1179:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-16 cinit CODE >1180:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-17 cinit CODE >1181:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-18 cinit CODE >1182:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-19 cinit CODE >1183:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-1E cinit CODE >1186:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-1F cinit CODE >1187:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-20 cinit CODE >1188:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-21 cinit CODE >1189:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-26 cinit CODE >1195:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-26 cinit CODE >1197:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-27 cinit CODE >1198:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
+15 cinit CODE >1130:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+15 cinit CODE >1133:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+15 cinit CODE >1189:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+16 cinit CODE >1190:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+17 cinit CODE >1191:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+18 cinit CODE >1192:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+19 cinit CODE >1193:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+1E cinit CODE >1196:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+1F cinit CODE >1197:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+20 cinit CODE >1198:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+21 cinit CODE >1199:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+26 cinit CODE >1205:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+26 cinit CODE >1207:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+27 cinit CODE >1208:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
 4 intentry CODE >91:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 6F3 text36 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awdiv.c
 6F3 text36 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awdiv.c
@@ -201,15 +201,15 @@ F9B text35 CODE >32:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\
 F9E text35 CODE >32:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
 FA0 text35 CODE >33:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
 FA4 text35 CODE >34:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
-D92 text34 CODE >295:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D93 text34 CODE >297:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DA5 text34 CODE >298:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DB7 text34 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DBA text34 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DBD text34 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DBF text34 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DC3 text34 CODE >303:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DC4 text34 CODE >304:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D92 text34 CODE >296:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D93 text34 CODE >298:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DA5 text34 CODE >299:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DB7 text34 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DBA text34 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DBD text34 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DBF text34 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DC3 text34 CODE >304:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DC4 text34 CODE >305:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 C74 text33 CODE >32:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C74 text33 CODE >34:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C80 text33 CODE >35:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
@@ -225,19 +225,19 @@ C60 text30 CODE >65:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I
 C60 text30 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C65 text30 CODE >68:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C69 text30 CODE >69:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
-56C text29 CODE >254:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-56F text29 CODE >256:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-574 text29 CODE >257:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-57F text29 CODE >258:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-589 text29 CODE >261:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-59E text29 CODE >264:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-5B3 text29 CODE >267:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-5C8 text29 CODE >269:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-5DD text29 CODE >270:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-5F2 text29 CODE >273:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-607 text29 CODE >276:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-61C text29 CODE >279:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-621 text29 CODE >280:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+56C text29 CODE >255:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+56F text29 CODE >257:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+574 text29 CODE >258:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+57F text29 CODE >259:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+589 text29 CODE >262:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+59E text29 CODE >265:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+5B3 text29 CODE >268:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+5C8 text29 CODE >270:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+5DD text29 CODE >271:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+5F2 text29 CODE >274:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+607 text29 CODE >277:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+61C text29 CODE >280:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+621 text29 CODE >281:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 380 text28 CODE >91:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 380 text28 CODE >93:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 384 text28 CODE >94:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
@@ -297,14 +297,14 @@ CBD text27 CODE >46:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\
 CBF text27 CODE >47:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8.c
 CC4 text27 CODE >50:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8.c
 CC5 text27 CODE >51:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8.c
-CFA text26 CODE >282:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-CFD text26 CODE >284:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D00 text26 CODE >284:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D03 text26 CODE >284:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D08 text26 CODE >287:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D0B text26 CODE >290:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D17 text26 CODE >292:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-D18 text26 CODE >293:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+CFA text26 CODE >283:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+CFD text26 CODE >285:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D00 text26 CODE >285:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D03 text26 CODE >285:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D08 text26 CODE >288:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D0B text26 CODE >291:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D17 text26 CODE >293:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+D18 text26 CODE >294:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 C81 text25 CODE >32:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C81 text25 CODE >34:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C8D text25 CODE >35:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
@@ -459,15 +459,15 @@ FF6 text15 CODE >32:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\
 FF9 text15 CODE >32:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
 FFB text15 CODE >33:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
 FFF text15 CODE >34:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
-DC5 text14 CODE >295:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DC8 text14 CODE >297:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DDC text14 CODE >298:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DF0 text14 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DF3 text14 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DF6 text14 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DF8 text14 CODE >301:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DFC text14 CODE >303:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-DFD text14 CODE >304:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DC5 text14 CODE >296:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DC8 text14 CODE >298:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DDC text14 CODE >299:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DF0 text14 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DF3 text14 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DF6 text14 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DF8 text14 CODE >302:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DFC text14 CODE >304:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+DFD text14 CODE >305:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 C4E text13 CODE >39:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C4E text13 CODE >41:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C53 text13 CODE >42:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
@@ -480,19 +480,19 @@ C6A text11 CODE >65:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I
 C6A text11 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C6F text11 CODE >68:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
 C73 text11 CODE >69:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\I2C.c
-4B6 text10 CODE >254:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-4B9 text10 CODE >256:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-4BE text10 CODE >257:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-4C9 text10 CODE >258:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-4D3 text10 CODE >261:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-4E8 text10 CODE >264:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-4FD text10 CODE >267:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-512 text10 CODE >269:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-527 text10 CODE >270:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-53C text10 CODE >273:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-551 text10 CODE >276:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-566 text10 CODE >279:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-56B text10 CODE >280:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4B6 text10 CODE >255:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4B9 text10 CODE >257:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4BE text10 CODE >258:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4C9 text10 CODE >259:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4D3 text10 CODE >262:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4E8 text10 CODE >265:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+4FD text10 CODE >268:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+512 text10 CODE >270:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+527 text10 CODE >271:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+53C text10 CODE >274:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+551 text10 CODE >277:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+566 text10 CODE >280:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+56B text10 CODE >281:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 68B text9 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
 68B text9 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
 695 text9 CODE >14:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
@@ -556,32 +556,32 @@ F4B text7 CODE >94:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\lc
 7AE text6 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\oscillator.c
 7BA text6 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\oscillator.c
 7BD text6 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Lab4\Lab4_Master.X\oscillator.c
-7BE text5 CODE >219:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 7BE text5 CODE >220:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7C9 text5 CODE >221:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7CC text5 CODE >222:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7CD text5 CODE >224:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7D0 text5 CODE >226:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7D2 text5 CODE >227:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7D4 text5 CODE >228:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7D5 text5 CODE >230:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7D8 text5 CODE >231:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7D9 text5 CODE >232:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7DA text5 CODE >233:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7DB text5 CODE >234:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7E8 text5 CODE >235:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7ED text5 CODE >237:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7EE text5 CODE >238:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7EF text5 CODE >239:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F0 text5 CODE >240:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F1 text5 CODE >243:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F4 text5 CODE >244:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F5 text5 CODE >245:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F6 text5 CODE >247:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F7 text5 CODE >249:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F8 text5 CODE >250:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7F9 text5 CODE >251:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-7FA text5 CODE >252:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7BE text5 CODE >221:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7C9 text5 CODE >222:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7CC text5 CODE >223:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7CD text5 CODE >225:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7D0 text5 CODE >227:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7D2 text5 CODE >228:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7D4 text5 CODE >229:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7D5 text5 CODE >231:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7D8 text5 CODE >232:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7D9 text5 CODE >233:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7DA text5 CODE >234:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7DB text5 CODE >235:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7E8 text5 CODE >236:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7ED text5 CODE >238:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7EE text5 CODE >239:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7EF text5 CODE >240:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F0 text5 CODE >241:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F1 text5 CODE >244:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F4 text5 CODE >245:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F5 text5 CODE >246:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F6 text5 CODE >248:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F7 text5 CODE >250:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F8 text5 CODE >251:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7F9 text5 CODE >252:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+7FA text5 CODE >253:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 EB0 text4 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
 EB0 text4 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
 EB4 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
@@ -711,25 +711,25 @@ FD maintext CODE >178:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X
 167 maintext CODE >195:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 19E maintext CODE >196:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 1A4 maintext CODE >198:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-1AE maintext CODE >199:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-1C7 maintext CODE >200:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-1CD maintext CODE >201:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-1D7 maintext CODE >202:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-20E maintext CODE >203:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-214 maintext CODE >205:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-21E maintext CODE >206:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-226 maintext CODE >207:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-227 maintext CODE >210:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-C2B clrtext CODE >1166:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C2B clrtext CODE >1167:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C2C clrtext CODE >1168:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C2C clrtext CODE >1169:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C2D clrtext CODE >1170:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C2E clrtext CODE >1171:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C2F clrtext CODE >1172:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C30 clrtext CODE >1173:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C31 clrtext CODE >1174:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
-C32 clrtext CODE >1175:C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_1.s
+1AE maintext CODE >200:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+1C7 maintext CODE >201:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+1CD maintext CODE >202:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+1D7 maintext CODE >203:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+20E maintext CODE >204:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+214 maintext CODE >206:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+21E maintext CODE >207:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+226 maintext CODE >208:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+227 maintext CODE >211:E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+C2B clrtext CODE >1176:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C2B clrtext CODE >1177:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C2C clrtext CODE >1178:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C2C clrtext CODE >1179:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C2D clrtext CODE >1180:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C2E clrtext CODE >1181:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C2F clrtext CODE >1182:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C30 clrtext CODE >1183:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C31 clrtext CODE >1184:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
+C32 clrtext CODE >1185:C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -765,24 +765,24 @@ __Hstrings 0 0 ABS 0 strings -
 _Decimal_to_BCD 1B8A 0 CODE 0 text14 dist/default/production\Lab4_Master.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\Lab4_Master.X.production.o
 _RBIF 58 0 ABS 0 - dist/default/production\Lab4_Master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 _main 54 0 CODE 0 maintext dist/default/production\Lab4_Master.X.production.o
 _mode 57 0 BANK0 1 bssBANK0 dist/default/production\Lab4_Master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab4_Master.X.production.o
 _Lcd_Write_Char 198C 0 CODE 0 text18 dist/default/production\Lab4_Master.X.production.o
-start 24 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+start 24 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 Lcd_Port@a 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab4_Master.X.production.o
 _settingRTC 96C 0 CODE 0 text10 dist/default/production\Lab4_Master.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 35 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
 I2C_Master_Read@a 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 _BCD_to_Decimal 19F4 0 CODE 0 text26 dist/default/production\Lab4_Master.X.production.o
 ___bmul@multiplicand 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
 _dateRTC 4D 0 BANK0 1 bssBANK0 dist/default/production\Lab4_Master.X.production.o
@@ -815,8 +815,8 @@ __end_of___lldiv DE6 0 CODE 0 text9 dist/default/production\Lab4_Master.X.produc
 __end_of___lwdiv 1DEC 0 CODE 0 text4 dist/default/production\Lab4_Master.X.production.o
 __end_of___lwmod 1D60 0 CODE 0 text3 dist/default/production\Lab4_Master.X.production.o
 __end_of_BCD_to_Decimal 1A32 0 CODE 0 text26 dist/default/production\Lab4_Master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
-___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
+___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 _dpowers 100C 0 STRING 0 strings dist/default/production\Lab4_Master.X.production.o
 i1I2C_Master_Write@d 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
 __end_ofi1_I2C_Master_Start 1878 0 CODE 0 text32 dist/default/production\Lab4_Master.X.production.o
@@ -846,8 +846,8 @@ _TRISC4 43C 0 ABS 0 - dist/default/production\Lab4_Master.X.production.o
 i1_I2C_Master_Start 1866 0 CODE 0 text32 dist/default/production\Lab4_Master.X.production.o
 i1_I2C_Master_Write 18C0 0 CODE 0 text30 dist/default/production\Lab4_Master.X.production.o
 i1___awdiv@counter 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab4_Master.X.production.o
-_isdigit$878 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+_isdigit$881 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -927,7 +927,7 @@ ___lldiv@divisor 30 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.
 __stringtab 1000 0 STRING 0 strings dist/default/production\Lab4_Master.X.production.o
 Lcd_Write_String@a 36 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
 Lcd_Write_String@i 34 0 BANK0 1 cstackBANK0 dist/default/production\Lab4_Master.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
 __end_of_Lcd_Cmd 19F4 0 CODE 0 text21 dist/default/production\Lab4_Master.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
@@ -1158,7 +1158,7 @@ cstackBANK0 1 20 20 3B 1
 intentry 0 4 8 7F7 2
 reset_vec 0 0 0 3 2
 bssBANK1 1 A0 A0 16 1
-strings 0 800 1000 34 2
+strings 0 800 1000 3C 2
 clrtext 0 C2B 1856 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

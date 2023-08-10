@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.41\pic\dat\20230208172133_en.msgs \
   -cn -h+dist/default/production\Lab4_Master.X.production.sym \
   --cmf=dist/default/production\Lab4_Master.X.production.cmf -z -Q16F887 \
-  -oC:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_3.o \
+  -oC:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/Lab4_Master.X.production.map \
-  --md=C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -22,7 +22,7 @@ Linker command line:
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -k \
-  C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o \
+  C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o \
   dist/default/production\Lab4_Master.X.production.o 
 
 Object code version is 3.11
@@ -32,7 +32,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\WMGWW\AppData\Local\Temp\xcAsslo.\driver_tmp_17.o
+C:\Users\WMGWW\AppData\Local\Temp\xcAsjkg.\driver_tmp_17.o
                 end_init                             12       12        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -85,7 +85,7 @@ dist/default/production\Lab4_Master.X.production.o
                 clrtext                             C2B      C2B        8     1856       0
                 bssBANK1                             A0       A0       10       A0       1
                 bssBANK0                             4D       4D        E       20       1
-                strings                             800      800       34     1000       0
+                strings                             800      800       3C     1000       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
@@ -135,7 +135,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STRCODE        
 
         CLASS   STRING         
-                strings                             800      800       34         0
+                strings                             800      800       3C         0
 
         CLASS   CONST          
 
@@ -188,7 +188,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackBANK0                    000020  00003B  00005B        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 bssBANK1                       0000A0  000016  0000B6        A0       1  BANK1       1
-                strings                        000800  000034  000834      1000       0  STRING      2
+                strings                        000800  00003C  00083C      1000       0  STRING      2
                 clrtext                        000C2B  000008  000C33      1856       0  CODE        2
                 text32                         000C33  000009  000C3C      1866       0  CODE        2
                 text31                         000C3C  000009  000C45      1878       0  CODE        2
@@ -228,16 +228,16 @@ UNUSED ADDRESS RANGES
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
                          07FB-07FF              5
-                         0834-0C2A            3F7
+                         083C-0C2A            3EF
                          1000-1FFF            800
         CONST            0003-0003              1           2
                          07FB-07FF              5
-                         0834-0C2A            100
+                         083C-0C2A            100
                          1000-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
                          07FB-07FF              5
-                         0834-0C2A            100
+                         083C-0C2A            100
                          1000-1FFF            100
         RAM              005B-006F             15           1
                          00B6-00EF             3A
@@ -249,11 +249,11 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STRCODE          0003-0003              1           2
                          07FB-07FF              5
-                         0834-0C2A            3F7
+                         083C-0C2A            3EF
                          1000-1FFF           1000
         STRING           0003-0003              1           2
                          07FB-07FF              5
-                         0834-0C2A            100
+                         083C-0C2A            100
                          1000-1FFF            100
 
                                   Symbol Table
@@ -549,7 +549,7 @@ _configOsc                        text6        075A
 _dateRTC                          bssBANK0     004D
 _dpowers                          strings      0806
 _isdigit                          text2        0C9B
-_isdigit$878                      cstackBANK0  0030
+_isdigit$881                      cstackBANK0  0030
 _isr                              text28       0380
 _lineLCD                          bssBANK1     00A0
 _main                             maintext     002A

@@ -2843,7 +2843,7 @@ void setup(void);
 uint8_t BCD_to_Decimal(uint8_t bcd_value);
 void settingRTC(char sec, char min, char hour, char day, char mon, char year);
 uint8_t Decimal_to_BCD(uint8_t decimal_value);
-void updateI2C(void);
+double mapToTemperature(int inputValue);
 
 
 
@@ -2949,16 +2949,17 @@ void main(void) {
 
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
-        sprintf(lineLCD, "S1:");
+        sprintf(lineLCD, "Temp:");
         Lcd_Write_String(lineLCD);
-        Lcd_Set_Cursor(1,6);
+        Lcd_Set_Cursor(1,7);
         sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[1], dateRTC[2], dateRTC[3]);
         Lcd_Write_String(lineLCD);
 
         Lcd_Set_Cursor(2,1);
-        sprintf(lineLCD,"%.2d", s1ADC);
+
+        sprintf(lineLCD,"%.2dC", s1ADC);
         Lcd_Write_String(lineLCD);
-        Lcd_Set_Cursor(2,7);
+        Lcd_Set_Cursor(2,8);
         sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
         Lcd_Write_String(lineLCD);
 
@@ -3063,6 +3064,10 @@ uint8_t Decimal_to_BCD(uint8_t decimal_value) {
     return bcd_value;
 }
 
-void updateI2C(){
+double mapToTemperature(int inputValue) {
+    double voltage = inputValue * (255 / 40);
 
+
+    double temperature = voltage;
+    return temperature;
 }
