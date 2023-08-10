@@ -3,10 +3,12 @@
 // visit io.adafruit.com if you need to create an account,
 // or if you need your Adafruit IO key.
 #define IO_USERNAME  "Tumanita"
-#define IO_KEY       "aio_Rboe864RPfm3WseSSiDmQfkOPQM4"
+#define IO_KEY       "aio_ynJK19nf1AfkXcT7Q6Ff2ek7GCXp"
 
 /******************************* WIFI **************************************/
 
+//#define WIFI_SSID "DinisTumaninis"
+//#define WIFI_PASS "LuluDini123@"
 #define WIFI_SSID "Doggy"
 #define WIFI_PASS "Doggy.2021"
 

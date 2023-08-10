@@ -12,25 +12,27 @@
 
 /************************** Configuration ***********************************/
 
-// edit the config.h tab and enter your Adafruit IO credentials
-// and any additional configuration needed for WiFi, cellular,
-// or ethernet clients.
 #include "config.h"
 
-/************************ Example Starts Here *******************************/
-
 const int potPin = 34;
+
 // this int will hold the current count for our sketch
-//int count = 0;
+
+#define ledPin 2
+
 int adcValue = 0;
+boolean ledState = false;
 
 // set up the 'Example1' feed
-AdafruitIO_Feed *Example1 = io.feed("Example1");
+AdafruitIO_Feed *adcFeed = io.feed("example1");
+AdafruitIO_Feed *ledFeed = io.feed("led");
 
 void setup() {
 
   // start the serial connection
   Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin,LOW);
 
   // wait for serial monitor to open
   while(!Serial);
@@ -40,11 +42,18 @@ void setup() {
   // connect to io.adafruit.com
   io.connect();
 
+  // set up a message handler for the count feed.
+  // the handleMessage function (defined below)
+  // will be called whenever a message is
+  // received from adafruit io.
+  ledFeed->onMessage(handleMessage);
+
   // wait for a connection
   while(io.status() < AIO_CONNECTED) {
     Serial.print(".");
     delay(500);
-  }
+  }  
+  //ledFeed->get();
 
   // we are connected
   Serial.println();
@@ -54,6 +63,10 @@ void setup() {
 
 void loop() {
   int adcValue = analogRead(potPin);
+  adcValue = map(adcValue, 0, 4095, 0, 255);
+
+  if (ledState) digitalWrite(ledPin,HIGH);
+  else digitalWrite(ledPin,LOW);
 
   // io.run(); is required for all sketches.
   // it should always be present at the top of your loop
@@ -66,7 +79,7 @@ void loop() {
   // save count to the 'counter' feed on Adafruit IO
   Serial.print("sending -> ");
   Serial.println(adcValue);
-  Example1->save(adcValue);
+  adcFeed->save(adcValue);
 
   // increment the count by 1
   //adcValue++;
@@ -75,5 +88,19 @@ void loop() {
   // between feed->save events. In this example, we will wait three seconds
   // (1000 milliseconds == 1 second) during each loop.
   delay(3000);
+
+}
+
+// this function is called whenever a 'counter' message
+// is received from Adafruit IO. it was attached to
+// the counter feed in the setup() function above.
+void handleMessage(AdafruitIO_Data *data) { //once feed receives message
+  char receivedAdafruitData = *data->value();
+
+  Serial.print("received <- ");
+  Serial.println(receivedAdafruitData);
+
+  if (receivedAdafruitData == '1') ledState = true;
+  else ledState = false;
 
 }
