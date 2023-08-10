@@ -1,0 +1,5 @@
+Adafruit Dashboard:
+https://io.adafruit.com/Tumanita/dashboards/project1 
+
+Github Repository:
+https://github.com/Rod19566/Digital-2/tree/main/Proyecto1 
