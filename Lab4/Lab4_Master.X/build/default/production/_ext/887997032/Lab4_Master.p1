@@ -7,9 +7,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4108
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"4111
+"84 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 84: void settingRTC(char sec, char min, char hour, char day, char mon, char year);
+[v _settingRTC `(v ~T0 @X0 0 ef6`uc`uc`uc`uc`uc`uc ]
+"4111 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4111: extern volatile __bit RB1 __attribute__((address(0x31)));
 [v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"4114
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4114: extern volatile __bit RB2 __attribute__((address(0x32)));
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
 "466
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 466:     struct {
 [s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -26,12 +32,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 [p mainexit ]
-"81 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 81: void setup(void);
+"82 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 82: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
-"83
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 83: void settingHourRTC(char sec, char min, char hour, char day, char mon, char year);
-[v _settingHourRTC `(v ~T0 @X0 0 ef6`uc`uc`uc`uc`uc`uc ]
 "41 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 41: void I2C_Master_Start(void);
 [v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
@@ -41,8 +44,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 45: void I2C_Master_RepeatedStart(void);
 [v _I2C_Master_RepeatedStart `(v ~T0 @X0 0 ef ]
-"82 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 82: uint8_t BCD_to_Decimal(uint8_t bcd_value);
+"83 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 83: uint8_t BCD_to_Decimal(uint8_t bcd_value);
 [v _BCD_to_Decimal `(uc ~T0 @X0 0 ef1`uc ]
 "60 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/I2C.h: 60: unsigned short I2C_Master_Read(unsigned short a);
@@ -149,8 +152,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2367
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2367: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x095)));
 [v _WPUBbits `VS89 ~T0 @X0 0 e@149 ]
-"84 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 84: uint8_t Decimal_to_BCD(uint8_t decimal_value);
+"85 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 85: uint8_t Decimal_to_BCD(uint8_t decimal_value);
 [v _Decimal_to_BCD `(uc ~T0 @X0 0 ef1`uc ]
 "13 E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
@@ -432,7 +435,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "68
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 68: char dateRTC[4] = {0,0,0,0};
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 68: char mode = 0;
+[v _mode `uc ~T0 @X0 1 e ]
+[i _mode
+-> -> 0 `i `uc
+]
+"69
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 69: char dateRTC[4] = {0,0,0,0};
 [v _dateRTC `uc ~T0 @X0 -> 4 `i e ]
 [i _dateRTC
 :U ..
@@ -442,8 +451,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"70
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 70: char timeRTC[3] = {0,0,0};
+"71
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 71: char timeRTC[3] = {0,0,0};
 [v _timeRTC `uc ~T0 @X0 -> 3 `i e ]
 [i _timeRTC
 :U ..
@@ -452,274 +461,432 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"71
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 71: unsigned char seconds, minutes, hours;
+"72
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 72: unsigned char seconds, minutes, hours;
 [v _seconds `uc ~T0 @X0 1 e ]
 [v _minutes `uc ~T0 @X0 1 e ]
 [v _hours `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"89
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 89: void __attribute__((picinterrupt(("")))) isr(void) {
+"91
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 91: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"91
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 91:     if(RBIF == 1) {
+"93
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 93:     if(RBIF == 1) {
 [e $ ! == -> _RBIF `i -> 1 `i 140  ]
 {
-"92
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 92:     if (!RB0){
+"94
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 94:     if (!RB0){
 [e $ ! ! _RB0 141  ]
 {
-"93
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 93:         counter++;
-[e ++ _counter -> -> 1 `i `uc ]
 "95
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 95:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 95:         switch(mode){
+[e $U 143  ]
+{
+"96
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 96:             case 0:
+[e :U 144 ]
+"97
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 97:                 settingRTC(timeRTC[2]+1,timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , -> + -> *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> 1 `i `uc *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"98
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 98:                 break;
+[e $U 142  ]
+"99
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 99:             case 1:
+[e :U 145 ]
+"100
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 100:                 settingRTC(timeRTC[2],timeRTC[1]+1,timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> + -> *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> 1 `i `uc *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"101
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 101:                 break;
+[e $U 142  ]
+"102
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 102:             case 2:
+[e :U 146 ]
+"103
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 103:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0]+1,dateRTC[1],dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> + -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> 1 `i `uc *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"104
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 104:                 break;
+[e $U 142  ]
+"105
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 105:             case 3:
+[e :U 147 ]
+"106
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 106:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1]+1,dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> + -> *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> 1 `i `uc *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"107
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 107:                 break;
+[e $U 142  ]
+"108
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 108:             case 4:
+[e :U 148 ]
+"109
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 109:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2]+1,dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> + -> *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> 1 `i `uc *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"110
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 110:                 break;
+[e $U 142  ]
+"111
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 111:             case 5:
+[e :U 149 ]
+"112
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 112:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]+1);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> + -> *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> 1 `i `uc ]
+"113
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 113:                 break;
+[e $U 142  ]
+"114
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 114:         }
+}
+[e $U 142  ]
+[e :U 143 ]
+[e [\ -> _mode `i , $ -> 0 `i 144
+ , $ -> 1 `i 145
+ , $ -> 2 `i 146
+ , $ -> 3 `i 147
+ , $ -> 4 `i 148
+ , $ -> 5 `i 149
+ 142 ]
+[e :U 142 ]
+"116
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 116:     }
 }
 [e :U 141 ]
-"96
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 96:     if (!RB1){
-[e $ ! ! _RB1 142  ]
+"117
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 117:     if (!RB1){
+[e $ ! ! _RB1 150  ]
 {
-"97
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 97:         counter--;
-[e -- _counter -> -> 1 `i `uc ]
-"98
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 98:     }
+"118
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 118:         switch(mode){
+[e $U 152  ]
+{
+"119
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 119:             case 0:
+[e :U 153 ]
+"120
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 120:                 settingRTC(timeRTC[2]-1,timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , -> - -> *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> 1 `i `uc *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"121
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 121:                 break;
+[e $U 151  ]
+"122
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 122:             case 1:
+[e :U 154 ]
+"123
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 123:                 settingRTC(timeRTC[2],timeRTC[1]-1,timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> - -> *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> 1 `i `uc *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"124
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 124:                 break;
+[e $U 151  ]
+"125
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 125:             case 2:
+[e :U 155 ]
+"126
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 126:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0]-1,dateRTC[1],dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> - -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> 1 `i `uc *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"127
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 127:                 break;
+[e $U 151  ]
+"128
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 128:             case 3:
+[e :U 156 ]
+"129
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 129:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1]-1,dateRTC[2],dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> - -> *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> 1 `i `uc *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"130
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 130:                 break;
+[e $U 151  ]
+"131
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 131:             case 4:
+[e :U 157 ]
+"132
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 132:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2]-1,dateRTC[3]);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> - -> *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> 1 `i `uc *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux ]
+"133
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 133:                 break;
+[e $U 151  ]
+"134
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 134:             case 5:
+[e :U 158 ]
+"135
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 135:                 settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]-1);
+[e ( _settingRTC (4 , , , , , *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> - -> *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> 1 `i `uc ]
+"136
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 136:                 break;
+[e $U 151  ]
+"137
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 137:         }
 }
-[e :U 142 ]
-"99
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 99:         INTCONbits.RBIF = 0;
+[e $U 151  ]
+[e :U 152 ]
+[e [\ -> _mode `i , $ -> 0 `i 153
+ , $ -> 1 `i 154
+ , $ -> 2 `i 155
+ , $ -> 3 `i 156
+ , $ -> 4 `i 157
+ , $ -> 5 `i 158
+ 151 ]
+[e :U 151 ]
+"138
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 138:     }
+}
+[e :U 150 ]
+"139
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 139:     if (!RB2){
+[e $ ! ! _RB2 159  ]
+{
+"140
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 140:         mode++;
+[e ++ _mode -> -> 1 `i `uc ]
+"141
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 141:     }
+}
+[e :U 159 ]
+"142
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 142:         INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"100
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 100:     }
+"143
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 143:     }
 }
 [e :U 140 ]
-"101
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 101: }
+"144
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 144: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"107
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 107: void main(void) {
+"150
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 150: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"108
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 108:     setup();
-[e ( _setup ..  ]
-"109
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 109:     settingHourRTC(12,12,12,12,12,23);
-[e ( _settingHourRTC (4 , , , , , -> -> 12 `i `uc -> -> 12 `i `uc -> -> 12 `i `uc -> -> 12 `i `uc -> -> 12 `i `uc -> -> 23 `i `uc ]
-"110
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 110:     while(1){
-[e :U 145 ]
-{
-"118
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 118:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"119
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 119:         I2C_Master_Write(0b11010000);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"120
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 120:         I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"122
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 122:         I2C_Master_RepeatedStart();
-[e ( _I2C_Master_RepeatedStart ..  ]
-"124
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 124:         I2C_Master_Write(0b11010000 | 0x01);
-[e ( _I2C_Master_Write (1 -> | -> 208 `i -> 1 `i `ui ]
-"126
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 126:         timeRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
-[e = *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
-"127
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 127:         timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
-[e = *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
-"128
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 128:         timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
-[e = *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
-"130
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 130:         dateRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
-[e = *U + &U _dateRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
-"131
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 131:         dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
-[e = *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
-"132
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 132:         dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
-[e = *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
-"133
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 133:         dateRTC[3] = BCD_to_Decimal(I2C_Master_Read(0));
-[e = *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc `uc ]
-"134
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 134:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"135
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 135:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"138
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 138:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"139
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 139:         I2C_Master_Write(0x51);
-[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
-"140
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 140:         s1ADC = I2C_Master_Read(0);
-[e = _s1ADC -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"141
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 141:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"142
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 142:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"147
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 147:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"148
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 148:         Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"149
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 149:         sprintf(lineLCD, "S1:");
-[e ( _sprintf (1 , &U _lineLCD :s 1C ]
-"150
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 150:         Lcd_Write_String(lineLCD);
-[e ( _Lcd_Write_String (1 &U _lineLCD ]
 "151
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 151:         Lcd_Set_Cursor(1,6);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 151:     setup();
+[e ( _setup ..  ]
 "152
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 152:         sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[1], dateRTC[2], dateRTC[3]);
-[e ( _sprintf (1 , , , (. , &U _lineLCD :s 2C -> *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 152:     settingRTC(12,12,12,12,12,23);
+[e ( _settingRTC (4 , , , , , -> -> 12 `i `uc -> -> 12 `i `uc -> -> 12 `i `uc -> -> 12 `i `uc -> -> 12 `i `uc -> -> 23 `i `uc ]
 "153
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 153:         Lcd_Write_String(lineLCD);
-[e ( _Lcd_Write_String (1 &U _lineLCD ]
-"155
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 155:         Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"156
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 156:         sprintf(lineLCD,"%.2d", s1ADC);
-[e ( _sprintf (1 , (. , &U _lineLCD :s 3C -> _s1ADC `i ]
-"157
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 157:         Lcd_Write_String(lineLCD);
-[e ( _Lcd_Write_String (1 &U _lineLCD ]
-"158
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 158:         Lcd_Set_Cursor(2,7);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
-"159
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 159:         sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
-[e ( _sprintf (1 , , , (. , &U _lineLCD :s 4C -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i ]
-"160
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 160:         Lcd_Write_String(lineLCD);
-[e ( _Lcd_Write_String (1 &U _lineLCD ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 153:     while(1){
+[e :U 162 ]
+{
+"161
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 161:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "162
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 162:         _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 162:         I2C_Master_Write(0b11010000);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
 "163
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 163:         PORTA = counter;
-[e = _PORTA -> _counter `uc ]
-"164
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 164:     }
-}
-[e :U 144 ]
-[e $U 145  ]
-[e :U 146 ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 163:         I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "165
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 165:     return;
-[e $UE 143  ]
-"166
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 166: }
-[e :UE 143 ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 165:         I2C_Master_RepeatedStart();
+[e ( _I2C_Master_RepeatedStart ..  ]
+"167
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 167:         I2C_Master_Write(0b11010000 | 0x01);
+[e ( _I2C_Master_Write (1 -> | -> 208 `i -> 1 `i `ui ]
+"169
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 169:         timeRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
+[e = *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
+"170
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 170:         timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
+[e = *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
+"171
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 171:         timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
+[e = *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
+"173
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 173:         dateRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
+[e = *U + &U _dateRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
+"174
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 174:         dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
+[e = *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
+"175
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 175:         dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
+[e = *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc `uc ]
+"176
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 176:         dateRTC[3] = BCD_to_Decimal(I2C_Master_Read(0));
+[e = *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux -> ( _BCD_to_Decimal (1 -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc `uc ]
+"177
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 177:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"178
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 178:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"181
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 181:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"182
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 182:         I2C_Master_Write(0x51);
+[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
+"183
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 183:         s1ADC = I2C_Master_Read(0);
+[e = _s1ADC -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"184
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 184:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"185
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 185:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"190
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 190:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"191
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 191:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"192
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 192:         sprintf(lineLCD, "S1:");
+[e ( _sprintf (1 , &U _lineLCD :s 1C ]
+"193
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 193:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"194
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 194:         Lcd_Set_Cursor(1,6);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
+"195
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 195:         sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[1], dateRTC[2], dateRTC[3]);
+[e ( _sprintf (1 , , , (. , &U _lineLCD :s 2C -> *U + &U _dateRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i -> *U + &U _dateRTC * -> -> -> 3 `i `ui `ux -> -> # *U &U _dateRTC `ui `ux `i ]
+"196
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 196:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"198
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 198:         Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"199
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 199:         sprintf(lineLCD,"%.2d", s1ADC);
+[e ( _sprintf (1 , (. , &U _lineLCD :s 3C -> _s1ADC `i ]
+"200
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 200:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"201
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 201:         Lcd_Set_Cursor(2,7);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+"202
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 202:         sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
+[e ( _sprintf (1 , , , (. , &U _lineLCD :s 4C -> *U + &U _timeRTC * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i -> *U + &U _timeRTC * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeRTC `ui `ux `i ]
+"203
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 203:         Lcd_Write_String(lineLCD);
+[e ( _Lcd_Write_String (1 &U _lineLCD ]
+"205
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 205:         _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"206
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 206:         if (mode == 6){
+[e $ ! == -> _mode `i -> 6 `i 164  ]
+{
+"207
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 207:             mode = 0;
+[e = _mode -> -> 0 `i `uc ]
+"208
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 208:         }
 }
-"172
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 172: void setup(void){
+[e :U 164 ]
+"210
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 210:         PORTA = mode;
+[e = _PORTA -> _mode `uc ]
+"211
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 211:     }
+}
+[e :U 161 ]
+[e $U 162  ]
+[e :U 163 ]
+"212
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 212:     return;
+[e $UE 160  ]
+"213
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 213: }
+[e :UE 160 ]
+}
+"219
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 219: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"173
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 173:     configOsc(8);
+"220
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 220:     configOsc(8);
 [e ( _configOsc (1 -> -> 8 `i `ui ]
-"174
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 174:     ANSEL = 0;
+"221
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 221:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"175
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 175:     ANSELH = 0;
+"222
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 222:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"177
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 177:     TRISA = 0;
+"224
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 224:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"179
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 179:     TRISB = 0b00000111;
+"226
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 226:     TRISB = 0b00000111;
 [e = _TRISB -> -> 7 `i `uc ]
-"180
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 180:     TRISC = 128;
+"227
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 227:     TRISC = 128;
 [e = _TRISC -> -> 128 `i `uc ]
-"181
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 181:     TRISD = 0;
+"228
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 228:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"183
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 183:     PORTA = 0;
+"230
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 230:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"184
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 184:     PORTB = 0;
+"231
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 231:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"185
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 185:     PORTC = 0;
+"232
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 232:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"186
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 186:     PORTD = 0;
+"233
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 233:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"187
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 187:     I2C_Master_Init(100000);
+"234
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 234:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"188
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 188:     Lcd_Init();
+"235
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 235:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"190
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 190:     INTCONbits.GIE = 1;
+"237
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 237:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"191
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 191:     INTCONbits.PEIE = 1;
+"238
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 238:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"192
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 192:     INTCONbits.RBIF = 0;
+"239
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 239:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"193
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 193:     INTCONbits.RBIE = 1;
+"240
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 240:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"196
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 196:     IOCBbits.IOCB0 = 1;
+"243
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 243:     IOCBbits.IOCB0 = 1;
 [e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
-"197
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 197:     IOCBbits.IOCB1 = 1;
+"244
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 244:     IOCBbits.IOCB1 = 1;
 [e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
-"198
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 198:     IOCBbits.IOCB2 = 1;
+"245
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 245:     IOCBbits.IOCB2 = 1;
 [e = . . _IOCBbits 1 2 -> -> 1 `i `uc ]
-"200
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 200:     OPTION_REGbits.nRBPU = 0;
+"247
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 247:     OPTION_REGbits.nRBPU = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"202
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 202:     WPUBbits.WPUB0 = 1;
+"249
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 249:     WPUBbits.WPUB0 = 1;
 [e = . . _WPUBbits 1 0 -> -> 1 `i `uc ]
-"203
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 203:     WPUBbits.WPUB1 = 1;
+"250
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 250:     WPUBbits.WPUB1 = 1;
 [e = . . _WPUBbits 1 1 -> -> 1 `i `uc ]
-"204
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 204:     WPUBbits.WPUB2 = 1;
+"251
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 251:     WPUBbits.WPUB2 = 1;
 [e = . . _WPUBbits 1 2 -> -> 1 `i `uc ]
-"205
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 205: }
-[e :UE 147 ]
+"252
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 252: }
+[e :UE 165 ]
 }
-"207
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 207: void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
-[v _settingHourRTC `(v ~T0 @X0 1 ef6`uc`uc`uc`uc`uc`uc ]
+"254
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 254: void settingRTC(char sec, char min, char hour, char day, char mon, char year){
+[v _settingRTC `(v ~T0 @X0 1 ef6`uc`uc`uc`uc`uc`uc ]
 {
-[e :U _settingHourRTC ]
+[e :U _settingRTC ]
 [v _sec `uc ~T0 @X0 1 r1 ]
 [v _min `uc ~T0 @X0 1 r2 ]
 [v _hour `uc ~T0 @X0 1 r3 ]
@@ -727,96 +894,106 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _mon `uc ~T0 @X0 1 r5 ]
 [v _year `uc ~T0 @X0 1 r6 ]
 [f ]
-"209
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 209:         I2C_Master_Start();
+"256
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 256:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"210
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 210:         I2C_Master_Write(0b11010000);
+"257
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 257:         I2C_Master_Write(0b11010000);
 [e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"211
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 211:         I2C_Master_Write(0x00);
+"258
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 258:         I2C_Master_Write(0x00);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"214
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 214:         I2C_Master_Write(Decimal_to_BCD(sec));
+"261
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 261:         I2C_Master_Write(Decimal_to_BCD(sec));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _sec `uc `ui ]
-"217
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 217:         I2C_Master_Write(Decimal_to_BCD(min));
+"264
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 264:         I2C_Master_Write(Decimal_to_BCD(min));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _min `uc `ui ]
-"220
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 220:         I2C_Master_Write(Decimal_to_BCD(hour));
+"267
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 267:         I2C_Master_Write(Decimal_to_BCD(hour));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _hour `uc `ui ]
-"222
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 222:         I2C_Master_Write(Decimal_to_BCD(day));
+"269
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 269:         I2C_Master_Write(Decimal_to_BCD(day));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _day `uc `ui ]
-"223
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 223:         I2C_Master_Write(Decimal_to_BCD(day));
+"270
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 270:         I2C_Master_Write(Decimal_to_BCD(day));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _day `uc `ui ]
-"226
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 226:         I2C_Master_Write(Decimal_to_BCD(mon));
+"273
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 273:         I2C_Master_Write(Decimal_to_BCD(mon));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _mon `uc `ui ]
-"229
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 229:         I2C_Master_Write(Decimal_to_BCD(year));
+"276
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 276:         I2C_Master_Write(Decimal_to_BCD(year));
 [e ( _I2C_Master_Write (1 -> ( _Decimal_to_BCD (1 -> _year `uc `ui ]
-"232
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 232:         I2C_Master_Stop();
+"279
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 279:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"233
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 233: }
-[e :UE 148 ]
+"280
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 280: }
+[e :UE 166 ]
 }
-"235
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 235: uint8_t BCD_to_Decimal(uint8_t bcd_value) {
+"282
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 282: uint8_t BCD_to_Decimal(uint8_t bcd_value) {
 [v _BCD_to_Decimal `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _BCD_to_Decimal ]
 [v _bcd_value `uc ~T0 @X0 1 r1 ]
 [f ]
-"237
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 237:     uint8_t tens_digit = (bcd_value >> 4) & 0x0F;
+"284
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 284:     uint8_t tens_digit = (bcd_value >> 4) & 0x0F;
 [v _tens_digit `uc ~T0 @X0 1 a ]
 [e = _tens_digit -> & >> -> _bcd_value `i -> 4 `i -> 15 `i `uc ]
-"240
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 240:     uint8_t ones_digit = bcd_value & 0x0F;
+"287
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 287:     uint8_t ones_digit = bcd_value & 0x0F;
 [v _ones_digit `uc ~T0 @X0 1 a ]
 [e = _ones_digit -> & -> _bcd_value `i -> 15 `i `uc ]
-"243
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 243:     uint8_t decimal_value = (tens_digit * 10) + ones_digit;
+"290
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 290:     uint8_t decimal_value = (tens_digit * 10) + ones_digit;
 [v _decimal_value `uc ~T0 @X0 1 a ]
 [e = _decimal_value -> + * -> _tens_digit `i -> 10 `i -> _ones_digit `i `uc ]
-"245
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 245:     return decimal_value;
+"292
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 292:     return decimal_value;
 [e ) _decimal_value ]
-[e $UE 149  ]
-"246
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 246: }
-[e :UE 149 ]
+[e $UE 167  ]
+"293
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 293: }
+[e :UE 167 ]
 }
-"248
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 248: uint8_t Decimal_to_BCD(uint8_t decimal_value) {
+"295
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 295: uint8_t Decimal_to_BCD(uint8_t decimal_value) {
 [v _Decimal_to_BCD `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Decimal_to_BCD ]
 [v _decimal_value `uc ~T0 @X0 1 r1 ]
 [f ]
-"250
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 250:     uint8_t tens_digit = decimal_value / 10;
+"297
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 297:     uint8_t tens_digit = decimal_value / 10;
 [v _tens_digit `uc ~T0 @X0 1 a ]
 [e = _tens_digit -> / -> _decimal_value `i -> 10 `i `uc ]
-"251
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 251:     uint8_t ones_digit = decimal_value % 10;
+"298
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 298:     uint8_t ones_digit = decimal_value % 10;
 [v _ones_digit `uc ~T0 @X0 1 a ]
 [e = _ones_digit -> % -> _decimal_value `i -> 10 `i `uc ]
-"254
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 254:     uint8_t bcd_value = (tens_digit << 4) | ones_digit;
+"301
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 301:     uint8_t bcd_value = (tens_digit << 4) | ones_digit;
 [v _bcd_value `uc ~T0 @X0 1 a ]
 [e = _bcd_value -> | << -> _tens_digit `i -> 4 `i -> _ones_digit `i `uc ]
-"256
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 256:     return bcd_value;
+"303
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 303:     return bcd_value;
 [e ) _bcd_value ]
-[e $UE 150  ]
-"257
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 257: }
-[e :UE 150 ]
+[e $UE 168  ]
+"304
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 304: }
+[e :UE 168 ]
+}
+"306
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 306: void updateI2C(){
+[v _updateI2C `(v ~T0 @X0 1 ef ]
+{
+[e :U _updateI2C ]
+[f ]
+"308
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c: 308: }
+[e :UE 169 ]
 }
 [p f _sprintf 8454272 ]
 [a 4C 37 46 50 100 58 37 46 50 100 58 37 46 50 100 0 ]

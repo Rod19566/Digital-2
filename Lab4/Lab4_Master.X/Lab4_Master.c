@@ -64,24 +64,26 @@
 #define D7 RD7
 char lineLCD[16];           //voltage chain
 char s1ADC = 0;          //dato pot s1 received ADC
-char counter = 0;          //dato pot s1 received ADC
-char dateRTC[4] = {0,0,0,0};           //dato Date
+char counter = 0;          //dato contador
+char mode = 0;          //dato mode editing seconds, minutes, or hours, days, month, year
+char dateRTC[4] = {0,0,0,0};           //dato Date (dotw, date, month, year)
 
-char timeRTC[3] = {0,0,0};        //dato Time
+char timeRTC[3] = {0,0,0};        //dato Time (hour, min, sec)
 unsigned char seconds, minutes, hours;
 
 
 #define upButton RB0
 #define downButton RB1
-#define mode RB2
+#define modeButton RB2
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
 uint8_t BCD_to_Decimal(uint8_t bcd_value);
-void settingHourRTC(char sec, char min, char hour, char day, char mon, char year);
+void settingRTC(char sec, char min, char hour, char day, char mon, char year);
 uint8_t Decimal_to_BCD(uint8_t decimal_value);
+void updateI2C(void);
 
 //*****************************************************************************
 // Código de Interrupción 
@@ -90,11 +92,52 @@ void __interrupt() isr(void) {
     
     if(RBIF == 1)  {        //interrupt due to change in button state
     if (!upButton){
-        counter++;
+        switch(mode){
+            case 0:
+                settingRTC(timeRTC[2]+1,timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 1:
+                settingRTC(timeRTC[2],timeRTC[1]+1,timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 2:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0]+1,dateRTC[1],dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 3:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1]+1,dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 4:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2]+1,dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 5:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]+1);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;            
+        }
         
     }
     if (!downButton){
-        counter--;        
+        switch(mode){
+            case 0:
+                settingRTC(timeRTC[2]-1,timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 1:
+                settingRTC(timeRTC[2],timeRTC[1]-1,timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 2:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0]-1,dateRTC[1],dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 3:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1]-1,dateRTC[2],dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 4:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2]-1,dateRTC[3]);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;
+            case 5:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]-1);      //(char sec, char min, char hour, char day, char mon, char year)
+                break;            
+        }      
+    }
+    if (!modeButton){
+        mode++;        
     }
         INTCONbits.RBIF = 0;
     }
@@ -106,7 +149,7 @@ void __interrupt() isr(void) {
 
 void main(void) {
     setup();
-    settingHourRTC(12,12,12,12,12,23);
+    settingRTC(12,12,12,12,12,23);
     while(1){        
 //        I2C_Master_Start();         //reads 
 //        I2C_Master_Write(0x50);
@@ -160,7 +203,11 @@ void main(void) {
         Lcd_Write_String(lineLCD); 
         
         __delay_ms(50);
-        PORTA = counter;
+        if (mode == 6){
+            mode = 0;
+        }
+        //PORTA = counter;
+        PORTA = mode;
     }
     return;
 }
@@ -204,7 +251,7 @@ void setup(void){
     WPUBbits.WPUB2 = 1;
 }
 
-void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
+void settingRTC(char sec, char min, char hour, char day, char mon, char year){
             //RTC  DS3232
         I2C_Master_Start();         //reads 
         I2C_Master_Write(DS3232_ADDRESS);
@@ -256,3 +303,6 @@ uint8_t Decimal_to_BCD(uint8_t decimal_value) {
     return bcd_value;
 }
 
+void updateI2C(){
+    
+}

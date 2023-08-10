@@ -2833,15 +2833,17 @@ void configOsc(uint16_t frec);
 char lineLCD[16];
 char s1ADC = 0;
 char counter = 0;
+char mode = 0;
 char dateRTC[4] = {0,0,0,0};
 
 char timeRTC[3] = {0,0,0};
 unsigned char seconds, minutes, hours;
-# 81 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
+# 82 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
 void setup(void);
 uint8_t BCD_to_Decimal(uint8_t bcd_value);
-void settingHourRTC(char sec, char min, char hour, char day, char mon, char year);
+void settingRTC(char sec, char min, char hour, char day, char mon, char year);
 uint8_t Decimal_to_BCD(uint8_t decimal_value);
+void updateI2C(void);
 
 
 
@@ -2850,11 +2852,52 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
     if(RBIF == 1) {
     if (!RB0){
-        counter++;
+        switch(mode){
+            case 0:
+                settingRTC(timeRTC[2]+1,timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+                break;
+            case 1:
+                settingRTC(timeRTC[2],timeRTC[1]+1,timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+                break;
+            case 2:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0]+1,dateRTC[1],dateRTC[2],dateRTC[3]);
+                break;
+            case 3:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1]+1,dateRTC[2],dateRTC[3]);
+                break;
+            case 4:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2]+1,dateRTC[3]);
+                break;
+            case 5:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]+1);
+                break;
+        }
 
     }
     if (!RB1){
-        counter--;
+        switch(mode){
+            case 0:
+                settingRTC(timeRTC[2]-1,timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+                break;
+            case 1:
+                settingRTC(timeRTC[2],timeRTC[1]-1,timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]);
+                break;
+            case 2:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0]-1,dateRTC[1],dateRTC[2],dateRTC[3]);
+                break;
+            case 3:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1]-1,dateRTC[2],dateRTC[3]);
+                break;
+            case 4:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2]-1,dateRTC[3]);
+                break;
+            case 5:
+                settingRTC(timeRTC[2],timeRTC[1],timeRTC[0],dateRTC[1],dateRTC[2],dateRTC[3]-1);
+                break;
+        }
+    }
+    if (!RB2){
+        mode++;
     }
         INTCONbits.RBIF = 0;
     }
@@ -2866,7 +2909,7 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
 void main(void) {
     setup();
-    settingHourRTC(12,12,12,12,12,23);
+    settingRTC(12,12,12,12,12,23);
     while(1){
 
 
@@ -2920,7 +2963,11 @@ void main(void) {
         Lcd_Write_String(lineLCD);
 
         _delay((unsigned long)((50)*(8000000/4000.0)));
-        PORTA = counter;
+        if (mode == 6){
+            mode = 0;
+        }
+
+        PORTA = mode;
     }
     return;
 }
@@ -2964,7 +3011,7 @@ void setup(void){
     WPUBbits.WPUB2 = 1;
 }
 
-void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
+void settingRTC(char sec, char min, char hour, char day, char mon, char year){
 
         I2C_Master_Start();
         I2C_Master_Write(0b11010000);
@@ -3014,4 +3061,8 @@ uint8_t Decimal_to_BCD(uint8_t decimal_value) {
     uint8_t bcd_value = (tens_digit << 4) | ones_digit;
 
     return bcd_value;
+}
+
+void updateI2C(){
+
 }
