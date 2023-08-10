@@ -65,7 +65,7 @@
 char lineLCD[16];           //voltage chain
 char s1ADC = 0;          //dato pot s1 received ADC
 char counter = 0;          //dato pot s1 received ADC
-char dateRTC[3] = {0,0,0};           //dato Date
+char dateRTC[4] = {0,0,0,0};           //dato Date
 
 char timeRTC[3] = {0,0,0};        //dato Time
 unsigned char seconds, minutes, hours;
@@ -73,6 +73,7 @@ unsigned char seconds, minutes, hours;
 
 #define upButton RB0
 #define downButton RB1
+#define mode RB2
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -105,10 +106,8 @@ void __interrupt() isr(void) {
 
 void main(void) {
     setup();
-    settingHourRTC(30,10,10,3,8,23);
-    while(1){
-        //PORTA = counter;
-        
+    settingHourRTC(12,12,12,12,12,23);
+    while(1){        
 //        I2C_Master_Start();         //reads 
 //        I2C_Master_Write(0x50);
 //        I2C_Master_Write(counter);
@@ -125,12 +124,13 @@ void main(void) {
         I2C_Master_Write(DS3232_ADDRESS | 0x01); // Set read bit (LSB)
         // Read second
         timeRTC[2] = BCD_to_Decimal(I2C_Master_Read(1)); // Read seconds and send ACK
-        timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read seconds and send ACK
-        timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1)); // Read seconds and send ACK
+        timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read minutes and send ACK
+        timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1)); // Read hours and send ACK
+        
         dateRTC[0] = BCD_to_Decimal(I2C_Master_Read(1)); // Read day and send ACK
         dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read date and send ACK
-        dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1)); // Read month and send ACK
-        dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(0)); // Read year and send ACK
+        dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(1)); // Read month and send ACK
+        dateRTC[3] = BCD_to_Decimal(I2C_Master_Read(0)); // Read year and send ACK
         I2C_Master_Stop();
         __delay_ms(200);
         
@@ -149,7 +149,7 @@ void main(void) {
         sprintf(lineLCD, "S1:");
         Lcd_Write_String(lineLCD); 
         Lcd_Set_Cursor(1,6);  //line 1
-        sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
+        sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[1], dateRTC[2], dateRTC[3]);
         Lcd_Write_String(lineLCD); 
         
         Lcd_Set_Cursor(2,1);  //line 2
@@ -160,6 +160,7 @@ void main(void) {
         Lcd_Write_String(lineLCD); 
         
         __delay_ms(50);
+        PORTA = counter;
     }
     return;
 }
@@ -175,7 +176,7 @@ void setup(void){
     
     TRISA = 0;
     //Setting PORTb as an input
-    TRISB = 3;       //RB0 RB1 as inputs
+    TRISB = 0b00000111;       //RB0 RB1 RB2 as inputs
     TRISC = 128;
     TRISD = 0;
     
@@ -194,11 +195,13 @@ void setup(void){
     // interrupt on change PORTB
     IOCBbits.IOCB0 = 1; //enable interrupt RB0, RB2
     IOCBbits.IOCB1 = 1;
+    IOCBbits.IOCB2 = 1;
 
     OPTION_REGbits.nRBPU = 0; //enable pullups
     //enable pullups RB0, RB2
     WPUBbits.WPUB0 = 1;      
-    WPUBbits.WPUB1 = 1;
+    WPUBbits.WPUB1 = 1;   
+    WPUBbits.WPUB2 = 1;
 }
 
 void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
@@ -216,8 +219,8 @@ void settingHourRTC(char sec, char min, char hour, char day, char mon, char year
         // Write hours to DS3232
         I2C_Master_Write(Decimal_to_BCD(hour));
         // Write seconds to DS3232
-        I2C_Master_Write(Decimal_to_BCD(day));
-        I2C_Master_Write(Decimal_to_BCD(day));
+        I2C_Master_Write(Decimal_to_BCD(day));//weekday
+        I2C_Master_Write(Decimal_to_BCD(day));//date
 
         // Write minutes to DS3232
         I2C_Master_Write(Decimal_to_BCD(mon));

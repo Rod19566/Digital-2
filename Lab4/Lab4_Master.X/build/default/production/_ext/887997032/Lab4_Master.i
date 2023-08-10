@@ -2833,11 +2833,11 @@ void configOsc(uint16_t frec);
 char lineLCD[16];
 char s1ADC = 0;
 char counter = 0;
-char dateRTC[3] = {0,0,0};
+char dateRTC[4] = {0,0,0,0};
 
 char timeRTC[3] = {0,0,0};
 unsigned char seconds, minutes, hours;
-# 80 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
+# 81 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
 void setup(void);
 uint8_t BCD_to_Decimal(uint8_t bcd_value);
 void settingHourRTC(char sec, char min, char hour, char day, char mon, char year);
@@ -2866,9 +2866,15 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
 void main(void) {
     setup();
-    settingHourRTC(30,10,10,3,8,23);
+    settingHourRTC(12,12,12,12,12,23);
     while(1){
-# 119 "E:/Universidad/Semestre2_2023/Digital-2/Lab4/Lab4_Master.X/Lab4_Master.c"
+
+
+
+
+
+
+
         I2C_Master_Start();
         I2C_Master_Write(0b11010000);
         I2C_Master_Write(0x00);
@@ -2880,10 +2886,11 @@ void main(void) {
         timeRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
         timeRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
         timeRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
+
         dateRTC[0] = BCD_to_Decimal(I2C_Master_Read(1));
         dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
-        dateRTC[1] = BCD_to_Decimal(I2C_Master_Read(1));
-        dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(0));
+        dateRTC[2] = BCD_to_Decimal(I2C_Master_Read(1));
+        dateRTC[3] = BCD_to_Decimal(I2C_Master_Read(0));
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
@@ -2902,7 +2909,7 @@ void main(void) {
         sprintf(lineLCD, "S1:");
         Lcd_Write_String(lineLCD);
         Lcd_Set_Cursor(1,6);
-        sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[0], dateRTC[1], dateRTC[2]);
+        sprintf(lineLCD, "%.2d/%.2d/20%.2d", dateRTC[1], dateRTC[2], dateRTC[3]);
         Lcd_Write_String(lineLCD);
 
         Lcd_Set_Cursor(2,1);
@@ -2913,6 +2920,7 @@ void main(void) {
         Lcd_Write_String(lineLCD);
 
         _delay((unsigned long)((50)*(8000000/4000.0)));
+        PORTA = counter;
     }
     return;
 }
@@ -2928,7 +2936,7 @@ void setup(void){
 
     TRISA = 0;
 
-    TRISB = 3;
+    TRISB = 0b00000111;
     TRISC = 128;
     TRISD = 0;
 
@@ -2947,11 +2955,13 @@ void setup(void){
 
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1;
+    IOCBbits.IOCB2 = 1;
 
     OPTION_REGbits.nRBPU = 0;
 
     WPUBbits.WPUB0 = 1;
     WPUBbits.WPUB1 = 1;
+    WPUBbits.WPUB2 = 1;
 }
 
 void settingHourRTC(char sec, char min, char hour, char day, char mon, char year){
