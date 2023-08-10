@@ -1,9 +1,11 @@
+#include <Wire.h>
+
 /************************ Adafruit IO Config *******************************/
 
 // visit io.adafruit.com if you need to create an account,
 // or if you need your Adafruit IO key.
 #define IO_USERNAME  "Tumanita"
-#define IO_KEY       "aio_ynJK19nf1AfkXcT7Q6Ff2ek7GCXp"
+#define IO_KEY       "aio_CwuD60KvDT6YYqUS8xDM84EK3hJf"
 
 /******************************* WIFI **************************************/
 

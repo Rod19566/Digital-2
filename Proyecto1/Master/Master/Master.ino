@@ -1,106 +1,87 @@
-// Adafruit IO Publish Example
-//
-// Adafruit invests time and resources providing this open source code.
-// Please support Adafruit and open source hardware by purchasing
-// products from Adafruit!
-//
-// Written by Todd Treece for Adafruit Industries
-// Copyright (c) 2016 Adafruit Industries
-// Licensed under the MIT license.
-//
-// All text above must be included in any redistribution.
-
 /************************** Configuration ***********************************/
 
 #include "config.h"
 
 const int potPin = 34;
-
-// this int will hold the current count for our sketch
-
-#define ledPin 2
+const int ledPin = 2;
+const int slave1Address = 0x50;
 
 int adcValue = 0;
 boolean ledState = false;
+byte receivedValueSlave1 = 0;
 
-// set up the 'Example1' feed
-AdafruitIO_Feed *adcFeed = io.feed("example1");
+// Set up the 'Example1' feed
+AdafruitIO_Feed *adcMasterFeed = io.feed("example1");
 AdafruitIO_Feed *ledFeed = io.feed("led");
+AdafruitIO_Feed *adcSlave1Feed = io.feed("slaveadc1");
 
 void setup() {
-
-  // start the serial connection
+  Wire.begin(21,22);
   Serial.begin(115200);
+  
   pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin,LOW);
+  digitalWrite(ledPin, LOW);
 
-  // wait for serial monitor to open
-  while(!Serial);
+  // Wait for serial monitor to open
+  while (!Serial);
 
   Serial.print("Connecting to Adafruit IO");
 
-  // connect to io.adafruit.com
+  // Connect to io.adafruit.com
   io.connect();
 
-  // set up a message handler for the count feed.
-  // the handleMessage function (defined below)
-  // will be called whenever a message is
-  // received from adafruit io.
+  // Set up a message handler for the led feed
   ledFeed->onMessage(handleMessage);
 
-  // wait for a connection
-  while(io.status() < AIO_CONNECTED) {
+  // Wait for a connection
+  while (io.status() < AIO_CONNECTED) {
     Serial.print(".");
     delay(500);
-  }  
-  //ledFeed->get();
+  }
 
-  // we are connected
+  // We are connected
   Serial.println();
   Serial.println(io.statusText());
-
 }
 
 void loop() {
-  int adcValue = analogRead(potPin);
-  adcValue = map(adcValue, 0, 4095, 0, 255);
+  int adcRawValue = analogRead(potPin);
+  adcValue = map(adcRawValue, 0, 4095, 0, 255);
 
-  if (ledState) digitalWrite(ledPin,HIGH);
-  else digitalWrite(ledPin,LOW);
+  digitalWrite(ledPin, ledState ? HIGH : LOW);
 
-  // io.run(); is required for all sketches.
-  // it should always be present at the top of your loop
-  // function. it keeps the client connected to
-  // io.adafruit.com, and processes any incoming data.
+  Wire.requestFrom(slave1Address, 1);
+
+  while (Wire.available()) {
+    receivedValueSlave1 = Wire.read();
+    Serial.print("Read from Slave1 -> ");
+    Serial.println(receivedValueSlave1);
+  }
+
+  // Process Adafruit IO events
   io.run();
 
- // adcValue = random(0,100);
-
-  // save count to the 'counter' feed on Adafruit IO
-  Serial.print("sending -> ");
+  // Save ADC pot value to the 'adcValue' feed on Adafruit IO
+  Serial.print("Sending ADC value -> ");
   Serial.println(adcValue);
-  adcFeed->save(adcValue);
+  adcMasterFeed->save(adcValue);
 
-  // increment the count by 1
-  //adcValue++;
+  delay(2000);
+  // Save slave pot value to the 'slaveValue' feed on Adafruit IO
+  Serial.print("Sending Slave 1 value -> ");
+  Serial.println(receivedValueSlave1);
+  adcSlave1Feed->save(receivedValueSlave1);
 
-  // Adafruit IO is rate limited for publishing, so a delay is required in
-  // between feed->save events. In this example, we will wait three seconds
-  // (1000 milliseconds == 1 second) during each loop.
-  delay(3000);
-
+  // Adafruit IO is rate limited for publishing, so add a delay between feed->save events
+  delay(2000);
 }
 
-// this function is called whenever a 'counter' message
-// is received from Adafruit IO. it was attached to
-// the counter feed in the setup() function above.
-void handleMessage(AdafruitIO_Data *data) { //once feed receives message
+// This function is called whenever a 'led' message is received from Adafruit IO
+void handleMessage(AdafruitIO_Data *data) {
   char receivedAdafruitData = *data->value();
 
-  Serial.print("received <- ");
+  Serial.print("Received <- ");
   Serial.println(receivedAdafruitData);
 
-  if (receivedAdafruitData == '1') ledState = true;
-  else ledState = false;
-
+  ledState = (receivedAdafruitData == '1');
 }
