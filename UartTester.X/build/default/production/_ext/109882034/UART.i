@@ -1,4 +1,4 @@
-# 1 "Lab2LCD.c"
+# 1 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/UART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,22 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab2LCD.c" 2
-# 15 "Lab2LCD.c"
-#pragma config FOSC = INTRC_CLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+# 1 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/UART.c" 2
 
 
 
@@ -29,7 +14,8 @@
 
 
 
-
+# 1 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/uart.h" 1
+# 14 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/uart.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2647,119 +2633,64 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 36 "Lab2LCD.c" 2
-
-# 1 "./oscillator.h" 1
-
-
-
+# 14 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/uart.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./oscillator.h" 2
+# 15 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/uart.h" 2
 
 
-void configOsc(uint16_t frec);
-# 37 "Lab2LCD.c" 2
-
-# 1 "./setup.h" 1
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./setup.h" 2
+void write(unsigned char data, unsigned char address);
+unsigned char read(unsigned char address);
+void enviocaracter(char a);
+void enviocadena(char* cadena);
+# 8 "D:/Universidad/Semestre2_2023/Digital-2/UartTester.X/UART.c" 2
 
 
-void setupF(void);
-void ioc_init (char pin);
-void buttonPressed(void);
-void upButtonF(void);
-void downButtonF(void);
-# 38 "Lab2LCD.c" 2
+void write(unsigned char data, unsigned char address){
+    EEADR = address;
+    EEDAT = data;
 
-# 1 "./ADC_Interrupt.h" 1
+    EECON1bits.EEPGD = 0;
+    EECON1bits.WREN = 1;
 
+    INTCONbits.GIE = 0;
 
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;
 
+    while(PIR2bits.EEIF==0);
+    PIR2bits.EEIF = 0;
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./ADC_Interrupt.h" 2
+    INTCONbits.GIE = 1;
+    EECON1bits.WREN = 0;
 
-
-
-void adc_init(int channel);
-int adc_read();
-unsigned char adc_change_channel(unsigned char channel);
-int adc_get_channel();
-# 39 "Lab2LCD.c" 2
-
-# 1 "./sevensd.h" 1
-
-
-
-
-
-
-unsigned char sevenSegmentDisplay(unsigned char number);
-# 40 "Lab2LCD.c" 2
-# 53 "Lab2LCD.c"
-unsigned char c = 0;
-unsigned char display = 0;
-# 64 "Lab2LCD.c"
-void __attribute__((picinterrupt(("")))) isr(void){
-
-    if(RBIF == 1) {
-    if (!RB0){
-        upButtonF();
-
-    }
-    if (!RB1){
-        downButtonF();
-
-    }
-        INTCONbits.RBIF = 0;
-    }
-    if (ADIF == 1) {
-
-        if (c == PORTC){
-                  PORTBbits.RB4 = 1;
-              }
-        else {
-                  PORTBbits.RB4 = 0;
-        }
-        c = adc_change_channel(0);
-        _delay((unsigned long)((20)*(8000000/4000000.0)));
-        PIR1bits.ADIF = 0;
-        ADCON0bits.GO = 1;
-    }
-
-
-     if (T0IF == 1) {
-        TMR0 = 0;
-
-        switch(display) {
-            case 0:
-                PORTBbits.RB2 = 0;
-                PORTD = sevenSegmentDisplay(c & 0x0F);
-                PORTBbits.RB3 = 1;
-                display = 1;
-                break;
-            case 1:
-                PORTBbits.RB3 = 0;
-                PORTD = sevenSegmentDisplay((c & 0xF0) >> 4);
-                PORTBbits.RB2 = 1;
-                display = 0;
-                break;
-        }
-    INTCONbits.T0IF = 0;
-     }
 }
 
-void main(void) {
-    setupF();
-    adc_init(1);
+unsigned char read(unsigned char address){
+    EEADR = address;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    unsigned char data = EEDAT;
 
-    while(1){
+    return data;
+}
+
+void enviocaracter(char a){
+    while (TXSTAbits.TRMT == 0){
+
     }
+    if (PIR1bits.TXIF){
+            TXREG = a;
+        }
+}
 
+void enviocadena(char* cadena){
+    while (*cadena != 0){
+      enviocaracter(*cadena);
+      cadena++;
+    }
+    if (PIR1bits.TXIF){
+            TXREG = 13;
+        }
 }

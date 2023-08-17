@@ -15,7 +15,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"64 E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\Lab2LCD.c
+"64 E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
 "113
 [v _main main `(v  1 e 1 0 ]
@@ -212,7 +212,7 @@
 [v _RBIF RBIF `VEb  1 e 0 @88 ]
 "4327
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
-"53 E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\Lab2LCD.c
+"53 E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
 [v _c c `uc  1 e 1 0 ]
 "54
 [v _display display `uc  1 e 1 0 ]
@@ -243,7 +243,7 @@
 [v adc_init@channel channel `i  1 p 2 17 ]
 "21
 } 0
-"64 E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\Lab2LCD.c
+"64 E:\Universidad\Semestre2_2023\Digital-2\Lab1\Lab1.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
 "111

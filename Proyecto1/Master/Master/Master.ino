@@ -5,6 +5,7 @@
 const int potPin = 34;
 const int ledPin = 2;
 const int slave1Address = 0x50;
+TwoWire I2CBME = TwoWire(0);    //creates 12c bus
 
 int adcValue = 0;
 boolean ledState = false;
@@ -16,7 +17,9 @@ AdafruitIO_Feed *ledFeed = io.feed("led");
 AdafruitIO_Feed *adcSlave1Feed = io.feed("slaveadc1");
 
 void setup() {
-  Wire.begin(21,22);
+  Wire.begin(slave1Address, 21, 22); 
+  // Attach a function to trigger when something is received.
+  Wire.onReceive(receiveEvent);
   Serial.begin(115200);
   
   pinMode(ledPin, OUTPUT);
@@ -50,14 +53,6 @@ void loop() {
 
   digitalWrite(ledPin, ledState ? HIGH : LOW);
 
-  Wire.requestFrom(slave1Address, 1);
-
-  while (Wire.available()) {
-    receivedValueSlave1 = Wire.read();
-    Serial.print("Read from Slave1 -> ");
-    Serial.println(receivedValueSlave1);
-  }
-
   // Process Adafruit IO events
   io.run();
 
@@ -65,7 +60,6 @@ void loop() {
   Serial.print("Sending ADC value -> ");
   Serial.println(adcValue);
   adcMasterFeed->save(adcValue);
-
   delay(2000);
   // Save slave pot value to the 'slaveValue' feed on Adafruit IO
   Serial.print("Sending Slave 1 value -> ");
@@ -84,4 +78,10 @@ void handleMessage(AdafruitIO_Data *data) {
   Serial.println(receivedAdafruitData);
 
   ledState = (receivedAdafruitData == '1');
+}
+
+void receiveEvent(int bytes) {
+  receivedValueSlave1 = Wire.read();    // read one character from the I2C
+  Serial.print("Received");
+  Serial.println(receivedValueSlave1);
 }
