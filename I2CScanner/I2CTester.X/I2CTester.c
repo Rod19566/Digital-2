@@ -24,33 +24,85 @@
 // Use project enums instead of #define for ON and OFF.
 
 
-
+//////////////////LIBRERIAS/////////////////
 #include <xc.h>
+#include <pic16f887.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "I2Clib.h"
 
+/////////////////////VARIABLES/////////////////
 #define _XTAL_FREQ 8000000 // Oscillator frequency for __delay_ms()
 
-void main(void) {
-    // Initialization
-    TRISC3 = 1; // SDA pin as input
-    TRISC4 = 1; // SCL pin as input
-    SSPSTAT = 0x80; // Slew rate control disabled
-    SSPADD = 0x08; // Slave address
-    SSPCON = 0x36; // I2C Slave mode, 7-bit address
+// Slave 1 I2C address (default address)
+#define slave1_ADDRESS 0x50        //
+#define slave2_ADDRESS 0x60        //
+#define slave3_ADDRESS 0x70        //
 
-    while (1) {
-        while (!SSPIF); // Wait for I2C start condition
-        SSPIF = 0; // Clear the flag
-        if (!SSPOV && !WCOL) { // No overflow or collision
-            if (SSPSTATbits.R_nW) { // Read operation
-                // Implement your read code here
-            } else { // Write operation
-                // Implement your write code here
-                while (!BF); // Wait for buffer to be full
-                __delay_ms(10); // Add a delay for stability
-            }
-        }
-        SSPCONbits.CKP = 1; // Release SCL line
+
+char valueS1 = 0;          //dato pot s1 received ADC
+char valueS2 = 0;          //dato pot s1 received ADC
+
+
+////////////////// PROTOTIPOS ///////////////////
+void setup(void);
+
+////////////////////////////////////////////
+void main(void) {
+    setup();
+    
+    while(1){
+        PORTA = valueS1;
+        PORTB = valueS2;
+         
+        /////// COMUNICATION WITH SLAVE 1 
+        //READ
+        I2C_Master_Start();
+        I2C_Master_Write(slave1_ADDRESS + 1);     //read
+        valueS1 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        //WRITE      
+        I2C_Master_Start();         //reads 
+        I2C_Master_Write(slave1_ADDRESS);
+        I2C_Master_Write(0b10000001);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        
+        
+        /////// COMUNICATION WITH SLAVE 2
+        //READ
+        I2C_Master_Start();
+        I2C_Master_Write(slave2_ADDRESS + 1);     //read
+        valueS2 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        //WRITE
+        I2C_Master_Start();         //reads 
+        I2C_Master_Write(slave2_ADDRESS);
+        I2C_Master_Write(0b00011000);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        
     }
+    
+}
+
+/////////////FUNCIONES///////////////
+void setup(void){
+        OSCCONbits.IRCF = 0b111;
+        OSCCONbits.SCS = 1;
+        
+        ANSEL = 0;
+        ANSELH = 0;
+
+        TRISC = 128;
+        TRISA = 0;
+        TRISB = 0;
+
+        PORTA = 0;
+        PORTB = 0;
+        PORTC = 0;
+        I2C_Master_Init(100000);        // Inicializar ComuncaciÃ³n I2C
+
 }

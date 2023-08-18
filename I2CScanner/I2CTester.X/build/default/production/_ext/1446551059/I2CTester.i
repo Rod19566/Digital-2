@@ -2654,6 +2654,7 @@ extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
 # 28 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2CTester.c" 2
 
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 1 3
 
 
@@ -2747,34 +2748,117 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 29 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2CTester.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
 # 30 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2CTester.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 31 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2CTester.c" 2
 
+# 1 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2Clib.h" 1
+# 20 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2Clib.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 20 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2Clib.h" 2
+# 29 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2Clib.h"
+void I2C_Master_Init(const unsigned long c);
+
+
+
+
+
+
+
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+
+
+
+
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+# 32 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2CTester.c" 2
+# 43 "D:/Universidad/Semestre2_2023/Digital-2/I2CScanner/I2CTester.X/I2CTester.c"
+char valueS1 = 0;
+char valueS2 = 0;
+
+
+
+void setup(void);
 
 
 void main(void) {
+    setup();
 
-    TRISC3 = 1;
-    TRISC4 = 1;
-    SSPSTAT = 0x80;
-    SSPADD = 0x08;
-    SSPCON = 0x36;
+    while(1){
+        PORTA = valueS1;
+        PORTB = valueS2;
 
-    while (1) {
-        while (!SSPIF);
-        SSPIF = 0;
-        if (!SSPOV && !WCOL) {
-            if (SSPSTATbits.R_nW) {
 
-            } else {
 
-                while (!BF);
-                _delay((unsigned long)((10)*(8000000/4000.0)));
-            }
-        }
-        SSPCONbits.CKP = 1;
+        I2C_Master_Start();
+        I2C_Master_Write(0x50 + 1);
+        valueS1 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x50);
+        I2C_Master_Write(0b10000001);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x60 + 1);
+        valueS2 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x60);
+        I2C_Master_Write(0b00011000);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
     }
+
+}
+
+
+void setup(void){
+        OSCCONbits.IRCF = 0b111;
+        OSCCONbits.SCS = 1;
+
+        ANSEL = 0;
+        ANSELH = 0;
+
+        TRISC = 128;
+        TRISA = 0;
+        TRISB = 0;
+
+        PORTA = 0;
+        PORTB = 0;
+        PORTC = 0;
+        I2C_Master_Init(100000);
+
 }
