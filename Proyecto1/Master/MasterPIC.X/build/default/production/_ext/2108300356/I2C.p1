@@ -288,243 +288,243 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"16 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 16: void I2C_Master_Init(const unsigned long c)
+"16 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 16: void I2C_Master_Init(const unsigned long c)
 [v _I2C_Master_Init `(v ~T0 @X0 1 ef1`Cul ]
 "17
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 17: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 17: {
 {
 [e :U _I2C_Master_Init ]
 "16
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 16: void I2C_Master_Init(const unsigned long c)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 16: void I2C_Master_Init(const unsigned long c)
 [v _c `Cul ~T0 @X0 1 r1 ]
 "17
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 17: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 17: {
 [f ]
 "18
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 18:     SSPCON = 0b00101000;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 18:     SSPCON = 0b00101000;
 [e = _SSPCON -> -> 40 `i `uc ]
 "19
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 19:     SSPCON2 = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 19:     SSPCON2 = 0;
 [e = _SSPCON2 -> -> 0 `i `uc ]
 "20
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 20:     SSPADD = (8000000/(4*c))-1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 20:     SSPADD = (8000000/(4*c))-1;
 [e = _SSPADD -> - / -> -> 8000000 `l `ul * -> -> -> 4 `i `l `ul _c -> -> -> 1 `i `l `ul `uc ]
 "21
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 21:     SSPSTAT = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 21:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
 "22
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 22:     TRISCbits.TRISC3 = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 22:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
 "23
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 23:     TRISCbits.TRISC4 = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 23:     TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "24
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 24: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 24: }
 [e :UE 138 ]
 }
 "32
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 32: void I2C_Master_Wait()
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 32: void I2C_Master_Wait()
 [v _I2C_Master_Wait `(v ~T0 @X0 1 ef ]
 "33
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 33: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 33: {
 {
 [e :U _I2C_Master_Wait ]
 [f ]
 "34
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 34:     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 34:     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
 [e $U 140  ]
 [e :U 141 ]
 [e :U 140 ]
 [e $ || != & -> _SSPSTAT `i -> 4 `i -> 0 `i != & -> _SSPCON2 `i -> 31 `i -> 0 `i 141  ]
 [e :U 142 ]
 "35
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 35: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 35: }
 [e :UE 139 ]
 }
 "39
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 39: void I2C_Master_Start()
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 39: void I2C_Master_Start()
 [v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
 "40
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 40: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 40: {
 {
 [e :U _I2C_Master_Start ]
 [f ]
 "41
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 41:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 41:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "42
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 42:     SSPCON2bits.SEN = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 42:     SSPCON2bits.SEN = 1;
 [e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
 "43
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 43: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 43: }
 [e :UE 143 ]
 }
 "47
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 47: void I2C_Master_RepeatedStart()
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 47: void I2C_Master_RepeatedStart()
 [v _I2C_Master_RepeatedStart `(v ~T0 @X0 1 ef ]
 "48
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 48: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 48: {
 {
 [e :U _I2C_Master_RepeatedStart ]
 [f ]
 "49
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 49:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 49:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "50
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 50:     SSPCON2bits.RSEN = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 50:     SSPCON2bits.RSEN = 1;
 [e = . . _SSPCON2bits 0 1 -> -> 1 `i `uc ]
 "51
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 51: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 51: }
 [e :UE 144 ]
 }
 "55
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 55: void I2C_Master_Stop()
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 55: void I2C_Master_Stop()
 [v _I2C_Master_Stop `(v ~T0 @X0 1 ef ]
 "56
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 56: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 56: {
 {
 [e :U _I2C_Master_Stop ]
 [f ]
 "57
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 57:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 57:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "58
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 58:     SSPCON2bits.PEN = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 58:     SSPCON2bits.PEN = 1;
 [e = . . _SSPCON2bits 0 2 -> -> 1 `i `uc ]
 "59
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 59: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 59: }
 [e :UE 145 ]
 }
 "65
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 65: void I2C_Master_Write(unsigned d)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 65: void I2C_Master_Write(unsigned d)
 [v _I2C_Master_Write `(v ~T0 @X0 1 ef1`ui ]
 "66
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 66: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 66: {
 {
 [e :U _I2C_Master_Write ]
 "65
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 65: void I2C_Master_Write(unsigned d)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 65: void I2C_Master_Write(unsigned d)
 [v _d `ui ~T0 @X0 1 r1 ]
 "66
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 66: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 66: {
 [f ]
 "67
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 67:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 67:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "68
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 68:     SSPBUF = d;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 68:     SSPBUF = d;
 [e = _SSPBUF -> _d `uc ]
 "69
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 69: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 69: }
 [e :UE 146 ]
 }
 "74
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 74: unsigned short I2C_Master_Read(unsigned short a)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 74: unsigned short I2C_Master_Read(unsigned short a)
 [v _I2C_Master_Read `(us ~T0 @X0 1 ef1`us ]
 "75
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 75: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 75: {
 {
 [e :U _I2C_Master_Read ]
 "74
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 74: unsigned short I2C_Master_Read(unsigned short a)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 74: unsigned short I2C_Master_Read(unsigned short a)
 [v _a `us ~T0 @X0 1 r1 ]
 "75
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 75: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 75: {
 [f ]
 "76
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 76:     unsigned short temp;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 76:     unsigned short temp;
 [v _temp `us ~T0 @X0 1 a ]
 "77
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 77:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 77:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "78
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 78:     SSPCON2bits.RCEN = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 78:     SSPCON2bits.RCEN = 1;
 [e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
 "79
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 79:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 79:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "80
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 80:     temp = SSPBUF;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 80:     temp = SSPBUF;
 [e = _temp -> _SSPBUF `us ]
 "81
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 81:     I2C_Master_Wait();
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 81:     I2C_Master_Wait();
 [e ( _I2C_Master_Wait ..  ]
 "82
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 82:     if(a == 1){
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 82:     if(a == 1){
 [e $ ! == -> _a `ui -> -> 1 `i `ui 148  ]
 {
 "83
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 83:         SSPCON2bits.ACKDT = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 83:         SSPCON2bits.ACKDT = 0;
 [e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
 "84
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 84:     }else{
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 84:     }else{
 }
 [e $U 149  ]
 [e :U 148 ]
 {
 "85
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 85:         SSPCON2bits.ACKDT = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 85:         SSPCON2bits.ACKDT = 1;
 [e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
 "86
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 86:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 86:     }
 }
 [e :U 149 ]
 "87
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 87:     SSPCON2bits.ACKEN = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 87:     SSPCON2bits.ACKEN = 1;
 [e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
 "88
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 88:     return temp;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 88:     return temp;
 [e ) _temp ]
 [e $UE 147  ]
 "89
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 89: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 89: }
 [e :UE 147 ]
 }
 "93
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 93: void I2C_Slave_Init(uint8_t address)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 93: void I2C_Slave_Init(uint8_t address)
 [v _I2C_Slave_Init `(v ~T0 @X0 1 ef1`uc ]
 "94
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 94: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 94: {
 {
 [e :U _I2C_Slave_Init ]
 "93
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 93: void I2C_Slave_Init(uint8_t address)
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 93: void I2C_Slave_Init(uint8_t address)
 [v _address `uc ~T0 @X0 1 r1 ]
 "94
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 94: {
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 94: {
 [f ]
 "95
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 95:     SSPADD = address;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 95:     SSPADD = address;
 [e = _SSPADD _address ]
 "96
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 96:     SSPCON = 0x36;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 96:     SSPCON = 0x36;
 [e = _SSPCON -> -> 54 `i `uc ]
 "97
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 97:     SSPSTAT = 0x80;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 97:     SSPSTAT = 0x80;
 [e = _SSPSTAT -> -> 128 `i `uc ]
 "98
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 98:     SSPCON2 = 0x01;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 98:     SSPCON2 = 0x01;
 [e = _SSPCON2 -> -> 1 `i `uc ]
 "99
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 99:     TRISC3 = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 99:     TRISC3 = 1;
 [e = _TRISC3 -> -> 1 `i `b ]
 "100
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 100:     TRISC4 = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 100:     TRISC4 = 1;
 [e = _TRISC4 -> -> 1 `i `b ]
 "101
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 101:     GIE = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 101:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
 "102
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 102:     PEIE = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 102:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
 "103
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 103:     SSPIF = 0;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 103:     SSPIF = 0;
 [e = _SSPIF -> -> 0 `i `b ]
 "104
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 104:     SSPIE = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 104:     SSPIE = 1;
 [e = _SSPIE -> -> 1 `i `b ]
 "105
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 105: }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c: 105: }
 [e :UE 150 ]
 }

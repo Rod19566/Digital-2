@@ -248,52 +248,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"4 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 4:     void configOsc(uint16_t frec){
+"4 oscillator.c
+[; ;oscillator.c: 4:     void configOsc(uint16_t frec){
 [v _configOsc `(v ~T0 @X0 1 ef1`ui ]
 {
 [e :U _configOsc ]
 [v _frec `ui ~T0 @X0 1 r1 ]
 [f ]
 "5
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 5:         if (frec == 8) OSCCONbits.IRCF = 0b111;
+[; ;oscillator.c: 5:         if (frec == 8) OSCCONbits.IRCF = 0b111;
 [e $ ! == _frec -> -> 8 `i `ui 139  ]
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
 [e :U 139 ]
 "6
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 6:         if (frec == 4) OSCCONbits.IRCF = 0b110;
+[; ;oscillator.c: 6:         if (frec == 4) OSCCONbits.IRCF = 0b110;
 [e $ ! == _frec -> -> 4 `i `ui 140  ]
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
 [e :U 140 ]
 "7
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 7:         if (frec == 1) OSCCONbits.IRCF = 0b100;
+[; ;oscillator.c: 7:         if (frec == 1) OSCCONbits.IRCF = 0b100;
 [e $ ! == _frec -> -> 1 `i `ui 141  ]
 [e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
 [e :U 141 ]
 "8
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 8:         if (frec == 500) OSCCONbits.IRCF = 0b011;
+[; ;oscillator.c: 8:         if (frec == 500) OSCCONbits.IRCF = 0b011;
 [e $ ! == _frec -> -> 500 `i `ui 142  ]
 [e = . . _OSCCONbits 0 4 -> -> 3 `i `uc ]
 [e :U 142 ]
 "9
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 9:         if (frec == 250) OSCCONbits.IRCF = 0b101;
+[; ;oscillator.c: 9:         if (frec == 250) OSCCONbits.IRCF = 0b101;
 [e $ ! == _frec -> -> 250 `i `ui 143  ]
 [e = . . _OSCCONbits 0 4 -> -> 5 `i `uc ]
 [e :U 143 ]
 "10
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 10:         if (frec == 125) OSCCONbits.IRCF = 0b001;
+[; ;oscillator.c: 10:         if (frec == 125) OSCCONbits.IRCF = 0b001;
 [e $ ! == _frec -> -> 125 `i `ui 144  ]
 [e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
 [e :U 144 ]
 "11
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 11:         if (frec == 31) OSCCONbits.IRCF = 0b000;
+[; ;oscillator.c: 11:         if (frec == 31) OSCCONbits.IRCF = 0b000;
 [e $ ! == _frec -> -> 31 `i `ui 145  ]
 [e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
 [e :U 145 ]
 "12
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 12:         OSCCONbits.SCS = 1;
+[; ;oscillator.c: 12:         OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "13
-[; ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c: 13:     }
+[; ;oscillator.c: 13:     }
 [e :UE 138 ]
 }

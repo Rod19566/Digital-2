@@ -144,7 +144,7 @@ intentry 8 251 CODE 8 0
 cstackCOMMON 70 7A COMMON 70 1
 %locals
 dist/default/production\ProyectoSlave2.X.production.o
-C:\Users\WMGWW\AppData\Local\Temp\xcAs17vc.\driver_tmp_1.s
+C:\Users\WMGWW\AppData\Local\Temp\xcAsank.\driver_tmp_1.s
 793 F 0 CODE 0
 796 F 0 CODE 0
 813 F 0 CODE 0
@@ -153,7 +153,7 @@ C:\Users\WMGWW\AppData\Local\Temp\xcAs17vc.\driver_tmp_1.s
 821 12 0 CODE 0
 823 12 0 CODE 0
 824 13 0 CODE 0
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c
+Project1_Slave2.c
 94 CF 0 CODE 0
 96 CF 0 CODE 0
 97 D8 0 CODE 0
@@ -171,7 +171,7 @@ D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Projec
 129 107 0 CODE 0
 130 108 0 CODE 0
 131 10E 0 CODE 0
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c
+oscillator.c
 4 73 0 CODE 0
 5 73 0 CODE 0
 6 7E 0 CODE 0
@@ -183,7 +183,7 @@ D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscill
 11 C0 0 CODE 0
 12 CB 0 CODE 0
 13 CE 0 CODE 0
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c
+I2C.c
 93 10F 0 CODE 0
 95 110 0 CODE 0
 96 114 0 CODE 0
@@ -196,7 +196,7 @@ D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c
 103 122 0 CODE 0
 104 125 0 CODE 0
 105 128 0 CODE 0
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c
+Project1_Slave2.c
 59 16 0 CODE 0
 60 16 0 CODE 0
 62 1C 0 CODE 0

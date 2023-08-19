@@ -1,4 +1,4 @@
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c"
+# 1 "Project1_Slave2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c" 2
-# 13 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c"
+# 1 "Project1_Slave2.c" 2
+# 13 "Project1_Slave2.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2647,17 +2647,17 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 34 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c" 2
+# 34 "Project1_Slave2.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 36 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c" 2
+# 36 "Project1_Slave2.c" 2
 
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/I2C.h" 1
-# 20 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/I2C.h"
+# 1 "./I2C.h" 1
+# 20 "./I2C.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/I2C.h" 2
-# 29 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/I2C.h"
+# 20 "./I2C.h" 2
+# 29 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2694,26 +2694,19 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 37 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c" 2
+# 37 "Project1_Slave2.c" 2
 
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/ADC.h" 1
-# 14 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/ADC.h"
-void adcConfig(void);
-void adcChannel(unsigned char channel);
-unsigned char adcRead();
-# 38 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c" 2
-
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/oscillator.h" 1
+# 1 "./oscillator.h" 1
 
 
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/oscillator.h" 2
+# 5 "./oscillator.h" 2
 
 
 void configOsc(uint16_t frec);
-# 39 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c" 2
+# 38 "Project1_Slave2.c" 2
 
 
 
@@ -2781,7 +2774,7 @@ void main(void) {
 
     while(1){
 
-       adcValue = adcValue++;
+       adcValue = adcValue--;
        PORTB = adcValue;
        _delay((unsigned long)((1000)*(8000000/4000.0)));
     }
@@ -2806,5 +2799,5 @@ void setup(void){
     PORTA = 0;
     PORTB = 0;
     PORTD = 0;
-    I2C_Slave_Init(0x50);
+    I2C_Slave_Init(0x60);
 }

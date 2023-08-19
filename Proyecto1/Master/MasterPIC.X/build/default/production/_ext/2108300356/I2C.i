@@ -1,4 +1,4 @@
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c" 2
-# 12 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c"
-# 1 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.h" 1
-# 18 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.h"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c" 2
+# 12 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h" 1
+# 18 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2627,12 +2627,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 18 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.h" 2
+# 18 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.h" 2
-# 29 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.h"
+# 20 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h" 2
+# 29 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h"
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2669,7 +2669,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 12 "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c" 2
+# 12 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c" 2
 
 
 

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Thu Aug 17 18:37:46 2023
+                                                                                               Sat Aug 19 10:38:49 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	16F887
@@ -375,30 +375,30 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    361     0189                     	;# 
    362     018C                     	;# 
    363     018D                     	;# 
-   364     0014                     _SSPCON	set	20
-   365     0005                     _PORTA	set	5
-   366     000B                     _INTCONbits	set	11
-   367     0006                     _PORTB	set	6
-   368     0008                     _PORTD	set	8
-   369     0013                     _SSPBUF	set	19
-   370     0014                     _SSPCONbits	set	20
-   371     000C                     _PIR1bits	set	12
+   364     0005                     _PORTA	set	5
+   365     000B                     _INTCONbits	set	11
+   366     0006                     _PORTB	set	6
+   367     0008                     _PORTD	set	8
+   368     0014                     _SSPCONbits	set	20
+   369     000C                     _PIR1bits	set	12
+   370     0013                     _SSPBUF	set	19
+   371     0014                     _SSPCON	set	20
    372     0063                     _SSPIF	set	99
    373     005E                     _PEIE	set	94
    374     005F                     _GIE	set	95
    375     008F                     _OSCCONbits	set	143
-   376     0091                     _SSPCON2bits	set	145
-   377     0087                     _TRISCbits	set	135
-   378     0094                     _SSPSTAT	set	148
-   379     0093                     _SSPADD	set	147
-   380     0091                     _SSPCON2	set	145
-   381     0088                     _TRISD	set	136
-   382     0086                     _TRISB	set	134
-   383     0094                     _SSPSTATbits	set	148
-   384     0463                     _SSPIE	set	1123
-   385     043C                     _TRISC4	set	1084
-   386     043B                     _TRISC3	set	1083
-   387     04A0                     _BF	set	1184
+   376     0088                     _TRISD	set	136
+   377     0086                     _TRISB	set	134
+   378     0094                     _SSPSTATbits	set	148
+   379     0091                     _SSPCON2bits	set	145
+   380     0087                     _TRISCbits	set	135
+   381     0094                     _SSPSTAT	set	148
+   382     0093                     _SSPADD	set	147
+   383     0091                     _SSPCON2	set	145
+   384     04A0                     _BF	set	1184
+   385     0463                     _SSPIE	set	1123
+   386     043C                     _TRISC4	set	1084
+   387     043B                     _TRISC3	set	1083
    388                           
    389                           	psect	cinit
    390     000F                     start_initialization:	
@@ -475,7 +475,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    461 ;;
    462 ;; *************** function _main *****************
    463 ;; Defined at:
-   464 ;;		line 94 in file "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c"
+   464 ;;		line 94 in file "Project1_Slave2.c"
    465 ;; Parameters:    Size  Location     Type
    466 ;;		None
    467 ;; Auto vars:     Size  Location     Type
@@ -511,32 +511,28 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    497                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    498                           
    499                           
-   500                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 96:     configOsc(8);
+   500                           ;Project1_Slave2.c: 96:     configOsc(8);
    501     00CF  3008               	movlw	8
    502     00D0  00F3               	movwf	configOsc@frec
    503     00D1  3000               	movlw	0
    504     00D2  00F4               	movwf	configOsc@frec+1
    505     00D3  120A  118A  2073  120A  118A  	fcall	_configOsc
    506                           
-   507                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 97:     setup();
+   507                           ;Project1_Slave2.c: 97:     setup();
    508     00D8  120A  118A  20F4  120A  118A  	fcall	_setup
    509     00DD                     l898:
    510     00DD  3001               	movlw	1
    511     00DE  02F8               	subwf	_adcValue,f
    512     00DF                     l900:
    513                           
-   514                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 106:        PORTB = adcValue;
+   514                           ;Project1_Slave2.c: 106:        PORTB = adcValue;
    515     00DF  0878               	movf	_adcValue,w
    516     00E0  1283               	bcf	3,5	;RP0=0, select bank0
    517     00E1  1303               	bcf	3,6	;RP1=0, select bank0
    518     00E2  0086               	movwf	6	;volatile
    519     00E3                     l902:
    520                           
-   521                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 107:        _delay((unsigned long)((1000)*(8000000/4000.0)));
+   521                           ;Project1_Slave2.c: 107:        _delay((unsigned long)((1000)*(8000000/4000.0)));
    522     00E3  300B               	movlw	11
    523     00E4  00F7               	movwf	??_main+2
    524     00E5  3026               	movlw	38
@@ -559,7 +555,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    541     00F4                     __ptext1:	
    542 ;; *************** function _setup *****************
    543 ;; Defined at:
-   544 ;;		line 116 in file "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c"
+   544 ;;		line 116 in file "Project1_Slave2.c"
    545 ;; Parameters:    Size  Location     Type
    546 ;;		None
    547 ;; Auto vars:     Size  Location     Type
@@ -596,8 +592,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    578                           ; Regs used in _setup: [wreg+status,2+status,0+pclath+cstack]
    579                           
    580                           
-   581                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 117:     configOsc(8);
+   581                           ;Project1_Slave2.c: 117:     configOsc(8);
    582     00F4  3008               	movlw	8
    583     00F5  00F3               	movwf	configOsc@frec
    584     00F6  3000               	movlw	0
@@ -605,50 +600,42 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    586     00F8  120A  118A  2073  120A  118A  	fcall	_configOsc
    587     00FD                     l880:
    588                           
-   589                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 120:     INTCONbits.GIE = 1;
+   589                           ;Project1_Slave2.c: 120:     INTCONbits.GIE = 1;
    590     00FD  178B               	bsf	11,7	;volatile
    591     00FE                     l882:
    592                           
-   593                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 121:     INTCONbits.PEIE = 1;
+   593                           ;Project1_Slave2.c: 121:     INTCONbits.PEIE = 1;
    594     00FE  170B               	bsf	11,6	;volatile
    595     00FF                     l884:
    596                           
-   597                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 124:     TRISB = 0;
+   597                           ;Project1_Slave2.c: 124:     TRISB = 0;
    598     00FF  1683               	bsf	3,5	;RP0=1, select bank1
    599     0100  1303               	bcf	3,6	;RP1=0, select bank1
    600     0101  0186               	clrf	6	;volatile
    601     0102                     l886:
    602                           
-   603                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 125:     TRISD = 0;
+   603                           ;Project1_Slave2.c: 125:     TRISD = 0;
    604     0102  0188               	clrf	8	;volatile
    605     0103                     l888:
    606                           
-   607                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 127:     PORTA = 0;
+   607                           ;Project1_Slave2.c: 127:     PORTA = 0;
    608     0103  1283               	bcf	3,5	;RP0=0, select bank0
    609     0104  1303               	bcf	3,6	;RP1=0, select bank0
    610     0105  0185               	clrf	5	;volatile
    611     0106                     l890:
    612                           
-   613                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 128:     PORTB = 0;
+   613                           ;Project1_Slave2.c: 128:     PORTB = 0;
    614     0106  0186               	clrf	6	;volatile
    615     0107                     l892:
    616                           
-   617                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 129:     PORTD = 0;
+   617                           ;Project1_Slave2.c: 129:     PORTD = 0;
    618     0107  0188               	clrf	8	;volatile
    619     0108                     l894:
    620                           
-   621                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 130:     I2C_Slave_Init(0x60);
+   621                           ;Project1_Slave2.c: 130:     I2C_Slave_Init(0x60);
    622     0108  3060               	movlw	96
    623     0109  120A  118A  210F  120A  118A  	fcall	_I2C_Slave_Init
-   624     010E                     l65:
+   624     010E                     l120:
    625     010E  0008               	return
    626     010F                     __end_of_setup:
    627                           
@@ -656,7 +643,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    629     0073                     __ptext2:	
    630 ;; *************** function _configOsc *****************
    631 ;; Defined at:
-   632 ;;		line 4 in file "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c"
+   632 ;;		line 4 in file "oscillator.c"
    633 ;; Parameters:    Size  Location     Type
    634 ;;  frec            2    3[COMMON] unsigned int 
    635 ;; Auto vars:     Size  Location     Type
@@ -693,8 +680,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    666                           ; Regs used in _configOsc: [wreg+status,2+status,0]
    667                           
    668                           
-   669                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           5:         if (frec == 8) OSCCONbits.IRCF = 0b111;
+   669                           ;oscillator.c: 5:         if (frec == 8) OSCCONbits.IRCF = 0b111;
    670     0073  3008               	movlw	8
    671     0074  0673               	xorwf	configOsc@frec,w
    672     0075  0474               	iorwf	configOsc@frec+1,w
@@ -711,8 +697,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    683     007D  048F               	iorwf	15,f	;volatile
    684     007E                     l125:
    685                           
-   686                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           6:         if (frec == 4) OSCCONbits.IRCF = 0b110;
+   686                           ;oscillator.c: 6:         if (frec == 4) OSCCONbits.IRCF = 0b110;
    687     007E  3004               	movlw	4
    688     007F  0673               	xorwf	configOsc@frec,w
    689     0080  0474               	iorwf	configOsc@frec+1,w
@@ -731,8 +716,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    702     008A  008F               	movwf	15	;volatile
    703     008B                     l126:
    704                           
-   705                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           7:         if (frec == 1) OSCCONbits.IRCF = 0b100;
+   705                           ;oscillator.c: 7:         if (frec == 1) OSCCONbits.IRCF = 0b100;
    706     008B  0373               	decf	configOsc@frec,w
    707     008C  0474               	iorwf	configOsc@frec+1,w
    708     008D  1D03               	btfss	3,2
@@ -750,8 +734,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    720     0096  008F               	movwf	15	;volatile
    721     0097                     l127:
    722                           
-   723                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           8:         if (frec == 500) OSCCONbits.IRCF = 0b011;
+   723                           ;oscillator.c: 8:         if (frec == 500) OSCCONbits.IRCF = 0b011;
    724     0097  30F4               	movlw	244
    725     0098  0673               	xorwf	configOsc@frec,w
    726     0099  1D03               	skipz
@@ -772,8 +755,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    741     00A5  008F               	movwf	15	;volatile
    742     00A6                     l128:
    743                           
-   744                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           9:         if (frec == 250) OSCCONbits.IRCF = 0b101;
+   744                           ;oscillator.c: 9:         if (frec == 250) OSCCONbits.IRCF = 0b101;
    745     00A6  30FA               	movlw	250
    746     00A7  0673               	xorwf	configOsc@frec,w
    747     00A8  0474               	iorwf	configOsc@frec+1,w
@@ -792,8 +774,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    760     00B2  008F               	movwf	15	;volatile
    761     00B3                     l129:
    762                           
-   763                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           10:         if (frec == 125) OSCCONbits.IRCF = 0b001;
+   763                           ;oscillator.c: 10:         if (frec == 125) OSCCONbits.IRCF = 0b001;
    764     00B3  307D               	movlw	125
    765     00B4  0673               	xorwf	configOsc@frec,w
    766     00B5  0474               	iorwf	configOsc@frec+1,w
@@ -812,8 +793,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    779     00BF  008F               	movwf	15	;volatile
    780     00C0                     l130:
    781                           
-   782                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           11:         if (frec == 31) OSCCONbits.IRCF = 0b000;
+   782                           ;oscillator.c: 11:         if (frec == 31) OSCCONbits.IRCF = 0b000;
    783     00C0  301F               	movlw	31
    784     00C1  0673               	xorwf	configOsc@frec,w
    785     00C2  0474               	iorwf	configOsc@frec+1,w
@@ -830,8 +810,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    796     00CA  058F               	andwf	15,f	;volatile
    797     00CB                     l876:
    798                           
-   799                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c:
-      +                           12:         OSCCONbits.SCS = 1;
+   799                           ;oscillator.c: 12:         OSCCONbits.SCS = 1;
    800     00CB  1683               	bsf	3,5	;RP0=1, select bank1
    801     00CC  1303               	bcf	3,6	;RP1=0, select bank1
    802     00CD  140F               	bsf	15,0	;volatile
@@ -843,7 +822,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    808     010F                     __ptext3:	
    809 ;; *************** function _I2C_Slave_Init *****************
    810 ;; Defined at:
-   811 ;;		line 93 in file "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c"
+   811 ;;		line 93 in file "I2C.c"
    812 ;; Parameters:    Size  Location     Type
    813 ;;  address         1    wreg     unsigned char 
    814 ;; Auto vars:     Size  Location     Type
@@ -879,70 +858,59 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    844                           ; Regs used in _I2C_Slave_Init: [wreg]
    845                           ;I2C_Slave_Init@address stored from wreg
    846     010F  00F3               	movwf	I2C_Slave_Init@address
-   847     0110                     l742:
+   847     0110                     l724:
    848                           
-   849                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 93: vo
-      +                          id I2C_Slave_Init(uint8_t address);D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Sla
-      +                          ve2/ProyectoSlave2.X/I2C.c: 94: {;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slav
-      +                          e2/ProyectoSlave2.X/I2C.c: 95:     SSPADD = address;
+   849                           ;I2C.c: 93: void I2C_Slave_Init(uint8_t address);I2C.c: 94: {;I2C.c: 95:     SSPADD = ad
+      +                          dress;
    850     0110  0873               	movf	I2C_Slave_Init@address,w
    851     0111  1683               	bsf	3,5	;RP0=1, select bank1
    852     0112  1303               	bcf	3,6	;RP1=0, select bank1
    853     0113  0093               	movwf	19	;volatile
    854                           
-   855                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 96:   
-      +                            SSPCON = 0x36;
+   855                           ;I2C.c: 96:     SSPCON = 0x36;
    856     0114  3036               	movlw	54
    857     0115  1283               	bcf	3,5	;RP0=0, select bank0
    858     0116  1303               	bcf	3,6	;RP1=0, select bank0
    859     0117  0094               	movwf	20	;volatile
    860                           
-   861                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 97:   
-      +                            SSPSTAT = 0x80;
+   861                           ;I2C.c: 97:     SSPSTAT = 0x80;
    862     0118  3080               	movlw	128
    863     0119  1683               	bsf	3,5	;RP0=1, select bank1
    864     011A  1303               	bcf	3,6	;RP1=0, select bank1
    865     011B  0094               	movwf	20	;volatile
    866                           
-   867                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 98:   
-      +                            SSPCON2 = 0x01;
+   867                           ;I2C.c: 98:     SSPCON2 = 0x01;
    868     011C  3001               	movlw	1
    869     011D  0091               	movwf	17	;volatile
-   870     011E                     l744:
+   870     011E                     l726:
    871                           
-   872                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 99:   
-      +                            TRISC3 = 1;
+   872                           ;I2C.c: 99:     TRISC3 = 1;
    873     011E  1587               	bsf	7,3	;volatile
-   874     011F                     l746:
+   874     011F                     l728:
    875                           
-   876                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 100:  
-      +                             TRISC4 = 1;
+   876                           ;I2C.c: 100:     TRISC4 = 1;
    877     011F  1607               	bsf	7,4	;volatile
-   878     0120                     l748:
+   878     0120                     l730:
    879                           
-   880                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 101:  
-      +                             GIE = 1;
+   880                           ;I2C.c: 101:     GIE = 1;
    881     0120  178B               	bsf	11,7	;volatile
-   882     0121                     l750:
+   882     0121                     l732:
    883                           
-   884                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 102:  
-      +                             PEIE = 1;
+   884                           ;I2C.c: 102:     PEIE = 1;
    885     0121  170B               	bsf	11,6	;volatile
-   886     0122                     l752:
+   886     0122                     l734:
    887                           
-   888                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 103:  
-      +                             SSPIF = 0;
+   888                           ;I2C.c: 103:     SSPIF = 0;
    889     0122  1283               	bcf	3,5	;RP0=0, select bank0
    890     0123  1303               	bcf	3,6	;RP1=0, select bank0
    891     0124  118C               	bcf	12,3	;volatile
-   892     0125                     l754:
+   892     0125                     l736:
    893                           
-   894                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c: 104:  
-      +                             SSPIE = 1;
+   894                           ;I2C.c: 104:     SSPIE = 1;
    895     0125  1683               	bsf	3,5	;RP0=1, select bank1
    896     0126  1303               	bcf	3,6	;RP1=0, select bank1
    897     0127  158C               	bsf	12,3	;volatile
-   898     0128                     l120:
+   898     0128                     l55:
    899     0128  0008               	return
    900     0129                     __end_of_I2C_Slave_Init:
    901                           
@@ -950,7 +918,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    903     0016                     __ptext4:	
    904 ;; *************** function _isr *****************
    905 ;; Defined at:
-   906 ;;		line 59 in file "D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c"
+   906 ;;		line 59 in file "Project1_Slave2.c"
    907 ;; Parameters:    Size  Location     Type
    908 ;;		None
    909 ;; Auto vars:     Size  Location     Type
@@ -980,120 +948,106 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    933     0016                     _isr:	
    934                           ;psect for function _isr
    935                           
-   936     0016                     i1l778:
+   936     0016                     i1l818:
    937                           
-   938                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 60:    if(PIR1bits.SSPIF == 1){
+   938                           ;Project1_Slave2.c: 60:    if(PIR1bits.SSPIF == 1){
    939     0016  1283               	bcf	3,5	;RP0=0, select bank0
    940     0017  1303               	bcf	3,6	;RP1=0, select bank0
    941     0018  1D8C               	btfss	12,3	;volatile
-   942     0019  281B               	goto	u10_21
-   943     001A  281C               	goto	u10_20
-   944     001B                     u10_21:
-   945     001B  286C               	goto	i1l54
-   946     001C                     u10_20:
-   947     001C                     i1l780:
+   942     0019  281B               	goto	u12_21
+   943     001A  281C               	goto	u12_20
+   944     001B                     u12_21:
+   945     001B  286C               	goto	i1l109
+   946     001C                     u12_20:
+   947     001C                     i1l820:
    948                           
-   949                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 62:         SSPCONbits.CKP = 0;
+   949                           ;Project1_Slave2.c: 62:         SSPCONbits.CKP = 0;
    950     001C  1214               	bcf	20,4	;volatile
    951                           
-   952                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 64:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+   952                           ;Project1_Slave2.c: 64:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
    953     001D  1B14               	btfsc	20,6	;volatile
-   954     001E  2820               	goto	u11_21
-   955     001F  2821               	goto	u11_20
-   956     0020                     u11_21:
-   957     0020  2825               	goto	i1l784
-   958     0021                     u11_20:
-   959     0021                     i1l782:
+   954     001E  2820               	goto	u13_21
+   955     001F  2821               	goto	u13_20
+   956     0020                     u13_21:
+   957     0020  2825               	goto	i1l824
+   958     0021                     u13_20:
+   959     0021                     i1l822:
    960     0021  1F94               	btfss	20,7	;volatile
-   961     0022  2824               	goto	u12_21
-   962     0023  2825               	goto	u12_20
-   963     0024                     u12_21:
-   964     0024  282A               	goto	i1l792
-   965     0025                     u12_20:
-   966     0025                     i1l784:
+   961     0022  2824               	goto	u14_21
+   962     0023  2825               	goto	u14_20
+   963     0024                     u14_21:
+   964     0024  282A               	goto	i1l832
+   965     0025                     u14_20:
+   966     0025                     i1l824:
    967                           
-   968                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 65:             z = SSPBUF;
+   968                           ;Project1_Slave2.c: 65:             z = SSPBUF;
    969     0025  0813               	movf	19,w	;volatile
    970     0026  00FA               	movwf	_z
-   971     0027                     i1l786:
+   971     0027                     i1l826:
    972                           
-   973                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 66:             SSPCONbits.SSPOV = 0;
+   973                           ;Project1_Slave2.c: 66:             SSPCONbits.SSPOV = 0;
    974     0027  1314               	bcf	20,6	;volatile
-   975     0028                     i1l788:
+   975     0028                     i1l828:
    976                           
-   977                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 67:             SSPCONbits.WCOL = 0;
+   977                           ;Project1_Slave2.c: 67:             SSPCONbits.WCOL = 0;
    978     0028  1394               	bcf	20,7	;volatile
-   979     0029                     i1l790:
+   979     0029                     i1l830:
    980                           
-   981                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 68:             SSPCONbits.CKP = 1;
+   981                           ;Project1_Slave2.c: 68:             SSPCONbits.CKP = 1;
    982     0029  1614               	bsf	20,4	;volatile
-   983     002A                     i1l792:
+   983     002A                     i1l832:
    984                           
-   985                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 71:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+   985                           ;Project1_Slave2.c: 71:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
    986     002A  1683               	bsf	3,5	;RP0=1, select bank1
    987     002B  1303               	bcf	3,6	;RP1=0, select bank1
    988     002C  1A94               	btfsc	20,5	;volatile
-   989     002D  282F               	goto	u13_21
-   990     002E  2830               	goto	u13_20
-   991     002F                     u13_21:
-   992     002F  284A               	goto	i1l45
-   993     0030                     u13_20:
-   994     0030                     i1l794:
+   989     002D  282F               	goto	u15_21
+   990     002E  2830               	goto	u15_20
+   991     002F                     u15_21:
+   992     002F  284A               	goto	i1l100
+   993     0030                     u15_20:
+   994     0030                     i1l834:
    995     0030  1914               	btfsc	20,2	;volatile
-   996     0031  2833               	goto	u14_21
-   997     0032  2834               	goto	u14_20
-   998     0033                     u14_21:
-   999     0033  284A               	goto	i1l45
-  1000     0034                     u14_20:
-  1001     0034                     i1l796:
+   996     0031  2833               	goto	u16_21
+   997     0032  2834               	goto	u16_20
+   998     0033                     u16_21:
+   999     0033  284A               	goto	i1l100
+  1000     0034                     u16_20:
+  1001     0034                     i1l836:
   1002                           
-  1003                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 73:             z = SSPBUF;
+  1003                           ;Project1_Slave2.c: 73:             z = SSPBUF;
   1004     0034  1283               	bcf	3,5	;RP0=0, select bank0
   1005     0035  1303               	bcf	3,6	;RP1=0, select bank0
   1006     0036  0813               	movf	19,w	;volatile
   1007     0037  00FA               	movwf	_z
-  1008     0038                     i1l798:
+  1008     0038                     i1l838:
   1009                           
-  1010                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 75:             PIR1bits.SSPIF = 0;
+  1010                           ;Project1_Slave2.c: 75:             PIR1bits.SSPIF = 0;
   1011     0038  118C               	bcf	12,3	;volatile
-  1012     0039                     i1l800:
+  1012     0039                     i1l840:
   1013                           
-  1014                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 76:             SSPCONbits.CKP = 1;
+  1014                           ;Project1_Slave2.c: 76:             SSPCONbits.CKP = 1;
   1015     0039  1614               	bsf	20,4	;volatile
-  1016     003A                     i1l46:	
-  1017                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 77:             while(!SSPSTATbits.BF);
+  1016     003A                     i1l101:	
+  1017                           ;Project1_Slave2.c: 77:             while(!SSPSTATbits.BF);
   1018                           
   1019     003A  1683               	bsf	3,5	;RP0=1, select bank1
   1020     003B  1303               	bcf	3,6	;RP1=0, select bank1
   1021     003C  1C14               	btfss	20,0	;volatile
-  1022     003D  283F               	goto	u15_21
-  1023     003E  2840               	goto	u15_20
-  1024     003F                     u15_21:
-  1025     003F  283A               	goto	i1l46
-  1026     0040                     u15_20:
-  1027     0040                     i1l802:
+  1022     003D  283F               	goto	u17_21
+  1023     003E  2840               	goto	u17_20
+  1024     003F                     u17_21:
+  1025     003F  283A               	goto	i1l101
+  1026     0040                     u17_20:
+  1027     0040                     i1l842:
   1028                           
-  1029                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 78:             PORTD = SSPBUF;
+  1029                           ;Project1_Slave2.c: 78:             PORTD = SSPBUF;
   1030     0040  1283               	bcf	3,5	;RP0=0, select bank0
   1031     0041  1303               	bcf	3,6	;RP1=0, select bank0
   1032     0042  0813               	movf	19,w	;volatile
   1033     0043  0088               	movwf	8	;volatile
   1034                           
-  1035                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 79:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+  1035                           ;Project1_Slave2.c: 79:             _delay((unsigned long)((250)*(8000000/4000000.0)));
   1036     0044  30A6               	movlw	166
   1037     0045  00F0               	movwf	??_isr
   1038     0046                     u29_27:
@@ -1101,79 +1055,71 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1040     0047  2846               	goto	u29_27
   1041     0048  0000               	nop
   1042                           
-  1043                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 81:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-  1044     0049  2869               	goto	i1l49
-  1045     004A                     i1l45:
+  1043                           ;Project1_Slave2.c: 81:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+  1044     0049  2869               	goto	i1l104
+  1045     004A                     i1l100:
   1046     004A  1A94               	btfsc	20,5	;volatile
-  1047     004B  284D               	goto	u16_21
-  1048     004C  284E               	goto	u16_20
-  1049     004D                     u16_21:
-  1050     004D  2869               	goto	i1l49
-  1051     004E                     u16_20:
-  1052     004E                     i1l804:
+  1047     004B  284D               	goto	u18_21
+  1048     004C  284E               	goto	u18_20
+  1049     004D                     u18_21:
+  1050     004D  2869               	goto	i1l104
+  1051     004E                     u18_20:
+  1052     004E                     i1l844:
   1053     004E  1D14               	btfss	20,2	;volatile
-  1054     004F  2851               	goto	u17_21
-  1055     0050  2852               	goto	u17_20
-  1056     0051                     u17_21:
-  1057     0051  2869               	goto	i1l49
-  1058     0052                     u17_20:
-  1059     0052                     i1l806:
+  1054     004F  2851               	goto	u19_21
+  1055     0050  2852               	goto	u19_20
+  1056     0051                     u19_21:
+  1057     0051  2869               	goto	i1l104
+  1058     0052                     u19_20:
+  1059     0052                     i1l846:
   1060                           
-  1061                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 82:             z = SSPBUF;
+  1061                           ;Project1_Slave2.c: 82:             z = SSPBUF;
   1062     0052  1283               	bcf	3,5	;RP0=0, select bank0
   1063     0053  1303               	bcf	3,6	;RP1=0, select bank0
   1064     0054  0813               	movf	19,w	;volatile
   1065     0055  00FA               	movwf	_z
-  1066     0056                     i1l808:
+  1066     0056                     i1l848:
   1067                           
-  1068                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 83:             BF = 0;
+  1068                           ;Project1_Slave2.c: 83:             BF = 0;
   1069     0056  1683               	bsf	3,5	;RP0=1, select bank1
   1070     0057  1303               	bcf	3,6	;RP1=0, select bank1
   1071     0058  1014               	bcf	20,0	;volatile
   1072                           
-  1073                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 84:             SSPBUF = adcValue;
+  1073                           ;Project1_Slave2.c: 84:             SSPBUF = adcValue;
   1074     0059  0878               	movf	_adcValue,w
   1075     005A  1283               	bcf	3,5	;RP0=0, select bank0
   1076     005B  1303               	bcf	3,6	;RP1=0, select bank0
   1077     005C  0093               	movwf	19	;volatile
-  1078     005D                     i1l810:
+  1078     005D                     i1l850:
   1079                           
-  1080                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 85:             SSPCONbits.CKP = 1;
+  1080                           ;Project1_Slave2.c: 85:             SSPCONbits.CKP = 1;
   1081     005D  1614               	bsf	20,4	;volatile
   1082                           
-  1083                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 86:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+  1083                           ;Project1_Slave2.c: 86:             _delay((unsigned long)((250)*(8000000/4000000.0)));
   1084     005E  30A6               	movlw	166
   1085     005F  00F0               	movwf	??_isr
   1086     0060                     u30_27:
   1087     0060  0BF0               	decfsz	??_isr,f
   1088     0061  2860               	goto	u30_27
   1089     0062  0000               	nop
-  1090     0063                     i1l51:	
-  1091                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 87:             while(SSPSTATbits.BF);
+  1090     0063                     i1l106:	
+  1091                           ;Project1_Slave2.c: 87:             while(SSPSTATbits.BF);
   1092                           
   1093     0063  1683               	bsf	3,5	;RP0=1, select bank1
   1094     0064  1303               	bcf	3,6	;RP1=0, select bank1
   1095     0065  1814               	btfsc	20,0	;volatile
-  1096     0066  2868               	goto	u18_21
-  1097     0067  2869               	goto	u18_20
-  1098     0068                     u18_21:
-  1099     0068  2863               	goto	i1l51
-  1100     0069                     u18_20:
-  1101     0069                     i1l49:
+  1096     0066  2868               	goto	u20_21
+  1097     0067  2869               	goto	u20_20
+  1098     0068                     u20_21:
+  1099     0068  2863               	goto	i1l106
+  1100     0069                     u20_20:
+  1101     0069                     i1l104:
   1102                           
-  1103                           ;D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slav
-      +                          e2.c: 90:         PIR1bits.SSPIF = 0;
+  1103                           ;Project1_Slave2.c: 90:         PIR1bits.SSPIF = 0;
   1104     0069  1283               	bcf	3,5	;RP0=0, select bank0
   1105     006A  1303               	bcf	3,6	;RP1=0, select bank0
   1106     006B  118C               	bcf	12,3	;volatile
-  1107     006C                     i1l54:
+  1107     006C                     i1l109:
   1108     006C  0872               	movf	??_isr+2,w
   1109     006D  008A               	movwf	10
   1110     006E  0E71               	swapf	??_isr+1,w
@@ -1387,15 +1333,15 @@ DATA                 0      0       B      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Thu Aug 17 18:37:46 2023
+Symbol Table                                                                                   Sat Aug 19 10:38:49 2023
 
                       _z 007A              _SSPSTATbits 0094                       _BF 04A0  
-                     l65 010E                      l120 0128                      l130 00C0  
+                     l55 0128                      l120 010E                      l130 00C0  
                     l132 00CE                      l125 007E                      l126 008B  
                     l127 0097                      l128 00A6                      l129 00B3  
-                    l900 00DF                      l750 0121                      l742 0110  
-                    l902 00E3                      l752 0122                      l744 011E  
-                    l754 0125                      l746 011F                      l748 0120  
+                    l730 0120                      l732 0121                      l724 0110  
+                    l900 00DF                      l734 0122                      l726 011E  
+                    l902 00E3                      l736 0125                      l728 011F  
                     l860 0073                      l870 00AD                      l862 007A  
                     l872 00BA                      l864 0085                      l880 00FD  
                     l874 00C7                      l866 0091                      l890 0106  
@@ -1409,29 +1355,29 @@ Symbol Table                                                                    
                     u251 00AC                      u260 00BA                      u261 00B9  
                     u270 00C7                      u271 00C6                      u287 00E9  
                     _isr 0016                     ?_isr 0070                     _PEIE 005E  
-                   i1l51 0063                     i1l45 004A                     i1l46 003A  
-                   i1l54 006C                     i1l49 0069                     _dato 0079  
-                   _main 00CF                     btemp 007E                     start 000C  
-                  ??_isr 0070            configOsc@frec 0073                    ?_main 0070  
-                  i1l800 0039                    i1l810 005D                    i1l802 0040  
-                  i1l804 004E                    i1l806 0052                    i1l808 0056  
-                  i1l780 001C                    i1l790 0029                    i1l782 0021  
-                  i1l792 002A                    i1l784 0025                    i1l794 0030  
-                  i1l786 0027                    i1l778 0016                    i1l796 0034  
-                  i1l788 0028                    i1l798 0038                    u10_20 001C  
-                  u10_21 001B                    u11_20 0021                    u11_21 0020  
-                  u12_20 0025                    u12_21 0024                    u13_20 0030  
-                  u13_21 002F                    u14_20 0034                    u14_21 0033  
-                  u30_27 0060                    u15_20 0040                    u15_21 003F  
-                  u16_20 004E                    u16_21 004D                    u17_20 0052  
-                  u17_21 0051                    u18_20 0069                    u18_21 0068  
+                   _dato 0079                     _main 00CF                     btemp 007E  
+                   start 000C                    ??_isr 0070            configOsc@frec 0073  
+                  ?_main 0070                    i1l100 004A                    i1l101 003A  
+                  i1l104 0069                    i1l106 0063                    i1l109 006C  
+                  i1l820 001C                    i1l830 0029                    i1l822 0021  
+                  i1l840 0039                    i1l832 002A                    i1l824 0025  
+                  i1l850 005D                    i1l842 0040                    i1l834 0030  
+                  i1l826 0027                    i1l818 0016                    i1l844 004E  
+                  i1l836 0034                    i1l828 0028                    i1l846 0052  
+                  i1l838 0038                    i1l848 0056                    u20_20 0069  
+                  u12_20 001C                    u20_21 0068                    u12_21 001B  
+                  u13_20 0021                    u13_21 0020                    u14_20 0025  
+                  u14_21 0024                    u30_27 0060                    u15_20 0030  
+                  u15_21 002F                    u16_20 0034                    u16_21 0033  
+                  u17_20 0040                    u17_21 003F                    u18_20 004E  
+                  u18_21 004D                    u19_20 0052                    u19_21 0051  
                   _PORTA 0005                    _PORTB 0006                    _PORTD 0008  
                   u29_27 0046                    _TRISB 0086                    _TRISD 0088  
                   _SSPIE 0463                    _SSPIF 0063                    _setup 00F4  
                   pclath 000A                    status 0003                    wtemp0 007E  
         __initialization 000F             __end_of_main 00F4                   ??_main 0075  
                  ?_setup 0070                   _SSPADD 0093                   _TRISC3 043B  
-                 _TRISC4 043C                   _SSPBUF 0013                   _SSPCON 0014  
+                 _TRISC4 043C                   _SSPCON 0014                   _SSPBUF 0013  
                  saved_w 007E  __end_of__initialization 0012           __pcstackCOMMON 0070  
           __end_of_setup 010F                  ??_setup 0075    I2C_Slave_Init@address 0073  
              __pmaintext 00CF               __pintentry 0004                  _SSPCON2 0091  

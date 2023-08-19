@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c
+SOURCEFILES_QUOTED_IF_SPACED=I2C.c Project1_Slave2.c oscillator.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1 ${OBJECTDIR}/_ext/1196198048/I2C.p1 ${OBJECTDIR}/_ext/1196198048/oscillator.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d ${OBJECTDIR}/_ext/1196198048/I2C.p1.d ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/Project1_Slave2.p1 ${OBJECTDIR}/oscillator.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/Project1_Slave2.p1.d ${OBJECTDIR}/oscillator.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1 ${OBJECTDIR}/_ext/1196198048/I2C.p1 ${OBJECTDIR}/_ext/1196198048/oscillator.p1
+OBJECTFILES=${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/Project1_Slave2.p1 ${OBJECTDIR}/oscillator.p1
 
 # Source Files
-SOURCEFILES=D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c
+SOURCEFILES=I2C.c Project1_Slave2.c oscillator.c
 
 
 
@@ -94,54 +94,54 @@ MP_PROCESSOR_OPTION=16F887
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1: D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1196198048" 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c 
-	@-${MV} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.d ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/I2C.p1: I2C.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/I2C.p1.d 
+	@${RM} ${OBJECTDIR}/I2C.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/I2C.p1 I2C.c 
+	@-${MV} ${OBJECTDIR}/I2C.d ${OBJECTDIR}/I2C.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1196198048/I2C.p1: D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1196198048" 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/I2C.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/I2C.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1196198048/I2C.p1 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c 
-	@-${MV} ${OBJECTDIR}/_ext/1196198048/I2C.d ${OBJECTDIR}/_ext/1196198048/I2C.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1196198048/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/Project1_Slave2.p1: Project1_Slave2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Project1_Slave2.p1.d 
+	@${RM} ${OBJECTDIR}/Project1_Slave2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Project1_Slave2.p1 Project1_Slave2.c 
+	@-${MV} ${OBJECTDIR}/Project1_Slave2.d ${OBJECTDIR}/Project1_Slave2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Project1_Slave2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1196198048/oscillator.p1: D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1196198048" 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/oscillator.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1196198048/oscillator.p1 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c 
-	@-${MV} ${OBJECTDIR}/_ext/1196198048/oscillator.d ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/oscillator.p1: oscillator.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/oscillator.p1.d 
+	@${RM} ${OBJECTDIR}/oscillator.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/oscillator.p1 oscillator.c 
+	@-${MV} ${OBJECTDIR}/oscillator.d ${OBJECTDIR}/oscillator.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1: D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1196198048" 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c 
-	@-${MV} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.d ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1196198048/Project1_Slave2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/I2C.p1: I2C.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/I2C.p1.d 
+	@${RM} ${OBJECTDIR}/I2C.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/I2C.p1 I2C.c 
+	@-${MV} ${OBJECTDIR}/I2C.d ${OBJECTDIR}/I2C.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1196198048/I2C.p1: D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1196198048" 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/I2C.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/I2C.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1196198048/I2C.p1 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c 
-	@-${MV} ${OBJECTDIR}/_ext/1196198048/I2C.d ${OBJECTDIR}/_ext/1196198048/I2C.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1196198048/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/Project1_Slave2.p1: Project1_Slave2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Project1_Slave2.p1.d 
+	@${RM} ${OBJECTDIR}/Project1_Slave2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Project1_Slave2.p1 Project1_Slave2.c 
+	@-${MV} ${OBJECTDIR}/Project1_Slave2.d ${OBJECTDIR}/Project1_Slave2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Project1_Slave2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1196198048/oscillator.p1: D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1196198048" 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1196198048/oscillator.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1196198048/oscillator.p1 D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c 
-	@-${MV} ${OBJECTDIR}/_ext/1196198048/oscillator.d ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1196198048/oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/oscillator.p1: oscillator.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/oscillator.p1.d 
+	@${RM} ${OBJECTDIR}/oscillator.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/oscillator.p1 oscillator.c 
+	@-${MV} ${OBJECTDIR}/oscillator.d ${OBJECTDIR}/oscillator.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

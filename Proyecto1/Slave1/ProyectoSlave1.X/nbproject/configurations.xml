@@ -18,7 +18,7 @@
       <itemPath>I2C.c</itemPath>
       <itemPath>ADC.c</itemPath>
       <itemPath>oscillator.c</itemPath>
-      <itemPath>D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/Project1_Slave1.c</itemPath>
+      <itemPath>Project1_Slave1.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -26,6 +26,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

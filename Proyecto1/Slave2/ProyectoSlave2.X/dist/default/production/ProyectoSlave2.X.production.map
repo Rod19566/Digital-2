@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.41\pic\dat\20230208172133_en.msgs \
   -cn -h+dist/default/production\ProyectoSlave2.X.production.sym \
   --cmf=dist/default/production\ProyectoSlave2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\WMGWW\AppData\Local\Temp\xcAs17vc.\driver_tmp_3.o \
+  -oC:\Users\WMGWW\AppData\Local\Temp\xcAsank.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/ProyectoSlave2.X.production.map \
-  --md=C:\Users\WMGWW\AppData\Local\Temp\xcAs17vc.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\WMGWW\AppData\Local\Temp\xcAsank.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -22,7 +22,7 @@ Linker command line:
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -k \
-  C:\Users\WMGWW\AppData\Local\Temp\xcAs17vc.\driver_tmp_12.o \
+  C:\Users\WMGWW\AppData\Local\Temp\xcAsank.\driver_tmp_12.o \
   dist/default/production\ProyectoSlave2.X.production.o 
 
 Object code version is 3.11
@@ -32,7 +32,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\WMGWW\AppData\Local\Temp\xcAs17vc.\driver_tmp_12.o
+C:\Users\WMGWW\AppData\Local\Temp\xcAsank.\driver_tmp_12.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -289,22 +289,22 @@ wtemp0                   (abs)        007E
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c
+oscillator.c
 		_configOsc     		CODE           	0073	0000	92
 
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/oscillator.c estimated size: 92
+oscillator.c estimated size: 92
 
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c
+Project1_Slave2.c
 		_main          		CODE           	00CF	0000	37
 		_isr           		CODE           	0016	0000	93
 		_setup         		CODE           	00F4	0000	27
 
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/Project1_Slave2.c estimated size: 157
+Project1_Slave2.c estimated size: 157
 
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c
+I2C.c
 		_I2C_Slave_Init		CODE           	010F	0000	26
 
-D:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave2/ProyectoSlave2.X/I2C.c estimated size: 26
+I2C.c estimated size: 26
 
 shared
 		__initialization		CODE           	000F	0000	3

@@ -3,6 +3,8 @@
  * Author: WMGWW
  *
  * Created on 17 de agosto de 2023, 05:43 PM
+ * Slave 1 
+ * Sensor Ultrasónico
  */
 
 // PIC16F887 Configuration Bit Settings
@@ -42,16 +44,23 @@
 // DefiniciÃ³n de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
+#define slave1Address 0x50
+
+//Ultrasonic Sensor
+#define TRIG RB2   //SALIDA 1
+#define ECHO RB3   //ENTRADA 1
 
 uint8_t z;
 uint8_t dato;
-unsigned char adcValue = 0;      //valor adc   
+uint16_t distance;
 
 //*****************************************************************************
 // DefiniciÃ³n de funciones para que se puedan colocar despuÃ©s del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
+uint16_t getDistance(void);
+void timer1Config (void);
 
 
 //*****************************************************************************
@@ -82,7 +91,7 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){ //writes data
             z = SSPBUF;
             BF = 0;
-            SSPBUF = adcValue;      //Sends value
+            SSPBUF = distance;      //Sends value
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -93,19 +102,55 @@ void __interrupt() isr(void){
 }
 
 void main(void) {
+    uint8_t counter = 0; // Inicializar el contador en 0    
     
-    configOsc(8);
     setup();
-    
+    timer1Config();    
     
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
     while(1){     
         
-       adcValue = adcValue++;
-       PORTB = adcValue;
-       __delay_ms(1000);
+      // adcValue = adcValue++;
+      // PORTB = adcValue;
+        
+        //SENSOR ULTRASONICO 
+        distance = getDistance();        
+        switch (distance) {
+            case 2:
+                PORTA = 0b11111111; // Turn on all LEDs
+                break;
+            case 3:
+                PORTA = 0b11111110; // Turn off the first LED
+                break;
+            case 6:
+                PORTA = 0b11111100; // Turn off the second LED
+                break;
+            case 8:
+                PORTA = 0b11111000; // Turn off the third LED
+                break;
+            case 10:
+                PORTA = 0b11110000; // Turn off the second LED
+                break;
+            case 12:
+                PORTA = 0b11100000; // Turn off the third LED
+                break;
+            case 14:
+                PORTA = 0b11000000; // Turn off the second LED
+                break;
+            case 16:
+                PORTA = 0b10000000; // Turn off the third LED
+                break;
+            case 18:
+                PORTA = 0b00000000; // Turn off all LEDs
+                break;
+            default:
+                // Handle cases where distance does not match any of the above values.
+                break;
+        }    
+        __delay_ms(200);
+       
     }
     return;
 }
@@ -121,12 +166,58 @@ void setup(void){
     INTCONbits.GIE = 1;         // Habilitamos interrupciones
     INTCONbits.PEIE = 1;        // Se habilitan las interrupciones perifericos
     
+    ANSEL = 0;
+    ANSELH = 0;
     
-    TRISB = 0;
+    TRISA = 0;
+    TRISB = 0b00001000;
     TRISD = 0;
     
     PORTA = 0;         //se limpian los puertos
     PORTB = 0;
     PORTD = 0;
-    I2C_Slave_Init(0x50);   
+    I2C_Slave_Init(slave1Address);   
+}
+
+void timer1Config(void){
+    //T1CONbits.RD16=1;
+    T1CONbits.T1CKPS0 = 0b00;
+    T1CONbits.TMR1CS = 0;
+    TMR1 = 0;
+    TMR1ON = 0;
+}
+
+
+uint16_t getDistance(void)
+{
+    uint16_t Duration;
+    uint16_t Distance;
+    uint16_t Timer1;
+    TRIG = 1;
+    __delay_ms(10);
+    TRIG = 0;
+    while(ECHO == 0);
+    T1CONbits.TMR1ON = 1;
+    while(ECHO == 1);
+    T1CONbits.TMR1ON = 0;
+    Timer1 = TMR1;
+    Duration = Timer1/2;
+    if(Duration <= 23200)//400 cms de maximos del sensor si se usara float se usa el valor exacto 23529.4
+    {
+        Distance = Duration/58;
+    }
+    else if(Duration < 116)//rango minimo de 2 cm
+        
+    {
+        Distance = 0;
+    }
+     else 
+        
+    {
+        Distance = 0;
+    }
+    Duration = 0;
+    TMR1 = 0;
+    return Distance;
+    
 }
