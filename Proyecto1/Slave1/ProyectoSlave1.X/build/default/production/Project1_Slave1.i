@@ -2714,7 +2714,7 @@ unsigned char adcRead();
 
 void configOsc(uint16_t frec);
 # 41 "Project1_Slave1.c" 2
-# 53 "Project1_Slave1.c"
+# 52 "Project1_Slave1.c"
 uint8_t z;
 uint8_t dato;
 uint16_t distance;
@@ -2724,9 +2724,8 @@ uint16_t distance;
 
 
 void setup(void);
-uint16_t getDistance(void);
-void timer1Config (void);
-
+uint16_t getDistance1();
+void timer1Config(void);
 
 
 
@@ -2781,7 +2780,7 @@ void main(void) {
 
 
 
-        distance = getDistance();
+        distance = getDistance1();
         switch (distance) {
             case 2:
                 PORTA = 0b11111111;
@@ -2844,17 +2843,8 @@ void setup(void){
     I2C_Slave_Init(0x50);
 }
 
-void timer1Config(void){
 
-    T1CONbits.T1CKPS0 = 0b00;
-    T1CONbits.TMR1CS = 0;
-    TMR1 = 0;
-    TMR1ON = 0;
-}
-
-
-uint16_t getDistance(void)
-{
+uint16_t getDistance1(){
     uint16_t Duration;
     uint16_t Distance;
     uint16_t Timer1;
@@ -2884,5 +2874,13 @@ uint16_t getDistance(void)
     Duration = 0;
     TMR1 = 0;
     return Distance;
+}
 
+
+void timer1Config(void){
+
+    T1CONbits.T1CKPS0 = 0b00;
+    T1CONbits.TMR1CS = 0;
+    TMR1 = 0;
+    TMR1ON = 0;
 }

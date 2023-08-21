@@ -5,8 +5,18 @@
 [d frameptr 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"505 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
@@ -19,22 +29,50 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "39
 [v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"47
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
 "55
 [v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
 "65
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-"51 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+"13 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+"55
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"63
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"68
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"80
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"96
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"104
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+"81 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
 [v _main main `(v  1 e 1 0 ]
-"92
+"106
 [v _setup setup `(v  1 e 1 0 ]
+"145
+[v _slave1Communication slave1Communication `(v  1 e 1 0 ]
+"163
+[v _slave2Communication slave2Communication `(v  1 e 1 0 ]
+"182
+[v _LCDprint LCDprint `(v  1 e 1 0 ]
+"197
+[v _usSensor usSensor `(v  1 e 1 0 ]
+"207
+[v _dcForward dcForward `(v  1 e 1 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "291
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
@@ -57,20 +95,22 @@
 "1558
 [u S35 . 1 `S26 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES35  1 e 1 @135 ]
-[s S121 . 1 `uc 1 SCS 1 0 :1:0 
+"1603
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S126 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S127 . 1 `uc 1 . 1 0 :4:0 
+[s S132 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S132 . 1 `S121 1 . 1 0 `S127 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES132  1 e 1 @143 ]
+[u S137 . 1 `S126 1 . 1 0 `S132 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES137  1 e 1 @143 ]
 "1980
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
 [s S47 . 1 `uc 1 SEN 1 0 :1:0 
@@ -97,6 +137,38 @@
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "4045
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4084
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"4087
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"4090
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"4093
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"4096
+[v _RA4 RA4 `VEb  1 e 0 @44 ]
+"4099
+[v _RA5 RA5 `VEb  1 e 0 @45 ]
+"4138
+[v _RC0 RC0 `VEb  1 e 0 @56 ]
+"4141
+[v _RC1 RC1 `VEb  1 e 0 @57 ]
+"4186
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"4189
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"4192
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"4195
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"4198
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"4201
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"4204
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"4207
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
 "4279
 [v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4282
@@ -105,37 +177,32 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4465
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"43 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
-[v _valueS1 valueS1 `uc  1 e 1 0 ]
-"44
-[v _valueS2 valueS2 `uc  1 e 1 0 ]
-"51
+"358 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"64 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[v _ultrasonicValue ultrasonicValue `uc  1 e 1 0 ]
+"65
+[v _motor1 motor1 `uc  1 e 1 0 ]
+"68
+[v _lineLCD lineLCD `[16]uc  1 e 16 0 ]
+"81
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"103
 } 0
-"92
-[v _setup setup `(v  1 e 1 0 ]
+"163
+[v _slave2Communication slave2Communication `(v  1 e 1 0 ]
 {
-"108
+"164
+[v slave2Communication@valueS2 valueS2 `uc  1 a 1 9 ]
+"180
 } 0
-"16 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"145
+[v _slave1Communication slave1Communication `(v  1 e 1 0 ]
 {
-[v I2C_Master_Init@c c `DCul  1 p 4 0 ]
-"24
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
-{
-"10
-[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
-"11
-[v ___lldiv@counter counter `uc  1 a 1 13 ]
-"5
-[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
-[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
-"30
+"146
+[v slave1Communication@valueS1 valueS1 `uc  1 a 1 9 ]
+"161
 } 0
 "65 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
@@ -166,4 +233,163 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 {
 "35
+} 0
+"106 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[v _setup setup `(v  1 e 1 0 ]
+{
+"125
+} 0
+"80 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"94
+} 0
+"16 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+[v I2C_Master_Init@c c `DCul  1 p 4 0 ]
+"24
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
+"207 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[v _dcForward dcForward `(v  1 e 1 0 ]
+{
+"216
+} 0
+"182
+[v _LCDprint LCDprint `(v  1 e 1 0 ]
+{
+"194
+} 0
+"197
+[v _usSensor usSensor `(v  1 e 1 0 ]
+{
+"204
+} 0
+"104 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+{
+"105
+[v Lcd_Write_String@i i `i  1 a 2 8 ]
+"104
+[v Lcd_Write_String@a a `*.26uc  1 p 2 3 ]
+"108
+} 0
+"96
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+[v Lcd_Write_Char@a a `uc  1 a 1 2 ]
+"102
+} 0
+"68
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+"69
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 6 ]
+"68
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
+"70
+[v Lcd_Set_Cursor@a a `uc  1 a 1 5 ]
+"78
+} 0
+"505 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"545
+[v sprintf@val val `ui  1 a 2 9 ]
+"512
+[v sprintf@c c `uc  1 a 1 12 ]
+"521
+[v sprintf@prec prec `c  1 a 1 11 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 7 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 6 ]
+"505
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 0 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 8 ]
+"1567
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 1 ]
+"15
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 11 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 7 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 9 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 1 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 2 ]
+"51
+} 0
+"63 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"66
+} 0
+"55
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 3 ]
+"61
+} 0
+"13
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+{
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+[v Lcd_Port@a a `uc  1 a 1 0 ]
+"53
 } 0

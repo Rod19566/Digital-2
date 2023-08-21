@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Sat Aug 19 11:21:47 2023
+                                                                                               Sat Aug 19 13:09:51 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	16F887
@@ -469,9 +469,9 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    455     001F                     _ADCON0bits	set	31
    456     0013                     _SSPBUF	set	19
    457     0014                     _SSPCON	set	20
-   458     0033                     _RB3	set	51
-   459     0032                     _RB2	set	50
-   460     0080                     _TMR1ON	set	128
+   458     0080                     _TMR1ON	set	128
+   459     0033                     _RB3	set	51
+   460     0032                     _RB2	set	50
    461     0063                     _SSPIF	set	99
    462     005E                     _PEIE	set	94
    463     005F                     _GIE	set	95
@@ -588,23 +588,23 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    574                           
    575                           ; 2 bytes @ 0x1
    576     0021                     	ds	2
-   577     0023                     ?_getDistance:
+   577     0023                     ?_getDistance1:
    578                           
    579                           ; 2 bytes @ 0x3
    580     0023                     	ds	2
-   581     0025                     ??_getDistance:
+   581     0025                     ??_getDistance1:
    582                           
    583                           ; 1 bytes @ 0x5
    584     0025                     	ds	2
-   585     0027                     getDistance@Timer1:
+   585     0027                     getDistance1@Timer1:
    586                           
    587                           ; 2 bytes @ 0x7
    588     0027                     	ds	2
-   589     0029                     getDistance@Distance:
+   589     0029                     getDistance1@Distance:
    590                           
    591                           ; 2 bytes @ 0x9
    592     0029                     	ds	2
-   593     002B                     getDistance@Duration:
+   593     002B                     getDistance1@Duration:
    594                           
    595                           ; 2 bytes @ 0xB
    596     002B                     	ds	2
@@ -620,7 +620,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    606 ;;
    607 ;; *************** function _main *****************
    608 ;; Defined at:
-   609 ;;		line 104 in file "Project1_Slave1.c"
+   609 ;;		line 102 in file "Project1_Slave1.c"
    610 ;; Parameters:    Size  Location     Type
    611 ;;		None
    612 ;; Auto vars:     Size  Location     Type
@@ -641,7 +641,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    627 ;;Total ram usage:        3 bytes
    628 ;; Hardware stack levels required when called: 3
    629 ;; This function calls:
-   630 ;;		_getDistance
+   630 ;;		_getDistance1
    631 ;;		_setup
    632 ;;		_timer1Config
    633 ;; This function is called by:
@@ -658,95 +658,95 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    644                           
    645     0017                     l1293:
    646                           
-   647                           ;Project1_Slave1.c: 107:     setup();
+   647                           ;Project1_Slave1.c: 105:     setup();
    648     0017  120A  118A  21CB  120A  118A  	fcall	_setup
    649     001C                     l1295:
    650                           
-   651                           ;Project1_Slave1.c: 108:     timer1Config();
+   651                           ;Project1_Slave1.c: 106:     timer1Config();
    652     001C  120A  118A  2206  120A  118A  	fcall	_timer1Config
    653     0021                     l1297:
    654                           
-   655                           ;Project1_Slave1.c: 119:         distance = getDistance();
-   656     0021  120A  118A  2135  120A  118A  	fcall	_getDistance
+   655                           ;Project1_Slave1.c: 117:         distance = getDistance1();
+   656     0021  120A  118A  2135  120A  118A  	fcall	_getDistance1
    657     0026  1283               	bcf	3,5	;RP0=0, select bank0
    658     0027  1303               	bcf	3,6	;RP1=0, select bank0
-   659     0028  0824               	movf	?_getDistance+1,w
+   659     0028  0824               	movf	?_getDistance1+1,w
    660     0029  00F8               	movwf	_distance+1
-   661     002A  0823               	movf	?_getDistance,w
+   661     002A  0823               	movf	?_getDistance1,w
    662     002B  00F7               	movwf	_distance
    663                           
-   664                           ;Project1_Slave1.c: 120:         switch (distance) {
+   664                           ;Project1_Slave1.c: 118:         switch (distance) {
    665     002C  2847               	goto	l1319
    666     002D                     l1299:
    667                           
-   668                           ;Project1_Slave1.c: 122:                 PORTA = 0b11111111;
+   668                           ;Project1_Slave1.c: 120:                 PORTA = 0b11111111;
    669     002D  30FF               	movlw	255
    670     002E  0085               	movwf	5	;volatile
    671                           
-   672                           ;Project1_Slave1.c: 123:                 break;
+   672                           ;Project1_Slave1.c: 121:                 break;
    673     002F  2869               	goto	l1321
    674     0030                     l1301:
    675                           
-   676                           ;Project1_Slave1.c: 125:                 PORTA = 0b11111110;
+   676                           ;Project1_Slave1.c: 123:                 PORTA = 0b11111110;
    677     0030  30FE               	movlw	254
    678     0031  0085               	movwf	5	;volatile
    679                           
-   680                           ;Project1_Slave1.c: 126:                 break;
+   680                           ;Project1_Slave1.c: 124:                 break;
    681     0032  2869               	goto	l1321
    682     0033                     l1303:
    683                           
-   684                           ;Project1_Slave1.c: 128:                 PORTA = 0b11111100;
+   684                           ;Project1_Slave1.c: 126:                 PORTA = 0b11111100;
    685     0033  30FC               	movlw	252
    686     0034  0085               	movwf	5	;volatile
    687                           
-   688                           ;Project1_Slave1.c: 129:                 break;
+   688                           ;Project1_Slave1.c: 127:                 break;
    689     0035  2869               	goto	l1321
    690     0036                     l1305:
    691                           
-   692                           ;Project1_Slave1.c: 131:                 PORTA = 0b11111000;
+   692                           ;Project1_Slave1.c: 129:                 PORTA = 0b11111000;
    693     0036  30F8               	movlw	248
    694     0037  0085               	movwf	5	;volatile
    695                           
-   696                           ;Project1_Slave1.c: 132:                 break;
+   696                           ;Project1_Slave1.c: 130:                 break;
    697     0038  2869               	goto	l1321
    698     0039                     l1307:
    699                           
-   700                           ;Project1_Slave1.c: 134:                 PORTA = 0b11110000;
+   700                           ;Project1_Slave1.c: 132:                 PORTA = 0b11110000;
    701     0039  30F0               	movlw	240
    702     003A  0085               	movwf	5	;volatile
    703                           
-   704                           ;Project1_Slave1.c: 135:                 break;
+   704                           ;Project1_Slave1.c: 133:                 break;
    705     003B  2869               	goto	l1321
    706     003C                     l1309:
    707                           
-   708                           ;Project1_Slave1.c: 137:                 PORTA = 0b11100000;
+   708                           ;Project1_Slave1.c: 135:                 PORTA = 0b11100000;
    709     003C  30E0               	movlw	224
    710     003D  0085               	movwf	5	;volatile
    711                           
-   712                           ;Project1_Slave1.c: 138:                 break;
+   712                           ;Project1_Slave1.c: 136:                 break;
    713     003E  2869               	goto	l1321
    714     003F                     l1311:
    715                           
-   716                           ;Project1_Slave1.c: 140:                 PORTA = 0b11000000;
+   716                           ;Project1_Slave1.c: 138:                 PORTA = 0b11000000;
    717     003F  30C0               	movlw	192
    718     0040  0085               	movwf	5	;volatile
    719                           
-   720                           ;Project1_Slave1.c: 141:                 break;
+   720                           ;Project1_Slave1.c: 139:                 break;
    721     0041  2869               	goto	l1321
    722     0042                     l1313:
    723                           
-   724                           ;Project1_Slave1.c: 143:                 PORTA = 0b10000000;
+   724                           ;Project1_Slave1.c: 141:                 PORTA = 0b10000000;
    725     0042  3080               	movlw	128
    726     0043  0085               	movwf	5	;volatile
    727                           
-   728                           ;Project1_Slave1.c: 144:                 break;
+   728                           ;Project1_Slave1.c: 142:                 break;
    729     0044  2869               	goto	l1321
    730     0045                     l1315:
    731                           
-   732                           ;Project1_Slave1.c: 146:                 PORTA = 0b00000000;
+   732                           ;Project1_Slave1.c: 144:                 PORTA = 0b00000000;
    733     0045  0185               	clrf	5	;volatile
    734                           
-   735                           ;Project1_Slave1.c: 147:                 break;
+   735                           ;Project1_Slave1.c: 145:                 break;
    736     0046  2869               	goto	l1321
    737     0047                     l1319:
    738                           
@@ -806,7 +806,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    791     0068  2869               	goto	l1321
    792     0069                     l1321:
    793                           
-   794                           ;Project1_Slave1.c: 152:         _delay((unsigned long)((200)*(8000000/4000.0)));
+   794                           ;Project1_Slave1.c: 150:         _delay((unsigned long)((200)*(8000000/4000.0)));
    795     0069  3003               	movlw	3
    796     006A  1283               	bcf	3,5	;RP0=0, select bank0
    797     006B  1303               	bcf	3,6	;RP1=0, select bank0
@@ -831,7 +831,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    816     0206                     __ptext1:	
    817 ;; *************** function _timer1Config *****************
    818 ;; Defined at:
-   819 ;;		line 182 in file "Project1_Slave1.c"
+   819 ;;		line 214 in file "Project1_Slave1.c"
    820 ;; Parameters:    Size  Location     Type
    821 ;;		None
    822 ;; Auto vars:     Size  Location     Type
@@ -867,23 +867,23 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    852                           ; Regs used in _timer1Config: [status,2]
    853                           
    854                           
-   855                           ;Project1_Slave1.c: 184:     T1CONbits.T1CKPS0 = 0b00;
+   855                           ;Project1_Slave1.c: 216:     T1CONbits.T1CKPS0 = 0b00;
    856     0206  1283               	bcf	3,5	;RP0=0, select bank0
    857     0207  1303               	bcf	3,6	;RP1=0, select bank0
    858     0208  1210               	bcf	16,4	;volatile
    859                           
-   860                           ;Project1_Slave1.c: 185:     T1CONbits.TMR1CS = 0;
+   860                           ;Project1_Slave1.c: 217:     T1CONbits.TMR1CS = 0;
    861     0209  1090               	bcf	16,1	;volatile
    862     020A                     l881:
    863                           
-   864                           ;Project1_Slave1.c: 186:     TMR1 = 0;
+   864                           ;Project1_Slave1.c: 218:     TMR1 = 0;
    865     020A  018E               	clrf	14	;volatile
    866     020B  018F               	clrf	15	;volatile
    867     020C                     l883:
    868                           
-   869                           ;Project1_Slave1.c: 187:     TMR1ON = 0;
+   869                           ;Project1_Slave1.c: 219:     TMR1ON = 0;
    870     020C  1010               	bcf	16,0	;volatile
-   871     020D                     l188:
+   871     020D                     l201:
    872     020D  0008               	return
    873     020E                     __end_of_timer1Config:
    874                           
@@ -891,7 +891,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    876     01CB                     __ptext2:	
    877 ;; *************** function _setup *****************
    878 ;; Defined at:
-   879 ;;		line 162 in file "Project1_Slave1.c"
+   879 ;;		line 160 in file "Project1_Slave1.c"
    880 ;; Parameters:    Size  Location     Type
    881 ;;		None
    882 ;; Auto vars:     Size  Location     Type
@@ -928,7 +928,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    913                           ; Regs used in _setup: [wreg+status,2+status,0+pclath+cstack]
    914                           
    915                           
-   916                           ;Project1_Slave1.c: 163:     configOsc(8);
+   916                           ;Project1_Slave1.c: 161:     configOsc(8);
    917     01CB  3008               	movlw	8
    918     01CC  00F3               	movwf	configOsc@frec
    919     01CD  3000               	movlw	0
@@ -936,54 +936,54 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    921     01CF  120A  118A  20D9  120A  118A  	fcall	_configOsc
    922     01D4                     l1127:
    923                           
-   924                           ;Project1_Slave1.c: 166:     INTCONbits.GIE = 1;
+   924                           ;Project1_Slave1.c: 164:     INTCONbits.GIE = 1;
    925     01D4  178B               	bsf	11,7	;volatile
    926     01D5                     l1129:
    927                           
-   928                           ;Project1_Slave1.c: 167:     INTCONbits.PEIE = 1;
+   928                           ;Project1_Slave1.c: 165:     INTCONbits.PEIE = 1;
    929     01D5  170B               	bsf	11,6	;volatile
    930     01D6                     l1131:
    931                           
-   932                           ;Project1_Slave1.c: 169:     ANSEL = 0;
+   932                           ;Project1_Slave1.c: 167:     ANSEL = 0;
    933     01D6  1683               	bsf	3,5	;RP0=1, select bank3
    934     01D7  1703               	bsf	3,6	;RP1=1, select bank3
    935     01D8  0188               	clrf	8	;volatile
    936     01D9                     l1133:
    937                           
-   938                           ;Project1_Slave1.c: 170:     ANSELH = 0;
+   938                           ;Project1_Slave1.c: 168:     ANSELH = 0;
    939     01D9  0189               	clrf	9	;volatile
    940     01DA                     l1135:
    941                           
-   942                           ;Project1_Slave1.c: 172:     TRISA = 0;
+   942                           ;Project1_Slave1.c: 170:     TRISA = 0;
    943     01DA  1683               	bsf	3,5	;RP0=1, select bank1
    944     01DB  1303               	bcf	3,6	;RP1=0, select bank1
    945     01DC  0185               	clrf	5	;volatile
    946     01DD                     l1137:
    947                           
-   948                           ;Project1_Slave1.c: 173:     TRISB = 0b00001000;
+   948                           ;Project1_Slave1.c: 171:     TRISB = 0b00001000;
    949     01DD  3008               	movlw	8
    950     01DE  0086               	movwf	6	;volatile
    951     01DF                     l1139:
    952                           
-   953                           ;Project1_Slave1.c: 174:     TRISD = 0;
+   953                           ;Project1_Slave1.c: 172:     TRISD = 0;
    954     01DF  0188               	clrf	8	;volatile
    955     01E0                     l1141:
    956                           
-   957                           ;Project1_Slave1.c: 176:     PORTA = 0;
+   957                           ;Project1_Slave1.c: 174:     PORTA = 0;
    958     01E0  1283               	bcf	3,5	;RP0=0, select bank0
    959     01E1  1303               	bcf	3,6	;RP1=0, select bank0
    960     01E2  0185               	clrf	5	;volatile
    961     01E3                     l1143:
    962                           
-   963                           ;Project1_Slave1.c: 177:     PORTB = 0;
+   963                           ;Project1_Slave1.c: 175:     PORTB = 0;
    964     01E3  0186               	clrf	6	;volatile
    965     01E4                     l1145:
    966                           
-   967                           ;Project1_Slave1.c: 178:     PORTD = 0;
+   967                           ;Project1_Slave1.c: 176:     PORTD = 0;
    968     01E4  0188               	clrf	8	;volatile
    969     01E5                     l1147:
    970                           
-   971                           ;Project1_Slave1.c: 179:     I2C_Slave_Init(0x50);
+   971                           ;Project1_Slave1.c: 177:     I2C_Slave_Init(0x50);
    972     01E5  3050               	movlw	80
    973     01E6  120A  118A  21EC  120A  118A  	fcall	_I2C_Slave_Init
    974     01EB                     l185:
@@ -1266,9 +1266,9 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1250                           
   1251                           	psect	text5
   1252     0135                     __ptext5:	
-  1253 ;; *************** function _getDistance *****************
+  1253 ;; *************** function _getDistance1 *****************
   1254 ;; Defined at:
-  1255 ;;		line 191 in file "Project1_Slave1.c"
+  1255 ;;		line 181 in file "Project1_Slave1.c"
   1256 ;; Parameters:    Size  Location     Type
   1257 ;;		None
   1258 ;; Auto vars:     Size  Location     Type
@@ -1298,95 +1298,95 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1282 ;; This function uses a non-reentrant model
   1283 ;;
   1284                           
-  1285     0135                     _getDistance:	
-  1286                           ;psect for function _getDistance
+  1285     0135                     _getDistance1:	
+  1286                           ;psect for function _getDistance1
   1287                           
   1288     0135                     l1267:	
   1289                           ;incstack = 0
-  1290                           ; Regs used in _getDistance: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+  1290                           ; Regs used in _getDistance1: [wreg+status,2+status,0+btemp+1+pclath+cstack]
   1291                           
   1292                           
-  1293                           ;Project1_Slave1.c: 193:     uint16_t Duration;;Project1_Slave1.c: 194:     uint16_t Dis
-      +                          tance;;Project1_Slave1.c: 195:     uint16_t Timer1;;Project1_Slave1.c: 196:     RB2 = 1;
+  1293                           ;Project1_Slave1.c: 182:     uint16_t Duration;;Project1_Slave1.c: 183:     uint16_t Dis
+      +                          tance;;Project1_Slave1.c: 184:     uint16_t Timer1;;Project1_Slave1.c: 185:     RB2 = 1;
   1294     0135  1283               	bcf	3,5	;RP0=0, select bank0
   1295     0136  1303               	bcf	3,6	;RP1=0, select bank0
   1296     0137  1506               	bsf	6,2	;volatile
   1297     0138                     l1269:
   1298                           
-  1299                           ;Project1_Slave1.c: 197:     _delay((unsigned long)((10)*(8000000/4000.0)));
+  1299                           ;Project1_Slave1.c: 186:     _delay((unsigned long)((10)*(8000000/4000.0)));
   1300     0138  301A               	movlw	26
   1301     0139  1283               	bcf	3,5	;RP0=0, select bank0
   1302     013A  1303               	bcf	3,6	;RP1=0, select bank0
-  1303     013B  00A6               	movwf	??_getDistance+1
+  1303     013B  00A6               	movwf	??_getDistance1+1
   1304     013C  30F7               	movlw	247
-  1305     013D  00A5               	movwf	??_getDistance
+  1305     013D  00A5               	movwf	??_getDistance1
   1306     013E                     u597:
-  1307     013E  0BA5               	decfsz	??_getDistance,f
+  1307     013E  0BA5               	decfsz	??_getDistance1,f
   1308     013F  293E               	goto	u597
-  1309     0140  0BA6               	decfsz	??_getDistance+1,f
+  1309     0140  0BA6               	decfsz	??_getDistance1+1,f
   1310     0141  293E               	goto	u597
   1311     0142  2943               	nop2
   1312     0143                     l1271:
   1313                           
-  1314                           ;Project1_Slave1.c: 198:     RB2 = 0;
+  1314                           ;Project1_Slave1.c: 187:     RB2 = 0;
   1315     0143  1283               	bcf	3,5	;RP0=0, select bank0
   1316     0144  1303               	bcf	3,6	;RP1=0, select bank0
   1317     0145  1106               	bcf	6,2	;volatile
-  1318     0146                     l191:	
-  1319                           ;Project1_Slave1.c: 199:     while(RB3 == 0);
+  1318     0146                     l188:	
+  1319                           ;Project1_Slave1.c: 188:     while(RB3 == 0);
   1320                           
   1321     0146  1D86               	btfss	6,3	;volatile
   1322     0147  2949               	goto	u551
   1323     0148  294A               	goto	u550
   1324     0149                     u551:
-  1325     0149  2946               	goto	l191
+  1325     0149  2946               	goto	l188
   1326     014A                     u550:
-  1327     014A                     l193:
+  1327     014A                     l190:
   1328                           
-  1329                           ;Project1_Slave1.c: 200:     T1CONbits.TMR1ON = 1;
+  1329                           ;Project1_Slave1.c: 189:     T1CONbits.TMR1ON = 1;
   1330     014A  1410               	bsf	16,0	;volatile
-  1331     014B                     l194:	
-  1332                           ;Project1_Slave1.c: 201:     while(RB3 == 1);
+  1331     014B                     l191:	
+  1332                           ;Project1_Slave1.c: 190:     while(RB3 == 1);
   1333                           
   1334     014B  1986               	btfsc	6,3	;volatile
   1335     014C  294E               	goto	u561
   1336     014D  294F               	goto	u560
   1337     014E                     u561:
-  1338     014E  294B               	goto	l194
+  1338     014E  294B               	goto	l191
   1339     014F                     u560:
-  1340     014F                     l196:
+  1340     014F                     l193:
   1341                           
-  1342                           ;Project1_Slave1.c: 202:     T1CONbits.TMR1ON = 0;
+  1342                           ;Project1_Slave1.c: 191:     T1CONbits.TMR1ON = 0;
   1343     014F  1010               	bcf	16,0	;volatile
   1344     0150                     l1273:
   1345                           
-  1346                           ;Project1_Slave1.c: 203:     Timer1 = TMR1;
+  1346                           ;Project1_Slave1.c: 192:     Timer1 = TMR1;
   1347     0150  080F               	movf	15,w	;volatile
-  1348     0151  00A8               	movwf	getDistance@Timer1+1
+  1348     0151  00A8               	movwf	getDistance1@Timer1+1
   1349     0152  080E               	movf	14,w	;volatile
-  1350     0153  00A7               	movwf	getDistance@Timer1
+  1350     0153  00A7               	movwf	getDistance1@Timer1
   1351     0154                     l1275:
   1352                           
-  1353                           ;Project1_Slave1.c: 204:     Duration = Timer1/2;
-  1354     0154  0828               	movf	getDistance@Timer1+1,w
-  1355     0155  00A6               	movwf	??_getDistance+1
-  1356     0156  0827               	movf	getDistance@Timer1,w
-  1357     0157  00A5               	movwf	??_getDistance
+  1353                           ;Project1_Slave1.c: 193:     Duration = Timer1/2;
+  1354     0154  0828               	movf	getDistance1@Timer1+1,w
+  1355     0155  00A6               	movwf	??_getDistance1+1
+  1356     0156  0827               	movf	getDistance1@Timer1,w
+  1357     0157  00A5               	movwf	??_getDistance1
   1358     0158  1003               	clrc
-  1359     0159  0CA6               	rrf	??_getDistance+1,f
-  1360     015A  0CA5               	rrf	??_getDistance,f
-  1361     015B  0825               	movf	??_getDistance,w
-  1362     015C  00AB               	movwf	getDistance@Duration
-  1363     015D  0826               	movf	??_getDistance+1,w
-  1364     015E  00AC               	movwf	getDistance@Duration+1
+  1359     0159  0CA6               	rrf	??_getDistance1+1,f
+  1360     015A  0CA5               	rrf	??_getDistance1,f
+  1361     015B  0825               	movf	??_getDistance1,w
+  1362     015C  00AB               	movwf	getDistance1@Duration
+  1363     015D  0826               	movf	??_getDistance1+1,w
+  1364     015E  00AC               	movwf	getDistance1@Duration+1
   1365     015F                     l1277:
   1366                           
-  1367                           ;Project1_Slave1.c: 205:     if(Duration <= 23200)
+  1367                           ;Project1_Slave1.c: 194:     if(Duration <= 23200)
   1368     015F  305A               	movlw	90
-  1369     0160  022C               	subwf	getDistance@Duration+1,w
+  1369     0160  022C               	subwf	getDistance1@Duration+1,w
   1370     0161  30A1               	movlw	161
   1371     0162  1903               	skipnz
-  1372     0163  022B               	subwf	getDistance@Duration,w
+  1372     0163  022B               	subwf	getDistance1@Duration,w
   1373     0164  1803               	skipnc
   1374     0165  2967               	goto	u571
   1375     0166  2968               	goto	u570
@@ -1395,48 +1395,48 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1378     0168                     u570:
   1379     0168                     l1279:
   1380                           
-  1381                           ;Project1_Slave1.c: 206:     {;Project1_Slave1.c: 207:         Distance = Duration/58;
+  1381                           ;Project1_Slave1.c: 195:     {;Project1_Slave1.c: 196:         Distance = Duration/58;
   1382     0168  303A               	movlw	58
   1383     0169  00F3               	movwf	___lwdiv@divisor
   1384     016A  3000               	movlw	0
   1385     016B  00F4               	movwf	___lwdiv@divisor+1
-  1386     016C  082C               	movf	getDistance@Duration+1,w
+  1386     016C  082C               	movf	getDistance1@Duration+1,w
   1387     016D  00F6               	movwf	___lwdiv@dividend+1
-  1388     016E  082B               	movf	getDistance@Duration,w
+  1388     016E  082B               	movf	getDistance1@Duration,w
   1389     016F  00F5               	movwf	___lwdiv@dividend
   1390     0170  120A  118A  2185  120A  118A  	fcall	___lwdiv
   1391     0175  0874               	movf	?___lwdiv+1,w
   1392     0176  1283               	bcf	3,5	;RP0=0, select bank0
   1393     0177  1303               	bcf	3,6	;RP1=0, select bank0
-  1394     0178  00AA               	movwf	getDistance@Distance+1
+  1394     0178  00AA               	movwf	getDistance1@Distance+1
   1395     0179  0873               	movf	?___lwdiv,w
-  1396     017A  00A9               	movwf	getDistance@Distance
+  1396     017A  00A9               	movwf	getDistance1@Distance
   1397                           
-  1398                           ;Project1_Slave1.c: 208:     }
-  1399     017B  297E               	goto	l198
+  1398                           ;Project1_Slave1.c: 197:     }
+  1399     017B  297E               	goto	l195
   1400     017C                     l1281:
   1401     017C                     l1283:
   1402                           
-  1403                           ;Project1_Slave1.c: 211:     {;Project1_Slave1.c: 212:         Distance = 0;
-  1404     017C  01A9               	clrf	getDistance@Distance
-  1405     017D  01AA               	clrf	getDistance@Distance+1
-  1406     017E                     l198:	
-  1407                           ;Project1_Slave1.c: 213:     }
+  1403                           ;Project1_Slave1.c: 200:     {;Project1_Slave1.c: 201:         Distance = 0;
+  1404     017C  01A9               	clrf	getDistance1@Distance
+  1405     017D  01AA               	clrf	getDistance1@Distance+1
+  1406     017E                     l195:	
+  1407                           ;Project1_Slave1.c: 202:     }
   1408                           
   1409                           
-  1410                           ;Project1_Slave1.c: 220:     TMR1 = 0;
+  1410                           ;Project1_Slave1.c: 209:     TMR1 = 0;
   1411     017E  018E               	clrf	14	;volatile
   1412     017F  018F               	clrf	15	;volatile
   1413     0180                     l1287:
   1414                           
-  1415                           ;Project1_Slave1.c: 221:     return Distance;
-  1416     0180  082A               	movf	getDistance@Distance+1,w
-  1417     0181  00A4               	movwf	?_getDistance+1
-  1418     0182  0829               	movf	getDistance@Distance,w
-  1419     0183  00A3               	movwf	?_getDistance
-  1420     0184                     l201:
+  1415                           ;Project1_Slave1.c: 210:     return Distance;
+  1416     0180  082A               	movf	getDistance1@Distance+1,w
+  1417     0181  00A4               	movwf	?_getDistance1+1
+  1418     0182  0829               	movf	getDistance1@Distance,w
+  1419     0183  00A3               	movwf	?_getDistance1
+  1420     0184                     l198:
   1421     0184  0008               	return
-  1422     0185                     __end_of_getDistance:
+  1422     0185                     __end_of_getDistance1:
   1423                           
   1424                           	psect	text6
   1425     0185                     __ptext6:	
@@ -1468,7 +1468,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1451 ;; This function calls:
   1452 ;;		Nothing
   1453 ;; This function is called by:
-  1454 ;;		_getDistance
+  1454 ;;		_getDistance1
   1455 ;; This function uses a non-reentrant model
   1456 ;;
   1457                           
@@ -1579,7 +1579,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1562     007C                     __ptext7:	
   1563 ;; *************** function _isr *****************
   1564 ;; Defined at:
-  1565 ;;		line 69 in file "Project1_Slave1.c"
+  1565 ;;		line 67 in file "Project1_Slave1.c"
   1566 ;; Parameters:    Size  Location     Type
   1567 ;;		None
   1568 ;; Auto vars:     Size  Location     Type
@@ -1611,7 +1611,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1594                           
   1595     007C                     i1l979:
   1596                           
-  1597                           ;Project1_Slave1.c: 70:    if(PIR1bits.SSPIF == 1){
+  1597                           ;Project1_Slave1.c: 68:    if(PIR1bits.SSPIF == 1){
   1598     007C  1283               	bcf	3,5	;RP0=0, select bank0
   1599     007D  1303               	bcf	3,6	;RP1=0, select bank0
   1600     007E  1D8C               	btfss	12,3	;volatile
@@ -1622,10 +1622,10 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1605     0082                     u22_20:
   1606     0082                     i1l981:
   1607                           
-  1608                           ;Project1_Slave1.c: 72:         SSPCONbits.CKP = 0;
+  1608                           ;Project1_Slave1.c: 70:         SSPCONbits.CKP = 0;
   1609     0082  1214               	bcf	20,4	;volatile
   1610                           
-  1611                           ;Project1_Slave1.c: 74:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+  1611                           ;Project1_Slave1.c: 72:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
   1612     0083  1B14               	btfsc	20,6	;volatile
   1613     0084  2886               	goto	u23_21
   1614     0085  2887               	goto	u23_20
@@ -1641,24 +1641,24 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1624     008B                     u24_20:
   1625     008B                     i1l985:
   1626                           
-  1627                           ;Project1_Slave1.c: 75:             z = SSPBUF;
+  1627                           ;Project1_Slave1.c: 73:             z = SSPBUF;
   1628     008B  0813               	movf	19,w	;volatile
   1629     008C  00FA               	movwf	_z
   1630     008D                     i1l987:
   1631                           
-  1632                           ;Project1_Slave1.c: 76:             SSPCONbits.SSPOV = 0;
+  1632                           ;Project1_Slave1.c: 74:             SSPCONbits.SSPOV = 0;
   1633     008D  1314               	bcf	20,6	;volatile
   1634     008E                     i1l989:
   1635                           
-  1636                           ;Project1_Slave1.c: 77:             SSPCONbits.WCOL = 0;
+  1636                           ;Project1_Slave1.c: 75:             SSPCONbits.WCOL = 0;
   1637     008E  1394               	bcf	20,7	;volatile
   1638     008F                     i1l991:
   1639                           
-  1640                           ;Project1_Slave1.c: 78:             SSPCONbits.CKP = 1;
+  1640                           ;Project1_Slave1.c: 76:             SSPCONbits.CKP = 1;
   1641     008F  1614               	bsf	20,4	;volatile
   1642     0090                     i1l993:
   1643                           
-  1644                           ;Project1_Slave1.c: 81:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+  1644                           ;Project1_Slave1.c: 79:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
   1645     0090  1683               	bsf	3,5	;RP0=1, select bank1
   1646     0091  1303               	bcf	3,6	;RP1=0, select bank1
   1647     0092  1A94               	btfsc	20,5	;volatile
@@ -1676,21 +1676,21 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1659     009A                     u26_20:
   1660     009A                     i1l997:
   1661                           
-  1662                           ;Project1_Slave1.c: 83:             z = SSPBUF;
+  1662                           ;Project1_Slave1.c: 81:             z = SSPBUF;
   1663     009A  1283               	bcf	3,5	;RP0=0, select bank0
   1664     009B  1303               	bcf	3,6	;RP1=0, select bank0
   1665     009C  0813               	movf	19,w	;volatile
   1666     009D  00FA               	movwf	_z
   1667     009E                     i1l999:
   1668                           
-  1669                           ;Project1_Slave1.c: 85:             PIR1bits.SSPIF = 0;
+  1669                           ;Project1_Slave1.c: 83:             PIR1bits.SSPIF = 0;
   1670     009E  118C               	bcf	12,3	;volatile
   1671     009F                     i1l1001:
   1672                           
-  1673                           ;Project1_Slave1.c: 86:             SSPCONbits.CKP = 1;
+  1673                           ;Project1_Slave1.c: 84:             SSPCONbits.CKP = 1;
   1674     009F  1614               	bsf	20,4	;volatile
   1675     00A0                     i1l154:	
-  1676                           ;Project1_Slave1.c: 87:             while(!SSPSTATbits.BF);
+  1676                           ;Project1_Slave1.c: 85:             while(!SSPSTATbits.BF);
   1677                           
   1678     00A0  1683               	bsf	3,5	;RP0=1, select bank1
   1679     00A1  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1702,13 +1702,13 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1685     00A6                     u27_20:
   1686     00A6                     i1l1003:
   1687                           
-  1688                           ;Project1_Slave1.c: 88:             PORTD = SSPBUF;
+  1688                           ;Project1_Slave1.c: 86:             PORTD = SSPBUF;
   1689     00A6  1283               	bcf	3,5	;RP0=0, select bank0
   1690     00A7  1303               	bcf	3,6	;RP1=0, select bank0
   1691     00A8  0813               	movf	19,w	;volatile
   1692     00A9  0088               	movwf	8	;volatile
   1693                           
-  1694                           ;Project1_Slave1.c: 89:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+  1694                           ;Project1_Slave1.c: 87:             _delay((unsigned long)((250)*(8000000/4000000.0)));
   1695     00AA  30A6               	movlw	166
   1696     00AB  00F0               	movwf	??_isr
   1697     00AC                     u60_27:
@@ -1716,7 +1716,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1699     00AD  28AC               	goto	u60_27
   1700     00AE  0000               	nop
   1701                           
-  1702                           ;Project1_Slave1.c: 91:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+  1702                           ;Project1_Slave1.c: 89:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
   1703     00AF  28CF               	goto	i1l157
   1704     00B0                     i1l153:
   1705     00B0  1A94               	btfsc	20,5	;volatile
@@ -1734,29 +1734,29 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1717     00B8                     u29_20:
   1718     00B8                     i1l1007:
   1719                           
-  1720                           ;Project1_Slave1.c: 92:             z = SSPBUF;
+  1720                           ;Project1_Slave1.c: 90:             z = SSPBUF;
   1721     00B8  1283               	bcf	3,5	;RP0=0, select bank0
   1722     00B9  1303               	bcf	3,6	;RP1=0, select bank0
   1723     00BA  0813               	movf	19,w	;volatile
   1724     00BB  00FA               	movwf	_z
   1725     00BC                     i1l1009:
   1726                           
-  1727                           ;Project1_Slave1.c: 93:             BF = 0;
+  1727                           ;Project1_Slave1.c: 91:             BF = 0;
   1728     00BC  1683               	bsf	3,5	;RP0=1, select bank1
   1729     00BD  1303               	bcf	3,6	;RP1=0, select bank1
   1730     00BE  1014               	bcf	20,0	;volatile
   1731                           
-  1732                           ;Project1_Slave1.c: 94:             SSPBUF = distance;
+  1732                           ;Project1_Slave1.c: 92:             SSPBUF = distance;
   1733     00BF  0877               	movf	_distance,w
   1734     00C0  1283               	bcf	3,5	;RP0=0, select bank0
   1735     00C1  1303               	bcf	3,6	;RP1=0, select bank0
   1736     00C2  0093               	movwf	19	;volatile
   1737     00C3                     i1l1011:
   1738                           
-  1739                           ;Project1_Slave1.c: 95:             SSPCONbits.CKP = 1;
+  1739                           ;Project1_Slave1.c: 93:             SSPCONbits.CKP = 1;
   1740     00C3  1614               	bsf	20,4	;volatile
   1741                           
-  1742                           ;Project1_Slave1.c: 96:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+  1742                           ;Project1_Slave1.c: 94:             _delay((unsigned long)((250)*(8000000/4000000.0)));
   1743     00C4  30A6               	movlw	166
   1744     00C5  00F0               	movwf	??_isr
   1745     00C6                     u61_27:
@@ -1764,7 +1764,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1747     00C7  28C6               	goto	u61_27
   1748     00C8  0000               	nop
   1749     00C9                     i1l159:	
-  1750                           ;Project1_Slave1.c: 97:             while(SSPSTATbits.BF);
+  1750                           ;Project1_Slave1.c: 95:             while(SSPSTATbits.BF);
   1751                           
   1752     00C9  1683               	bsf	3,5	;RP0=1, select bank1
   1753     00CA  1303               	bcf	3,6	;RP1=0, select bank1
@@ -1776,7 +1776,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
   1759     00CF                     u30_20:
   1760     00CF                     i1l157:
   1761                           
-  1762                           ;Project1_Slave1.c: 100:         PIR1bits.SSPIF = 0;
+  1762                           ;Project1_Slave1.c: 98:         PIR1bits.SSPIF = 0;
   1763     00CF  1283               	bcf	3,5	;RP0=0, select bank0
   1764     00D0  1303               	bcf	3,6	;RP1=0, select bank0
   1765     00D1  118C               	bcf	12,3	;volatile
@@ -1887,7 +1887,7 @@ Pointer List with Targets:
 Critical Paths under _main in COMMON
 
     _setup->_configOsc
-    _getDistance->___lwdiv
+    _getDistance1->___lwdiv
 
 Critical Paths under _isr in COMMON
 
@@ -1895,8 +1895,8 @@ Critical Paths under _isr in COMMON
 
 Critical Paths under _main in BANK0
 
-    _main->_getDistance
-    _getDistance->___lwdiv
+    _main->_getDistance1
+    _getDistance1->___lwdiv
 
 Critical Paths under _isr in BANK0
 
@@ -1933,7 +1933,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (0) _main                                                 4     4      0     842
                                              13 BANK0      3     3      0
-                        _getDistance
+                       _getDistance1
                               _setup
                        _timer1Config
  ---------------------------------------------------------------------------------
@@ -1949,7 +1949,7 @@ Call Graph Tables:
  (2) _I2C_Slave_Init                                       1     1      0      15
                                               3 COMMON     1     1      0
  ---------------------------------------------------------------------------------
- (1) _getDistance                                         10     8      2     594
+ (1) _getDistance1                                        10     8      2     594
                                               3 BANK0     10     8      2
                             ___lwdiv
  ---------------------------------------------------------------------------------
@@ -1970,7 +1970,7 @@ Call Graph Tables:
  Call Graph Graphs:
 
  _main (ROOT)
-   _getDistance
+   _getDistance1
      ___lwdiv
    _setup
      _I2C_Slave_Init
@@ -2008,15 +2008,15 @@ DATA                 0      0      1B      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Sat Aug 19 11:21:47 2023
+Symbol Table                                                                                   Sat Aug 19 13:09:51 2023
 
                       _z 007A              _SSPSTATbits 0094                       _BF 04A0  
                      l55 0205                       l81 00E4                       l82 00F1  
                      l83 00FD                       l84 010C                       l85 0119  
-                     l86 0126                       l88 0134                      l201 0184  
-                    l191 0146                      l193 014A                      l185 01EB  
-                    l194 014B                      l196 014F                      l188 020D  
-                    l198 017E                      l801 01FE                      l803 01FF  
+                     l86 0126                       l88 0134                      l201 020D  
+                    l190 014A                      l191 014B                      l193 014F  
+                    l185 01EB                      l195 017E                      l188 0146  
+                    l198 0184                      l801 01FE                      l803 01FF  
                     l805 0202                      l559 01CA                      l793 01ED  
                     l881 020A                      l795 01FB                      l883 020C  
                     l797 01FC                      l799 01FD                      l879 0206  
@@ -2072,30 +2072,30 @@ Symbol Table                                                                    
                   u61_27 00C6                    _TRISA 0085                    _TRISB 0086  
                   _TRISD 0088                    _SSPIE 0463                    _SSPIF 0063  
                   _setup 01CB                    pclath 000A                    status 0003  
-                  wtemp0 007E          __initialization 000F             __end_of_main 007C  
-      getDistance@Timer1 0027                   ??_main 002D                   _ADRESH 001E  
+                  wtemp0 007E     __end_of_getDistance1 0185          __initialization 000F  
+           __end_of_main 007C                   ??_main 002D                   _ADRESH 001E  
                  ?_setup 0070                   _ANSELH 0189                   i1l1001 009F  
                  i1l1011 00C3                   i1l1003 00A6                   i1l1005 00B4  
                  i1l1007 00B8                   i1l1009 00BC                   _TMR1ON 0080  
                  _SSPADD 0093                   _TRISC3 043B                   _TRISC4 043C  
                  _SSPCON 0014                   _SSPBUF 0013                ??___lwdiv 0077  
-                 saved_w 007E  __end_of__initialization 0013           __pcstackCOMMON 0070  
-          __end_of_setup 01EC                  ??_setup 0075    I2C_Slave_Init@address 0073  
-             __pmaintext 0017               __pintentry 0004                  _SSPCON2 0091  
-                _SSPSTAT 0094        __end_of_configOsc 0135            ?_timer1Config 0070  
-                ___lwdiv 0185                  __ptext1 0206                  __ptext2 01CB  
-                __ptext3 00D9                  __ptext4 01EC                  __ptext5 0135  
-                __ptext6 0185                  __ptext7 007C                _T1CONbits 0010  
-   end_of_initialization 0013           ??_timer1Config 0073           _I2C_Slave_Init 01EC  
-          ??_getDistance 0025                _TRISCbits 0087   __end_of_I2C_Slave_Init 0206  
-    __end_of_getDistance 0185      start_initialization 000F              __end_of_isr 00D9  
-    getDistance@Distance 0029      getDistance@Duration 002B          ?_I2C_Slave_Init 0070  
-            __pbssCOMMON 0077                ___latbits 0002            __pcstackBANK0 0020  
-   __end_of_timer1Config 020E         ___lwdiv@dividend 0075                 ?___lwdiv 0073  
-            _getDistance 0135                _configOsc 00D9         ___lwdiv@quotient 0021  
+                 saved_w 007E       getDistance1@Timer1 0027  __end_of__initialization 0013  
+         __pcstackCOMMON 0070            __end_of_setup 01EC                  ??_setup 0075  
+  I2C_Slave_Init@address 0073               __pmaintext 0017               __pintentry 0004  
+           _getDistance1 0135                  _SSPCON2 0091                  _SSPSTAT 0094  
+      __end_of_configOsc 0135            ?_timer1Config 0070                  ___lwdiv 0185  
+                __ptext1 0206                  __ptext2 01CB                  __ptext3 00D9  
+                __ptext4 01EC                  __ptext5 0135                  __ptext6 0185  
+                __ptext7 007C                _T1CONbits 0010     end_of_initialization 0013  
+         ??_timer1Config 0073           _I2C_Slave_Init 01EC                _TRISCbits 0087  
+ __end_of_I2C_Slave_Init 0206      start_initialization 000F              __end_of_isr 00D9  
+        ?_I2C_Slave_Init 0070              __pbssCOMMON 0077                ___latbits 0002  
+          __pcstackBANK0 0020     __end_of_timer1Config 020E         ___lwdiv@dividend 0075  
+               ?___lwdiv 0073                _configOsc 00D9         ___lwdiv@quotient 0021  
       interrupt_function 0004                 _PIE1bits 008C                 _PIR1bits 000C  
              ?_configOsc 0073               _ADCON0bits 001F               _ADCON1bits 009F  
         ___lwdiv@divisor 0073          ___lwdiv@counter 0020                 _distance 0077  
        ??_I2C_Slave_Init 0073             _timer1Config 0206              ??_configOsc 0075  
-             _INTCONbits 000B                 intlevel1 0000               _OSCCONbits 008F  
-           ?_getDistance 0023              _SSPCON2bits 0091               _SSPCONbits 0014  
+          ?_getDistance1 0023               _INTCONbits 000B                 intlevel1 0000  
+             _OSCCONbits 008F     getDistance1@Distance 0029     getDistance1@Duration 002B  
+         ??_getDistance1 0025              _SSPCON2bits 0091               _SSPCONbits 0014  

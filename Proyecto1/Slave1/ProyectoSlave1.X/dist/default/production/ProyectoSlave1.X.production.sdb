@@ -23,16 +23,16 @@
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
 "4 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
-"69 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+"67 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"104
+"102
 [v _main main `(v  1 e 1 0 ]
-"162
+"160
 [v _setup setup `(v  1 e 1 0 ]
-"182
+"181
+[v _getDistance1 getDistance1 `(ui  1 e 2 0 ]
+"214
 [v _timer1Config timer1Config `(v  1 e 1 0 ]
-"191
-[v _getDistance getDistance `(ui  1 e 2 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
@@ -69,7 +69,7 @@
 [v _PIR1bits PIR1bits `VES300  1 e 1 @12 ]
 "651
 [v _TMR1 TMR1 `VEus  1 e 2 @14 ]
-[s S474 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S476 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -78,7 +78,7 @@
 `uc 1 T1GINV 1 0 :1:7 
 ]
 "701
-[s S482 . 1 `uc 1 . 1 0 :2:0 
+[s S484 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1INSYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
@@ -86,11 +86,11 @@
 `uc 1 . 1 0 :1:6 
 `uc 1 T1GIV 1 0 :1:7 
 ]
-[s S490 . 1 `uc 1 . 1 0 :2:0 
+[s S492 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 ]
-[u S493 . 1 `S474 1 . 1 0 `S482 1 . 1 0 `S490 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES493  1 e 1 @16 ]
+[u S495 . 1 `S476 1 . 1 0 `S484 1 . 1 0 `S492 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES495  1 e 1 @16 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
@@ -271,24 +271,24 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4465
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"53 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+"52 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
 [v _z z `uc  1 e 1 0 ]
-"55
+"54
 [v _distance distance `ui  1 e 2 0 ]
-"104
+"102
 [v _main main `(v  1 e 1 0 ]
 {
-"156
+"154
 } 0
-"182
+"214
 [v _timer1Config timer1Config `(v  1 e 1 0 ]
 {
-"188
+"220
 } 0
-"162
+"160
 [v _setup setup `(v  1 e 1 0 ]
 {
-"180
+"178
 } 0
 "4 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
 [v _configOsc configOsc `(v  1 e 1 0 ]
@@ -305,16 +305,16 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "105
 } 0
-"191 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-[v _getDistance getDistance `(ui  1 e 2 0 ]
+"181 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+[v _getDistance1 getDistance1 `(ui  1 e 2 0 ]
 {
-"193
-[v getDistance@Duration Duration `ui  1 a 2 11 ]
-"194
-[v getDistance@Distance Distance `ui  1 a 2 9 ]
-"195
-[v getDistance@Timer1 Timer1 `ui  1 a 2 7 ]
-"223
+"182
+[v getDistance1@Duration Duration `ui  1 a 2 11 ]
+"183
+[v getDistance1@Distance Distance `ui  1 a 2 9 ]
+"184
+[v getDistance1@Timer1 Timer1 `ui  1 a 2 7 ]
+"211
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -328,8 +328,8 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
 "30
 } 0
-"69 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+"67 E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"102
+"100
 } 0

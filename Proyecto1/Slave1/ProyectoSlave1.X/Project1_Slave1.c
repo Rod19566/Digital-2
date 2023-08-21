@@ -47,9 +47,8 @@
 #define slave1Address 0x50
 
 //Ultrasonic Sensor
-#define TRIG RB2   //SALIDA 1
-#define ECHO RB3   //ENTRADA 1
-
+#define TRIG RB2   //SALIDA 0
+#define ECHO RB3   //ENTRADA 0
 uint8_t z;
 uint8_t dato;
 uint16_t distance;
@@ -59,9 +58,8 @@ uint16_t distance;
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
-uint16_t getDistance(void);
-void timer1Config (void);
-
+uint16_t getDistance1();
+void timer1Config(void);
 
 //*****************************************************************************
 // CÃ³digo de InterrupciÃ³n 
@@ -105,7 +103,7 @@ void main(void) {
     uint8_t counter = 0; // Inicializar el contador en 0    
     
     setup();
-    timer1Config();    
+    timer1Config();  
     
     //*************************************************************************
     // Loop infinito
@@ -116,7 +114,7 @@ void main(void) {
       // PORTB = adcValue;
         
         //SENSOR ULTRASONICO 
-        distance = getDistance();        
+        distance = getDistance1();         
         switch (distance) {
             case 2:
                 PORTA = 0b11111111; // Turn on all LEDs
@@ -179,17 +177,8 @@ void setup(void){
     I2C_Slave_Init(slave1Address);   
 }
 
-void timer1Config(void){
-    //T1CONbits.RD16=1;
-    T1CONbits.T1CKPS0 = 0b00;
-    T1CONbits.TMR1CS = 0;
-    TMR1 = 0;
-    TMR1ON = 0;
-}
 
-
-uint16_t getDistance(void)
-{
+uint16_t getDistance1(){
     uint16_t Duration;
     uint16_t Distance;
     uint16_t Timer1;
@@ -219,5 +208,17 @@ uint16_t getDistance(void)
     Duration = 0;
     TMR1 = 0;
     return Distance;
-    
 }
+
+
+void timer1Config(void){
+    //T1CONbits.RD16=1;
+    T1CONbits.T1CKPS0 = 0b00;
+    T1CONbits.TMR1CS = 0;
+    TMR1 = 0;
+    TMR1ON = 0;
+}
+
+
+
+

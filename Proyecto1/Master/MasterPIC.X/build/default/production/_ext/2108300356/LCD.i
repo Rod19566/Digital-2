@@ -1,4 +1,4 @@
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,35 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
-
-
-
-
-
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
-
-
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c" 2
+# 11 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/lcd.h" 1
+# 29 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/lcd.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2652,154 +2627,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
-# 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
-# 6 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
-{
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 86 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 2 3
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 30 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
+# 29 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/lcd.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 31 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
-
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h" 1
-# 20 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h" 2
-# 29 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-# 32 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
-
-# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h" 1
-# 30 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 30 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h" 2
+# 30 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/lcd.h" 2
 
 
 
@@ -2821,179 +2652,110 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 
 void Lcd_Shift_Left(void);
-# 33 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
-# 64 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
-char ultrasonicValue = 0;
-char motor1 = 0;
-char motor2 = 0;
-int16_t gyroData[3];
-char lineLCD[16];
-int OnOff = 0;
+# 11 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c" 2
 
 
-void setup(void);
-void ReadGyroscopeData(int16_t *gyroData);
-void slave1Communication(void);
-void slave2Communication(void);
-void LCDprint(void);
-void usSensor(void);
-void dcForward(void);
+void Lcd_Port(unsigned char a) {
+    if (a & 1)
+        RD0 = 1;
+    else
+        RD0 = 0;
 
+    if (a & 2)
+        RD1 = 1;
+    else
+        RD1 = 0;
 
-void main(void) {
-    setup();
+    if (a & 4)
+        RD2 = 1;
+    else
+        RD2 = 0;
 
-    while(1){
-        PORTB = motor1;
-        dcForward();
+    if (a & 8)
+        RD3 = 1;
+    else
+        RD3 = 0;
 
+    if (a & 16)
+        RD4 = 1;
+    else
+        RD4 = 0;
 
-        slave1Communication();
+    if (a & 32)
+        RD5 = 1;
+    else
+        RD5 = 0;
 
+    if (a & 64)
+        RD6 = 1;
+    else
+        RD6 = 0;
 
-        slave2Communication();
+    if (a & 128)
+        RD7 = 1;
+    else
+        RD7 = 0;
+}
 
+void Lcd_Cmd(unsigned char a) {
+    RC0 = 0;
+    Lcd_Port(a);
+    RC1 = 1;
+    _delay((unsigned long)((4)*(8000000/4000.0)));
+    RC1 = 0;
+}
 
+void Lcd_Clear(void) {
+    Lcd_Cmd(0);
+    Lcd_Cmd(1);
+}
 
+void Lcd_Set_Cursor(unsigned char a,unsigned char b) {
+    unsigned char temp;
+    if (a == 1) {
+        temp = 0x80 + b - 1;
+        Lcd_Cmd(temp);
 
-
-
-
-        LCDprint();
+    } else if (a == 2) {
+        temp = 0xC0 + b - 1;
+        Lcd_Cmd(temp);
     }
-
 }
 
+void Lcd_Init(void) {
+    Lcd_Port(0);
+    _delay((unsigned long)((20)*(8000000/4000.0)));
+    Lcd_Cmd(48);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    Lcd_Cmd(48);
+    _delay((unsigned long)((11)*(8000000/4000.0)));
+    Lcd_Cmd(48);
 
-void setup(void){
-        OSCCONbits.IRCF = 0b111;
-        OSCCONbits.SCS = 1;
-
-        ANSEL = 0;
-        ANSELH = 0;
-
-        TRISC = 128;
-        TRISA = 0;
-        TRISB = 0;
-        TRISD = 0;
-
-        PORTA = 0;
-        PORTB = 0;
-        PORTC = 0;
-        PORTD = 0;
-        I2C_Master_Init(100000);
-        Lcd_Init();
-
+    Lcd_Cmd(56);
+    Lcd_Cmd(8);
+    Lcd_Cmd(1);
+    Lcd_Cmd(6);
+    Lcd_Cmd(12);
 }
 
-
-
-void ReadGyroscopeData(int16_t *gyroData) {
-    I2C_Master_Start();
-    I2C_Master_Write(0x68);
-    I2C_Master_Write(0x43);
-
-    I2C_Master_RepeatedStart();
-    I2C_Master_Write(0x68 | 0x01);
-
-
-    gyroData[0] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1);
-    gyroData[1] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1);
-    gyroData[2] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(0);
-
-    I2C_Master_Stop();
+void Lcd_Write_Char(char a) {
+    RC0 = 1;
+    Lcd_Port(a);
+    RC1 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    RC1 = 0;
 }
 
-void slave1Communication(void){
-        char valueS1 = 0;
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x50 + 1);
-        valueS1 = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x50);
-        I2C_Master_Write(0b10000001);
-        I2C_Master_Stop();
-        ultrasonicValue = valueS1;
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
+void Lcd_Write_String(char *a) {
+    int i;
+    for (i = 0; a[i] != '\0'; i++)
+        Lcd_Write_Char(a[i]);
 }
 
-void slave2Communication(void){
-        char valueS2 = 0;
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x60 + 1);
-        valueS2 = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x60);
-        I2C_Master_Write(0b00011000);
-        I2C_Master_Stop();
-        motor1 = valueS2;
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-
+void Lcd_Shift_Right(void) {
+    Lcd_Cmd(28);
 }
 
-void LCDprint(void){
-
-        Lcd_Clear();
-        Lcd_Set_Cursor(1,1);
-        sprintf(lineLCD, "Distance: %.2d", ultrasonicValue);
-        Lcd_Write_String(lineLCD);
-        usSensor();
-
-        Lcd_Set_Cursor(2,1);
-
-        Lcd_Write_String("Hola");
-
-}
-
-
-void usSensor(void){
-    Lcd_Set_Cursor(1,15);
-
-    if (ultrasonicValue < 4) Lcd_Write_String("!!");
-    else Lcd_Write_String("  ");
-
-
-}
-
-
-void dcForward(void){
-    RA0 = 1;
-    RA1 = 0;
-    RA2 = 1;
-
-    RA5 = 1;
-    RA3 = 1;
-    RA4 = 0;
-
-}
-
-void dcRight(void){
-    RA0 = 1;
-    RA1 = 0;
-    RA2 = 1;
-
-    RA5 = 1;
-    RA3 = 0;
-    RA4 = 1;
-
-}
-
-void dcStop(void){
-    RA0 = 1;
-    RA1 = 0;
-    RA2 = 0;
-
-    RA5 = 1;
-    RA3 = 0;
-    RA4 = 0;
+void Lcd_Shift_Left(void) {
+    Lcd_Cmd(24);
 }
