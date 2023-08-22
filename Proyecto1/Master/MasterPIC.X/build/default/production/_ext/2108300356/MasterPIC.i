@@ -2900,16 +2900,17 @@ void main(void) {
         LCDprint();
 
         toESP = "Hello";
-        sprintf(toESP,"%d", OnOff);
+        sprintf(toESP,"P%d F%d", OnOff, fanOnOff);
 
         enviocadena(toESP);
         enviocaracter(10);
+        _delay((unsigned long)((300)*(8000000/4000.0)));
 
 
-        sprintf(toESP,"Fan:%d", fanOnOff);
+        sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue);
+
         enviocadena(toESP);
         enviocaracter(10);
-
 
 
     }
@@ -3025,6 +3026,8 @@ void LCDprint(void){
 
         } else{
 
+
+        fsrValue = 0;
         dcStop();
 
         Lcd_Clear();
@@ -3040,8 +3043,6 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);
 
-
-
     if (ultrasonicValue <= 7) {
         Lcd_Write_String("!!");
         fanOnOff = 0;
@@ -3055,7 +3056,7 @@ void usSensor(void){
 
 
 }
-# 302 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
+# 303 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
 void dcForward(void){
     RA0 = 1;
     RA1 = 0;

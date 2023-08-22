@@ -2725,7 +2725,7 @@ uint8_t z;
 uint8_t dato;
 unsigned char adcValue = 0;
 int onOff = 0;
-char recievedOnOff;
+char receivedOnOff;
 
 
 
@@ -2756,7 +2756,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             PIR1bits.SSPIF = 0;
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
-            recievedOnOff = SSPBUF;
+            receivedOnOff = SSPBUF;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
 
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2802,7 +2802,7 @@ void main(void) {
        if (adcValue > 200) onOff = 0;
        else onOff = 1;
 
-       if (onOff) PORTDbits.RD0 = 1;
+       if (onOff == 1 && receivedOnOff == 1) PORTDbits.RD0 = 1;
        else PORTDbits.RD0 = 0;
 
     }

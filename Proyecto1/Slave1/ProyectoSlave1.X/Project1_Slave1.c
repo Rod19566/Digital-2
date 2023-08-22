@@ -50,7 +50,7 @@
 #define TRIG RB2   //SALIDA 0
 #define ECHO RB3   //ENTRADA 0
 uint8_t z;
-uint8_t dato;
+uint8_t receivedData;
 uint16_t distance;
 
 //*****************************************************************************
@@ -83,7 +83,7 @@ void __interrupt() isr(void){
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupciÃ³n recepciÃ³n/transmisiÃ³n SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepciÃ³n se complete
-            PORTD = SSPBUF;             // Saves buffer value in PORTD 
+            receivedData = SSPBUF;             // Saves buffer value in PORTD 
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){ //writes data
@@ -113,41 +113,12 @@ void main(void) {
       // adcValue = adcValue++;
       // PORTB = adcValue;
         
+        if (receivedData == 1){
         //SENSOR ULTRASONICO 
-        distance = getDistance1();         
-        switch (distance) {
-            case 2:
-                PORTA = 0b11111111; // Turn on all LEDs
-                break;
-            case 3:
-                PORTA = 0b11111110; // Turn off the first LED
-                break;
-            case 6:
-                PORTA = 0b11111100; // Turn off the second LED
-                break;
-            case 8:
-                PORTA = 0b11111000; // Turn off the third LED
-                break;
-            case 10:
-                PORTA = 0b11110000; // Turn off the second LED
-                break;
-            case 12:
-                PORTA = 0b11100000; // Turn off the third LED
-                break;
-            case 14:
-                PORTA = 0b11000000; // Turn off the second LED
-                break;
-            case 16:
-                PORTA = 0b10000000; // Turn off the third LED
-                break;
-            case 18:
-                PORTA = 0b00000000; // Turn off all LEDs
-                break;
-            default:
-                // Handle cases where distance does not match any of the above values.
-                break;
-        }    
+        distance = getDistance1();    
         __delay_ms(200);
+            
+        }
        
     }
     return;

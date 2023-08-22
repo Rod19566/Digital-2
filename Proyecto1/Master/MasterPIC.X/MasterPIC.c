@@ -128,16 +128,17 @@ void main(void) {
         LCDprint();
         
         toESP = "Hello";
-        sprintf(toESP,"%d", OnOff);
+        sprintf(toESP,"P%d F%d", OnOff, fanOnOff); //ON or OFF all and fan
         //UART
         enviocadena(toESP);  //new line in ASCII
         enviocaracter(10);  //new line in ASCII
+        __delay_ms(300); // Delay before next reading
         
         
-        sprintf(toESP,"Fan:%d", fanOnOff);
+        sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue); //weight value and US
+        //UART
         enviocadena(toESP);  //new line in ASCII
         enviocaracter(10);  //new line in ASCII
-        
         
         //readFromESP = UART_get_char();
     }
@@ -253,6 +254,8 @@ void LCDprint(void){
             
         } else{
         //stops wheels
+        //ultrasonicValue = 0;
+        fsrValue = 0;
         dcStop();
         
         Lcd_Clear();
@@ -266,9 +269,7 @@ void LCDprint(void){
 
 
 void usSensor(void){
-    Lcd_Set_Cursor(1,15);  //line 1
-    
-    
+    Lcd_Set_Cursor(1,15);  //line 1    
     
     if (ultrasonicValue <= 7) {
         Lcd_Write_String("!!"); 
@@ -287,7 +288,7 @@ void usSensor(void){
 //void fsrSensor(void){
 //    Lcd_Set_Cursor(2,9);  //line 1
 //    
-//    if (ultrasonicValue <= 7) {
+//    if (ultrasonicValue <= 100) {
 //        Lcd_Write_String("!!"); 
 //        dcRight();
 //    }

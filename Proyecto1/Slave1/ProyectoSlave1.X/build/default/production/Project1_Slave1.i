@@ -2716,7 +2716,7 @@ void configOsc(uint16_t frec);
 # 41 "Project1_Slave1.c" 2
 # 52 "Project1_Slave1.c"
 uint8_t z;
-uint8_t dato;
+uint8_t receivedData;
 uint16_t distance;
 
 
@@ -2749,7 +2749,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             PIR1bits.SSPIF = 0;
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
-            PORTD = SSPBUF;
+            receivedData = SSPBUF;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
 
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2779,41 +2779,12 @@ void main(void) {
 
 
 
+        if (receivedData == 1){
 
         distance = getDistance1();
-        switch (distance) {
-            case 2:
-                PORTA = 0b11111111;
-                break;
-            case 3:
-                PORTA = 0b11111110;
-                break;
-            case 6:
-                PORTA = 0b11111100;
-                break;
-            case 8:
-                PORTA = 0b11111000;
-                break;
-            case 10:
-                PORTA = 0b11110000;
-                break;
-            case 12:
-                PORTA = 0b11100000;
-                break;
-            case 14:
-                PORTA = 0b11000000;
-                break;
-            case 16:
-                PORTA = 0b10000000;
-                break;
-            case 18:
-                PORTA = 0b00000000;
-                break;
-            default:
-
-                break;
-        }
         _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        }
 
     }
     return;

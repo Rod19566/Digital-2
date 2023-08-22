@@ -444,8 +444,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "50
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 50: char recievedOnOff;
-[v _recievedOnOff `uc ~T0 @X0 1 e ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 50: char receivedOnOff;
+[v _receivedOnOff `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "62
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 62: void __attribute__((picinterrupt(("")))) isr(void){
@@ -501,8 +501,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
 [e :U 144 ]
 "81
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 81:             recievedOnOff = SSPBUF;
-[e = _recievedOnOff -> _SSPBUF `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 81:             receivedOnOff = SSPBUF;
+[e = _receivedOnOff -> _SSPBUF `uc ]
 "82
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 82:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
@@ -624,8 +624,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _onOff -> 1 `i ]
 [e :U 158 ]
 "127
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 127:        if (onOff) PORTDbits.RD0 = 1;
-[e $ ! != _onOff -> 0 `i 159  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Slave1/ProyectoSlave1.X/MainSlave2.c: 127:        if (onOff == 1 && receivedOnOff == 1) PORTDbits.RD0 = 1;
+[e $ ! && == _onOff -> 1 `i == -> _receivedOnOff `i -> 1 `i 159  ]
 [e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 [e $U 160  ]
 "128

@@ -14,20 +14,20 @@
 $dist/default/production\ProyectoSlave1.X.production.o
 cinit CODE 0 F F 8 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 206 206 8 2 1
-text2 CODE 0 1CB 1CB 21 2 1
-text3 CODE 0 D9 D9 5C 2 1
-text4 CODE 0 1EC 1EC 1A 2 1
-text5 CODE 0 135 135 50 2 1
-text6 CODE 0 185 185 46 2 1
-text7 CODE 0 7C 7C 5D 2 1
-maintext CODE 0 17 17 65 2 1
+text1 CODE 0 1CE 1CE 8 2 1
+text2 CODE 0 193 193 21 2 1
+text3 CODE 0 74 74 5C 2 1
+text4 CODE 0 1B4 1B4 1A 2 1
+text5 CODE 0 D0 D0 50 2 1
+text6 CODE 0 120 120 46 2 1
+text7 CODE 0 17 17 5D 2 1
+maintext CODE 0 166 166 2D 2 1
 cstackCOMMON COMMON 1 70 70 7 1 1
 cstackBANK0 BANK0 1 20 20 10 1 1
 intentry CODE 0 4 4 8 2 1
 bssCOMMON COMMON 1 77 77 4 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
+$C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -47,11 +47,11 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 20E-1FFF 2
+CONST 1D6-1FFF 2
 ENTRY 3-3 2
-ENTRY 20E-1FFF 2
+ENTRY 1D6-1FFF 2
 CODE 3-3 2
-CODE 20E-1FFF 2
+CODE 1D6-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -59,9 +59,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 20E-1FFF 2
+STRCODE 1D6-1FFF 2
 STRING 3-3 2
-STRING 20E-1FFF 2
+STRING 1D6-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -76,167 +76,138 @@ STRING 20E-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\ProyectoSlave1.X.production.o
-F cinit CODE >975:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-F cinit CODE >978:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-F cinit CODE >995:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-10 cinit CODE >996:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-11 cinit CODE >997:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-12 cinit CODE >998:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-13 cinit CODE >1004:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-13 cinit CODE >1006:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
-14 cinit CODE >1007:C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_1.s
+F cinit CODE >976:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+F cinit CODE >979:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+F cinit CODE >996:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+10 cinit CODE >997:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+11 cinit CODE >998:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+12 cinit CODE >999:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+13 cinit CODE >1005:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+13 cinit CODE >1007:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
+14 cinit CODE >1008:C:\Users\WMGWW\AppData\Local\Temp\xcAs5do.\driver_tmp_1.s
 4 intentry CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-7C text7 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-7C text7 CODE >68:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-82 text7 CODE >70:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-83 text7 CODE >72:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-8B text7 CODE >73:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-8D text7 CODE >74:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-8E text7 CODE >75:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-8F text7 CODE >76:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-90 text7 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-9A text7 CODE >81:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-9E text7 CODE >83:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-9F text7 CODE >84:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-A0 text7 CODE >85:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-A6 text7 CODE >86:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-AA text7 CODE >87:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-AF text7 CODE >89:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-B8 text7 CODE >90:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-BC text7 CODE >91:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-BF text7 CODE >92:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-C3 text7 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-C4 text7 CODE >94:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-C9 text7 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-CF text7 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-CF text7 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-D2 text7 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-185 text6 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-185 text6 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-189 text6 CODE >14:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-18F text6 CODE >15:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-191 text6 CODE >16:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-192 text6 CODE >17:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-193 text6 CODE >17:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-197 text6 CODE >17:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-199 text6 CODE >18:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-19D text6 CODE >16:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1A1 text6 CODE >21:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1A2 text6 CODE >21:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1A6 text6 CODE >21:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1A8 text6 CODE >22:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1AA text6 CODE >22:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1AE text6 CODE >22:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1B2 text6 CODE >23:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1B5 text6 CODE >23:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1B8 text6 CODE >24:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1B9 text6 CODE >26:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1BA text6 CODE >26:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1BE text6 CODE >26:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1C0 text6 CODE >27:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1C6 text6 CODE >29:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-1CA text6 CODE >30:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
-135 text5 CODE >181:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-135 text5 CODE >185:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-138 text5 CODE >186:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-143 text5 CODE >187:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-146 text5 CODE >188:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-14A text5 CODE >189:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-14B text5 CODE >190:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-14F text5 CODE >191:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-150 text5 CODE >192:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-154 text5 CODE >193:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-158 text5 CODE >193:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-15F text5 CODE >194:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-162 text5 CODE >194:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-164 text5 CODE >194:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-168 text5 CODE >196:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17B text5 CODE >197:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17C text5 CODE >198:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17C text5 CODE >201:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17E text5 CODE >207:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17E text5 CODE >209:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-180 text5 CODE >210:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-184 text5 CODE >211:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1EC text4 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1ED text4 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1F1 text4 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1F5 text4 CODE >97:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1F9 text4 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1FB text4 CODE >99:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1FC text4 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1FD text4 CODE >101:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1FE text4 CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-1FF text4 CODE >103:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-202 text4 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-205 text4 CODE >105:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
-D9 text3 CODE >4:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-D9 text3 CODE >5:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-E4 text3 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-F1 text3 CODE >7:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-FD text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-FF text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-10C text3 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-119 text3 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-126 text3 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-131 text3 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-134 text3 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
-1CB text2 CODE >160:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1CB text2 CODE >161:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1D4 text2 CODE >164:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1D5 text2 CODE >165:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1D6 text2 CODE >167:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1D9 text2 CODE >168:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1DA text2 CODE >170:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1DD text2 CODE >171:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1DF text2 CODE >172:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1E0 text2 CODE >174:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1E3 text2 CODE >175:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1E4 text2 CODE >176:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1E5 text2 CODE >177:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1EB text2 CODE >178:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-206 text1 CODE >214:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-206 text1 CODE >216:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-209 text1 CODE >217:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-20A text1 CODE >218:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-20C text1 CODE >219:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-20D text1 CODE >220:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17 maintext CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17 maintext CODE >103:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-17 maintext CODE >105:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-1C maintext CODE >106:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-21 maintext CODE >117:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-2C maintext CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-2D maintext CODE >120:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-2F maintext CODE >121:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-30 maintext CODE >123:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-32 maintext CODE >124:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-33 maintext CODE >126:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-35 maintext CODE >127:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-36 maintext CODE >129:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-38 maintext CODE >130:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-39 maintext CODE >132:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-3B maintext CODE >133:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-3C maintext CODE >135:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-3E maintext CODE >136:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-3F maintext CODE >138:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-41 maintext CODE >139:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-42 maintext CODE >141:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-44 maintext CODE >142:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-45 maintext CODE >144:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-46 maintext CODE >145:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-47 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-49 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-4E maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-51 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-54 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-57 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-5A maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-5D maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-60 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-63 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-66 maintext CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
-69 maintext CODE >150:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+17 text7 CODE >67:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+17 text7 CODE >68:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1D text7 CODE >70:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1E text7 CODE >72:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+26 text7 CODE >73:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+28 text7 CODE >74:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+29 text7 CODE >75:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+2A text7 CODE >76:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+2B text7 CODE >79:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+35 text7 CODE >81:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+39 text7 CODE >83:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+3A text7 CODE >84:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+3B text7 CODE >85:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+41 text7 CODE >86:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+45 text7 CODE >87:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+4A text7 CODE >89:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+53 text7 CODE >90:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+57 text7 CODE >91:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+5A text7 CODE >92:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+5E text7 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+5F text7 CODE >94:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+64 text7 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+6A text7 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+6A text7 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+6D text7 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+120 text6 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+120 text6 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+124 text6 CODE >14:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+12A text6 CODE >15:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+12C text6 CODE >16:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+12D text6 CODE >17:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+12E text6 CODE >17:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+132 text6 CODE >17:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+134 text6 CODE >18:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+138 text6 CODE >16:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+13C text6 CODE >21:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+13D text6 CODE >21:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+141 text6 CODE >21:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+143 text6 CODE >22:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+145 text6 CODE >22:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+149 text6 CODE >22:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+14D text6 CODE >23:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+150 text6 CODE >23:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+153 text6 CODE >24:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+154 text6 CODE >26:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+155 text6 CODE >26:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+159 text6 CODE >26:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+15B text6 CODE >27:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+161 text6 CODE >29:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+165 text6 CODE >30:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\lwdiv.c
+D0 text5 CODE >152:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+D0 text5 CODE >156:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+D3 text5 CODE >157:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+DE text5 CODE >158:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+E1 text5 CODE >159:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+E5 text5 CODE >160:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+E6 text5 CODE >161:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+EA text5 CODE >162:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+EB text5 CODE >163:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+EF text5 CODE >164:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+F3 text5 CODE >164:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+FA text5 CODE >165:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+FD text5 CODE >165:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+FF text5 CODE >165:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+103 text5 CODE >167:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+116 text5 CODE >168:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+117 text5 CODE >169:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+117 text5 CODE >172:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+119 text5 CODE >178:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+119 text5 CODE >180:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+11B text5 CODE >181:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+11F text5 CODE >182:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1B4 text4 CODE >93:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1B5 text4 CODE >95:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1B9 text4 CODE >96:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1BD text4 CODE >97:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1C1 text4 CODE >98:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1C3 text4 CODE >99:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1C4 text4 CODE >100:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1C5 text4 CODE >101:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1C6 text4 CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1C7 text4 CODE >103:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1CA text4 CODE >104:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+1CD text4 CODE >105:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\I2C.c
+74 text3 CODE >4:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+74 text3 CODE >5:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+7F text3 CODE >6:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+8C text3 CODE >7:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+98 text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+9A text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+A7 text3 CODE >9:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+B4 text3 CODE >10:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+C1 text3 CODE >11:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+CC text3 CODE >12:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+CF text3 CODE >13:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\oscillator.c
+193 text2 CODE >131:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+193 text2 CODE >132:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+19C text2 CODE >135:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+19D text2 CODE >136:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+19E text2 CODE >138:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1A1 text2 CODE >139:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1A2 text2 CODE >141:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1A5 text2 CODE >142:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1A7 text2 CODE >143:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1A8 text2 CODE >145:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1AB text2 CODE >146:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1AC text2 CODE >147:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1AD text2 CODE >148:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1B3 text2 CODE >149:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1CE text1 CODE >185:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1CE text1 CODE >187:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1D1 text1 CODE >188:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1D2 text1 CODE >189:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1D4 text1 CODE >190:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+1D5 text1 CODE >191:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+166 maintext CODE >102:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+166 maintext CODE >103:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+166 maintext CODE >105:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+16B maintext CODE >106:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+170 maintext CODE >116:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+175 maintext CODE >118:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
+180 maintext CODE >119:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\ProyectoSlave1.X\Project1_Slave1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -251,13 +222,13 @@ FF text3 CODE >8:E:\Universidad\Semestre2_2023\Digital-2\Proyecto1\Slave1\Proyec
 %SYMTAB
 _z 7A 0 COMMON 1 bssCOMMON dist/default/production\ProyectoSlave1.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-__Hspace_0 20E 0 ABS 0 - -
+__Hspace_0 1D6 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 getDistance1@Distance 29 0 BANK0 1 cstackBANK0 dist/default/production\ProyectoSlave1.X.production.o
-_timer1Config 40C 0 CODE 0 text1 dist/default/production\ProyectoSlave1.X.production.o
+_timer1Config 39C 0 CODE 0 text1 dist/default/production\ProyectoSlave1.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _T1CONbits 10 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _BF 4A0 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
@@ -265,36 +236,37 @@ __L__absolute__ 0 0 ABS 0 __absolute__ -
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TMR1 E 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-_main 2E 0 CODE 0 maintext dist/default/production\ProyectoSlave1.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+_main 2CC 0 CODE 0 maintext dist/default/production\ProyectoSlave1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-start 18 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
+start 18 0 CODE 0 init C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 _distance 77 0 COMMON 1 bssCOMMON dist/default/production\ProyectoSlave1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
+_receivedData 79 0 COMMON 1 bssCOMMON dist/default/production\ProyectoSlave1.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_configOsc 26A 0 CODE 0 text3 dist/default/production\ProyectoSlave1.X.production.o
-__end_of_timer1Config 41C 0 CODE 0 text1 dist/default/production\ProyectoSlave1.X.production.o
+__end_of_configOsc 1A0 0 CODE 0 text3 dist/default/production\ProyectoSlave1.X.production.o
+__end_of_timer1Config 3AC 0 CODE 0 text1 dist/default/production\ProyectoSlave1.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-_configOsc 1B2 0 CODE 0 text3 dist/default/production\ProyectoSlave1.X.production.o
+_configOsc E8 0 CODE 0 text3 dist/default/production\ProyectoSlave1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of___lwdiv 396 0 CODE 0 text6 dist/default/production\ProyectoSlave1.X.production.o
+__end_of___lwdiv 2CC 0 CODE 0 text6 dist/default/production\ProyectoSlave1.X.production.o
 getDistance1@Timer1 27 0 BANK0 1 cstackBANK0 dist/default/production\ProyectoSlave1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
-_I2C_Slave_Init 3D8 0 CODE 0 text4 dist/default/production\ProyectoSlave1.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+___stacklo 0 0 ABS 0 - C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
+_I2C_Slave_Init 368 0 CODE 0 text4 dist/default/production\ProyectoSlave1.X.production.o
 ___lwdiv@quotient 21 0 BANK0 1 cstackBANK0 dist/default/production\ProyectoSlave1.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\ProyectoSlave1.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
@@ -305,13 +277,13 @@ _SSPCON 14 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TMR1ON 80 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
+___int_sp 0 0 STACK 2 stack C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 2E 0 CODE 0 cinit -
-__end_of_I2C_Slave_Init 40C 0 CODE 0 text4 dist/default/production\ProyectoSlave1.X.production.o
+__end_of_I2C_Slave_Init 39C 0 CODE 0 text4 dist/default/production\ProyectoSlave1.X.production.o
 __Hidloc 4008 0 IDLOC 5 idloc -
 __Hstack 0 0 STACK 2 stack -
 ___lwdiv@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\ProyectoSlave1.X.production.o
@@ -348,25 +320,25 @@ __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _RB2 32 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _RB3 33 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-__S0 20E 0 ABS 0 - -
+__S0 1D6 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr F8 0 CODE 0 text7 dist/default/production\ProyectoSlave1.X.production.o
+_isr 2E 0 CODE 0 text7 dist/default/production\ProyectoSlave1.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-_getDistance1 26A 0 CODE 0 text5 dist/default/production\ProyectoSlave1.X.production.o
-__end_of_isr 1B2 0 CODE 0 text7 dist/default/production\ProyectoSlave1.X.production.o
+_getDistance1 1A0 0 CODE 0 text5 dist/default/production\ProyectoSlave1.X.production.o
+__end_of_isr E8 0 CODE 0 text7 dist/default/production\ProyectoSlave1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcAs2m4.\driver_tmp_12.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\WMGWW\AppData\Local\Temp\xcBssj0.1\driver_tmp_12.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 getDistance1@Duration 2B 0 BANK0 1 cstackBANK0 dist/default/production\ProyectoSlave1.X.production.o
-___lwdiv 30A 0 CODE 0 text6 dist/default/production\ProyectoSlave1.X.production.o
-__pmaintext 2E 0 CODE 0 maintext dist/default/production\ProyectoSlave1.X.production.o
+___lwdiv 240 0 CODE 0 text6 dist/default/production\ProyectoSlave1.X.production.o
+__pmaintext 2CC 0 CODE 0 maintext dist/default/production\ProyectoSlave1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 I2C_Slave_Init@address 73 0 COMMON 1 cstackCOMMON dist/default/production\ProyectoSlave1.X.production.o
 ___lwdiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\ProyectoSlave1.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-__end_of_getDistance1 30A 0 CODE 0 text5 dist/default/production\ProyectoSlave1.X.production.o
+__end_of_getDistance1 240 0 CODE 0 text5 dist/default/production\ProyectoSlave1.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -386,13 +358,13 @@ ___lwdiv@dividend 75 0 COMMON 1 cstackCOMMON dist/default/production\ProyectoSla
 ?___lwdiv 73 0 COMMON 1 cstackCOMMON dist/default/production\ProyectoSlave1.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-__ptext1 40C 0 CODE 0 text1 dist/default/production\ProyectoSlave1.X.production.o
-__ptext2 396 0 CODE 0 text2 dist/default/production\ProyectoSlave1.X.production.o
-__ptext3 1B2 0 CODE 0 text3 dist/default/production\ProyectoSlave1.X.production.o
-__ptext4 3D8 0 CODE 0 text4 dist/default/production\ProyectoSlave1.X.production.o
-__ptext5 26A 0 CODE 0 text5 dist/default/production\ProyectoSlave1.X.production.o
-__ptext6 30A 0 CODE 0 text6 dist/default/production\ProyectoSlave1.X.production.o
-__ptext7 F8 0 CODE 0 text7 dist/default/production\ProyectoSlave1.X.production.o
+__ptext1 39C 0 CODE 0 text1 dist/default/production\ProyectoSlave1.X.production.o
+__ptext2 326 0 CODE 0 text2 dist/default/production\ProyectoSlave1.X.production.o
+__ptext3 E8 0 CODE 0 text3 dist/default/production\ProyectoSlave1.X.production.o
+__ptext4 368 0 CODE 0 text4 dist/default/production\ProyectoSlave1.X.production.o
+__ptext5 1A0 0 CODE 0 text5 dist/default/production\ProyectoSlave1.X.production.o
+__ptext6 240 0 CODE 0 text6 dist/default/production\ProyectoSlave1.X.production.o
+__ptext7 2E 0 CODE 0 text7 dist/default/production\ProyectoSlave1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
@@ -404,7 +376,7 @@ __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\ProyectoSlave
 _SSPCON2 91 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main F8 0 CODE 0 maintext dist/default/production\ProyectoSlave1.X.production.o
+__end_of_main 326 0 CODE 0 maintext dist/default/production\ProyectoSlave1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
@@ -414,11 +386,11 @@ _SSPIF 63 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
-__end_of_setup 3D8 0 CODE 0 text2 dist/default/production\ProyectoSlave1.X.production.o
+__end_of_setup 368 0 CODE 0 text2 dist/default/production\ProyectoSlave1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\ProyectoSlave1.X.production.o
-_setup 396 0 CODE 0 text2 dist/default/production\ProyectoSlave1.X.production.o
+_setup 326 0 CODE 0 text2 dist/default/production\ProyectoSlave1.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\ProyectoSlave1.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\ProyectoSlave1.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\ProyectoSlave1.X.production.o
@@ -449,7 +421,7 @@ __initialization 1E 0 CODE 0 cinit dist/default/production\ProyectoSlave1.X.prod
 %SEGMENTS
 cstackCOMMON 1 70 70 B 1
 cstackBANK0 1 20 20 10 1
-intentry 0 4 8 20A 2
+intentry 0 4 8 1D2 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

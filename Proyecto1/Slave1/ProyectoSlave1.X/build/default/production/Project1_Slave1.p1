@@ -65,9 +65,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2232
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2232: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
 [v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
-"353
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
@@ -85,9 +82,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "61
 [; ;Project1_Slave1.c: 61: uint16_t getDistance1();
 [v _getDistance1 `(ui ~T0 @X0 0 e? ]
-"167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "7 ./oscillator.h
 [; ;./oscillator.h: 7: void configOsc(uint16_t frec);
 [v _configOsc `(v ~T0 @X0 0 ef1`ui ]
@@ -121,9 +115,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1603
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"167
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "229
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "64 ./I2C.h
 [; ;./I2C.h: 64: void I2C_Slave_Init(uint8_t address);
 [v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
@@ -420,8 +420,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Project1_Slave1.c: 52: uint8_t z;
 [v _z `uc ~T0 @X0 1 e ]
 "53
-[; ;Project1_Slave1.c: 53: uint8_t dato;
-[v _dato `uc ~T0 @X0 1 e ]
+[; ;Project1_Slave1.c: 53: uint8_t receivedData;
+[v _receivedData `uc ~T0 @X0 1 e ]
 "54
 [; ;Project1_Slave1.c: 54: uint16_t distance;
 [v _distance `ui ~T0 @X0 1 e ]
@@ -480,8 +480,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
 [e :U 144 ]
 "86
-[; ;Project1_Slave1.c: 86:             PORTD = SSPBUF;
-[e = _PORTD _SSPBUF ]
+[; ;Project1_Slave1.c: 86:             receivedData = SSPBUF;
+[e = _receivedData _SSPBUF ]
 "87
 [; ;Project1_Slave1.c: 87:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
@@ -551,302 +551,203 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Project1_Slave1.c: 111:     while(1){
 [e :U 152 ]
 {
-"117
-[; ;Project1_Slave1.c: 117:         distance = getDistance1();
-[e = _distance ( _getDistance1 ..  ]
-"118
-[; ;Project1_Slave1.c: 118:         switch (distance) {
-[e $U 155  ]
+"116
+[; ;Project1_Slave1.c: 116:         if (receivedData == 1){
+[e $ ! == -> _receivedData `i -> 1 `i 154  ]
 {
+"118
+[; ;Project1_Slave1.c: 118:         distance = getDistance1();
+[e = _distance ( _getDistance1 ..  ]
 "119
-[; ;Project1_Slave1.c: 119:             case 2:
-[e :U 156 ]
-"120
-[; ;Project1_Slave1.c: 120:                 PORTA = 0b11111111;
-[e = _PORTA -> -> 255 `i `uc ]
-"121
-[; ;Project1_Slave1.c: 121:                 break;
-[e $U 154  ]
-"122
-[; ;Project1_Slave1.c: 122:             case 3:
-[e :U 157 ]
-"123
-[; ;Project1_Slave1.c: 123:                 PORTA = 0b11111110;
-[e = _PORTA -> -> 254 `i `uc ]
-"124
-[; ;Project1_Slave1.c: 124:                 break;
-[e $U 154  ]
-"125
-[; ;Project1_Slave1.c: 125:             case 6:
-[e :U 158 ]
-"126
-[; ;Project1_Slave1.c: 126:                 PORTA = 0b11111100;
-[e = _PORTA -> -> 252 `i `uc ]
-"127
-[; ;Project1_Slave1.c: 127:                 break;
-[e $U 154  ]
-"128
-[; ;Project1_Slave1.c: 128:             case 8:
-[e :U 159 ]
-"129
-[; ;Project1_Slave1.c: 129:                 PORTA = 0b11111000;
-[e = _PORTA -> -> 248 `i `uc ]
-"130
-[; ;Project1_Slave1.c: 130:                 break;
-[e $U 154  ]
-"131
-[; ;Project1_Slave1.c: 131:             case 10:
-[e :U 160 ]
-"132
-[; ;Project1_Slave1.c: 132:                 PORTA = 0b11110000;
-[e = _PORTA -> -> 240 `i `uc ]
-"133
-[; ;Project1_Slave1.c: 133:                 break;
-[e $U 154  ]
-"134
-[; ;Project1_Slave1.c: 134:             case 12:
-[e :U 161 ]
-"135
-[; ;Project1_Slave1.c: 135:                 PORTA = 0b11100000;
-[e = _PORTA -> -> 224 `i `uc ]
-"136
-[; ;Project1_Slave1.c: 136:                 break;
-[e $U 154  ]
-"137
-[; ;Project1_Slave1.c: 137:             case 14:
-[e :U 162 ]
-"138
-[; ;Project1_Slave1.c: 138:                 PORTA = 0b11000000;
-[e = _PORTA -> -> 192 `i `uc ]
-"139
-[; ;Project1_Slave1.c: 139:                 break;
-[e $U 154  ]
-"140
-[; ;Project1_Slave1.c: 140:             case 16:
-[e :U 163 ]
-"141
-[; ;Project1_Slave1.c: 141:                 PORTA = 0b10000000;
-[e = _PORTA -> -> 128 `i `uc ]
-"142
-[; ;Project1_Slave1.c: 142:                 break;
-[e $U 154  ]
-"143
-[; ;Project1_Slave1.c: 143:             case 18:
-[e :U 164 ]
-"144
-[; ;Project1_Slave1.c: 144:                 PORTA = 0b00000000;
-[e = _PORTA -> -> 0 `i `uc ]
-"145
-[; ;Project1_Slave1.c: 145:                 break;
-[e $U 154  ]
-"146
-[; ;Project1_Slave1.c: 146:             default:
-[e :U 165 ]
-"148
-[; ;Project1_Slave1.c: 148:                 break;
-[e $U 154  ]
-"149
-[; ;Project1_Slave1.c: 149:         }
-}
-[e $U 154  ]
-[e :U 155 ]
-[e [\ _distance , $ -> -> 2 `i `ui 156
- , $ -> -> 3 `i `ui 157
- , $ -> -> 6 `i `ui 158
- , $ -> -> 8 `i `ui 159
- , $ -> -> 10 `i `ui 160
- , $ -> -> 12 `i `ui 161
- , $ -> -> 14 `i `ui 162
- , $ -> -> 16 `i `ui 163
- , $ -> -> 18 `i `ui 164
- 165 ]
-[e :U 154 ]
-"150
-[; ;Project1_Slave1.c: 150:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[; ;Project1_Slave1.c: 119:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"152
-[; ;Project1_Slave1.c: 152:     }
+"121
+[; ;Project1_Slave1.c: 121:         }
+}
+[e :U 154 ]
+"123
+[; ;Project1_Slave1.c: 123:     }
 }
 [e :U 151 ]
 [e $U 152  ]
 [e :U 153 ]
-"153
-[; ;Project1_Slave1.c: 153:     return;
+"124
+[; ;Project1_Slave1.c: 124:     return;
 [e $UE 150  ]
-"154
-[; ;Project1_Slave1.c: 154: }
+"125
+[; ;Project1_Slave1.c: 125: }
 [e :UE 150 ]
 }
-"160
-[; ;Project1_Slave1.c: 160: void setup(void){
+"131
+[; ;Project1_Slave1.c: 131: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"161
-[; ;Project1_Slave1.c: 161:     configOsc(8);
+"132
+[; ;Project1_Slave1.c: 132:     configOsc(8);
 [e ( _configOsc (1 -> -> 8 `i `ui ]
-"164
-[; ;Project1_Slave1.c: 164:     INTCONbits.GIE = 1;
+"135
+[; ;Project1_Slave1.c: 135:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"165
-[; ;Project1_Slave1.c: 165:     INTCONbits.PEIE = 1;
+"136
+[; ;Project1_Slave1.c: 136:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"167
-[; ;Project1_Slave1.c: 167:     ANSEL = 0;
+"138
+[; ;Project1_Slave1.c: 138:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"168
-[; ;Project1_Slave1.c: 168:     ANSELH = 0;
+"139
+[; ;Project1_Slave1.c: 139:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"170
-[; ;Project1_Slave1.c: 170:     TRISA = 0;
+"141
+[; ;Project1_Slave1.c: 141:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"171
-[; ;Project1_Slave1.c: 171:     TRISB = 0b00001000;
+"142
+[; ;Project1_Slave1.c: 142:     TRISB = 0b00001000;
 [e = _TRISB -> -> 8 `i `uc ]
-"172
-[; ;Project1_Slave1.c: 172:     TRISD = 0;
+"143
+[; ;Project1_Slave1.c: 143:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"174
-[; ;Project1_Slave1.c: 174:     PORTA = 0;
+"145
+[; ;Project1_Slave1.c: 145:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"175
-[; ;Project1_Slave1.c: 175:     PORTB = 0;
+"146
+[; ;Project1_Slave1.c: 146:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"176
-[; ;Project1_Slave1.c: 176:     PORTD = 0;
+"147
+[; ;Project1_Slave1.c: 147:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"177
-[; ;Project1_Slave1.c: 177:     I2C_Slave_Init(0x50);
+"148
+[; ;Project1_Slave1.c: 148:     I2C_Slave_Init(0x50);
 [e ( _I2C_Slave_Init (1 -> -> 80 `i `uc ]
-"178
-[; ;Project1_Slave1.c: 178: }
-[e :UE 166 ]
+"149
+[; ;Project1_Slave1.c: 149: }
+[e :UE 155 ]
 }
-"181
-[; ;Project1_Slave1.c: 181: uint16_t getDistance1(){
+"152
+[; ;Project1_Slave1.c: 152: uint16_t getDistance1(){
 [v _getDistance1 `(ui ~T0 @X0 1 ef ]
 {
 [e :U _getDistance1 ]
 [f ]
-"182
-[; ;Project1_Slave1.c: 182:     uint16_t Duration;
+"153
+[; ;Project1_Slave1.c: 153:     uint16_t Duration;
 [v _Duration `ui ~T0 @X0 1 a ]
-"183
-[; ;Project1_Slave1.c: 183:     uint16_t Distance;
+"154
+[; ;Project1_Slave1.c: 154:     uint16_t Distance;
 [v _Distance `ui ~T0 @X0 1 a ]
-"184
-[; ;Project1_Slave1.c: 184:     uint16_t Timer1;
+"155
+[; ;Project1_Slave1.c: 155:     uint16_t Timer1;
 [v _Timer1 `ui ~T0 @X0 1 a ]
-"185
-[; ;Project1_Slave1.c: 185:     RB2 = 1;
+"156
+[; ;Project1_Slave1.c: 156:     RB2 = 1;
 [e = _RB2 -> -> 1 `i `b ]
-"186
-[; ;Project1_Slave1.c: 186:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"157
+[; ;Project1_Slave1.c: 157:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"187
-[; ;Project1_Slave1.c: 187:     RB2 = 0;
+"158
+[; ;Project1_Slave1.c: 158:     RB2 = 0;
 [e = _RB2 -> -> 0 `i `b ]
-"188
-[; ;Project1_Slave1.c: 188:     while(RB3 == 0);
-[e $U 168  ]
-[e :U 169 ]
-[e :U 168 ]
-[e $ == -> _RB3 `i -> 0 `i 169  ]
-[e :U 170 ]
-"189
-[; ;Project1_Slave1.c: 189:     T1CONbits.TMR1ON = 1;
+"159
+[; ;Project1_Slave1.c: 159:     while(RB3 == 0);
+[e $U 157  ]
+[e :U 158 ]
+[e :U 157 ]
+[e $ == -> _RB3 `i -> 0 `i 158  ]
+[e :U 159 ]
+"160
+[; ;Project1_Slave1.c: 160:     T1CONbits.TMR1ON = 1;
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"190
-[; ;Project1_Slave1.c: 190:     while(RB3 == 1);
-[e $U 171  ]
-[e :U 172 ]
-[e :U 171 ]
-[e $ == -> _RB3 `i -> 1 `i 172  ]
-[e :U 173 ]
-"191
-[; ;Project1_Slave1.c: 191:     T1CONbits.TMR1ON = 0;
+"161
+[; ;Project1_Slave1.c: 161:     while(RB3 == 1);
+[e $U 160  ]
+[e :U 161 ]
+[e :U 160 ]
+[e $ == -> _RB3 `i -> 1 `i 161  ]
+[e :U 162 ]
+"162
+[; ;Project1_Slave1.c: 162:     T1CONbits.TMR1ON = 0;
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"192
-[; ;Project1_Slave1.c: 192:     Timer1 = TMR1;
+"163
+[; ;Project1_Slave1.c: 163:     Timer1 = TMR1;
 [e = _Timer1 -> _TMR1 `ui ]
-"193
-[; ;Project1_Slave1.c: 193:     Duration = Timer1/2;
+"164
+[; ;Project1_Slave1.c: 164:     Duration = Timer1/2;
 [e = _Duration / _Timer1 -> -> 2 `i `ui ]
-"194
-[; ;Project1_Slave1.c: 194:     if(Duration <= 23200)
-[e $ ! <= _Duration -> -> 23200 `i `ui 174  ]
-"195
-[; ;Project1_Slave1.c: 195:     {
+"165
+[; ;Project1_Slave1.c: 165:     if(Duration <= 23200)
+[e $ ! <= _Duration -> -> 23200 `i `ui 163  ]
+"166
+[; ;Project1_Slave1.c: 166:     {
 {
-"196
-[; ;Project1_Slave1.c: 196:         Distance = Duration/58;
+"167
+[; ;Project1_Slave1.c: 167:         Distance = Duration/58;
 [e = _Distance / _Duration -> -> 58 `i `ui ]
-"197
-[; ;Project1_Slave1.c: 197:     }
+"168
+[; ;Project1_Slave1.c: 168:     }
 }
-[e $U 175  ]
-"198
-[; ;Project1_Slave1.c: 198:     else if(Duration < 116)
-[e :U 174 ]
-[e $ ! < _Duration -> -> 116 `i `ui 176  ]
-"200
-[; ;Project1_Slave1.c: 200:     {
+[e $U 164  ]
+"169
+[; ;Project1_Slave1.c: 169:     else if(Duration < 116)
+[e :U 163 ]
+[e $ ! < _Duration -> -> 116 `i `ui 165  ]
+"171
+[; ;Project1_Slave1.c: 171:     {
 {
-"201
-[; ;Project1_Slave1.c: 201:         Distance = 0;
+"172
+[; ;Project1_Slave1.c: 172:         Distance = 0;
 [e = _Distance -> -> 0 `i `ui ]
-"202
-[; ;Project1_Slave1.c: 202:     }
+"173
+[; ;Project1_Slave1.c: 173:     }
 }
-[e $U 177  ]
-"203
-[; ;Project1_Slave1.c: 203:      else
-[e :U 176 ]
-"205
-[; ;Project1_Slave1.c: 205:     {
+[e $U 166  ]
+"174
+[; ;Project1_Slave1.c: 174:      else
+[e :U 165 ]
+"176
+[; ;Project1_Slave1.c: 176:     {
 {
-"206
-[; ;Project1_Slave1.c: 206:         Distance = 0;
+"177
+[; ;Project1_Slave1.c: 177:         Distance = 0;
 [e = _Distance -> -> 0 `i `ui ]
-"207
-[; ;Project1_Slave1.c: 207:     }
+"178
+[; ;Project1_Slave1.c: 178:     }
 }
-[e :U 177 ]
-[e :U 175 ]
-"208
-[; ;Project1_Slave1.c: 208:     Duration = 0;
+[e :U 166 ]
+[e :U 164 ]
+"179
+[; ;Project1_Slave1.c: 179:     Duration = 0;
 [e = _Duration -> -> 0 `i `ui ]
-"209
-[; ;Project1_Slave1.c: 209:     TMR1 = 0;
+"180
+[; ;Project1_Slave1.c: 180:     TMR1 = 0;
 [e = _TMR1 -> -> 0 `i `us ]
-"210
-[; ;Project1_Slave1.c: 210:     return Distance;
+"181
+[; ;Project1_Slave1.c: 181:     return Distance;
 [e ) _Distance ]
-[e $UE 167  ]
-"211
-[; ;Project1_Slave1.c: 211: }
-[e :UE 167 ]
+[e $UE 156  ]
+"182
+[; ;Project1_Slave1.c: 182: }
+[e :UE 156 ]
 }
-"214
-[; ;Project1_Slave1.c: 214: void timer1Config(void){
+"185
+[; ;Project1_Slave1.c: 185: void timer1Config(void){
 [v _timer1Config `(v ~T0 @X0 1 ef ]
 {
 [e :U _timer1Config ]
 [f ]
-"216
-[; ;Project1_Slave1.c: 216:     T1CONbits.T1CKPS0 = 0b00;
+"187
+[; ;Project1_Slave1.c: 187:     T1CONbits.T1CKPS0 = 0b00;
 [e = . . _T1CONbits 1 3 -> -> 0 `i `uc ]
-"217
-[; ;Project1_Slave1.c: 217:     T1CONbits.TMR1CS = 0;
+"188
+[; ;Project1_Slave1.c: 188:     T1CONbits.TMR1CS = 0;
 [e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
-"218
-[; ;Project1_Slave1.c: 218:     TMR1 = 0;
+"189
+[; ;Project1_Slave1.c: 189:     TMR1 = 0;
 [e = _TMR1 -> -> 0 `i `us ]
-"219
-[; ;Project1_Slave1.c: 219:     TMR1ON = 0;
+"190
+[; ;Project1_Slave1.c: 190:     TMR1ON = 0;
 [e = _TMR1ON -> -> 0 `i `b ]
-"220
-[; ;Project1_Slave1.c: 220: }
-[e :UE 178 ]
+"191
+[; ;Project1_Slave1.c: 191: }
+[e :UE 167 ]
 }

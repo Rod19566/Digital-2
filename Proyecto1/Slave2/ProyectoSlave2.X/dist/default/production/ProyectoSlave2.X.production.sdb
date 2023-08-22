@@ -260,7 +260,7 @@
 "49
 [v _onOff onOff `i  1 e 2 0 ]
 "50
-[v _recievedOnOff recievedOnOff `uc  1 e 1 0 ]
+[v _receivedOnOff receivedOnOff `uc  1 e 1 0 ]
 "104
 [v _main main `(v  1 e 1 0 ]
 {
