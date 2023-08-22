@@ -70,10 +70,11 @@ char motor1 = 0;
 char motor2 = 0;
 int16_t gyroData[3];       // Array to store gyroscope data (X, Y, Z)
 char lineLCD[16];           //voltage chain
-int OnOff = 0;
+int OnOff = 1;
 char readFromESP = 0;
 char toESP = 0;
-char fanOnOff = 0;
+char fanOnOff = 1;
+int UARTcounter = 0;
 
 ////////////////// PROTOTIPOS ///////////////////
 void setup(void);
@@ -128,18 +129,19 @@ void main(void) {
         LCDprint();
         
         toESP = "Hello";
-        sprintf(toESP,"P%d F%d", OnOff, fanOnOff); //ON or OFF all and fan
+        if (UARTcounter == 0) {
+            sprintf(toESP,"P%d F%d ", OnOff, fanOnOff); //ON or OFF all and fan
+            UARTcounter = 1;
+        }
+        else {
+            sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue); //weight value and US 
+            UARTcounter = 0;           
+        }
         //UART
         enviocadena(toESP);  //new line in ASCII
         enviocaracter(10);  //new line in ASCII
+//        
         __delay_ms(300); // Delay before next reading
-        
-        
-        sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue); //weight value and US
-        //UART
-        enviocadena(toESP);  //new line in ASCII
-        enviocaracter(10);  //new line in ASCII
-        
         //readFromESP = UART_get_char();
     }
     

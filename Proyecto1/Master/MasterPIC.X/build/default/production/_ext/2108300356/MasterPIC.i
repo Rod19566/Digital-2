@@ -2842,10 +2842,11 @@ char motor1 = 0;
 char motor2 = 0;
 int16_t gyroData[3];
 char lineLCD[16];
-int OnOff = 0;
+int OnOff = 1;
 char readFromESP = 0;
 char toESP = 0;
-char fanOnOff = 0;
+char fanOnOff = 1;
+int UARTcounter = 0;
 
 
 void setup(void);
@@ -2900,18 +2901,19 @@ void main(void) {
         LCDprint();
 
         toESP = "Hello";
-        sprintf(toESP,"P%d F%d", OnOff, fanOnOff);
+        if (UARTcounter == 0) {
+            sprintf(toESP,"P%d F%d ", OnOff, fanOnOff);
+            UARTcounter = 1;
+        }
+        else {
+            sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue);
+            UARTcounter = 0;
+        }
 
         enviocadena(toESP);
         enviocaracter(10);
+
         _delay((unsigned long)((300)*(8000000/4000.0)));
-
-
-        sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue);
-
-        enviocadena(toESP);
-        enviocaracter(10);
-
 
     }
 
@@ -3056,7 +3058,7 @@ void usSensor(void){
 
 
 }
-# 303 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
+# 305 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
 void dcForward(void){
     RA0 = 1;
     RA1 = 0;
