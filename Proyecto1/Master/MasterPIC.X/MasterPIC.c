@@ -30,6 +30,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "I2C.h"
+#include "USART.h"
 #include "LCD.h"
 
 /////////////////////VARIABLES/////////////////
@@ -41,6 +42,8 @@
 
 #define mpu6050_ADDRESS     0x68       // WHEN ADO connected to GND
 #define gyro_ADDRESS        0x43       // 
+
+#define onOffButton RB0
 
 #define RS RC0         
 #define EN RC1
@@ -62,11 +65,15 @@
 
 
 char ultrasonicValue = 0;
+char fsrValue = 0;
 char motor1 = 0;
 char motor2 = 0;
 int16_t gyroData[3];       // Array to store gyroscope data (X, Y, Z)
 char lineLCD[16];           //voltage chain
 int OnOff = 0;
+char readFromESP = 0;
+char toESP = 0;
+char fanOnOff = 0;
 
 ////////////////// PROTOTIPOS ///////////////////
 void setup(void);
@@ -76,28 +83,63 @@ void slave2Communication(void);
 void LCDprint(void);
 void usSensor(void);
 void dcForward(void);
+void dcRight(void);
+void dcStop(void);
+void ioc_init (char pin);
+
+
+void __interrupt() isr(void){
+    
+    if(RBIF == 1)  {        //interrupt due to change in button state
+    if (onOffButton == 1){
+        if (OnOff == 1){
+            OnOff = 0;
+            fanOnOff = 0;
+        }
+        else OnOff = 1;
+        
+    }
+        INTCONbits.RBIF = 0;
+    }
+        
+}
 
 ////////////////////////////////////////////
 void main(void) {
     setup();
     
     while(1){
-        PORTB = motor1;
-        dcForward();
+        //PORTB = motor1;
         
+        if (OnOff == 1){
         /////// COMUNICATION WITH SLAVE 1 
         slave1Communication();
-        
         /////// COMUNICATION WITH SLAVE 2
         slave2Communication();
         
         /////// COMUNICATION WITH Gyroscope
-        //ReadGyroscopeData(gyroData); // Read gyroscope data 
-        //__delay_ms(200); // Delay before next reading
-        
+        //ReadGyroscopeData(gyroData); // Read gyroscope data   
+            
+        } else{
+            
+        }
         
         //LCD
         LCDprint();
+        
+        toESP = "Hello";
+        sprintf(toESP,"%d", OnOff);
+        //UART
+        enviocadena(toESP);  //new line in ASCII
+        enviocaracter(10);  //new line in ASCII
+        
+        
+        sprintf(toESP,"Fan:%d", fanOnOff);
+        enviocadena(toESP);  //new line in ASCII
+        enviocaracter(10);  //new line in ASCII
+        
+        
+        //readFromESP = UART_get_char();
     }
     
 }
@@ -107,18 +149,35 @@ void setup(void){
         OSCCONbits.IRCF = 0b111;
         OSCCONbits.SCS = 1;
         
+        //TX y RX para UART
+        TXSTAbits.SYNC = 0;
+        TXSTAbits.BRGH = 1;
+
+        BAUDCTLbits.BRG16 = 1;
+        
+        SPBRG = 207; //baud 9600    
+        SPBRGH = 0; 
+        
         ANSEL = 0;
         ANSELH = 0;
 
         TRISC = 128;
         TRISA = 0;
-        TRISB = 0;
+        //Setting PORTb as an input
+        TRISB = 1;       //RB0 as inputs
         TRISD = 0;
     
         PORTA = 0;
         PORTB = 0;
         PORTC = 0;
         PORTD = 0;
+        
+        RCSTAbits.SPEN = 1;
+        RCSTAbits.RX9 = 0;
+        RCSTAbits.CREN = 1;
+        TXSTAbits.TXEN = 1;
+        ioc_init(1);    //enable interrupt on change and pullup
+        
         I2C_Master_Init(100000);        // Inicializar ComuncaciÃ³n I2C
         Lcd_Init();
 
@@ -139,7 +198,8 @@ void ReadGyroscopeData(int16_t *gyroData) {
     gyroData[1] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1); // Y-axis
     gyroData[2] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(0); // Z-axis
 
-    I2C_Master_Stop(); // Stop I2C communication
+    I2C_Master_Stop(); // Stop I2C communication//
+    __delay_ms(200); // Delay before next reading
 }
 
 void slave1Communication(void){    
@@ -153,7 +213,7 @@ void slave1Communication(void){
         //WRITE      
         I2C_Master_Start();         //reads 
         I2C_Master_Write(slave1_ADDRESS);
-        I2C_Master_Write(0b10000001);
+        I2C_Master_Write(OnOff);
         I2C_Master_Stop();
         ultrasonicValue = valueS1;
         __delay_ms(200);
@@ -171,16 +231,16 @@ void slave2Communication(void){
         //WRITE
         I2C_Master_Start();         //reads 
         I2C_Master_Write(slave2_ADDRESS);
-        I2C_Master_Write(0b00011000);
+        I2C_Master_Write(fanOnOff);
         I2C_Master_Stop();
-        motor1 = valueS2;
+        fsrValue = valueS2;
         __delay_ms(200);
         
     
 }
 
 void LCDprint(void){
-    
+    if (OnOff == 1){ 
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);  //line 1
         sprintf(lineLCD, "Distance: %.2d", ultrasonicValue);
@@ -188,8 +248,19 @@ void LCDprint(void){
         usSensor();
         
         Lcd_Set_Cursor(2,1);  //line 2
-        //sprintf(lineLCD,"%.2d:%.2d:%.2d", timeRTC[0], timeRTC[1], timeRTC[2]);
-        Lcd_Write_String("Hola"); 
+        sprintf(lineLCD,"Basket: %.2d", fsrValue);
+        Lcd_Write_String(lineLCD); 
+            
+        } else{
+        //stops wheels
+        dcStop();
+        
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);  //line 1
+        Lcd_Write_String("Off");
+            
+        }   
+     
     
 }
 
@@ -197,11 +268,35 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);  //line 1
     
-    if (ultrasonicValue < 4) Lcd_Write_String("!!"); 
-    else  Lcd_Write_String("  "); 
+    
+    
+    if (ultrasonicValue <= 7) {
+        Lcd_Write_String("!!"); 
+        fanOnOff = 0;
+        dcRight();
+    }
+    else  {
+        Lcd_Write_String("  "); 
+        fanOnOff = 1;
+        dcForward();
+    }
     
     
 }
+
+//void fsrSensor(void){
+//    Lcd_Set_Cursor(2,9);  //line 1
+//    
+//    if (ultrasonicValue <= 7) {
+//        Lcd_Write_String("!!"); 
+//        dcRight();
+//    }
+//    else  {
+//        Lcd_Write_String("  "); 
+//        dcForward();
+//    }
+//    
+//}
 
 
 void dcForward(void){
@@ -234,4 +329,23 @@ void dcStop(void){
     EN2 = 1;
     IN3 = 0;
     IN4 = 0;
+}
+
+
+void ioc_init (char pin){
+           // PIR1bits.ADIF   = 0;
+           // PIE1bits.ADIE   = 1;
+           // INTCONbits.PEIE = 1;
+            INTCONbits.GIE  = 1;
+            INTCONbits.RBIF = 0;
+            INTCONbits.RBIE  = 1;
+            
+            // interrupt on change PORTB
+            IOCBbits.IOCB0 = 1; //enable interrupt RB0, RB2
+            IOCBbits.IOCB1 = 1;
+            
+            OPTION_REGbits.nRBPU = 0; //enable pullups
+            //enable pullups RB0, RB2
+            WPUBbits.WPUB0 = 1;      
+            WPUBbits.WPUB1 = 1;
 }

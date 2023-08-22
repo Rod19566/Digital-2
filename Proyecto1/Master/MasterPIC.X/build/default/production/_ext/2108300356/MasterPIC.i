@@ -2796,6 +2796,19 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 # 32 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
 
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h" 1
+# 15 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
+# 15 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h" 2
+
+
+void write(unsigned char data, unsigned char address);
+unsigned char read(unsigned char address);
+void enviocaracter(char a);
+void enviocadena(char* cadena);
+char UART_get_char();
+# 33 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
+
 # 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h" 1
 # 30 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
@@ -2821,14 +2834,18 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 
 void Lcd_Shift_Left(void);
-# 33 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
-# 64 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
+# 34 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
+# 67 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
 char ultrasonicValue = 0;
+char fsrValue = 0;
 char motor1 = 0;
 char motor2 = 0;
 int16_t gyroData[3];
 char lineLCD[16];
 int OnOff = 0;
+char readFromESP = 0;
+char toESP = 0;
+char fanOnOff = 0;
 
 
 void setup(void);
@@ -2838,28 +2855,63 @@ void slave2Communication(void);
 void LCDprint(void);
 void usSensor(void);
 void dcForward(void);
+void dcRight(void);
+void dcStop(void);
+void ioc_init (char pin);
+
+
+void __attribute__((picinterrupt(("")))) isr(void){
+
+    if(RBIF == 1) {
+    if (RB0 == 1){
+        if (OnOff == 1){
+            OnOff = 0;
+            fanOnOff = 0;
+        }
+        else OnOff = 1;
+
+    }
+        INTCONbits.RBIF = 0;
+    }
+
+}
 
 
 void main(void) {
     setup();
 
     while(1){
-        PORTB = motor1;
-        dcForward();
 
+
+        if (OnOff == 1){
 
         slave1Communication();
-
 
         slave2Communication();
 
 
 
 
+        } else{
 
+        }
 
 
         LCDprint();
+
+        toESP = "Hello";
+        sprintf(toESP,"%d", OnOff);
+
+        enviocadena(toESP);
+        enviocaracter(10);
+
+
+        sprintf(toESP,"Fan:%d", fanOnOff);
+        enviocadena(toESP);
+        enviocaracter(10);
+
+
+
     }
 
 }
@@ -2869,18 +2921,35 @@ void setup(void){
         OSCCONbits.IRCF = 0b111;
         OSCCONbits.SCS = 1;
 
+
+        TXSTAbits.SYNC = 0;
+        TXSTAbits.BRGH = 1;
+
+        BAUDCTLbits.BRG16 = 1;
+
+        SPBRG = 207;
+        SPBRGH = 0;
+
         ANSEL = 0;
         ANSELH = 0;
 
         TRISC = 128;
         TRISA = 0;
-        TRISB = 0;
+
+        TRISB = 1;
         TRISD = 0;
 
         PORTA = 0;
         PORTB = 0;
         PORTC = 0;
         PORTD = 0;
+
+        RCSTAbits.SPEN = 1;
+        RCSTAbits.RX9 = 0;
+        RCSTAbits.CREN = 1;
+        TXSTAbits.TXEN = 1;
+        ioc_init(1);
+
         I2C_Master_Init(100000);
         Lcd_Init();
 
@@ -2902,6 +2971,7 @@ void ReadGyroscopeData(int16_t *gyroData) {
     gyroData[2] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(0);
 
     I2C_Master_Stop();
+    _delay((unsigned long)((200)*(8000000/4000.0)));
 }
 
 void slave1Communication(void){
@@ -2915,7 +2985,7 @@ void slave1Communication(void){
 
         I2C_Master_Start();
         I2C_Master_Write(0x50);
-        I2C_Master_Write(0b10000001);
+        I2C_Master_Write(OnOff);
         I2C_Master_Stop();
         ultrasonicValue = valueS1;
         _delay((unsigned long)((200)*(8000000/4000.0)));
@@ -2933,16 +3003,16 @@ void slave2Communication(void){
 
         I2C_Master_Start();
         I2C_Master_Write(0x60);
-        I2C_Master_Write(0b00011000);
+        I2C_Master_Write(fanOnOff);
         I2C_Master_Stop();
-        motor1 = valueS2;
+        fsrValue = valueS2;
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
 
 }
 
 void LCDprint(void){
-
+    if (OnOff == 1){
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
         sprintf(lineLCD, "Distance: %.2d", ultrasonicValue);
@@ -2950,8 +3020,19 @@ void LCDprint(void){
         usSensor();
 
         Lcd_Set_Cursor(2,1);
+        sprintf(lineLCD,"Basket: %.2d", fsrValue);
+        Lcd_Write_String(lineLCD);
 
-        Lcd_Write_String("Hola");
+        } else{
+
+        dcStop();
+
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("Off");
+
+        }
+
 
 }
 
@@ -2959,13 +3040,22 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);
 
-    if (ultrasonicValue < 4) Lcd_Write_String("!!");
-    else Lcd_Write_String("  ");
+
+
+    if (ultrasonicValue <= 7) {
+        Lcd_Write_String("!!");
+        fanOnOff = 0;
+        dcRight();
+    }
+    else {
+        Lcd_Write_String("  ");
+        fanOnOff = 1;
+        dcForward();
+    }
 
 
 }
-
-
+# 302 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
 void dcForward(void){
     RA0 = 1;
     RA1 = 0;
@@ -2996,4 +3086,23 @@ void dcStop(void){
     RA5 = 1;
     RA3 = 0;
     RA4 = 0;
+}
+
+
+void ioc_init (char pin){
+
+
+
+            INTCONbits.GIE = 1;
+            INTCONbits.RBIF = 0;
+            INTCONbits.RBIE = 1;
+
+
+            IOCBbits.IOCB0 = 1;
+            IOCBbits.IOCB1 = 1;
+
+            OPTION_REGbits.nRBPU = 0;
+
+            WPUBbits.WPUB0 = 1;
+            WPUBbits.WPUB1 = 1;
 }

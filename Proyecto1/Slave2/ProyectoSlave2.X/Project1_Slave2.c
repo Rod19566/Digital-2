@@ -1,5 +1,5 @@
 /*
- * File:   Project1_Slave1.c
+ * File:   Project1_Slave2.c
  * Author: WMGWW
  *
  * Created on 17 de agosto de 2023, 05:43 PM
@@ -36,6 +36,7 @@
 #include <stdint.h>
 #include "I2C.h"
 #include "oscillator.h"
+#include "ADC2.h"
 
 //*****************************************************************************
 // DefiniciÃ³n de variables
@@ -89,6 +90,13 @@ void __interrupt() isr(void){
        
         PIR1bits.SSPIF = 0;    
     }
+   
+    if (ADIF == 1) {
+        if (ADCON0bits.CHS == 0) { // Check if the ADC channel is AN0
+            adcValue = adcRead();
+            PIR1bits.ADIF = 0; // Clear the ADC interrupt flag
+        }
+    }
 }
 
 void main(void) {
@@ -101,10 +109,16 @@ void main(void) {
     // Loop infinito
     //*************************************************************************
     while(1){     
-        
-       adcValue = adcValue--;
+         
+       if (ADCON0bits.CHS == 0){
+       adcChannel(0);     //se actualiza la variable con valor del adc
+        __delay_us(20);   //delay de 20 ms
+        ADCON0bits.GO = 1;//inicio de la siguiente conversion
+        } 
        PORTB = adcValue;
-       __delay_ms(1000);
+        //PORTB = ~PORTB;
+       __delay_ms(500);
+       
     }
     return;
 }
@@ -115,11 +129,17 @@ void main(void) {
 //*****************************************************************************
 void setup(void){
     configOsc(8);
+    ANSEL = 0;
+    ANSELH = 1;
+    TRISA = 0b00000001;         //RA0 as inputs
     
     //////interrupciones habilitadas////////////    
     INTCONbits.GIE = 1;         // Habilitamos interrupciones
     INTCONbits.PEIE = 1;        // Se habilitan las interrupciones perifericos
     
+    
+    adcConfig();
+    __delay_us(40);
     
     TRISB = 0;
     TRISD = 0;

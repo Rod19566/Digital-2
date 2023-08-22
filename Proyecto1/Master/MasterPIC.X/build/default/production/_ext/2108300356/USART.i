@@ -1,4 +1,4 @@
-# 1 "Project1_Slave2.c"
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,22 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Project1_Slave2.c" 2
-# 13 "Project1_Slave2.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c" 2
 
 
 
@@ -29,7 +14,8 @@
 
 
 
-
+# 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/usart.h" 1
+# 14 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/usart.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2647,157 +2633,78 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 34 "Project1_Slave2.c" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 36 "Project1_Slave2.c" 2
-
-# 1 "./I2C.h" 1
-# 20 "./I2C.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C.h" 2
-# 29 "./I2C.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-# 37 "Project1_Slave2.c" 2
-
-# 1 "./oscillator.h" 1
-
-
-
+# 14 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/usart.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./oscillator.h" 2
+# 15 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/usart.h" 2
 
 
-void configOsc(uint16_t frec);
-# 38 "Project1_Slave2.c" 2
+void write(unsigned char data, unsigned char address);
+unsigned char read(unsigned char address);
+void enviocaracter(char a);
+void enviocadena(char* cadena);
+char UART_get_char();
+# 8 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c" 2
 
 
+void write(unsigned char data, unsigned char address){
+    EEADR = address;
+    EEDAT = data;
 
+    EECON1bits.EEPGD = 0;
+    EECON1bits.WREN = 1;
 
+    INTCONbits.GIE = 0;
 
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;
 
-
-uint8_t z;
-uint8_t dato;
-unsigned char adcValue = 0;
-
-
-
-
-
-void setup(void);
-
-
-
-
-
-void __attribute__((picinterrupt(("")))) isr(void){
-   if(PIR1bits.SSPIF == 1){
-
-        SSPCONbits.CKP = 0;
-
-        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-            z = SSPBUF;
-            SSPCONbits.SSPOV = 0;
-            SSPCONbits.WCOL = 0;
-            SSPCONbits.CKP = 1;
-        }
-
-        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-
-            z = SSPBUF;
-
-            PIR1bits.SSPIF = 0;
-            SSPCONbits.CKP = 1;
-            while(!SSPSTATbits.BF);
-            PORTD = SSPBUF;
-            _delay((unsigned long)((250)*(8000000/4000000.0)));
-
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
-            SSPBUF = adcValue;
-            SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(8000000/4000000.0)));
-            while(SSPSTATbits.BF);
-        }
-
-        PIR1bits.SSPIF = 0;
-    }
-}
-
-void main(void) {
-
-    configOsc(8);
-    setup();
-
-
-
-
-
-    while(1){
-
-       adcValue = adcValue--;
-       PORTB = adcValue;
-       _delay((unsigned long)((1000)*(8000000/4000.0)));
-    }
-    return;
-}
-
-
-
-
-
-void setup(void){
-    configOsc(8);
-
+    while(PIR2bits.EEIF==0);
+    PIR2bits.EEIF = 0;
 
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+    EECON1bits.WREN = 0;
+
+}
+
+unsigned char read(unsigned char address){
+    EEADR = address;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    unsigned char data = EEDAT;
+
+    return data;
+}
+
+void enviocaracter(char a){
+    while (TXSTAbits.TRMT == 0){
+
+    }
+    if (PIR1bits.TXIF){
+            TXREG = a;
+        }
+}
+
+void enviocadena(char* cadena){
+    while (*cadena != 0){
+      enviocaracter(*cadena);
+      cadena++;
+    }
+    if (PIR1bits.TXIF){
+            TXREG = 13;
+        }
+}
 
 
-    TRISB = 0;
-    TRISD = 0;
+char UART_get_char(){
+    if(OERR)
+    {
+        CREN = 0;
+        CREN = 1;
+    }
 
-    PORTA = 0;
-    PORTB = 0;
-    PORTD = 0;
-    I2C_Slave_Init(0x60);
+    while(!RCIF);
+
+    return RCREG;
 }
