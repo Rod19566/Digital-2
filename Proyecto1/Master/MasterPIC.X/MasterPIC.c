@@ -75,6 +75,7 @@ char readFromESP = 0;
 char toESP = 0;
 char fanOnOff = 1;
 int UARTcounter = 0;
+char state = 0;
 
 ////////////////// PROTOTIPOS ///////////////////
 void setup(void);
@@ -123,48 +124,16 @@ void main(void) {
             
         } else{
             
-        }
+        }// To enable UART transmission again
+        //TXSTAbits.TXEN = 1; // Turn on UART transmission
+        char temp = 0;
         
-        TXSTAbits.TXEN = 1; // Turn on UART transmission
-        toESP = "Hello from the PIC";
-        //UART
-        if (UARTcounter == 1) {
-            // toESP = "Power";
-            // varToESP = OnOff;
-            enviocadena("Power");  //new line in ASCII
-            __delay_ms(300); // Delay before next reading  
-            envioentero(OnOff);  //new line in ASCII
-        } else if (UARTcounter == 2) {
-            // toESP = "Fan";
-            // varToESP = fanOnOff;
-            enviocadena("Fan");  //new line in ASCII
-            __delay_ms(300); // Delay before next reading  
-            envioentero(fanOnOff);  //new line in ASCII
-        } else if (UARTcounter == 3) {
-            // toESP = "FSR";
-            // varToESP = fsrValue;
-            enviocadena("FSR");  //new line in ASCII 
-            __delay_ms(300); // Delay before next reading  
-            envioentero(fsrValue);  //new line in ASCII
-        } else if (UARTcounter == 4) {
-            // toESP = "Ultrasonic";
-            // varToESP = ultrasonicValue;
-            enviocadena("Ultrasonic");  //new line in ASCII
-            __delay_ms(300); // Delay before next reading  
-            envioentero(ultrasonicValue);  //new line in ASCII
-        } else {
-            enviocadena("None 404");  //new line in ASCII
-            // toESP = "None";
-            // varToESP = 404;
-        }
-
-        __delay_ms(300); // Delay before next reading  
-        TXSTAbits.TXEN = 0; // Turn off UART transmission
-        __delay_ms(300); // Delay before next reading  
-        UARTcounter++;
-        if (UARTcounter == 5) {
-            UARTcounter = 1;
-        } 
+        if(OnOff == 0){
+        enviocadena("0");            
+        } else enviocadena("1"); 
+        __delay_ms(300); // Delay before next reading 
+        //TXSTAbits.TXEN = 0; // Turn off UART transmission 
+        //enviocaracter(10);
         //LCD
         LCDprint();
     } //loop
@@ -297,6 +266,7 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);  //line 1    
     
+    if (fsrValue <= 200) {
     if (ultrasonicValue <= 12) {
         Lcd_Write_String("!!"); 
         fanOnOff = 0;
@@ -306,7 +276,9 @@ void usSensor(void){
         Lcd_Write_String("  "); 
         fanOnOff = 1;
         dcForward();
-    }
+    } 
+        
+    }else dcStop();
     
     
 }

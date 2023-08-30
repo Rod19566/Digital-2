@@ -42,7 +42,6 @@ AdafruitIO_Feed *powerFeed = io.feed("power");
 void setup() {
   Serial.begin(115200);
   SerialPort.begin(9600, SERIAL_8N1, 16, 17); 
-  Serial.setTimeout(500);
   
 	// Allow allocation of all timers
 	ESP32PWM::allocateTimer(0);
@@ -76,6 +75,12 @@ void setup() {
   // We are connected
   Serial.println();
   Serial.println(io.statusText());
+  
+ // Save slave pot value to the 'slaveValue' feed on Adafruit IO
+  Serial.print("Robot is ON/Off -> ");
+  Serial.println("Powered but Off");
+  powerFeed->save(1);
+  delay(2000);
 
 }
 
@@ -84,9 +89,10 @@ void loop() {
   adcValue = map(adcRawValue, 0, 4095, 0, 255);
 
   digitalWrite(ledPin, ledState ? HIGH : LOW);
+  setBasket(ledState);
 
     // Read UART data here
-    uartValue = readUART();
+    readUART();
     delay(300);
     Serial.print("UART: ");
     Serial.println(uartValue);
@@ -137,20 +143,20 @@ void readADA(void){
 
 }
 
-String readUART(void){
-  if (SerialPort.available()){
-    char byteRead[10];
-    String data = SerialPort.readString();
-        // Process the received data
-    return data; 
+void readUART(void){
+  if (SerialPort.available())
+  {
+    String received = SerialPort.readStringUntil('\n');
+    //String received = SerialPort.readString();
+    uartValue = received;
+    delay(300);
   }
 }
 
-void setBasket(int on, int fan){
-  if (on == 1 && fan == 1) myservo.write(0);    // tell servo to go to position in variable 'pos'
-  else myservo.write(90);
+void setBasket(int on){
+  if (on == 1) myservo.write(0);    // tell servo to go to position in variable 'pos'
+  else myservo.write(60);
   delay(100);  
-
 }
 
 

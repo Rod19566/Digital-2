@@ -55,34 +55,32 @@
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "104
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"92 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+"93 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
 [v _isr isr `II(v  1 e 1 0 ]
-"108
+"109
 [v _main main `(v  1 e 1 0 ]
-"175
+"144
 [v _setup setup `(v  1 e 1 0 ]
-"232
+"201
 [v _slave1Communication slave1Communication `(v  1 e 1 0 ]
-"250
+"219
 [v _slave2Communication slave2Communication `(v  1 e 1 0 ]
-"269
+"238
 [v _LCDprint LCDprint `(v  1 e 1 0 ]
-"297
+"266
 [v _usSensor usSensor `(v  1 e 1 0 ]
-"329
+"301
 [v _dcForward dcForward `(v  1 e 1 0 ]
-"340
+"312
 [v _dcRight dcRight `(v  1 e 1 0 ]
-"351
+"323
 [v _dcStop dcStop `(v  1 e 1 0 ]
-"362
+"334
 [v _ioc_init ioc_init `(v  1 e 1 0 ]
 "40 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c
 [v _enviocaracter enviocaracter `(v  1 e 1 0 ]
 "49
 [v _enviocadena enviocadena `(v  1 e 1 0 ]
-"59
-[v _envioentero envioentero `(v  1 e 1 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
@@ -108,7 +106,7 @@
 ]
 [u S121 . 1 `S107 1 . 1 0 `S116 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES121  1 e 1 @11 ]
-[s S672 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S665 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -117,9 +115,9 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S680 . 1 `S672 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES680  1 e 1 @12 ]
-[s S630 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S673 . 1 `S665 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES673  1 e 1 @12 ]
+[s S623 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ULPWUIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -129,13 +127,13 @@
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "611
-[u S639 . 1 `S630 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES639  1 e 1 @13 ]
+[u S632 . 1 `S623 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES632  1 e 1 @13 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S267 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S262 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -145,23 +143,23 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1069
-[s S276 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S271 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S280 . 1 `uc 1 . 1 0 :6:0 
+[s S275 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S283 . 1 `uc 1 . 1 0 :6:0 
+[s S278 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S286 . 1 `S267 1 . 1 0 `S276 1 . 1 0 `S280 1 . 1 0 `S283 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES286  1 e 1 @24 ]
+[u S281 . 1 `S262 1 . 1 0 `S271 1 . 1 0 `S275 1 . 1 0 `S278 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES281  1 e 1 @24 ]
 "1134
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1141
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
-[s S395 . 1 `uc 1 PS 1 0 :3:0 
+[s S390 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -169,12 +167,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S402 . 1 `uc 1 PS0 1 0 :1:0 
+[s S397 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S406 . 1 `S395 1 . 1 0 `S402 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES406  1 e 1 @129 ]
+[u S401 . 1 `S390 1 . 1 0 `S397 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES401  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
@@ -195,20 +193,20 @@
 [v _TRISCbits TRISCbits `VES35  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S208 . 1 `uc 1 SCS 1 0 :1:0 
+[s S166 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S214 . 1 `uc 1 . 1 0 :4:0 
+[s S172 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S219 . 1 `S208 1 . 1 0 `S214 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES219  1 e 1 @143 ]
+[u S177 . 1 `S166 1 . 1 0 `S172 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES177  1 e 1 @143 ]
 "1980
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
 [s S47 . 1 `uc 1 SEN 1 0 :1:0 
@@ -227,10 +225,10 @@
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2178
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S421 . 1 `uc 1 WPUB 1 0 :8:0 
+[s S416 . 1 `uc 1 WPUB 1 0 :8:0 
 ]
 "2367
-[s S423 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S418 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -239,12 +237,12 @@
 `uc 1 WPUB6 1 0 :1:6 
 `uc 1 WPUB7 1 0 :1:7 
 ]
-[u S432 . 1 `S421 1 . 1 0 `S423 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES432  1 e 1 @149 ]
-[s S369 . 1 `uc 1 IOCB 1 0 :8:0 
+[u S427 . 1 `S416 1 . 1 0 `S418 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES427  1 e 1 @149 ]
+[s S364 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2437
-[s S371 . 1 `uc 1 IOCB0 1 0 :1:0 
+[s S366 . 1 `uc 1 IOCB0 1 0 :1:0 
 `uc 1 IOCB1 1 0 :1:1 
 `uc 1 IOCB2 1 0 :1:2 
 `uc 1 IOCB3 1 0 :1:3 
@@ -253,9 +251,9 @@
 `uc 1 IOCB6 1 0 :1:6 
 `uc 1 IOCB7 1 0 :1:7 
 ]
-[u S380 . 1 `S369 1 . 1 0 `S371 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES380  1 e 1 @150 ]
-[s S151 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S375 . 1 `S364 1 . 1 0 `S366 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES375  1 e 1 @150 ]
+[s S192 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -265,15 +263,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2583
-[s S160 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S201 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S164 . 1 `uc 1 . 1 0 :6:0 
+[s S205 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S167 . 1 `S151 1 . 1 0 `S160 1 . 1 0 `S164 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES167  1 e 1 @152 ]
+[u S208 . 1 `S192 1 . 1 0 `S201 1 . 1 0 `S205 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES208  1 e 1 @152 ]
 "2643
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2705
@@ -282,7 +280,7 @@
 [v _EEDAT EEDAT `VEuc  1 e 1 @268 ]
 "3258
 [v _EEADR EEADR `VEuc  1 e 1 @269 ]
-[s S234 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S229 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -292,13 +290,13 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3353
-[u S243 . 1 `S234 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES243  1 e 1 @391 ]
+[u S238 . 1 `S229 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES238  1 e 1 @391 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-[s S594 . 1 `uc 1 RD 1 0 :1:0 
+[s S587 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -306,8 +304,8 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3515
-[u S601 . 1 `S594 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES601  1 e 1 @396 ]
+[u S594 . 1 `S587 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES594  1 e 1 @396 ]
 "3545
 [v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
 "3841
@@ -374,30 +372,28 @@
 [v _lineLCD lineLCD `[16]uc  1 e 16 0 ]
 "73
 [v _OnOff OnOff `i  1 e 2 0 ]
-"75
-[v _toESP toESP `uc  1 e 1 0 ]
 "76
 [v _fanOnOff fanOnOff `uc  1 e 1 0 ]
 "77
 [v _UARTcounter UARTcounter `i  1 e 2 0 ]
-"108
+"109
 [v _main main `(v  1 e 1 0 ]
 {
-"172
+"141
 } 0
-"250
+"219
 [v _slave2Communication slave2Communication `(v  1 e 1 0 ]
 {
-"251
+"220
 [v slave2Communication@valueS2 valueS2 `uc  1 a 1 8 ]
-"267
+"236
 } 0
-"232
+"201
 [v _slave1Communication slave1Communication `(v  1 e 1 0 ]
 {
-"233
+"202
 [v slave1Communication@valueS1 valueS1 `uc  1 a 1 8 ]
-"248
+"217
 } 0
 "65 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
@@ -429,15 +425,15 @@
 {
 "35
 } 0
-"175 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+"144 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"211
+"180
 } 0
-"362
+"334
 [v _ioc_init ioc_init `(v  1 e 1 0 ]
 {
-"378
+"350
 } 0
 "80 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
@@ -462,43 +458,6 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 6 ]
 "30
 } 0
-"59 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c
-[v _envioentero envioentero `(v  1 e 1 0 ]
-{
-"78
-[v envioentero@i i `i  1 a 2 14 ]
-"70
-[v envioentero@buffer buffer `[10]uc  1 a 10 2 ]
-"71
-[v envioentero@digitCount digitCount `i  1 a 2 12 ]
-"59
-[v envioentero@value value `i  1 p 2 0 ]
-"81
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 7 ]
-[v ___awmod@counter counter `uc  1 a 1 6 ]
-"5
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-[v ___awmod@dividend dividend `i  1 p 2 4 ]
-"34
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 8 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 7 ]
-[v ___awdiv@counter counter `uc  1 a 1 6 ]
-"5
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-[v ___awdiv@dividend dividend `i  1 p 2 4 ]
-"41
-} 0
 "49 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c
 [v _enviocadena enviocadena `(v  1 e 1 0 ]
 {
@@ -515,25 +474,30 @@
 [v enviocaracter@a a `uc  1 a 1 2 ]
 "47
 } 0
-"269 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+"238 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
 [v _LCDprint LCDprint `(v  1 e 1 0 ]
 {
-"294
+"263
 } 0
-"297
+"266
 [v _usSensor usSensor `(v  1 e 1 0 ]
 {
-"312
+"284
 } 0
-"340
+"323
+[v _dcStop dcStop `(v  1 e 1 0 ]
+{
+"331
+} 0
+"312
 [v _dcRight dcRight `(v  1 e 1 0 ]
 {
-"349
+"321
 } 0
-"329
+"301
 [v _dcForward dcForward `(v  1 e 1 0 ]
 {
-"338
+"310
 } 0
 "104 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -630,11 +594,6 @@
 [v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
 "51
 } 0
-"351 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
-[v _dcStop dcStop `(v  1 e 1 0 ]
-{
-"359
-} 0
 "63 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.c
 [v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
 {
@@ -656,8 +615,8 @@
 [v Lcd_Port@a a `uc  1 a 1 2 ]
 "53
 } 0
-"92 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+"93 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"105
+"106
 } 0

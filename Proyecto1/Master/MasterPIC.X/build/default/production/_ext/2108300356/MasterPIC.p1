@@ -23,16 +23,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 [p mainexit ]
-"80 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 80: void setup(void);
+"81 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 81: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
-"82
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 82: void slave1Communication(void);
-[v _slave1Communication `(v ~T0 @X0 0 ef ]
 "83
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 83: void slave2Communication(void);
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 83: void slave1Communication(void);
+[v _slave1Communication `(v ~T0 @X0 0 ef ]
+"84
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 84: void slave2Communication(void);
 [v _slave2Communication `(v ~T0 @X0 0 ef ]
-"2563 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+"20 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h: 20: void enviocadena(char* cadena);
+[v _enviocadena `(v ~T0 @X0 0 ef1`*uc ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"85 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 85: void LCDprint(void);
+[v _LCDprint `(v ~T0 @X0 0 ef ]
+"1869 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1869:     struct {
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S70 . SCS LTS HTS OSTS IRCF ]
+"1876
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1876:     struct {
+[s S71 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . . IRCF0 IRCF1 IRCF2 ]
+"1868
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1868: typedef union {
+[u S69 `S70 1 `S71 1 ]
+[n S69 . . . ]
+"1883
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1883: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
+[v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"2563
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2563:     struct {
 [s S99 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S99 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
@@ -51,34 +76,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2583
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2583: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x098)));
 [v _TXSTAbits `VS98 ~T0 @X0 0 e@152 ]
-"20 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h: 20: void enviocadena(char* cadena);
-[v _enviocadena `(v ~T0 @X0 0 ef1`*uc ]
-[v F36 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
-[v __delay `JF36 ~T0 @X0 0 e ]
-[p i __delay ]
-"22 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.h: 22: void envioentero(int value);
-[v _envioentero `(v ~T0 @X0 0 ef1`i ]
-"84 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 84: void LCDprint(void);
-[v _LCDprint `(v ~T0 @X0 0 ef ]
-"1869 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1869:     struct {
-[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
-[n S70 . SCS LTS HTS OSTS IRCF ]
-"1876
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1876:     struct {
-[s S71 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S71 . . IRCF0 IRCF1 IRCF2 ]
-"1868
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1868: typedef union {
-[u S69 `S70 1 `S71 1 ]
-[n S69 . . . ]
-"1883
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1883: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
-[v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
 "3342
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3342:     struct {
 [s S131 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -149,8 +146,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1069
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1069: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x018)));
 [v _RCSTAbits `VS36 ~T0 @X0 0 e@24 ]
-"89 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 89: void ioc_init (char pin);
+"90 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 90: void ioc_init (char pin);
 [v _ioc_init `(v ~T0 @X0 0 ef1`uc ]
 "29 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/I2C.h: 29: void I2C_Master_Init(const unsigned long c);
@@ -184,17 +181,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h: 46: void Lcd_Write_String(char *a);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"85 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 85: void usSensor(void);
+"86 E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 86: void usSensor(void);
 [v _usSensor `(v ~T0 @X0 0 ef ]
-"88
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 88: void dcStop(void);
+"89
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 89: void dcStop(void);
 [v _dcStop `(v ~T0 @X0 0 ef ]
-"87
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 87: void dcRight(void);
+"88
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 88: void dcRight(void);
 [v _dcRight `(v ~T0 @X0 0 ef ]
-"86
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 86: void dcForward(void);
+"87
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 87: void dcForward(void);
 [v _dcForward `(v ~T0 @X0 0 ef ]
 "4084 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4084: extern volatile __bit RA0 __attribute__((address(0x28)));
@@ -583,666 +580,594 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _UARTcounter
 -> 0 `i
 ]
+"78
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 78: char state = 0;
+[v _state `uc ~T0 @X0 1 e ]
+[i _state
+-> -> 0 `i `uc
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"92
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 92: void __attribute__((picinterrupt(("")))) isr(void){
+"93
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 93: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"94
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 94:     if(RBIF == 1) {
+"95
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 95:     if(RBIF == 1) {
 [e $ ! == -> _RBIF `i -> 1 `i 140  ]
 {
-"95
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 95:     if (RB0 == 1){
+"96
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 96:     if (RB0 == 1){
 [e $ ! == -> _RB0 `i -> 1 `i 141  ]
 {
-"96
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 96:         if (OnOff == 1){
+"97
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 97:         if (OnOff == 1){
 [e $ ! == _OnOff -> 1 `i 142  ]
 {
-"97
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 97:             OnOff = 0;
-[e = _OnOff -> 0 `i ]
 "98
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 98:             fanOnOff = 0;
-[e = _fanOnOff -> -> 0 `i `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 98:             OnOff = 0;
+[e = _OnOff -> 0 `i ]
 "99
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 99:         }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 99:             fanOnOff = 0;
+[e = _fanOnOff -> -> 0 `i `uc ]
+"100
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 100:         }
 }
 [e $U 143  ]
-"100
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 100:         else OnOff = 1;
+"101
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 101:         else OnOff = 1;
 [e :U 142 ]
 [e = _OnOff -> 1 `i ]
 [e :U 143 ]
-"101
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 101:     }
+"102
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 102:     }
 }
 [e :U 141 ]
-"102
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 102:         INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "103
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 103:     }
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 103:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"104
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 104:     }
 }
 [e :U 140 ]
-"105
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 105: }
+"106
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 106: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"108
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 108: void main(void) {
+"109
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 109: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"109
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 109:     setup();
-[e ( _setup ..  ]
 "110
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 110:     UARTcounter = 1;
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 110:     setup();
+[e ( _setup ..  ]
+"111
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 111:     UARTcounter = 1;
 [e = _UARTcounter -> 1 `i ]
-"112
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 112:     while(1){
+"113
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 113:     while(1){
 [e :U 146 ]
 {
-"115
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 115:         if (OnOff == 1){
+"116
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 116:         if (OnOff == 1){
 [e $ ! == _OnOff -> 1 `i 148  ]
 {
-"117
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 117:         slave1Communication();
+"118
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 118:         slave1Communication();
 [e ( _slave1Communication ..  ]
-"119
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 119:         slave2Communication();
+"120
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 120:         slave2Communication();
 [e ( _slave2Communication ..  ]
-"124
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 124:         } else{
+"125
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 125:         } else{
 }
 [e $U 149  ]
 [e :U 148 ]
 {
-"126
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 126:         }
+"127
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 127:         }
 }
 [e :U 149 ]
-"128
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 128:         TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
 "129
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 129:         toESP = "Hello from the PIC";
-[e = _toESP -> :s 1C `uc ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 129:         char temp = 0;
+[v _temp `uc ~T0 @X0 1 a ]
+[e = _temp -> -> 0 `i `uc ]
 "131
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 131:         if (UARTcounter == 1) {
-[e $ ! == _UARTcounter -> 1 `i 150  ]
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 131:         if(OnOff == 0){
+[e $ ! == _OnOff -> 0 `i 150  ]
 {
-"134
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 134:             enviocadena("Power");
-[e ( _enviocadena (1 :s 2C ]
-"135
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 135:             _delay((unsigned long)((300)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"136
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 136:             envioentero(OnOff);
-[e ( _envioentero (1 _OnOff ]
-"137
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 137:         } else if (UARTcounter == 2) {
+"132
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 132:         enviocadena("0");
+[e ( _enviocadena (1 :s 1C ]
+"133
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 133:         } else enviocadena("1");
 }
 [e $U 151  ]
 [e :U 150 ]
-[e $ ! == _UARTcounter -> 2 `i 152  ]
-{
-"140
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 140:             enviocadena("Fan");
-[e ( _enviocadena (1 :s 3C ]
-"141
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 141:             _delay((unsigned long)((300)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"142
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 142:             envioentero(fanOnOff);
-[e ( _envioentero (1 -> _fanOnOff `i ]
-"143
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 143:         } else if (UARTcounter == 3) {
-}
-[e $U 153  ]
-[e :U 152 ]
-[e $ ! == _UARTcounter -> 3 `i 154  ]
-{
-"146
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 146:             enviocadena("FSR");
-[e ( _enviocadena (1 :s 4C ]
-"147
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 147:             _delay((unsigned long)((300)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"148
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 148:             envioentero(fsrValue);
-[e ( _envioentero (1 -> _fsrValue `i ]
-"149
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 149:         } else if (UARTcounter == 4) {
-}
-[e $U 155  ]
-[e :U 154 ]
-[e $ ! == _UARTcounter -> 4 `i 156  ]
-{
-"152
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 152:             enviocadena("Ultrasonic");
-[e ( _enviocadena (1 :s 5C ]
-"153
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 153:             _delay((unsigned long)((300)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"154
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 154:             envioentero(ultrasonicValue);
-[e ( _envioentero (1 -> _ultrasonicValue `i ]
-"155
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 155:         } else {
-}
-[e $U 157  ]
-[e :U 156 ]
-{
-"156
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 156:             enviocadena("None 404");
-[e ( _enviocadena (1 :s 6C ]
-"159
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 159:         }
-}
-[e :U 157 ]
-[e :U 155 ]
-[e :U 153 ]
+[e ( _enviocadena (1 :s 2C ]
 [e :U 151 ]
-"161
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 161:         _delay((unsigned long)((300)*(8000000/4000.0)));
+"134
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 134:         _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"162
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 162:         TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-"163
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 163:         _delay((unsigned long)((300)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"164
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 164:         UARTcounter++;
-[e ++ _UARTcounter -> 1 `i ]
-"165
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 165:         if (UARTcounter == 5) {
-[e $ ! == _UARTcounter -> 5 `i 158  ]
-{
-"166
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 166:             UARTcounter = 1;
-[e = _UARTcounter -> 1 `i ]
-"167
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 167:         }
-}
-[e :U 158 ]
-"169
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 169:         LCDprint();
+"138
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 138:         LCDprint();
 [e ( _LCDprint ..  ]
-"170
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 170:     }
+"139
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 139:     }
 }
 [e :U 145 ]
 [e $U 146  ]
 [e :U 147 ]
-"172
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 172: }
+"141
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 141: }
 [e :UE 144 ]
 }
-"175
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 175: void setup(void){
+"144
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 144: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"176
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 176:         OSCCONbits.IRCF = 0b111;
+"145
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 145:         OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
-"177
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 177:         OSCCONbits.SCS = 1;
+"146
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 146:         OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"180
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 180:         TXSTAbits.SYNC = 0;
+"149
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 149:         TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"181
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 181:         TXSTAbits.BRGH = 1;
+"150
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 150:         TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"183
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 183:         BAUDCTLbits.BRG16 = 1;
+"152
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 152:         BAUDCTLbits.BRG16 = 1;
 [e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
-"185
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 185:         SPBRG = 207;
+"154
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 154:         SPBRG = 207;
 [e = _SPBRG -> -> 207 `i `uc ]
-"186
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 186:         SPBRGH = 0;
+"155
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 155:         SPBRGH = 0;
 [e = _SPBRGH -> -> 0 `i `uc ]
-"188
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 188:         ANSEL = 0;
+"157
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 157:         ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"189
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 189:         ANSELH = 0;
+"158
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 158:         ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"191
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 191:         TRISC = 128;
+"160
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 160:         TRISC = 128;
 [e = _TRISC -> -> 128 `i `uc ]
-"192
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 192:         TRISA = 0;
+"161
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 161:         TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"194
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 194:         TRISB = 1;
+"163
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 163:         TRISB = 1;
 [e = _TRISB -> -> 1 `i `uc ]
-"195
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 195:         TRISD = 0;
+"164
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 164:         TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"197
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 197:         PORTA = 0;
+"166
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 166:         PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"198
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 198:         PORTB = 0;
+"167
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 167:         PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"199
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 199:         PORTC = 0;
+"168
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 168:         PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"200
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 200:         PORTD = 0;
+"169
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 169:         PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"202
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 202:         RCSTAbits.SPEN = 1;
+"171
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 171:         RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"203
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 203:         RCSTAbits.RX9 = 0;
+"172
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 172:         RCSTAbits.RX9 = 0;
 [e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"204
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 204:         RCSTAbits.CREN = 1;
+"173
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 173:         RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"205
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 205:         TXSTAbits.TXEN = 1;
+"174
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 174:         TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"206
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 206:         ioc_init(1);
+"175
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 175:         ioc_init(1);
 [e ( _ioc_init (1 -> -> 1 `i `uc ]
-"208
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 208:         I2C_Master_Init(100000);
+"177
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 177:         I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"209
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 209:         Lcd_Init();
+"178
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 178:         Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"211
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 211: }
-[e :UE 159 ]
+"180
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 180: }
+[e :UE 152 ]
 }
-"215
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 215: void ReadGyroscopeData(int16_t *gyroData) {
+"184
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 184: void ReadGyroscopeData(int16_t *gyroData) {
 [v _ReadGyroscopeData `(v ~T0 @X0 1 ef1`*i ]
 {
 [e :U _ReadGyroscopeData ]
 [v _gyroData `*i ~T0 @X0 1 r1 ]
 [f ]
-"216
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 216:     I2C_Master_Start();
+"185
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 185:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"217
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 217:     I2C_Master_Write(0x68);
+"186
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 186:     I2C_Master_Write(0x68);
 [e ( _I2C_Master_Write (1 -> -> 104 `i `ui ]
-"218
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 218:     I2C_Master_Write(0x43);
+"187
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 187:     I2C_Master_Write(0x43);
 [e ( _I2C_Master_Write (1 -> -> 67 `i `ui ]
-"220
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 220:     I2C_Master_RepeatedStart();
+"189
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 189:     I2C_Master_RepeatedStart();
 [e ( _I2C_Master_RepeatedStart ..  ]
-"221
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 221:     I2C_Master_Write(0x68 | 0x01);
+"190
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 190:     I2C_Master_Write(0x68 | 0x01);
 [e ( _I2C_Master_Write (1 -> | -> 104 `i -> 1 `i `ui ]
-"224
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 224:     gyroData[0] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1);
+"193
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 193:     gyroData[0] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1);
 [e = *U + _gyroData * -> -> 0 `i `x -> -> # *U _gyroData `i `x -> | << -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ui -> 8 `i -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ui `i ]
-"225
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 225:     gyroData[1] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1);
+"194
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 194:     gyroData[1] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(1);
 [e = *U + _gyroData * -> -> 1 `i `x -> -> # *U _gyroData `i `x -> | << -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ui -> 8 `i -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ui `i ]
-"226
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 226:     gyroData[2] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(0);
+"195
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 195:     gyroData[2] = (I2C_Master_Read(1) << 8) | I2C_Master_Read(0);
 [e = *U + _gyroData * -> -> 2 `i `x -> -> # *U _gyroData `i `x -> | << -> ( _I2C_Master_Read (1 -> -> 1 `i `us `ui -> 8 `i -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui `i ]
-"228
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 228:     I2C_Master_Stop();
+"197
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 197:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"229
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 229:     _delay((unsigned long)((200)*(8000000/4000.0)));
+"198
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 198:     _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"230
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 230: }
-[e :UE 160 ]
+"199
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 199: }
+[e :UE 153 ]
 }
-"232
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 232: void slave1Communication(void){
+"201
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 201: void slave1Communication(void){
 [v _slave1Communication `(v ~T0 @X0 1 ef ]
 {
 [e :U _slave1Communication ]
 [f ]
-"233
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 233:         char valueS1 = 0;
+"202
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 202:         char valueS1 = 0;
 [v _valueS1 `uc ~T0 @X0 1 a ]
 [e = _valueS1 -> -> 0 `i `uc ]
-"235
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 235:         I2C_Master_Start();
+"204
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 204:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"236
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 236:         I2C_Master_Write(0x50 + 1);
+"205
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 205:         I2C_Master_Write(0x50 + 1);
 [e ( _I2C_Master_Write (1 -> + -> 80 `i -> 1 `i `ui ]
-"237
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 237:         valueS1 = I2C_Master_Read(0);
+"206
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 206:         valueS1 = I2C_Master_Read(0);
 [e = _valueS1 -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"238
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 238:         I2C_Master_Stop();
+"207
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 207:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"239
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 239:         _delay((unsigned long)((200)*(8000000/4000.0)));
+"208
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 208:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"241
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 241:         I2C_Master_Start();
+"210
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 210:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"242
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 242:         I2C_Master_Write(0x50);
+"211
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 211:         I2C_Master_Write(0x50);
 [e ( _I2C_Master_Write (1 -> -> 80 `i `ui ]
-"243
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 243:         I2C_Master_Write(OnOff);
+"212
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 212:         I2C_Master_Write(OnOff);
 [e ( _I2C_Master_Write (1 -> _OnOff `ui ]
-"244
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 244:         I2C_Master_Stop();
+"213
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 213:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"245
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 245:         ultrasonicValue = valueS1;
+"214
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 214:         ultrasonicValue = valueS1;
 [e = _ultrasonicValue _valueS1 ]
-"246
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 246:         _delay((unsigned long)((200)*(8000000/4000.0)));
+"215
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 215:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"248
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 248: }
-[e :UE 161 ]
+"217
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 217: }
+[e :UE 154 ]
 }
-"250
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 250: void slave2Communication(void){
+"219
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 219: void slave2Communication(void){
 [v _slave2Communication `(v ~T0 @X0 1 ef ]
 {
 [e :U _slave2Communication ]
 [f ]
-"251
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 251:         char valueS2 = 0;
+"220
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 220:         char valueS2 = 0;
 [v _valueS2 `uc ~T0 @X0 1 a ]
 [e = _valueS2 -> -> 0 `i `uc ]
-"253
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 253:         I2C_Master_Start();
+"222
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 222:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"254
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 254:         I2C_Master_Write(0x60 + 1);
+"223
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 223:         I2C_Master_Write(0x60 + 1);
 [e ( _I2C_Master_Write (1 -> + -> 96 `i -> 1 `i `ui ]
-"255
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 255:         valueS2 = I2C_Master_Read(0);
+"224
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 224:         valueS2 = I2C_Master_Read(0);
 [e = _valueS2 -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"256
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 256:         I2C_Master_Stop();
+"225
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 225:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"257
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 257:         _delay((unsigned long)((200)*(8000000/4000.0)));
+"226
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 226:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"259
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 259:         I2C_Master_Start();
+"228
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 228:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"260
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 260:         I2C_Master_Write(0x60);
+"229
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 229:         I2C_Master_Write(0x60);
 [e ( _I2C_Master_Write (1 -> -> 96 `i `ui ]
-"261
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 261:         I2C_Master_Write(fanOnOff);
+"230
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 230:         I2C_Master_Write(fanOnOff);
 [e ( _I2C_Master_Write (1 -> _fanOnOff `ui ]
-"262
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 262:         I2C_Master_Stop();
+"231
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 231:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"263
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 263:         fsrValue = valueS2;
+"232
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 232:         fsrValue = valueS2;
 [e = _fsrValue _valueS2 ]
-"264
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 264:         _delay((unsigned long)((200)*(8000000/4000.0)));
+"233
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 233:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"267
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 267: }
-[e :UE 162 ]
+"236
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 236: }
+[e :UE 155 ]
 }
-"269
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 269: void LCDprint(void){
+"238
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 238: void LCDprint(void){
 [v _LCDprint `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCDprint ]
 [f ]
-"270
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 270:     if (OnOff == 1){
-[e $ ! == _OnOff -> 1 `i 164  ]
+"239
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 239:     if (OnOff == 1){
+[e $ ! == _OnOff -> 1 `i 157  ]
 {
-"271
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 271:         Lcd_Clear();
+"240
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 240:         Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"272
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 272:         Lcd_Set_Cursor(1,1);
+"241
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 241:         Lcd_Set_Cursor(1,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"273
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 273:         sprintf(lineLCD, "Distance: %.2d", ultrasonicValue);
-[e ( _sprintf (1 , (. , &U _lineLCD :s 7C -> _ultrasonicValue `i ]
-"274
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 274:         Lcd_Write_String(lineLCD);
+"242
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 242:         sprintf(lineLCD, "Distance: %.2d", ultrasonicValue);
+[e ( _sprintf (1 , (. , &U _lineLCD :s 3C -> _ultrasonicValue `i ]
+"243
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 243:         Lcd_Write_String(lineLCD);
 [e ( _Lcd_Write_String (1 &U _lineLCD ]
-"275
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 275:         usSensor();
+"244
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 244:         usSensor();
 [e ( _usSensor ..  ]
-"277
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 277:         Lcd_Set_Cursor(2,1);
+"246
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 246:         Lcd_Set_Cursor(2,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"278
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 278:         sprintf(lineLCD,"Basket: %.2d", fsrValue);
-[e ( _sprintf (1 , (. , &U _lineLCD :s 8C -> _fsrValue `i ]
-"279
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 279:         Lcd_Write_String(lineLCD);
+"247
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 247:         sprintf(lineLCD,"Basket: %.2d", fsrValue);
+[e ( _sprintf (1 , (. , &U _lineLCD :s 4C -> _fsrValue `i ]
+"248
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 248:         Lcd_Write_String(lineLCD);
 [e ( _Lcd_Write_String (1 &U _lineLCD ]
-"281
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 281:         } else{
+"250
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 250:         } else{
 }
-[e $U 165  ]
-[e :U 164 ]
+[e $U 158  ]
+[e :U 157 ]
 {
-"284
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 284:         fsrValue = 0;
+"253
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 253:         fsrValue = 0;
 [e = _fsrValue -> -> 0 `i `uc ]
-"285
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 285:         dcStop();
+"254
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 254:         dcStop();
 [e ( _dcStop ..  ]
-"287
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 287:         Lcd_Clear();
+"256
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 256:         Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"288
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 288:         Lcd_Set_Cursor(1,1);
+"257
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 257:         Lcd_Set_Cursor(1,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"289
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 289:         Lcd_Write_String("Off");
-[e ( _Lcd_Write_String (1 :s 9C ]
-"291
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 291:         }
+"258
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 258:         Lcd_Write_String("Off");
+[e ( _Lcd_Write_String (1 :s 5C ]
+"260
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 260:         }
 }
-[e :U 165 ]
-"294
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 294: }
-[e :UE 163 ]
+[e :U 158 ]
+"263
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 263: }
+[e :UE 156 ]
 }
-"297
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 297: void usSensor(void){
+"266
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 266: void usSensor(void){
 [v _usSensor `(v ~T0 @X0 1 ef ]
 {
 [e :U _usSensor ]
 [f ]
-"298
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 298:     Lcd_Set_Cursor(1,15);
+"267
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 267:     Lcd_Set_Cursor(1,15);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 15 `i `uc ]
-"300
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 300:     if (ultrasonicValue <= 12) {
-[e $ ! <= -> _ultrasonicValue `i -> 12 `i 167  ]
+"269
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 269:     if (fsrValue <= 200) {
+[e $ ! <= -> _fsrValue `i -> 200 `i 160  ]
 {
-"301
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 301:         Lcd_Write_String("!!");
-[e ( _Lcd_Write_String (1 :s 10C ]
-"302
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 302:         fanOnOff = 0;
+"270
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 270:     if (ultrasonicValue <= 12) {
+[e $ ! <= -> _ultrasonicValue `i -> 12 `i 161  ]
+{
+"271
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 271:         Lcd_Write_String("!!");
+[e ( _Lcd_Write_String (1 :s 6C ]
+"272
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 272:         fanOnOff = 0;
 [e = _fanOnOff -> -> 0 `i `uc ]
-"303
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 303:         dcRight();
+"273
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 273:         dcRight();
 [e ( _dcRight ..  ]
-"304
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 304:     }
+"274
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 274:     }
 }
-[e $U 168  ]
-"305
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 305:     else {
-[e :U 167 ]
+[e $U 162  ]
+"275
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 275:     else {
+[e :U 161 ]
 {
-"306
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 306:         Lcd_Write_String("  ");
-[e ( _Lcd_Write_String (1 :s 11C ]
-"307
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 307:         fanOnOff = 1;
+"276
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 276:         Lcd_Write_String("  ");
+[e ( _Lcd_Write_String (1 :s 7C ]
+"277
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 277:         fanOnOff = 1;
 [e = _fanOnOff -> -> 1 `i `uc ]
-"308
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 308:         dcForward();
+"278
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 278:         dcForward();
 [e ( _dcForward ..  ]
-"309
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 309:     }
+"279
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 279:     }
 }
-[e :U 168 ]
-"312
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 312: }
-[e :UE 166 ]
+[e :U 162 ]
+"281
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 281:     }else dcStop();
 }
-"329
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 329: void dcForward(void){
+[e $U 163  ]
+[e :U 160 ]
+[e ( _dcStop ..  ]
+[e :U 163 ]
+"284
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 284: }
+[e :UE 159 ]
+}
+"301
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 301: void dcForward(void){
 [v _dcForward `(v ~T0 @X0 1 ef ]
 {
 [e :U _dcForward ]
 [f ]
-"330
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 330:     RA0 = 1;
+"302
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 302:     RA0 = 1;
 [e = _RA0 -> -> 1 `i `b ]
-"331
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 331:     RA1 = 0;
+"303
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 303:     RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
-"332
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 332:     RA2 = 1;
+"304
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 304:     RA2 = 1;
 [e = _RA2 -> -> 1 `i `b ]
-"334
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 334:     RA5 = 1;
+"306
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 306:     RA5 = 1;
 [e = _RA5 -> -> 1 `i `b ]
-"335
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 335:     RA3 = 1;
+"307
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 307:     RA3 = 1;
 [e = _RA3 -> -> 1 `i `b ]
-"336
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 336:     RA4 = 0;
+"308
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 308:     RA4 = 0;
 [e = _RA4 -> -> 0 `i `b ]
-"338
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 338: }
-[e :UE 169 ]
+"310
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 310: }
+[e :UE 164 ]
 }
-"340
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 340: void dcRight(void){
+"312
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 312: void dcRight(void){
 [v _dcRight `(v ~T0 @X0 1 ef ]
 {
 [e :U _dcRight ]
 [f ]
-"341
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 341:     RA0 = 1;
+"313
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 313:     RA0 = 1;
 [e = _RA0 -> -> 1 `i `b ]
-"342
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 342:     RA1 = 0;
+"314
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 314:     RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
-"343
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 343:     RA2 = 1;
+"315
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 315:     RA2 = 1;
 [e = _RA2 -> -> 1 `i `b ]
-"345
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 345:     RA5 = 1;
+"317
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 317:     RA5 = 1;
 [e = _RA5 -> -> 1 `i `b ]
-"346
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 346:     RA3 = 0;
+"318
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 318:     RA3 = 0;
 [e = _RA3 -> -> 0 `i `b ]
-"347
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 347:     RA4 = 1;
+"319
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 319:     RA4 = 1;
 [e = _RA4 -> -> 1 `i `b ]
-"349
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 349: }
-[e :UE 170 ]
+"321
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 321: }
+[e :UE 165 ]
 }
-"351
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 351: void dcStop(void){
+"323
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 323: void dcStop(void){
 [v _dcStop `(v ~T0 @X0 1 ef ]
 {
 [e :U _dcStop ]
 [f ]
-"352
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 352:     RA0 = 1;
+"324
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 324:     RA0 = 1;
 [e = _RA0 -> -> 1 `i `b ]
-"353
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 353:     RA1 = 0;
+"325
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 325:     RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
-"354
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 354:     RA2 = 0;
+"326
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 326:     RA2 = 0;
 [e = _RA2 -> -> 0 `i `b ]
-"356
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 356:     RA5 = 1;
+"328
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 328:     RA5 = 1;
 [e = _RA5 -> -> 1 `i `b ]
-"357
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 357:     RA3 = 0;
+"329
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 329:     RA3 = 0;
 [e = _RA3 -> -> 0 `i `b ]
-"358
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 358:     RA4 = 0;
+"330
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 330:     RA4 = 0;
 [e = _RA4 -> -> 0 `i `b ]
-"359
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 359: }
-[e :UE 171 ]
+"331
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 331: }
+[e :UE 166 ]
 }
-"362
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 362: void ioc_init (char pin){
+"334
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 334: void ioc_init (char pin){
 [v _ioc_init `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _ioc_init ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-"366
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 366:             INTCONbits.GIE = 1;
+"338
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 338:             INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"367
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 367:             INTCONbits.RBIF = 0;
+"339
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 339:             INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"368
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 368:             INTCONbits.RBIE = 1;
+"340
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 340:             INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"371
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 371:             IOCBbits.IOCB0 = 1;
+"343
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 343:             IOCBbits.IOCB0 = 1;
 [e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
-"372
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 372:             IOCBbits.IOCB1 = 1;
+"344
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 344:             IOCBbits.IOCB1 = 1;
 [e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
-"374
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 374:             OPTION_REGbits.nRBPU = 0;
+"346
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 346:             OPTION_REGbits.nRBPU = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"376
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 376:             WPUBbits.WPUB0 = 1;
+"348
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 348:             WPUBbits.WPUB0 = 1;
 [e = . . _WPUBbits 1 0 -> -> 1 `i `uc ]
-"377
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 377:             WPUBbits.WPUB1 = 1;
+"349
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 349:             WPUBbits.WPUB1 = 1;
 [e = . . _WPUBbits 1 1 -> -> 1 `i `uc ]
-"378
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 378: }
-[e :UE 172 ]
+"350
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c: 350: }
+[e :UE 167 ]
 }
 [p f _sprintf 8454272 ]
-[a 2C 80 111 119 101 114 0 ]
-[a 3C 70 97 110 0 ]
-[a 9C 79 102 102 0 ]
-[a 8C 66 97 115 107 101 116 58 32 37 46 50 100 0 ]
-[a 7C 68 105 115 116 97 110 99 101 58 32 37 46 50 100 0 ]
-[a 5C 85 108 116 114 97 115 111 110 105 99 0 ]
-[a 4C 70 83 82 0 ]
-[a 1C 72 101 108 108 111 32 102 114 111 109 32 116 104 101 32 80 73 67 0 ]
-[a 6C 78 111 110 101 32 52 48 52 0 ]
-[a 10C 33 33 0 ]
-[a 11C 32 32 0 ]
+[a 5C 79 102 102 0 ]
+[a 4C 66 97 115 107 101 116 58 32 37 46 50 100 0 ]
+[a 3C 68 105 115 116 97 110 99 101 58 32 37 46 50 100 0 ]
+[a 2C 49 0 ]
+[a 1C 48 0 ]
+[a 6C 33 33 0 ]
+[a 7C 32 32 0 ]

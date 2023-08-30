@@ -2848,6 +2848,7 @@ char readFromESP = 0;
 char toESP = 0;
 char fanOnOff = 1;
 int UARTcounter = 0;
+char state = 0;
 
 
 void setup(void);
@@ -2898,46 +2899,14 @@ void main(void) {
 
         }
 
-        TXSTAbits.TXEN = 1;
-        toESP = "Hello from the PIC";
+        char temp = 0;
 
-        if (UARTcounter == 1) {
-
-
-            enviocadena("Power");
-            _delay((unsigned long)((300)*(8000000/4000.0)));
-            envioentero(OnOff);
-        } else if (UARTcounter == 2) {
-
-
-            enviocadena("Fan");
-            _delay((unsigned long)((300)*(8000000/4000.0)));
-            envioentero(fanOnOff);
-        } else if (UARTcounter == 3) {
-
-
-            enviocadena("FSR");
-            _delay((unsigned long)((300)*(8000000/4000.0)));
-            envioentero(fsrValue);
-        } else if (UARTcounter == 4) {
-
-
-            enviocadena("Ultrasonic");
-            _delay((unsigned long)((300)*(8000000/4000.0)));
-            envioentero(ultrasonicValue);
-        } else {
-            enviocadena("None 404");
-
-
-        }
-
+        if(OnOff == 0){
+        enviocadena("0");
+        } else enviocadena("1");
         _delay((unsigned long)((300)*(8000000/4000.0)));
-        TXSTAbits.TXEN = 0;
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        UARTcounter++;
-        if (UARTcounter == 5) {
-            UARTcounter = 1;
-        }
+
+
 
         LCDprint();
     }
@@ -3070,6 +3039,7 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);
 
+    if (fsrValue <= 200) {
     if (ultrasonicValue <= 12) {
         Lcd_Write_String("!!");
         fanOnOff = 0;
@@ -3081,9 +3051,11 @@ void usSensor(void){
         dcForward();
     }
 
+    }else dcStop();
+
 
 }
-# 329 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
+# 301 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
 void dcForward(void){
     RA0 = 1;
     RA1 = 0;
