@@ -84,14 +84,14 @@ void __interrupt() isr(void){
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepciÃ³n se complete
             receivedData = SSPBUF;             // Saves buffer value in PORTD 
-            __delay_us(250);
+            //__delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){ //writes data
             z = SSPBUF;
             BF = 0;
             SSPBUF = distance;      //Sends value
             SSPCONbits.CKP = 1;
-            __delay_us(250);
+            //__delay_us(250);
             while(SSPSTATbits.BF);
         }
        

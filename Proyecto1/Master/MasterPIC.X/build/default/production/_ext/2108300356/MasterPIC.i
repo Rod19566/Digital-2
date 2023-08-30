@@ -2807,6 +2807,7 @@ unsigned char read(unsigned char address);
 void enviocaracter(char a);
 void enviocadena(char* cadena);
 char UART_get_char();
+void envioentero(int value);
 # 33 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c" 2
 
 # 1 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/LCD.h" 1
@@ -2842,7 +2843,7 @@ char motor1 = 0;
 char motor2 = 0;
 int16_t gyroData[3];
 char lineLCD[16];
-int OnOff = 1;
+int OnOff = 0;
 char readFromESP = 0;
 char toESP = 0;
 char fanOnOff = 1;
@@ -2870,7 +2871,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
             fanOnOff = 0;
         }
         else OnOff = 1;
-
     }
         INTCONbits.RBIF = 0;
     }
@@ -2880,6 +2880,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 void main(void) {
     setup();
+    UARTcounter = 1;
 
     while(1){
 
@@ -2897,24 +2898,48 @@ void main(void) {
 
         }
 
+        TXSTAbits.TXEN = 1;
+        toESP = "Hello from the PIC";
 
-        LCDprint();
+        if (UARTcounter == 1) {
 
-        toESP = "Hello";
-        if (UARTcounter == 0) {
-            sprintf(toESP,"P%d F%d ", OnOff, fanOnOff);
-            UARTcounter = 1;
+
+            enviocadena("Power");
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+            envioentero(OnOff);
+        } else if (UARTcounter == 2) {
+
+
+            enviocadena("Fan");
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+            envioentero(fanOnOff);
+        } else if (UARTcounter == 3) {
+
+
+            enviocadena("FSR");
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+            envioentero(fsrValue);
+        } else if (UARTcounter == 4) {
+
+
+            enviocadena("Ultrasonic");
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+            envioentero(ultrasonicValue);
+        } else {
+            enviocadena("None 404");
+
+
         }
-        else {
-            sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue);
-            UARTcounter = 0;
-        }
-
-        enviocadena(toESP);
-        enviocaracter(10);
 
         _delay((unsigned long)((300)*(8000000/4000.0)));
+        TXSTAbits.TXEN = 0;
+        _delay((unsigned long)((300)*(8000000/4000.0)));
+        UARTcounter++;
+        if (UARTcounter == 5) {
+            UARTcounter = 1;
+        }
 
+        LCDprint();
     }
 
 }
@@ -3045,7 +3070,7 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);
 
-    if (ultrasonicValue <= 7) {
+    if (ultrasonicValue <= 12) {
         Lcd_Write_String("!!");
         fanOnOff = 0;
         dcRight();
@@ -3058,7 +3083,7 @@ void usSensor(void){
 
 
 }
-# 305 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
+# 329 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/MasterPIC.c"
 void dcForward(void){
     RA0 = 1;
     RA1 = 0;

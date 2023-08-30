@@ -28,7 +28,9 @@ int outputValue0 = 0;  // value output to the PWM (analog out)
 int OnOff = 0;
 int fanOnOff = 0;
 int weight = 0; 
-int ultrasonic = 0; 
+int ultrasonic = 0;
+
+int packetsReceived = 0;
 
 
 // Set up the 'Example1' feed
@@ -40,6 +42,7 @@ AdafruitIO_Feed *powerFeed = io.feed("power");
 void setup() {
   Serial.begin(115200);
   SerialPort.begin(9600, SERIAL_8N1, 16, 17); 
+  Serial.setTimeout(500);
   
 	// Allow allocation of all timers
 	ESP32PWM::allocateTimer(0);
@@ -47,7 +50,7 @@ void setup() {
 	ESP32PWM::allocateTimer(2);
 	ESP32PWM::allocateTimer(3);
 	myservo.setPeriodHertz(50);    // standard 50 hz servo
-	myservo.attach(servoPin, 500, 2400); // attaches the servo on pin 18 to the servo object
+	myservo.attach(servoPin, 500, 2400); // attaches the servo on pin 26 to the servo object
 	// using default min/max of 1000us and 2000us
   
   pinMode(ledPin, OUTPUT);
@@ -81,20 +84,21 @@ void loop() {
   adcValue = map(adcRawValue, 0, 4095, 0, 255);
 
   digitalWrite(ledPin, ledState ? HIGH : LOW);
-  
-  readUART();
-  Serial.print("UART: ");
-  Serial.println(uartValue);
-  UARThandler(); 
-  setBasket(OnOff, fanOnOff);
+
+    // Read UART data here
+    uartValue = readUART();
+    delay(300);
+    Serial.print("UART: ");
+    Serial.println(uartValue);
+    processReceivedData(uartValue);
+
+  //setBasket(OnOff, fanOnOff);
 
   // Process Adafruit IO events
   io.run();
   sendADA();
   readADA();
-  //Pxxx = On/Off    Fxxx = Fan On/Off    Wxxx = Weight Basket    Uxxx = Ultrasonic Sensor
-  //Example: P0 F0 
-  //         W0 U0
+  
 }
 
 // This function is called whenever a 'led' message is received from Adafruit IO
@@ -133,12 +137,12 @@ void readADA(void){
 
 }
 
-void readUART(void){
-  if (SerialPort.available())
-  {
-    String received = SerialPort.readString();
-    uartValue = received;
-    delay(300);
+String readUART(void){
+  if (SerialPort.available()){
+    char byteRead[10];
+    String data = SerialPort.readString();
+        // Process the received data
+    return data; 
   }
 }
 
@@ -149,23 +153,6 @@ void setBasket(int on, int fan){
 
 }
 
-void UARThandler(void) {
-    char* valuesUART[2]; // Assuming you have an array of char pointers to store tokens
-
-    int numTokens = separate(uartValue, valuesUART, 2);
-
-    // Assuming valuesUART[0] and valuesUART[1] are char arrays (char*)
-    if (valuesUART[0][0] == 'P') {
-        OnOff = atoi(valuesUART[0] + 1);   // Convert substring to integer
-        fanOnOff = atoi(valuesUART[1] + 1); // Convert substring to integer
-    }
-    if (valuesUART[0][0] == 'W') {
-        weight = atoi(valuesUART[0] + 1);   // Convert substring to integer
-        ultrasonic = atoi(valuesUART[1] + 1); // Convert substring to integer
-    }
-
-    
-}
 
 //separates string into array dividing by spaces
 int separate (String str, char   **p, int    size ){
@@ -181,3 +168,34 @@ int separate (String str, char   **p, int    size ){
 
     return n;
 }
+
+
+//
+//int OnOff = 0;
+//int fanOnOff = 0;
+//int weight = 0; 
+//int ultrasonic = 0; 
+void processReceivedData(String data) {
+    // Split the received data into parts (command and value)
+    int delimiterIndex = data.indexOf(' ');
+    if (delimiterIndex != -1) {
+        String command = data.substring(0, delimiterIndex);
+        String valueStr = data.substring(delimiterIndex + 1);
+
+        // Convert the value string to an integer
+        int value = valueStr.toInt();
+
+        // Perform actions based on the received command and value
+        if (command.equals("Power")) {
+          OnOff = value;
+        } else if (command.equals("Fan")) {
+          fanOnOff = value;
+        } else if (command.equals("FSR")) {
+          weight = value;
+        } else if (command.equals("Ultrasonic")) {
+          ultrasonic = value;
+        }
+    }
+    
+}
+

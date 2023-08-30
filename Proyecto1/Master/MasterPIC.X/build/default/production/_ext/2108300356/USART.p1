@@ -480,40 +480,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 57: }
 [e :UE 148 ]
 }
+"59
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 59: void envioentero(int value) {
+[v _envioentero `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _envioentero ]
+[v _value `i ~T0 @X0 1 r1 ]
+[f ]
 "60
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 60: char UART_get_char(){
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 60:     if (value == 0) {
+[e $ ! == _value -> 0 `i 154  ]
+{
+"61
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 61:         enviocaracter('0');
+[e ( _enviocaracter (1 -> -> 48 `ui `uc ]
+"62
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 62:         return;
+[e $UE 153  ]
+"63
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 63:     }
+}
+[e :U 154 ]
+"65
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 65:     if (value < 0) {
+[e $ ! < _value -> 0 `i 155  ]
+{
+"66
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 66:         enviocaracter('-');
+[e ( _enviocaracter (1 -> -> 45 `ui `uc ]
+"67
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 67:         value = -value;
+[e = _value -U _value ]
+"68
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 68:     }
+}
+[e :U 155 ]
+"70
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 70:     char buffer[10];
+[v _buffer `uc ~T0 @X0 -> 10 `i a ]
+"71
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 71:     int digitCount = 0;
+[v _digitCount `i ~T0 @X0 1 a ]
+[e = _digitCount -> 0 `i ]
+"73
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 73:     while (value > 0) {
+[e $U 156  ]
+[e :U 157 ]
+{
+"74
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 74:         buffer[digitCount++] = '0' + (value % 10);
+[e = *U + &U _buffer * -> -> ++ _digitCount -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> + -> 48 `ui -> % _value -> 10 `i `ui `uc ]
+"75
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 75:         value /= 10;
+[e =/ _value -> 10 `i ]
+"76
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 76:     }
+}
+[e :U 156 ]
+"73
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 73:     while (value > 0) {
+[e $ > _value -> 0 `i 157  ]
+[e :U 158 ]
+"78
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 78:     for (int i = digitCount - 1; i >= 0; i--) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i - _digitCount -> 1 `i ]
+[e $ >= _i -> 0 `i 159  ]
+[e $U 160  ]
+[e :U 159 ]
+{
+"79
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 79:         enviocaracter(buffer[i]);
+[e ( _enviocaracter (1 *U + &U _buffer * -> -> _i `ui `ux -> -> # *U &U _buffer `ui `ux ]
+"80
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 80:     }
+}
+[e -- _i -> 1 `i ]
+[e $ >= _i -> 0 `i 159  ]
+[e :U 160 ]
+}
+"81
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 81: }
+[e :UE 153 ]
+}
+"84
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 84: char UART_get_char(){
 [v _UART_get_char `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_get_char ]
 [f ]
-"61
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 61:     if(OERR)
-[e $ ! _OERR 154  ]
-"62
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 62:     {
+"85
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 85:     if(OERR)
+[e $ ! _OERR 163  ]
+"86
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 86:     {
 {
-"63
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 63:         CREN = 0;
+"87
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 87:         CREN = 0;
 [e = _CREN -> -> 0 `i `b ]
-"64
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 64:         CREN = 1;
+"88
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 88:         CREN = 1;
 [e = _CREN -> -> 1 `i `b ]
-"65
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 65:     }
+"89
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 89:     }
 }
-[e :U 154 ]
-"67
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 67:     while(!RCIF);
-[e $U 155  ]
-[e :U 156 ]
-[e :U 155 ]
-[e $ ! _RCIF 156  ]
-[e :U 157 ]
-"69
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 69:     return RCREG;
+[e :U 163 ]
+"91
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 91:     while(!RCIF);
+[e $U 164  ]
+[e :U 165 ]
+[e :U 164 ]
+[e $ ! _RCIF 165  ]
+[e :U 166 ]
+"93
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 93:     return RCREG;
 [e ) -> _RCREG `uc ]
-[e $UE 153  ]
-"70
-[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 70: }
-[e :UE 153 ]
+[e $UE 162  ]
+"94
+[; ;E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c: 94: }
+[e :UE 162 ]
 }

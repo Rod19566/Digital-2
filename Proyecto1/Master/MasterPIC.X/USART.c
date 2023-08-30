@@ -56,6 +56,30 @@ void enviocadena(char* cadena){
         } 
 }
 
+void envioentero(int value) {
+    if (value == 0) {
+        enviocaracter('0');
+        return;
+    }
+
+    if (value < 0) {
+        enviocaracter('-');
+        value = -value;
+    }
+
+    char buffer[10]; // Maximum 10 digits for a 32-bit integer
+    int digitCount = 0;
+
+    while (value > 0) {
+        buffer[digitCount++] = '0' + (value % 10);
+        value /= 10;
+    }
+
+    for (int i = digitCount - 1; i >= 0; i--) {
+        enviocaracter(buffer[i]);
+    }
+}
+
 //**Function to get one byte of date from UART**//
 char UART_get_char(){
     if(OERR) // check for Error 

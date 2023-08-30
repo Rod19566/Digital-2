@@ -5,7 +5,7 @@
 // visit io.adafruit.com if you need to create an account,
 // or if you need your Adafruit IO key.
 #define IO_USERNAME  "Tumanita"
-#define IO_KEY       "aio_Mnbg34E2tS23tvgKfg8UycqcAXcM"
+#define IO_KEY       "aio_URpV92Vt6HHM01uGNrTIM07WzG5p"
 
 /******************************* WIFI **************************************/
 //Phone

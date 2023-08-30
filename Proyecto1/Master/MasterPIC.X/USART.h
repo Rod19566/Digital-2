@@ -19,5 +19,6 @@ unsigned char read(unsigned char address);
 void enviocaracter(char a);
 void enviocadena(char* cadena);
 char UART_get_char();
+void envioentero(int value);
 
 #endif	/* USART_H */

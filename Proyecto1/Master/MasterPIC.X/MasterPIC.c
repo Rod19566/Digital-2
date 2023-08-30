@@ -70,7 +70,7 @@ char motor1 = 0;
 char motor2 = 0;
 int16_t gyroData[3];       // Array to store gyroscope data (X, Y, Z)
 char lineLCD[16];           //voltage chain
-int OnOff = 1;
+int OnOff = 0;
 char readFromESP = 0;
 char toESP = 0;
 char fanOnOff = 1;
@@ -97,8 +97,7 @@ void __interrupt() isr(void){
             OnOff = 0;
             fanOnOff = 0;
         }
-        else OnOff = 1;
-        
+        else OnOff = 1;        
     }
         INTCONbits.RBIF = 0;
     }
@@ -108,6 +107,7 @@ void __interrupt() isr(void){
 ////////////////////////////////////////////
 void main(void) {
     setup();
+    UARTcounter = 1;
     
     while(1){
         //PORTB = motor1;
@@ -125,25 +125,49 @@ void main(void) {
             
         }
         
+        TXSTAbits.TXEN = 1; // Turn on UART transmission
+        toESP = "Hello from the PIC";
+        //UART
+        if (UARTcounter == 1) {
+            // toESP = "Power";
+            // varToESP = OnOff;
+            enviocadena("Power");  //new line in ASCII
+            __delay_ms(300); // Delay before next reading  
+            envioentero(OnOff);  //new line in ASCII
+        } else if (UARTcounter == 2) {
+            // toESP = "Fan";
+            // varToESP = fanOnOff;
+            enviocadena("Fan");  //new line in ASCII
+            __delay_ms(300); // Delay before next reading  
+            envioentero(fanOnOff);  //new line in ASCII
+        } else if (UARTcounter == 3) {
+            // toESP = "FSR";
+            // varToESP = fsrValue;
+            enviocadena("FSR");  //new line in ASCII 
+            __delay_ms(300); // Delay before next reading  
+            envioentero(fsrValue);  //new line in ASCII
+        } else if (UARTcounter == 4) {
+            // toESP = "Ultrasonic";
+            // varToESP = ultrasonicValue;
+            enviocadena("Ultrasonic");  //new line in ASCII
+            __delay_ms(300); // Delay before next reading  
+            envioentero(ultrasonicValue);  //new line in ASCII
+        } else {
+            enviocadena("None 404");  //new line in ASCII
+            // toESP = "None";
+            // varToESP = 404;
+        }
+
+        __delay_ms(300); // Delay before next reading  
+        TXSTAbits.TXEN = 0; // Turn off UART transmission
+        __delay_ms(300); // Delay before next reading  
+        UARTcounter++;
+        if (UARTcounter == 5) {
+            UARTcounter = 1;
+        } 
         //LCD
         LCDprint();
-        
-        toESP = "Hello";
-        if (UARTcounter == 0) {
-            sprintf(toESP,"P%d F%d ", OnOff, fanOnOff); //ON or OFF all and fan
-            UARTcounter = 1;
-        }
-        else {
-            sprintf(toESP,"W%d U%d", fsrValue, ultrasonicValue); //weight value and US 
-            UARTcounter = 0;           
-        }
-        //UART
-        enviocadena(toESP);  //new line in ASCII
-        enviocaracter(10);  //new line in ASCII
-//        
-        __delay_ms(300); // Delay before next reading
-        //readFromESP = UART_get_char();
-    }
+    } //loop
     
 }
 
@@ -273,7 +297,7 @@ void LCDprint(void){
 void usSensor(void){
     Lcd_Set_Cursor(1,15);  //line 1    
     
-    if (ultrasonicValue <= 7) {
+    if (ultrasonicValue <= 12) {
         Lcd_Write_String("!!"); 
         fanOnOff = 0;
         dcRight();

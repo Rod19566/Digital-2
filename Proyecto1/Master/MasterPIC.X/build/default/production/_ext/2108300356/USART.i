@@ -2644,6 +2644,7 @@ unsigned char read(unsigned char address);
 void enviocaracter(char a);
 void enviocadena(char* cadena);
 char UART_get_char();
+void envioentero(int value);
 # 8 "E:/Universidad/Semestre2_2023/Digital-2/Proyecto1/Master/MasterPIC.X/USART.c" 2
 
 
@@ -2694,6 +2695,30 @@ void enviocadena(char* cadena){
     if (PIR1bits.TXIF){
             TXREG = 13;
         }
+}
+
+void envioentero(int value) {
+    if (value == 0) {
+        enviocaracter('0');
+        return;
+    }
+
+    if (value < 0) {
+        enviocaracter('-');
+        value = -value;
+    }
+
+    char buffer[10];
+    int digitCount = 0;
+
+    while (value > 0) {
+        buffer[digitCount++] = '0' + (value % 10);
+        value /= 10;
+    }
+
+    for (int i = digitCount - 1; i >= 0; i--) {
+        enviocaracter(buffer[i]);
+    }
 }
 
 
