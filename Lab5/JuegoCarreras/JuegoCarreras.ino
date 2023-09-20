@@ -25,6 +25,15 @@ const int buttonPin1 = PUSH2;     // the number of the pushbutton pin
 #define PE3 PE_3
 #define PF1 PF_1
 
+#define PF2 PF_2
+#define PF3 PF_3
+#define PB3 PB_3
+#define PC4 PC_4
+#define PC5 PC_5
+#define PC6 PC_6
+#define PC7 PC_7
+#define PD6 PD_6
+
 
 // Variables will change:
 int inGame = 0;
@@ -56,7 +65,15 @@ void setup() {
   pinMode(PE1, OUTPUT);   // Set PF1 as an output
   pinMode(PE2, OUTPUT);   // Set PF1 as an output
   pinMode(PE3, OUTPUT);   // Set PF1 as an output
-  pinMode(PF1, OUTPUT);   // Set PF1 as an output
+  
+  pinMode(PF2, OUTPUT);   // Set PF1 as an output
+  pinMode(PF3, OUTPUT);   // Set PF1 as an output
+  pinMode(PB3, OUTPUT);   // Set PF1 as an output
+  pinMode(PC4, OUTPUT);   // Set PF1 as an output
+  pinMode(PC5, OUTPUT);   // Set PF1 as an output
+  pinMode(PC6, OUTPUT);   // Set PF1 as an output
+  pinMode(PC7, OUTPUT);   // Set PF1 as an output
+  pinMode(PD6, OUTPUT);   // Set PF1 as an output
 
   allLedsOff();
   
@@ -148,7 +165,6 @@ void compareWinner(){
   if (counter2 == 8){
     offLIGHT();
     inGame = 0; //variable that ends the round
-    digitalWrite(redLED, HIGH);   // turn the LED on (HIGH is the voltage level)
     digitalWrite(greenLED, HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(5000);               // wait for a second
     whiteLIGHT();
@@ -189,6 +205,24 @@ void updateLights(){
       case 7: digitalWrite(PF1, HIGH);  // Set PF1 HIGH (turn on)
       break; 
     }
+    switch(counter2){
+      case 0: digitalWrite(PF2, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 1: digitalWrite(PF3, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 2: digitalWrite(PB3, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 3: digitalWrite(PC4, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 4: digitalWrite(PC5, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 5: digitalWrite(PC6, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 6: digitalWrite(PC7, HIGH);  // Set PF1 HIGH (turn on)
+      break;
+      case 7: digitalWrite(PD6, HIGH);  // Set PF1 HIGH (turn on)
+      break; 
+    }
   }
 
 void allLedsOff(){
@@ -200,5 +234,13 @@ void allLedsOff(){
   digitalWrite(PE2, LOW);  // Set PF1 HIGH (turn on)
   digitalWrite(PE3, LOW);  // Set PF1 HIGH (turn on)
   digitalWrite(PF1, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PF2, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PF3, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PB3, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PC4, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PC5, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PC6, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PC7, LOW);  // Set PF1 HIGH (turn on)
+  digitalWrite(PD6, LOW);  // Set PF1 HIGH (turn on)
   
 }
