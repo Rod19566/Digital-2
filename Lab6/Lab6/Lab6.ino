@@ -43,6 +43,8 @@ void loop() {
     }
       break;
     case 2:
+      myFile = SD.open("/");
+      printDirectory(myFile, 0);
       chooseWrite();
       break;
     case 3:{
