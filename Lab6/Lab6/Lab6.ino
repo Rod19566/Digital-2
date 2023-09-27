@@ -37,18 +37,18 @@ void loop() {
       while (Serial.available()) {
       Serial.read();
       }
-      myFile.close();
       myFile = SD.open("/");
       printDirectory(myFile, 0);
       printRead();
     }
       break;
     case 2:
-      Serial.println("Option 2");
+      chooseWrite();
       break;
     case 3:{
+      myFile = SD.open("/");
       printDirectory(myFile, 0);
-      Serial.println("Option 3");
+      chooseDelete();
     }
       break;
     default:
@@ -81,7 +81,6 @@ void readFile(char* textName){
 void printDirectory(File dir, int numTabs) {
    dir.rewindDirectory();
    while(true) {
-     
      File entry =  dir.openNextFile();
      if (! entry) {
        // no more files
@@ -125,43 +124,93 @@ char* trim(char* str) {
 }
 
 void printRead(){
-        Serial.println("Option 1: Read");
-        Serial.println("Write filename to read");
-        while (!Serial.available()); // Wait for user input
-        String choiceRead = Serial.readString();
-        char* choiceReadChar = strdup(choiceRead.c_str());
-     
-        // Close the file before calling readFile
-        myFile.close();
-
-        // Call readFile after the file is closed
-        readFile(choiceReadChar);
-        // Clean up allocated memory
-        free(choiceReadChar);
-        // Close the file before calling readFile
-        myFile.close();
+    Serial.println("Option 1: Read");
+    Serial.println("Write filename to read");
+    while (!Serial.available()); // Wait for user input
+    String choiceRead = Serial.readString();
+    char* choiceReadChar = strdup(choiceRead.c_str());
+  
+    // Close the file before calling readFile
+    myFile.close();
+  
+    // Call readFile after the file is closed
+    readFile(choiceReadChar);
+    // Clean up allocated memory
+    free(choiceReadChar);
+    // Close the file before calling readFile
+    myFile.close();
 }
 
+void chooseWrite(){
+    while (Serial.available()) {
+      Serial.read();
+    }
+    Serial.println("Option 2");
+    Serial.println("Write filename to write");
+    while (!Serial.available()); // Wait for user input
+    String choiceTextName = Serial.readString();
+    char* choiceTextNameChar = strdup(choiceTextName.c_str());
+
+    while (Serial.available()) {
+      Serial.read();
+    }
+    
+    Serial.println("Write text to write");
+    while (!Serial.available()); // Wait for user input
+    String choiceText = Serial.readString();
+    char* choiceTextChar = strdup(choiceText.c_str());
+
+
+    // Close the file before calling writeFile
+    myFile.close();
+    writeFile(choiceTextNameChar, choiceTextChar);
+
+    // Clean up allocated memory
+    free(choiceTextNameChar);
+    free(choiceTextChar);
+  
+}
+
+void writeFile(char* fileName, char* text){
+    // open the file. note that only one file can be open at a time,
+  // so you have to close this one before opening another.
+  myFile = SD.open(formatFileName(fileName), FILE_WRITE);
+
+  // if the file opened okay, write to it:
+  if (myFile) {
+    myFile.println(trim(text));
+    // close the file:
+    myFile.close();
+    Serial.println("Printed.");
+  } else {
+    // if the file didn't open, print an error:
+    Serial.println("Error Opening File");
+  }
+
+}
 
 void chooseDelete(){
-        
-        while (Serial.available()) {
-        Serial.read();
-        }
-        Serial.println("Option 3: Delete");
-        myFile = SD.open("/");
-        Serial.println("Choose a file to delete");
-        while (!Serial.available()); // Wait for user input
-        String choiceDelete = Serial.readString();
-        char* choiceDeleteChar = strdup(choiceDelete.c_str());
-     
-        // Close the file before calling readFile
-        myFile.close();
+  while (Serial.available()) {
+  Serial.read();
+  }
+  Serial.println("Option 3: Delete");
+  myFile = SD.open("/");
+  Serial.println("Choose a file to delete");
+  while (!Serial.available()); // Wait for user input
+  String choiceDelete = Serial.readString();
+  char* choiceDeleteChar = strdup(choiceDelete.c_str());
+  deleteFile(choiceDeleteChar);
 
-        // Call readFile after the file is closed
-        //readFile(choiceReadChar);
+  // Clean up allocated memory
+  free(choiceDeleteChar);
 
-        // Clean up allocated memory
-        free(choiceDeleteChar);
+}
+
+void deleteFile(char* textName){
+  SD.remove(formatFileName(textName));
+  Serial.println("File is not in SD Memory Card.");
+  
+  // Close the file
+  myFile.close();
 
 }
