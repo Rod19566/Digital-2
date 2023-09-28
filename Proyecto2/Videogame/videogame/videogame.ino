@@ -81,8 +81,8 @@ void setup() {
   LCD_Clear(0x00);
   
   FillRect(0, 0, 319, 206, 0x421b);
-  String text1 = "Super Mario World!";
-  LCD_Print(text1, 20, 100, 2, 0xffff, 0x421b);
+  String text1 = "Guitar Game";
+  LCD_Print(text1, 75, 100, 2, 0xffff, 0x421b);
 //  LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset);
     
 //  LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, unsigned char bitmap[]);
