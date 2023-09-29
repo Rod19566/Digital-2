@@ -6,9 +6,9 @@
 //***************************************************************************************************************************************
 // Functions Prototypes
 //***************************************************************************************************************************************
-void sd_Init(void);
+void SD_Init(void);
 
-void sd_Init(void){
+void SD_Init(void){
   SPI.setModule(0);
   Serial.print("Initializing SD card...");
   // On the Ethernet Shield, CS is pin 4. It's set as an output by default.
