@@ -5,19 +5,18 @@
  */
 //***************************************************************************************************************************************
 #include <stdint.h>
+
 #include <SPI.h>
 #include <SD.h>
-
 File myFile;
 
 #include "lcd_setup.h"
 #include "sd_setup.h"
+#include "songs.h"
 
-//extern uint8_t menuBackground[];
 extern uint8_t P1Guitar[];
 extern uint8_t P2Guitar[];
 extern uint8_t verticalArrow[];
-//extern uint8_t fireBall[];
 extern uint8_t gamingBackground[];
 
 #define redLED RED_LED
@@ -35,6 +34,8 @@ const int buttonPin1 = PUSH2;     // the number of the pushbutton pin
 #define button1P2 PD_6     // Button for Player 2
 #define button2P2 PD_7     // Button for Player 2
 #define button3P2 PF_4     // Button for Player 2
+
+#define BUZZER_PIN PF_2
 
 //define button variables
 int buttonState;             // the current reading from the input pin
@@ -76,9 +77,13 @@ int playersMode = 0;
 int gamingMode = 0;
 int ranksMode = 0;
 int timer = 0;
+int toc = 0;
+int finalP1 = 0;
+int finalP2 = 0;
 const int amountPieces = 20;
-const int spacePerPiece = 27;
-const int totalTime = 35000 ; // (ms) --- delay(15) --- 15 ms 66.67 fps
+const int spacePerPiece = 30;
+const int phase = 10;
+const int totalTime = 1000 ; // (ms) --- delay(15) --- 15 ms 66.67 fps
 
 //Prototypes
 void menuScreen(void);
@@ -90,10 +95,6 @@ void checkButton3P1(void);
 void fireBallSelect(void);
 //void piecePrinter(Piece p2Print, int timerPrint);
 
-struct Player{
-  String name;
-  int points;
-};
 
 struct Piece{
   int posX;
@@ -104,13 +105,20 @@ struct Piece{
   int pressed[2];    //determines if it has already been pressed by Player 1 [0] or Player 2 [1]
   String colorName;
 };
-  //Piece currentPiece;
+  Piece currentPiece;
   Piece playingPieces[amountPieces];
-
+  Player P1;
+  Player P2;
+  Player recordPlayers[3];
+  String content;
+  
+  ///////////////////////////////SETUP//////////////////////
 void setup() {
   // put your setup code here, to run once:
   // Open serial communications and wait for port to open:
   Serial.begin(115200);
+  SPI.setModule(0);
+  pinMode(12, OUTPUT);
   SD_Init();
   LCD_Init();
   LCD_Clear(0x00);
@@ -127,16 +135,13 @@ void setup() {
   
   pinMode(redLED, OUTPUT);     
   pinMode(blueLED, OUTPUT);     
-  pinMode(greenLED, OUTPUT);  
-
-  //FillRect(0, 0, 320, 240, 0x000000);
+  pinMode(greenLED, OUTPUT); 
   
-//  LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset);
+  pinMode(BUZZER_PIN, OUTPUT); 
 
+}//setup//////////////////////////////////////////////////
 
-
-}//setup
-
+///////////////////MAIN LOOP/////////////////////////////
 void loop() {
   // put your main code here, to run repeatedly: 
   switch(mode){//0 = Menu; 1 = Players Select; 2 = Gaming; 3 = Ranks
@@ -146,16 +151,17 @@ void loop() {
           menuScreen();
           menuOptions = 0;
           menuMode = 1;
+          toc = 0;
       }
       break;
         case 1:{ //menu select
           fireBallSelect(menuOptions);
           checkButton1("mainmenu");
           checkButton2("mainmenu", menuOptions);
+          playMusic(toc++);
       }
       break; 
       }
-      
     }
     break; // end mode case:0 -- MENU
     
@@ -186,29 +192,38 @@ void loop() {
           pieceRandomizer();
       }
       break;
-        case 1:{ //in gamet
+        case 1:{ //in game
           while (timer <= totalTime && gamingMode == 1){
             checkButton2("gotoMainMenu", 0);
+            //if (timer % 50 == 0) playMusic(timer/100);
             checkButton1P1();
             checkButton2P1();
             checkButton3P1();
             piecePrinter(playingPieces[0], timer);
             piecePrinter(playingPieces[1], timer);
             piecePrinter(playingPieces[2], timer);
-            if (timer % 450 == 0){
+            if (timer % 30 == 0){
+              playMusic1(timer/100);
               for (int i = 0; i < amountPieces; i++){ //prints pieces
-                if (playingPieces[i].posY >= 0 && playingPieces[i].posY < 240 && playingPieces[i].pressed[0] == 0) piecePrinter(playingPieces[i], timer);
+                if (playingPieces[i].posY >= 0 && playingPieces[i].posY < 240 && playingPieces[i].pressed[0] == 0) {
+                  piecePrinter(playingPieces[i], timer);
+                }
                 playingPieces[i].posY = playingPieces[i].posY + spacePerPiece;
               if (playingPieces[i].posY >= 230) {
-                playingPieces[i].posY = playingPieces[i].posYStart ;
+                currentPiece = playingPieces[i];
+                playingPieces[i].posY = playingPieces[i].posYStart;
+                playingPieces[i].pressed[0] = 0;
               }
               } //for       
             }
             printScores();
-            int wait = 25;
-            delay(wait);
-            timer = timer + wait;            
+            //int wait = 10;
+            //delay(wait);
+            timer++;            
           } 
+          finalP1 = P1.points;
+          finalP2 = P2.points;
+          resultsScreen(String(finalP1), String(finalP2));
           gamingMode = 2;
       }
       break; 
@@ -224,6 +239,10 @@ void loop() {
     case 3:{//ranks
       switch (ranksMode){//setup menu
         case 0:{
+          //readFile("scoreb~1.txt", content);
+          int numPlayers = 0;          
+          readFile("scoreb~1.txt", recordPlayers, numPlayers);
+
           ranksScreen();
           ranksMode = 1;
       }
@@ -238,27 +257,20 @@ void loop() {
     break; // end mode case:3 -- ranks
   } // end switch(mode)
 
-} // loop
+} // loop////////////////////////////////////////
 
+////////////////////FUNCTIONS//////////////////
 void resetGame(void){ //
   timer = 0;
- /* currentPiece.posX = 0;
-  currentPiece.posY = 0;
-  currentPiece.tick = 0;
-  currentPiece.pressed[0] = 0;
-  currentPiece.pressed[1] = 0;
-  for (int num = 0; num < 512; num++){
-    currentPiece.color[num] = redPiece[num];          
-  }
-  //pieceRandomizer();*/
+  P1.name = chooseRandomName();
+  P1.identifier = "P1: " + P1.name;
+  P1.points = 0;
+  P2.name = chooseRandomName();
+  P2.identifier = "P2: " + P2.name;
+  P2.points = 0;
 }
 
 void menuScreen(void){
-  //  LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, unsigned char bitmap[]);
-  //  LCD_Print(String text, int x, int y, int fontSize, int color, int background)
-  //  LCD_Bitmap(0, 0, 320, 240, menuBackground);
-    //LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset);
-  
   printGuitars(125, 0);
   
   LCD_Print("Guitar", 15, 30, 2, 0xffff, 0);
@@ -267,6 +279,34 @@ void menuScreen(void){
   LCD_Print("Play", 20, 90, 1, 0xffff, 0);
   LCD_Print("Scoreboard", 20, 115, 1, 0xffff, 0);
   
+}
+
+String chooseRandomName(void){
+  int randomNumber = random(10);
+  randomNumber = random(10);
+  randomNumber = random(10);
+  switch(randomNumber){
+    case 0: return "Sam";
+      break;
+    case 1: return "Alex";
+      break;
+    case 2: return "Charlie";
+      break;
+    case 3: return "Riley";
+      break;
+    case 4: return "Taylor";
+      break;
+    case 5: return "Peyton";
+      break;
+    case 6: return "Frankie";
+      break;
+    case 7: return "Robin";
+      break;
+    case 8: return "Jamie";
+      break;
+    case 9: return "Morgan";
+      break;
+  }
 }
 
 void ranksScreen(void){
@@ -280,8 +320,14 @@ void ranksScreen(void){
   LCD_Print("Board", 15, 50, 2, 0xffff, 0);
   
   LCD_Print("1. ", 15, 80, 1, 0xffff, 0);
-  LCD_Print("2. ", 15, 100, 1, 0xffff, 0);
-  LCD_Print("3. ", 15, 120, 1, 0xffff, 0);
+  LCD_Print(recordPlayers[0].identifier, 25, 80, 1, 0xffff, 0);
+  LCD_Print(String(recordPlayers[0].points), 25, 95, 1, 0xffff, 0);
+  LCD_Print("2. ", 15, 120, 1, 0xffff, 0);
+  LCD_Print(recordPlayers[1].identifier, 25, 120, 1, 0xffff, 0);
+  LCD_Print(String(recordPlayers[1].points), 25, 135, 1, 0xffff, 0);
+  LCD_Print("3. ", 15, 150, 1, 0xffff, 0);
+  LCD_Print(recordPlayers[2].identifier , 25, 150, 1, 0xffff, 0);
+  LCD_Print(String(recordPlayers[2].points) , 25, 165, 1, 0xffff, 0);
   
   LCD_Print("Main Menu", 20, 200, 1, 0xffff, 0);
 }
@@ -323,11 +369,31 @@ void playersScreen(void){
   
 }
 
-void gamingScreen(void){
-  //  LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, unsigned char bitmap[]);
-  //  LCD_Print(String text, int x, int y, int fontSize, int color, int background)
-  //LCD_Bitmap(0, 0, 320, 240, gamingBackground);
+void resultsScreen(String pointsP1, String pointsP2){
+  int posYP1 = 45;
+  printGuitars(0,0);
+  FillRect(25, 25, 270, 170, 0x00000);
+  if (menuOptions == 0){//1 Player
+    posYP1 = 90;
+  }
+  else if (menuOptions == 1){//2 Players
+    LCD_Sprite(50, 100, 14, 28, P2Guitar, 1, 1, 0, 0);
+    LCD_Print(P2.identifier, 70, 105, 2, 0xffff, 0);
+    LCD_Print("Score", 75, 125, 2, 0xffff, 0);
+    LCD_Print(pointsP2, 175, 125, 2, 0xffff, 0);
+  }  
+    LCD_Sprite(50, posYP1, 14, 28, P1Guitar, 1, 1, 0, 0);
+    LCD_Print(P1.identifier, 70, posYP1 + 5, 2, 0xffff, 0);
+    LCD_Print("Score", 75, posYP1 + 30, 2, 0xffff, 0);
+    LCD_Print(pointsP1, 175, posYP1 + 30, 2, 0xffff, 0);
 
+    //myFile = SD.open("/");
+    //printDirectory(myFile, 0);
+    writeFile(myFile, P1.identifier + "=" + pointsP1);  
+    writeFile(myFile, P2.identifier + "=" + pointsP2);  
+}
+
+void gamingScreen(void){
   printGuitars(0,0);
   int fontSize = 2;
   if (menuOptions == 0){//1 Player
@@ -377,17 +443,16 @@ void printGuitars(int xStart, int yStart){
 void pieceRandomizer(void){
   for (int i = 0; i < amountPieces; i++){
     playingPieces[i].id = i;  
-    playingPieces[i].posY = -spacePerPiece * playingPieces[i].id + 5;
+    playingPieces[i].posY = -(spacePerPiece * playingPieces[i].id) + phase;
     playingPieces[i].posYStart = playingPieces[i].posY;  
     playingPieces[i].tick = 0;   // 0 = fail; 1 = ok; 2 = perfect
     playingPieces[i].pressed[0] = 0;   //Player 1 0 = not pressed yet; 1 = already pressed
     playingPieces[i].pressed[1] = 0;   //Player 2 0 = not pressed yet; 1 = already pressed
-    int randomNumber = random(4);
+    int randomNumber = random(3);
     switch(randomNumber){
       case 0: {
         playingPieces[i].colorName = "red";
           if (menuOptions == 0){//1 Player
-  //LCD_Sprite(x + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
             playingPieces[i].posX = xStart + 1;
           }
           else if (menuOptions == 1){//2 Players
@@ -397,7 +462,6 @@ void pieceRandomizer(void){
       case 1: {
         playingPieces[i].colorName = "yellow";
           if (menuOptions == 0){//1 Player
-  //LCD_Sprite(x + 41, 220, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
             playingPieces[i].posX = xStart + 41;
           }
           else if (menuOptions == 1){//2 Players
@@ -407,18 +471,7 @@ void pieceRandomizer(void){
       case 2: {
         playingPieces[i].colorName = "green";
           if (menuOptions == 0){//1 Player
-  //LCD_Sprite(x + 81, 220, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
             playingPieces[i].posX = xStart + 81;
-          }
-          else if (menuOptions == 1){//2 Players
-          }
-      }
-      break;
-      default: {
-        playingPieces[i].colorName = "red";
-          if (menuOptions == 0){//1 Player
-  //LCD_Sprite(x + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
-            playingPieces[i].posX = xStart + 1;
           }
           else if (menuOptions == 1){//2 Players
           }
@@ -439,11 +492,11 @@ void piecePrinter(Piece p2Print, int timerPrint){
       FillRect(xStart + 1, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
       LCD_Sprite(xStart + 1, p2Print.posY, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
     }
-    else if (p2Print.colorName == "yellow"){
+    if (p2Print.colorName == "yellow"){
       FillRect(xStart + 41, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
       LCD_Sprite(xStart + 41, p2Print.posY, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
     }
-    else if (p2Print.colorName == "green"){
+    if (p2Print.colorName == "green"){
       FillRect(xStart + 81, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
       LCD_Sprite(xStart + 81, p2Print.posY, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
     }   
@@ -453,21 +506,24 @@ void piecePrinter(Piece p2Print, int timerPrint){
 
 void printScores(void){
   if (menuOptions == 0){
-    LCD_Print("0", 5, 50, 2, 0xffff, 0);
-  }
-    LCD_Print("Piece 1", 5, 80, 1, 0xffff, 0);
-    LCD_Print(String(playingPieces[0].posY), 75, 80, 1, 0xffff, 0);
-    LCD_Print("Piece 2", 5, 95, 1, 0xffff, 0);
-    LCD_Print(String(playingPieces[1].posY), 75, 95, 1, 0xffff, 0);
-    LCD_Print("Piece 3", 5, 120, 1, 0xffff, 0);
-    LCD_Print(String(playingPieces[2].posY), 75, 120, 1, 0xffff, 0);
-    LCD_Print("Piece 4", 5, 135, 1, 0xffff, 0);
-    LCD_Print(String(playingPieces[3].posY), 75, 135, 1, 0xffff, 0);
+    LCD_Print(P1.name, 5, 50, 1, 0xffff, 0);
+    LCD_Print(String(P1.points), 20, 75, 2, 0xffff, 0);
     
-   // LCD_Print("Time", 40, 135, 1, 0xffff, 0);
-   // LCD_Print(String(timer), 75, 135, 1, 0xffff, 0);
+    LCD_Print("Time", 40, 135, 1, 0xffff, 0);
+    LCD_Print(String(timer), 75, 135, 1, 0xffff, 0);
+  }
+  if (menuOptions == 1){
+    LCD_Print(P1.name, 0, 45, 1, 0xffff, 0);
+    LCD_Print(String(P1.points), 5, 60, 2, 0xffff, 0);
+    LCD_Print(P2.name, 0, 120, 1, 0xffff, 0);
+    LCD_Print(String(P2.points), 5, 135, 2, 0xffff, 0);
+    
+    LCD_Print("Time", 5, 160, 1, 0xffff, 0);
+    LCD_Print(String(timer), 5, 170, 1, 0xffff, 0);
+  }
 }
 
+///////////////////BUTTONS//////////////////////////////////////
 void checkButton1(String buttonMode){ //mode indicates response
   int reading = digitalRead(buttonPin);
   if (reading == HIGH && lastButtonState == LOW) {
@@ -544,6 +600,10 @@ void checkButton1P1(void){ //mode indicates response
     delay(2*debounceDelay);
     lastDebounceTime1P1 = millis();
     LCD_Sprite(xStart + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
+    if (currentPiece.colorName == "red" && currentPiece.posY >= 210 && currentPiece.posY <=250) {
+      P1.points++;
+      currentPiece.pressed[0] = 1;
+    }
   } // if reading == HIGH
   if ((millis() - lastDebounceTime1P1) > debounceDelay) {
     buttonState1P1 = reading;
@@ -566,6 +626,10 @@ void checkButton2P1(void){ //mode indicates response
     delay(2*debounceDelay);
     lastDebounceTime2P1 = millis();
     LCD_Sprite(xStart + 41, 220, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
+    if (currentPiece.colorName == "yellow" && currentPiece.posY >= 210 && currentPiece.posY <=250) {
+      P1.points++;
+      currentPiece.pressed[0] = 1;
+    }
   } // if reading == HIGH
   if ((millis() - lastDebounceTime2P1) > debounceDelay) {
     buttonState2P1 = reading;
@@ -578,7 +642,7 @@ void checkButton3P1(void){ //mode indicates response
   if (reading == HIGH && lastButtonState3P1 == LOW) {
   //button action here
     if (!onOff2){
-      digitalWrite(blueLED, HIGH);   // turn the LED on (HIGH is the voltage level)   
+     // digitalWrite(blueLED, HIGH);   // turn the LED on (HIGH is the voltage level)   
       onOff2 = 1;   
     } else{
       digitalWrite(blueLED, LOW);   // turn the LED on (HIGH is the voltage level)   
@@ -588,6 +652,11 @@ void checkButton3P1(void){ //mode indicates response
     delay(2*debounceDelay);
     lastDebounceTime3P1 = millis();
     LCD_Sprite(xStart + 81, 220, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
+    if (currentPiece.colorName == "green" && currentPiece.posY >= 210 && currentPiece.posY <=250 && currentPiece.pressed[0] == 0) {
+      P1.points++;
+      currentPiece.pressed[0] = 1;
+    }
+    
   } // if reading == HIGH
   if ((millis() - lastDebounceTime3P1) > debounceDelay) {
     buttonState3P1 = reading;
