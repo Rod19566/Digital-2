@@ -76,13 +76,19 @@ int playersMode = 0;
 int gamingMode = 0;
 int ranksMode = 0;
 int timer = 0;
-int totalTime = 60000 ; // (ms) --- delay(15) --- 15 ms 66.67 fps
+const int amountPieces = 20;
+const int spacePerPiece = 27;
+const int totalTime = 35000 ; // (ms) --- delay(15) --- 15 ms 66.67 fps
 
 //Prototypes
 void menuScreen(void);
 void checkButton1(String buttonMode);
 void checkButton2(String buttonMode, int optionSelected);
+void checkButton1P1(void);
+void checkButton2P1(void);
+void checkButton3P1(void);
 void fireBallSelect(void);
+//void piecePrinter(Piece p2Print, int timerPrint);
 
 struct Player{
   String name;
@@ -92,14 +98,14 @@ struct Player{
 struct Piece{
   int posX;
   int posY;
+  int posYStart;
+  int id;
   int tick;       // 0 = fail; 1 = ok; 2 = perfect
   int pressed[2];    //determines if it has already been pressed by Player 1 [0] or Player 2 [1]
-  char color[512];
+  String colorName;
 };
-
-Piece currentPiece;
-
-Piece playingPieces[15];
+  //Piece currentPiece;
+  Piece playingPieces[amountPieces];
 
 void setup() {
   // put your setup code here, to run once:
@@ -177,15 +183,40 @@ void loop() {
           gamingScreen();
           gamingMode = 1;
           resetGame();
+          pieceRandomizer();
       }
       break;
-        case 1:{ 
-          //checkButton2("ranksmenu", 0);
-          checkButton1P1();
-          checkButton2P1();
-          checkButton3P1();
+        case 1:{ //in gamet
+          while (timer <= totalTime && gamingMode == 1){
+            checkButton2("gotoMainMenu", 0);
+            checkButton1P1();
+            checkButton2P1();
+            checkButton3P1();
+            piecePrinter(playingPieces[0], timer);
+            piecePrinter(playingPieces[1], timer);
+            piecePrinter(playingPieces[2], timer);
+            if (timer % 450 == 0){
+              for (int i = 0; i < amountPieces; i++){ //prints pieces
+                if (playingPieces[i].posY >= 0 && playingPieces[i].posY < 240 && playingPieces[i].pressed[0] == 0) piecePrinter(playingPieces[i], timer);
+                playingPieces[i].posY = playingPieces[i].posY + spacePerPiece;
+              if (playingPieces[i].posY >= 230) {
+                playingPieces[i].posY = playingPieces[i].posYStart ;
+              }
+              } //for       
+            }
+            printScores();
+            int wait = 25;
+            delay(wait);
+            timer = timer + wait;            
+          } 
+          gamingMode = 2;
       }
       break; 
+        case 2:{ //winners screen
+            int wait = 5000;
+            checkButton2("gotoMainMenu", 0); 
+      }
+      break;
       }
     }
     break; // end mode case:2 -- Gaming
@@ -198,7 +229,7 @@ void loop() {
       }
       break;
         case 1:{ 
-          checkButton2("ranksmenu", 0);
+          checkButton2("gotoMainMenu", 0);
           fireBallSelect(200);
       }
       break; 
@@ -211,7 +242,7 @@ void loop() {
 
 void resetGame(void){ //
   timer = 0;
-  currentPiece.posX = 0;
+ /* currentPiece.posX = 0;
   currentPiece.posY = 0;
   currentPiece.tick = 0;
   currentPiece.pressed[0] = 0;
@@ -219,7 +250,7 @@ void resetGame(void){ //
   for (int num = 0; num < 512; num++){
     currentPiece.color[num] = redPiece[num];          
   }
-  pieceRandomizer();
+  //pieceRandomizer();*/
 }
 
 void menuScreen(void){
@@ -311,9 +342,11 @@ void gamingScreen(void){
     printFret(xStart + 130);
     FillRect(0, 0, xStart, 178, 0x00000);
     LCD_Print("P2", 5, 90, 2, 0xffff, 0);
+    LCD_Sprite(38, 85, 14, 28, P2Guitar, 1, 1, 0, 0);
     LCD_Print("Score", 5, 110, fontSize, 0xffff, 0);
   }  
   LCD_Print("P1", 5, 10, 2, 0xffff, 0);
+  LCD_Sprite(38, 5, 14, 26, P1Guitar, 1, 1, 0, 0);
   LCD_Print("Score", 5, 30, fontSize, 0xffff, 0);
 } //gamingscreen
 
@@ -342,59 +375,98 @@ void printGuitars(int xStart, int yStart){
  }
 }
 void pieceRandomizer(void){
-  /*
-LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset){ 
-Función para dibujar una línea vertical - parámetros ( coordenada x, cordenada y, longitud, color)
-V_line(unsigned int x, unsigned int y, unsigned int l, unsigned int c) 
-
-struct Piece{
-  int posY;
-  int tick;   // 0 = fail; 1 = ok; 2 = perfect
-  char color[];
-};
-   for(int x = 0; x <320-30; x++){
-    delay(15);
-    int anim2 = (x/11)%2;
-    
-    LCD_Sprite(x, 20, 30, 30, greenPiece, 5, anim2, 0, 0);  // 39 x 38
-    V_line( x - 1, 20, 30, 0x00000);
-  }*/
-  
-  for (int i = 0; i < 15; i++){
-    playingPieces[i].posX = 0;
-    playingPieces[i].posY = 0;
+  for (int i = 0; i < amountPieces; i++){
+    playingPieces[i].id = i;  
+    playingPieces[i].posY = -spacePerPiece * playingPieces[i].id + 5;
+    playingPieces[i].posYStart = playingPieces[i].posY;  
     playingPieces[i].tick = 0;   // 0 = fail; 1 = ok; 2 = perfect
     playingPieces[i].pressed[0] = 0;   //Player 1 0 = not pressed yet; 1 = already pressed
     playingPieces[i].pressed[1] = 0;   //Player 2 0 = not pressed yet; 1 = already pressed
-    int randomNumber = random(3);
+    int randomNumber = random(4);
     switch(randomNumber){
       case 0: {
-        for (int num = 0; num < 512; num++){
-          playingPieces[i].color[num] = redPiece[num];
-        } //for
+        playingPieces[i].colorName = "red";
+          if (menuOptions == 0){//1 Player
+  //LCD_Sprite(x + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
+            playingPieces[i].posX = xStart + 1;
+          }
+          else if (menuOptions == 1){//2 Players
+          }
       }
       break;
       case 1: {
-        for (int num = 0; num < 512; num++){
-          playingPieces[i].color[num] = yellowPiece[num];          
-        } //for
+        playingPieces[i].colorName = "yellow";
+          if (menuOptions == 0){//1 Player
+  //LCD_Sprite(x + 41, 220, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
+            playingPieces[i].posX = xStart + 41;
+          }
+          else if (menuOptions == 1){//2 Players
+          }
       }
       break;
       case 2: {
-        for (int num = 0; num < 512; num++){
-          playingPieces[i].color[num] = greenPiece[num];
-        } //for
+        playingPieces[i].colorName = "green";
+          if (menuOptions == 0){//1 Player
+  //LCD_Sprite(x + 81, 220, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
+            playingPieces[i].posX = xStart + 81;
+          }
+          else if (menuOptions == 1){//2 Players
+          }
       }
       break;
       default: {
-        for (int num = 0; num < 512; num++){
-          playingPieces[i].color[num] = redPiece[num];          
-        } //for
+        playingPieces[i].colorName = "red";
+          if (menuOptions == 0){//1 Player
+  //LCD_Sprite(x + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
+            playingPieces[i].posX = xStart + 1;
+          }
+          else if (menuOptions == 1){//2 Players
+          }
       }
       break;
     }    
   }
 }// void pieceRandomizer
+
+
+void piecePrinter(Piece p2Print, int timerPrint){
+  //  LCD_Sprite(xStart + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
+   // LCD_Sprite(xStart + 41, 220, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
+   // LCD_Sprite(xStart + 81, 220, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
+   //printFret(xStart);
+  if (p2Print.pressed[0] == 0){ //if not pressed keep moving
+    if (p2Print.colorName == "red"){
+      FillRect(xStart + 1, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
+      LCD_Sprite(xStart + 1, p2Print.posY, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
+    }
+    else if (p2Print.colorName == "yellow"){
+      FillRect(xStart + 41, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
+      LCD_Sprite(xStart + 41, p2Print.posY, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
+    }
+    else if (p2Print.colorName == "green"){
+      FillRect(xStart + 81, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
+      LCD_Sprite(xStart + 81, p2Print.posY, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
+    }   
+  }
+  
+} //void piece printer 
+
+void printScores(void){
+  if (menuOptions == 0){
+    LCD_Print("0", 5, 50, 2, 0xffff, 0);
+  }
+    LCD_Print("Piece 1", 5, 80, 1, 0xffff, 0);
+    LCD_Print(String(playingPieces[0].posY), 75, 80, 1, 0xffff, 0);
+    LCD_Print("Piece 2", 5, 95, 1, 0xffff, 0);
+    LCD_Print(String(playingPieces[1].posY), 75, 95, 1, 0xffff, 0);
+    LCD_Print("Piece 3", 5, 120, 1, 0xffff, 0);
+    LCD_Print(String(playingPieces[2].posY), 75, 120, 1, 0xffff, 0);
+    LCD_Print("Piece 4", 5, 135, 1, 0xffff, 0);
+    LCD_Print(String(playingPieces[3].posY), 75, 135, 1, 0xffff, 0);
+    
+   // LCD_Print("Time", 40, 135, 1, 0xffff, 0);
+   // LCD_Print(String(timer), 75, 135, 1, 0xffff, 0);
+}
 
 void checkButton1(String buttonMode){ //mode indicates response
   int reading = digitalRead(buttonPin);
@@ -430,6 +502,7 @@ void checkButton2(String buttonMode, int optionSelected){
         break;
       case 1:{ //scoreboard -- AKA go to main menu
         mode = 3;     
+        menuMode = 0;
         ranksMode = 0;   
         menuOptions = 0;
       }
@@ -437,17 +510,16 @@ void checkButton2(String buttonMode, int optionSelected){
     }
   } else if (buttonMode == "playermenu"){ //
     mode = 2;
+    menuMode = 0;
   }
-  else if (buttonMode == "ranksmenu"){ //
+  else if (buttonMode == "gotoMainMenu"){ //
     mode = 0;
     menuMode = 0;
+    menuOptions = 0;
+    gamingMode = 0; 
+    playersMode = 0;
+    //return;
   } 
-  else if (buttonMode == "gaming"){
-    mode = 0;
-    menuMode = 0;
-    menuOptions = 0;  
-    gamingMode = 0;  
-  }
     lastDebounceTime1 = millis();
   } 
   if ((millis() - lastDebounceTime1) > debounceDelay) {
