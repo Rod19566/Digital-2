@@ -111,6 +111,7 @@ struct Piece{
   Player P2;
   Player recordPlayers[3];
   String content;
+  int step = 4;
   
   ///////////////////////////////SETUP//////////////////////
 void setup() {
@@ -207,13 +208,14 @@ void loop() {
               for (int i = 0; i < amountPieces; i++){ //prints pieces
                 if (playingPieces[i].posY >= 0 && playingPieces[i].posY < 240 && playingPieces[i].pressed[0] == 0) {
                   piecePrinter(playingPieces[i], timer);
-                }
+                 }
                 playingPieces[i].posY = playingPieces[i].posY + spacePerPiece;
-              if (playingPieces[i].posY >= 230) {
-                currentPiece = playingPieces[i];
-                playingPieces[i].posY = playingPieces[i].posYStart;
-                playingPieces[i].pressed[0] = 0;
-              }
+               // playingPieces[i].posY = playingPieces[i].posY + step;
+                if (playingPieces[i].posY >= 230) {
+                  currentPiece = playingPieces[i];
+                  playingPieces[i].posY = playingPieces[i].posYStart;
+                  playingPieces[i].pressed[0] = 0;
+                }
               } //for       
             }
             printScores();
@@ -319,15 +321,17 @@ void ranksScreen(void){
   LCD_Print("Leader", 15, 30, 2, 0xffff, 0);
   LCD_Print("Board", 15, 50, 2, 0xffff, 0);
   
-  LCD_Print("1. ", 15, 80, 1, 0xffff, 0);
-  LCD_Print(recordPlayers[0].identifier, 25, 80, 1, 0xffff, 0);
-  LCD_Print(String(recordPlayers[0].points), 25, 95, 1, 0xffff, 0);
-  LCD_Print("2. ", 15, 120, 1, 0xffff, 0);
-  LCD_Print(recordPlayers[1].identifier, 25, 120, 1, 0xffff, 0);
-  LCD_Print(String(recordPlayers[1].points), 25, 135, 1, 0xffff, 0);
-  LCD_Print("3. ", 15, 150, 1, 0xffff, 0);
-  LCD_Print(recordPlayers[2].identifier , 25, 150, 1, 0xffff, 0);
-  LCD_Print(String(recordPlayers[2].points) , 25, 165, 1, 0xffff, 0);
+  LCD_Print("1. ", 15, 80, 2, 0xffff, 0);
+  LCD_Print(recordPlayers[0].identifier, 35, 80, 1, 0xffff, 0);
+  LCD_Print(String(recordPlayers[0].points), 45, 95, 1, 0xffff, 0);
+  
+  LCD_Print("2. ", 15, 120, 2, 0xffff, 0);
+  LCD_Print(recordPlayers[1].identifier, 35, 120, 1, 0xffff, 0);
+  LCD_Print(String(recordPlayers[1].points), 45, 135, 1, 0xffff, 0);
+  
+  LCD_Print("3. ", 15, 160, 2, 0xffff, 0);
+  LCD_Print(recordPlayers[2].identifier , 35, 160, 1, 0xffff, 0);
+  LCD_Print(String(recordPlayers[2].points) , 45, 175, 1, 0xffff, 0);
   
   LCD_Print("Main Menu", 20, 200, 1, 0xffff, 0);
 }
@@ -389,8 +393,8 @@ void resultsScreen(String pointsP1, String pointsP2){
 
     //myFile = SD.open("/");
     //printDirectory(myFile, 0);
-    writeFile(myFile, P1.identifier + "=" + pointsP1);  
-    writeFile(myFile, P2.identifier + "=" + pointsP2);  
+    if (pointsP1 != "0") writeFile(myFile, P1.identifier + "=" + pointsP1);  
+    if (pointsP2 != "0") writeFile(myFile, P2.identifier + "=" + pointsP2);  
 }
 
 void gamingScreen(void){
@@ -483,21 +487,18 @@ void pieceRandomizer(void){
 
 
 void piecePrinter(Piece p2Print, int timerPrint){
-  //  LCD_Sprite(xStart + 1, 220, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
-   // LCD_Sprite(xStart + 41, 220, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
-   // LCD_Sprite(xStart + 81, 220, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
-   //printFret(xStart);
+   step = spacePerPiece;
   if (p2Print.pressed[0] == 0){ //if not pressed keep moving
     if (p2Print.colorName == "red"){
-      FillRect(xStart + 1, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
+      FillRect(xStart + 1, p2Print.posY - step, 39, 19, 0x8F4200);
       LCD_Sprite(xStart + 1, p2Print.posY, 39, 19, redPiece, 1, 0, 0, 0);  // 39 x 38
     }
     if (p2Print.colorName == "yellow"){
-      FillRect(xStart + 41, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
+      FillRect(xStart + 41, p2Print.posY - step, 39, 19, 0x8F4200);
       LCD_Sprite(xStart + 41, p2Print.posY, 39, 19, yellowPiece, 1, 0, 0, 0);  // 39 x 38
     }
     if (p2Print.colorName == "green"){
-      FillRect(xStart + 81, p2Print.posY - spacePerPiece, 39, 19, 0x8F4200);
+      FillRect(xStart + 81, p2Print.posY - step, 39, 19, 0x8F4200);
       LCD_Sprite(xStart + 81, p2Print.posY, 39, 19, greenPiece, 1, 0, 0, 0);  // 39 x 38
     }   
   }
