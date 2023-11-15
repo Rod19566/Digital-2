@@ -1,8 +1,8 @@
 /*
  * ////////////////////////////////
 Proyecto final
-Dina Rodríguez      19566
-Este programa va en el TIVA C y está encargado
+Dina Rodrï¿½guez      19566
+Este programa va en el TIVA C y estï¿½ encargado
 de encender y apagar las luces del Park-o-Meter
 //////////////////////////
  * */
@@ -65,14 +65,14 @@ int available(int a[],int n)
 
 void setup(void){
 
-    ///////// CONFIGURACIÓN DEL RELOJ ///////////////////////
+    ///////// CONFIGURACIï¿½N DEL RELOJ ///////////////////////
         SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
          //CLK FREQUENCY 40 MHz
         SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF); //ENABLES PORT F FOR TIMER
         SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0); //ENABLES TIMER0
 
     ////////////////////////////////////////////////////////////
-         ///////// CONFIGURACIÓN DE LOS PINES ///////////////////////
+         ///////// CONFIGURACIï¿½N DE LOS PINES ///////////////////////
 
 
 

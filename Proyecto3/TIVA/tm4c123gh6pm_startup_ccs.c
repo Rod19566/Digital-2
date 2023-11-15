@@ -41,7 +41,7 @@ static void IntDefaultHandler(void);
 //
 //*****************************************************************************
 extern void _c_int00(void);
-extern void Timer0IntHandler(void); //incluimos función
+extern void Timer0IntHandler(void); //incluimos funciï¿½n
 extern void UARTIntHandler(void);
 
 //*****************************************************************************

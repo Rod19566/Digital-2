@@ -10,8 +10,9 @@
 // Librerías
 //************************************************************************************************
 #include <WiFi.h>
-//#include <SPIFFS.h>
 #include <WebServer.h>
+#include "SevSeg.h"
+SevSeg sevseg;
 //************************************************************************************************
 // Variables globales
 //************************************************************************************************
@@ -46,9 +47,18 @@ uint8_t availParkingLots = 4;
 void setup() {
   Serial.begin(115200);
 
-  Serial.println("Try Connecting to ");
-  Serial.println(ssid);
+ ///////////////////7seg setup 
+  byte numDigits = 1;
+  byte digitPins[] = {};
+  //byte segmentPins[] = {6, 5, 2, 3, 4, 7, 8, 9};
+  byte segmentPins[] = {25, 26, 12, 14, 27, 33, 32, 13};
+  bool resistorsOnSegments = true;
 
+  byte hardwareConfig = COMMON_CATHODE; 
+  sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
+  sevseg.setBrightness(75);
+
+/////////leds setup
   pinMode(LED1red, OUTPUT);
   pinMode(LED1green, OUTPUT);
   pinMode(LED2red, OUTPUT);
@@ -58,6 +68,9 @@ void setup() {
   pinMode(LED4red, OUTPUT);
   pinMode(LED4green, OUTPUT);
 
+///////////////server setup
+  Serial.println("Try Connecting to ");
+  Serial.println(ssid);
   // Connect to your wi-fi modem
   WiFi.begin(ssid, password);
 
@@ -71,6 +84,7 @@ void setup() {
   Serial.print("Got IP: ");
   Serial.println(WiFi.localIP());  //Show ESP32 IP on serial
 
+//////////https handlers
   server.on("/", handle_OnConnect); // Directly
   server.on("/lot1On", handle_lot1On);
   server.on("/lot1Off", handle_lot1Off);
@@ -92,6 +106,8 @@ void setup() {
 //************************************************************************************************
 void loop() {
   server.handleClient();
+  sevseg.setNumber(availParkingLots);
+  sevseg.refreshDisplay();
     ///////////////// LED 1 ////////////////////////
   if (!LED4status)
   {
@@ -156,21 +172,25 @@ void handle_OnConnect() {
 //************************************************************************************************
 void handle_lot1On() {
   LED1status = HIGH;
+  availParkingLots--;
   Serial.println("GPIO2 Status: ON");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
 void handle_lot2On() {
   LED2status = HIGH;
+  availParkingLots--;
   Serial.println("GPIO3 Status: ON");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
 void handle_lot3On() {
   LED3status = HIGH;
+  availParkingLots--;
   Serial.println("GPIO4 Status: ON");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
 void handle_lot4On() {
   LED4status = HIGH;
+  availParkingLots--;
   Serial.println("GPIO5 Status: ON");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
@@ -179,21 +199,25 @@ void handle_lot4On() {
 //************************************************************************************************
 void handle_lot1Off() {
   LED1status = LOW;
+  availParkingLots++;
   Serial.println("GPIO2 Status: OFF");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
 void handle_lot2Off() {
   LED2status = LOW;
+  availParkingLots++;
   Serial.println("GPIO3 Status: OFF");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
 void handle_lot3Off() {
   LED3status = LOW;
+  availParkingLots++;
   Serial.println("GPIO4 Status: OFF");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
 void handle_lot4Off() {
   LED4status = LOW;
+  availParkingLots++;
   Serial.println("GPIO5 Status: OFF");
   server.send(200, "text/html", SendHTML(LED1status, LED2status, LED3status, LED4status));
 }
