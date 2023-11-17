@@ -17,8 +17,8 @@ SevSeg sevseg;
 // Variables globales
 //************************************************************************************************
 // SSID & Password
-const char* ssid = "Luzelin";  // Enter your SSID here
-const char* password = "Frijolina2147@";  //Enter your Password here
+const char* ssid = "DinisTumaninis";  // Enter your SSID here
+const char* password = "LuluDini123@";  //Enter your Password here
 
 WebServer server(80);  // Object of WebServer(HTTP port, 80 is defult)
 bool LED1status = LOW;

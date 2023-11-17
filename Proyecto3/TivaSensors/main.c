@@ -92,10 +92,13 @@ void main(void)
             GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_6|GPIO_PIN_7, 128);   //GREEN LED ON
             }
 
-        UARTCharPut(UART1_BASE, 'P');            //ESP32 communication
+        UARTCharPut(UART1_BASE, 'A');            //ESP32 communication
         UARTCharPut(UART1_BASE, parking1);      //ESP32 communication
+        UARTCharPut(UART1_BASE, 'B');            //ESP32 communication
         UARTCharPut(UART1_BASE, parking2);      //ESP32 communication
+        UARTCharPut(UART1_BASE, 'C');            //ESP32 communication
         UARTCharPut(UART1_BASE, parking3);      //ESP32 communication
+        UARTCharPut(UART1_BASE, 'D');            //ESP32 communication
         UARTCharPut(UART1_BASE, parking4);      //ESP32 communication
 
 }
